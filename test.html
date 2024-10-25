@@ -6,24 +6,23 @@
     <title>Unique Visitor Counter</title>
 </head>
 <body>
-    <h1>Welcome to My Site</h1>
-    <p>Total Unique Visitors: <span id="visitorCount">Loading...</span></p>
+    <h1>Welcome to the Unique Visitor Counter!</h1>
+    <p>Unique Visits: <span id="visit-count">Loading...</span></p>
 
     <script>
-        const apiUrl = 'https://totalvisits.onrender.com/api';
+        const apiUrl = "https://totalvisits.onrender.com/api";
 
-        // Function to update visitor count
-        function updateVisitorCount() {
-            fetch(`${apiUrl}/visit`, { method: 'POST', credentials: 'include' })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("visitorCount").innerText = data.totalUniqueVisitors;
-                })
-                .catch(error => console.error("Error:", error));
-        }
+        // Fetch and display the unique visitor count
+        fetch(`${apiUrl}/count`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("visit-count").innerText = data.uniqueVisits;
+            })
+            .catch(error => console.error("Error fetching visitor count:", error));
 
-        // Initialize visitor count on page load
-        updateVisitorCount();
+        // Trigger a visit check to track unique visits
+        fetch(`${apiUrl}/visit`)
+            .catch(error => console.error("Error tracking visit:", error));
     </script>
 </body>
 </html>
