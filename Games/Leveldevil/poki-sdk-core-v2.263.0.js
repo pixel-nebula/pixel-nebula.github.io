@@ -4910,7 +4910,21 @@
 					this.SDK.setVolume(e)
 				}, t
 			}();
-		var mt = new ht;
-		for (var gt in mt) window.PokiSDK[gt] = mt[gt]
+			class ht {
+				constructor() {
+					this.gamestarted = false; // Initialize properties
+					// Other properties can be initialized here
+				}
+			}
+			
+			if (typeof window.PokiSDK === 'undefined') {
+				window.PokiSDK = {}; // Initialize PokiSDK if it does not exist
+			}
+			
+			var mt = new ht();
+			for (var gt in mt) {
+				window.PokiSDK[gt] = mt[gt]; // This will work now as PokiSDK is defined
+			}
+			
 	})()
 })();

@@ -1,4 +1,3 @@
-<script src="poki-sdk-core-v2.263.0.js"></script>
 (() => {
 	var e = function(e) {
 			var n = RegExp("[?&]" + e + "=([^&]*)").exec(window.location.search);
