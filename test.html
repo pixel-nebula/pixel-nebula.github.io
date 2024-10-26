@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Counter</title>
+</head>
+<body>
+    <h1>Welcome to My Site</h1>
+    <p>Total Unique Visitors: <span id="visitorCount">Loading...</span></p>
+
+    <script>
+        const apiUrl = 'https://totalvisits.onrender.com/api';
+
+        // Function to update visitor count
+        function updateVisitorCount() {
+            // Send POST request to the API to count the visitor
+            fetch(`${apiUrl}/visit`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("visitorCount").innerText = data.totalVisitors;
+                })
+                .catch(error => console.error("Error:", error));
+        }
+
+        // Initialize visitor count on page load
+        updateVisitorCount();
+    </script>
+</body>
+</html>
