@@ -4,17 +4,16 @@
 	
 	<meta charset="utf-8">
 	
-	<title>Level Devil</title>
+	<title>PixelNebula</title>
 	<meta name="robots" content="noindex,nofollow" />
 	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	
 	
-	<link rel="shortcut icon" type="image/png" href="favicon.ico">
+	<link rel="shortcut icon" type="image/png" href="../../../../Pictures/Logo.png">
 
 	
 	<script src="../../poki-sdk.js"></script>
-	<script src="../../poki-sdk-core-v2.263.0.js"></script>
 	
 	<script src="Level Devil.js"></script>
 
@@ -34,7 +33,7 @@
 	</style>
 	
 </head>
-<body>
+<body onload="checkLoginStatus()">
 	
 	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
 	
@@ -46,3 +45,30 @@
 
 </body>
 </html>
+
+<script>
+	function checkLoginStatus() {
+const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+	const [key, value] = cookie.split('=').map(c => c.trim());
+	acc[key] = value;
+	return acc;
+}, {});
+
+const idToken = cookies.IDToken;
+
+if (idToken) {
+	fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+		.then(response => response.json())
+		.then(data => {})
+		.catch(error => {
+			console.error('Error validating token:', error);
+			// Clear the cookie and redirect to index.html if token validation fails
+			document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+			window.location.href = '../../index.html';
+		});
+} else {
+	// Redirect to index.html if no ID Token is found
+	window.location.href = '../../index.html';
+}
+}
+</script>
