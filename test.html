@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unique Visitor Counter</title>
+    <title>User Count Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #user-count {
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Site</h1>
-    <p>Total Unique Visitors: <span id="visitorCount">Loading...</span></p>
+    <div id="user-count">Users online: 0</div>
 
     <script>
-        const apiUrl = 'https://totalvisits.onrender.com/api';
+        const userCountDisplay = document.getElementById('user-count');
+        const socket = new WebSocket(`ws://${window.location.host}`);
 
-        // Function to update visitor count
-        function updateVisitorCount() {
-            fetch(`${apiUrl}/visit`, { method: 'POST', credentials: 'include' })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("visitorCount").innerText = data.totalUniqueVisitors;
-                })
-                .catch(error => console.error("Error:", error));
-        }
-
-        // Initialize visitor count on page load
-        updateVisitorCount();
+        socket.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            userCountDisplay.innerText = `Users online: ${data.count}`;
+        };
     </script>
 </body>
 </html>
