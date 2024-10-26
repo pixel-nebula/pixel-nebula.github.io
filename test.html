@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitor Counter</title>
+    <title>Unique Visitor Counter</title>
 </head>
 <body>
     <h1>Welcome to My Site</h1>
@@ -14,11 +14,10 @@
 
         // Function to update visitor count
         function updateVisitorCount() {
-            // Send POST request to the API to count the visitor
-            fetch(`${apiUrl}/visit`, { method: 'POST' })
+            fetch(`${apiUrl}/visit`, { method: 'POST', credentials: 'include' })
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById("visitorCount").innerText = data.totalVisitors;
+                    document.getElementById("visitorCount").innerText = data.totalUniqueVisitors;
                 })
                 .catch(error => console.error("Error:", error));
         }
