@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>PixelNebula</title>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <link rel="icon" type="image/x-icon" href="../../Pictures/Logo.png" />
     <link rel="stylesheet" href="style/style.css">
 	<script src="/adinLoader.js"></script>
@@ -35,7 +36,12 @@ const idToken = cookies.IDToken;
 if (idToken) {
     fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
         .then(response => response.json(gameInstance.SetFullscreen(1)))
-        .then(data => {})
+        .then(data => {
+          var adsCodeElement = document.getElementById("adsCode");
+            if (adsCodeElement) {
+                adsCodeElement.remove();
+            }
+        })
         .catch(error => {
             console.error('Error validating token:', error);
             // Clear the cookie and redirect to index.html if token validation fails
