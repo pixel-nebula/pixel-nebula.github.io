@@ -15,40 +15,67 @@
     /* Set iframe to full viewport without borders */
     #youtube-iframe {
       width: 100%;
-      height: calc(100vh - 40px); /* Full viewport height minus link area */
+      height: 100vh;
       border: none;
     }
 
-    /* Style for the link to make it stand out */
-    #open-link {
+    /* Optional styling for a notification at the top */
+    #notification {
       display: block;
       padding: 10px;
       background-color: #333;
       color: #fff;
       text-align: center;
-      text-decoration: none;
       font-size: 16px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
     }
   </style>
 </head>
-<body onload="checkLoginStatus()">
-  <a id="open-link" href="javascript:(function(){const url=new URL(prompt('Drag and drop a YouTube video URL here:'));const videoID=url.searchParams.get('v');videoID?window.open('https://pixel-nebula.github.io/Pixel-Nebula/Games/Youtube/index.html?ID='+videoID,'_blank'):alert('Invalid YouTube URL');})();">Open YouTube Video in Pixel Nebula</a>
+<body onload="checkLoginStatus()" ondrop="handleDrop(event)" ondragover="event.preventDefault()">
+  <!-- Notification for users -->
+  <div id="notification">
+    Drag and drop a YouTube video link anywhere on this page to play it
+  </div>
   
+  <!-- Fullscreen iframe for YouTube video -->
   <iframe id="youtube-iframe"></iframe>
 
   <script>
+    // Function to load a video by its YouTube ID
+    function loadVideo(videoID) {
+      const iframeUrl = `https://www.youtube.com/embed/${videoID}`;
+      document.getElementById('youtube-iframe').src = iframeUrl;
+    }
+
+    // Handle the drop event and extract video ID from the YouTube URL
+    function handleDrop(event) {
+      event.preventDefault();
+      const url = event.dataTransfer.getData("text/plain");
+
+      try {
+        const parsedUrl = new URL(url);
+        const videoID = parsedUrl.searchParams.get("v");
+        if (videoID) {
+          loadVideo(videoID);
+        } else {
+          alert("Invalid YouTube URL");
+        }
+      } catch (error) {
+        alert("Please drop a valid YouTube URL");
+      }
+    }
+
+    // Check URL parameters on page load to load a video if an ID is provided
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('ID');
-
     if (id) {
-      const iframeUrl = `https://www.youtube.com/embed/${id}`;
-      document.getElementById('youtube-iframe').src = iframeUrl;
-    } else {
-      console.log('No ID parameter provided');
+      loadVideo(id);
     }
-  </script>
-  
-  <script>
+
+    // Login status check (this is optional, based on your requirements)
     function checkLoginStatus() {
       const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.split('=').map(c => c.trim());
@@ -64,12 +91,10 @@
           .then(data => {})
           .catch(error => {
             console.error('Error validating token:', error);
-            // Clear the cookie and redirect to index.html if token validation fails
             document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
             window.location.href = '../../index.html';
           });
       } else {
-        // Redirect to index.html if no ID Token is found
         window.location.href = '../../index.html';
       }
     }
