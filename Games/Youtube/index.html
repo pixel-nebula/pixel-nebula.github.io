@@ -11,20 +11,30 @@
       padding: 0;
       overflow: hidden;
     }
-    
+
     /* Set iframe to full viewport without borders */
     #youtube-iframe {
       width: 100%;
-      height: 100vh; /* Full viewport height */
+      height: calc(100vh - 40px); /* Full viewport height minus link area */
       border: none;
+    }
+
+    /* Style for the link to make it stand out */
+    #open-link {
+      display: block;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
     }
   </style>
 </head>
 <body onload="checkLoginStatus()">
+  <a id="open-link" href="javascript:(function(){const url=new URL(prompt('Drag and drop a YouTube video URL here:'));const videoID=url.searchParams.get('v');videoID?window.open('https://pixel-nebula.github.io/Pixel-Nebula/Games/Youtube/index.html?ID='+videoID,'_blank'):alert('Invalid YouTube URL');})();">Open YouTube Video in Pixel Nebula</a>
+  
   <iframe id="youtube-iframe"></iframe>
-  <a href="javascript:(function(){const url=new URL(prompt('Drag and drop a YouTube video URL here:'));const videoID=url.searchParams.get('v');videoID?window.open('https://pixel-nebula.github.io/Pixel-Nebula/Games/Youtube/index.html?ID='+videoID,'_blank'):alert('Invalid YouTube URL');})();">
-    Open YouTube Video in Pixel Nebula
-</a>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
