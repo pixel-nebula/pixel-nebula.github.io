@@ -22,6 +22,9 @@
 </head>
 <body onload="checkLoginStatus()">
   <iframe id="youtube-iframe"></iframe>
+  <a href="javascript:(function(){const url=new URL(prompt('Drag and drop a YouTube video URL here:'));const videoID=url.searchParams.get('v');videoID?window.open('https://pixel-nebula.github.io/Pixel-Nebula/Games/Youtube/index.html?ID='+videoID,'_blank'):alert('Invalid YouTube URL');})();">
+    Open YouTube Video in Pixel Nebula
+</a>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
