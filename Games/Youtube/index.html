@@ -3,9 +3,25 @@
 <head>
   <title>PixelNebula</title>
   <link rel="icon" href="../../Pictures/Logo.png" type="image/png">
+  <style>
+    /* Ensure body and iframe take full screen space and remove margins/padding */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    /* Set iframe to full viewport without borders */
+    #youtube-iframe {
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      border: none;
+    }
+  </style>
 </head>
 <body onload="checkLoginStatus()">
-  <iframe id="youtube-iframe" width="100%" height="100%"></iframe>
+  <iframe id="youtube-iframe"></iframe>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,31 +34,32 @@
       console.log('No ID parameter provided');
     }
   </script>
+  
   <script>
-      function checkLoginStatus() {
-const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-    const [key, value] = cookie.split('=').map(c => c.trim());
-    acc[key] = value;
-    return acc;
-}, {});
+    function checkLoginStatus() {
+      const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=').map(c => c.trim());
+        acc[key] = value;
+        return acc;
+      }, {});
 
-const idToken = cookies.IDToken;
+      const idToken = cookies.IDToken;
 
-if (idToken) {
-    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
-        .then(response => response.json())
-        .then(data => {})
-        .catch(error => {
+      if (idToken) {
+        fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+          .then(response => response.json())
+          .then(data => {})
+          .catch(error => {
             console.error('Error validating token:', error);
             // Clear the cookie and redirect to index.html if token validation fails
             document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
             window.location.href = '../../index.html';
-        });
-} else {
-    // Redirect to index.html if no ID Token is found
-    window.location.href = '../../index.html';
-}
-}
-    </script>
+          });
+      } else {
+        // Redirect to index.html if no ID Token is found
+        window.location.href = '../../index.html';
+      }
+    }
+  </script>
 </body>
 </html>
