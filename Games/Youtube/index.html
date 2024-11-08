@@ -34,7 +34,7 @@
     }
   </style>
 </head>
-<body onload="checkLoginStatus()" ondrop="handleDrop(event)" ondragover="event.preventDefault()">
+<body onload="checkLoginStatus()">
   <!-- Notification for users -->
   <div id="notification">
     Drag and drop a YouTube video link anywhere on this page to play it
@@ -52,7 +52,7 @@
 
     // Handle the drop event and extract video ID from the YouTube URL
     function handleDrop(event) {
-      event.preventDefault();
+      event.preventDefault(); // Prevent the default behavior (opening a new tab)
       const url = event.dataTransfer.getData("text/plain");
 
       try {
@@ -67,6 +67,13 @@
         alert("Please drop a valid YouTube URL");
       }
     }
+
+    // Add event listeners for dragover and drop events
+    window.addEventListener('dragover', (event) => {
+      event.preventDefault(); // Prevent the default behavior (for dragover)
+    });
+
+    window.addEventListener('drop', handleDrop); // Handle drop event
 
     // Check URL parameters on page load to load a video if an ID is provided
     const urlParams = new URLSearchParams(window.location.search);
