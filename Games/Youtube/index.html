@@ -34,7 +34,7 @@
     }
   </style>
 </head>
-<body onload="checkLoginStatus()">
+<body>
   <!-- Notification for users -->
   <div id="notification">
     Drag and drop a YouTube video link anywhere on this page to play it
@@ -53,18 +53,32 @@
     // Handle the drop event and extract video ID from the YouTube URL
     function handleDrop(event) {
       event.preventDefault(); // Prevent the default behavior (opening a new tab)
-      const url = event.dataTransfer.getData("text/plain");
-
+      
       try {
+        const url = event.dataTransfer.getData('text/plain'); // Get the dropped URL
         const parsedUrl = new URL(url);
-        const videoID = parsedUrl.searchParams.get("v");
-        if (videoID) {
-          loadVideo(videoID);
+        let videoID;
+
+        // Check if the URL is a YouTube video or YouTube Shorts
+        if (parsedUrl.hostname === 'www.youtube.com' || parsedUrl.hostname === 'youtube.com') {
+          if (parsedUrl.pathname.includes('/shorts/')) {
+            // Extract ID from YouTube Shorts URL
+            videoID = parsedUrl.pathname.split('/shorts/')[1];
+          } else if (parsedUrl.pathname === '/watch') {
+            // Extract ID from regular YouTube URL
+            videoID = parsedUrl.searchParams.get('v');
+          }
+
+          if (videoID) {
+            loadVideo(videoID);
+          } else {
+            alert("Invalid YouTube URL");
+          }
         } else {
-          alert("Invalid YouTube URL");
+          alert("Please drop a valid YouTube URL or Shorts link");
         }
       } catch (error) {
-        alert("Please drop a valid YouTube URL");
+        alert("Please drop a valid YouTube URL or Shorts link");
       }
     }
 
@@ -74,6 +88,14 @@
     });
 
     window.addEventListener('drop', handleDrop); // Handle drop event
+
+    // Add drop event listener for the iframe itself
+    const iframe = document.getElementById('youtube-iframe');
+    iframe.addEventListener('dragover', (event) => {
+      event.preventDefault(); // Allow dropping onto the iframe
+    });
+
+    iframe.addEventListener('drop', handleDrop); // Handle drop event on the iframe
 
     // Check URL parameters on page load to load a video if an ID is provided
     const urlParams = new URLSearchParams(window.location.search);
