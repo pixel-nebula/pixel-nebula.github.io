@@ -1,0 +1,15 @@
+{
+    "name": "The Cursed Abyss",
+    "short_name": "The Cursed Abyss",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#231F20",
+    "theme_color": "#000",
+    "description": "WASD - Move, Space - Jump, Z - Invisibility, X - Soul Drain{2 kills for 1 heart}, C - Increase sight.  You need to find 3 keys to enter boss area!",
+    "icons": [{
+      "src": "TemplateData/icons/unity-logo-dark.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }]
+  }
