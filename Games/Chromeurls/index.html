@@ -5,73 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelNebula</title>
-    <link rel="icon" href="../../Pictures/Logo.png" type="image/png"> <!-- Favicon added -->
+    <link rel="icon" href="../../Pictures/Logo.png" type="image/png">
     <style>
-        /* Ensure HTML and body take full height and remove margins */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;  /* Hide scrollbars */
+            overflow: hidden;
         }
 
         .holder {
-            width: 100%;       /* Full width of the window */
-            height: 100%;      /* Full height of the window */
-            position: relative; /* Position context for absolute elements */
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow-y: auto; /* Enable scrolling for the list */
         }
 
-        .frame {
-            width: 100%;       /* Full width of the holder */
-            height: 100%;      /* Full height of the holder */
-            border: none;      /* Remove border */
-            position: absolute; /* Positioning context */
-            top: 0;            /* Align to the top */
-            left: 0;           /* Align to the left */
+        .header {
+            background-color: #fafaf9;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
         }
 
-        .bar {
-            position: absolute; /* Position absolutely within the holder */
-            top: 0;            /* Align to the top of the holder */
-            left: 0;           /* Align to the left of the holder */
-            width: 100%;       /* Full width of the holder */
-            height: 100px;      /* Height of the bar */
-            background-color: #fafaf9; /* Background color for the bar */
-            z-index: 10;       /* Ensure it appears above the iframe */
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .url-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .url-item h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #007acc;
+        }
+
+        .url-item p {
+            margin: 5px 0 0;
+            color: #555;
+            font-size: 14px;
         }
     </style>
 </head>
 <body onload="checkLoginStatus()">
     <div class="holder">
-        
+        <div class="header">
+            <h1>These are all the not well-known Chrome URLs that do interesting stuff</h1>
+        </div>
+        <div class="content" id="url-list">
+            <!-- URLs and descriptions will be dynamically added here -->
+        </div>
     </div>
 </body>
 </html>
 
-
 <script>
     function checkLoginStatus() {
-const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-    const [key, value] = cookie.split('=').map(c => c.trim());
-    acc[key] = value;
-    return acc;
-}, {});
+        const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+            const [key, value] = cookie.split('=').map(c => c.trim());
+            acc[key] = value;
+            return acc;
+        }, {});
 
-const idToken = cookies.IDToken;
+        const idToken = cookies.IDToken;
 
-if (idToken) {
-    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
-        .then(response => response.json())
-        .then(data => {})
-        .catch(error => {
-            console.error('Error validating token:', error);
-            // Clear the cookie and redirect to index.html if token validation fails
-            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        if (idToken) {
+            fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+                .then(response => response.json())
+                .then(data => {})
+                .catch(error => {
+                    console.error('Error validating token:', error);
+                    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                    window.location.href = '../../index.html';
+                });
+        } else {
             window.location.href = '../../index.html';
-        });
-} else {
-    // Redirect to index.html if no ID Token is found
-    window.location.href = '../../index.html';
-}
-}
+        }
+    }
+
+    // Sample URLs and descriptions
+    const urls = [
+        { url: 'chrome://flags', description: 'Explore experimental features in Chrome.' },
+        { url: 'chrome://net-internals', description: 'Analyze Chrome’s network traffic.' },
+        { url: 'chrome://gpu', description: 'View details about Chrome’s GPU usage.' },
+        { url: 'chrome://version', description: 'Check your current Chrome version and build details.' }
+    ];
+
+    // Dynamically populate the list of URLs and descriptions
+    const urlList = document.getElementById('url-list');
+    urls.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'url-item';
+
+        const h2 = document.createElement('h2');
+        h2.textContent = item.url;
+        div.appendChild(h2);
+
+        const p = document.createElement('p');
+        p.textContent = item.description;
+        div.appendChild(p);
+
+        urlList.appendChild(div);
+    });
 </script>
