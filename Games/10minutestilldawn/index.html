@@ -9,6 +9,11 @@
     <link rel="icon" href="../../Pictures/Logo.png" type="image/png">
     <script src="/js/main.js"></script>
     <script>
+
+      if (window.location.origin !== "https://pixel-nebula.github.io") {
+        document.body.innerHTML = "<h1>This page can only be accessed from https://pixel-nebula.github.io/</h1>";
+        throw new Error("This page is only allowed to run on the correct domain.");
+      }
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/10MinutesTillDawnWebGL.json");
       var scaleToFit;
       try {
