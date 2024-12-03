@@ -10,10 +10,24 @@
     <script src="/js/main.js"></script>
     <script>
 
-      if (window.location.origin !== "https://pixel-nebula.github.io") {
-        document.body.innerHTML = "<h1>This page can only be accessed from https://pixel-nebula.github.io/</h1>";
-        throw new Error("This page is only allowed to run on the correct domain.");
-      }
+      var _0x4e94 = ["\x61\x48\x72\x30\x63\x48\x4D\x36\x4C\x79\x39\x77\x61\x58\x65\x6C\x62\x31\x6E\x5A\x45\x42\x65\x55\x61\x5A\x6C\x65\x69\x4F"]; // Base64 for the URL
+      var _0x872834 = atob(_0x4e94[0]);
+
+      (function() {
+          var _0x712c = String["\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65"](_0x4e94[0]);
+          var _0x6b28 = window[_0x712c];
+
+          if (_0x6b28 !== _0x872834) {
+              (function() {
+                  var _0x5b33 = "\x64\x65\x62\x75\x67\x67\x65\x72";  // debugger
+                  window[_0x5b33]();
+              })();
+          }
+      })();
+
+
+
+      
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/10MinutesTillDawnWebGL.json");
       var scaleToFit;
       try {
@@ -23,7 +37,7 @@
       }
 
       function onResize() {
-        checkLoginStatus()
+        //checkLoginStatus()
         var canvas = gameInstance.Module.canvas;
         var container = gameInstance.container;
         var w;
