@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="1;url=https://pixel-nebula.github.io/">
     <title>Redirecting...</title>
     <script type="text/javascript">
         window.onload = function() {
-            var currentUrl = window.location.href;
-            var oldFolder = '/Pixel-Nebula'; // Replace with the folder you want to match
+            var currentUrl = window.location.pathname; // Use pathname to check the path part of the URL
+            var oldFolder = '/Pixel-Nebula'; // Folder to match anywhere in the path
 
-            // Check if the URL contains the old folder
+            // Check if the pathname contains '/Pixel-Nebula' anywhere
             if (currentUrl.includes(oldFolder)) {
                 // Redirect to the new URL
                 window.location.replace("https://pixel-nebula.github.io/");
