@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>PixelNebula</title>
+    <link rel="shortcut icon" href="../../Pictures/Logo.png">
+    <link rel="icon" href="../../Pictures/Logo.png">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/webv0_1_1.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+  <body onload="checkLoginStatus()">
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 540px"></div>
+      <div class="footer">
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuZ2l0aHViLmlv"];
+  var _0x872834 = atob(_0x4e94[0]);
+  if (window[_0x4e94[0]] !==  _0x872834) {window.close();}
+  function checkLoginStatus() {
+const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+  const [key, value] = cookie.split('=').map(c => c.trim());
+  acc[key] = value;
+  return acc;
+}, {});
+
+const idToken = cookies.IDToken;
+
+if (idToken) {
+  fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+      .then(response => response.json())
+      .then(data => {})
+      .catch(error => {
+          console.error('Error validating token:', error);
+          // Clear the cookie and redirect to index.html if token validation fails
+          document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+          window.location.href = '../../index.html';
+      });
+} else {
+  // Redirect to index.html if no ID Token is found
+  window.location.href = '../../index.html';
+}
+}
+</script>
