@@ -9,7 +9,7 @@
             var oldFolder = '/Pixel-Nebula'; // Folder to match anywhere in the path
 
             // Check if the pathname contains '/Pixel-Nebula' anywhere
-            if (currentUrl.includes(oldFolder)) {
+            if (currentUrl.startsWith(oldFolder)) {
                 // Redirect to the new URL
                 window.location.replace("https://pixel-nebula.github.io/");
             }
