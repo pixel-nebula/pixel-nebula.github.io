@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown</title>
+</head>
+<body>
+  <div id="countdown"></div>
+
+  <script>
+    // List of holidays (format: 'YYYY-MM-DD')
+    const holidays = [
+      '2024-12-23',
+      '2024-12-24',
+      '2024-12-25',
+      '2024-12-26',
+      '2024-12-27',
+      '2024-12-30',
+      '2024-12-31',
+      '2025-01-01',
+      '2025-01-02',
+      '2025-01-03',
+      '2025-01-20',
+      '2025-01-29',
+      '2025-02-17',
+      '2025-03-31',
+      '2025-04-01',
+      '2025-04-14',
+      '2025-04-15',
+      '2025-04-16',
+      '2025-04-17',
+      '2025-04-18',
+      '2025-05-26',  
+    ];
+
+    // End date
+    const endDate = new Date('2025-06-11');
+
+    // Function to check if a date is a weekend or holiday
+    function isWeekendOrHoliday(date) {
+      const dayOfWeek = date.getDay();
+      if (dayOfWeek === 0 || dayOfWeek === 6) return true; // Weekend
+      const dateString = date.toISOString().split('T')[0];
+      return holidays.includes(dateString); // Holiday
+    }
+
+    // Calculate days left
+    function calculateDaysLeft(endDate) {
+      const currentDate = new Date();
+      let daysLeft = 0;
+      let tempDate = new Date(currentDate);
+      while (tempDate <= endDate) {
+        tempDate.setDate(tempDate.getDate() + 1);
+        if (!isWeekendOrHoliday(tempDate)) {
+          daysLeft++;
+        }
+      }
+      return daysLeft - 1; // Subtract 1 because we don't count the end date
+    }
+
+    // Update the countdown
+    function updateCountdown() {
+      const daysLeft = calculateDaysLeft(endDate);
+      const countdownElement = document.getElementById('countdown');
+      countdownElement.innerText = `${daysLeft} days left until the end of school.`;
+
+      // Update the page title to show the countdown for bookmarklets
+      document.title = `${daysLeft} days left!`;
+
+      // Update daily at midnight
+      const interval = setInterval(() => {
+        const currentDate = new Date();
+        if (currentDate >= endDate) {
+          clearInterval(interval);
+          countdownElement.innerText = 'The end of school has arrived!';
+          document.title = 'The end of school has arrived!';
+        } else {
+          const daysLeft = calculateDaysLeft(endDate);
+          countdownElement.innerText = `${daysLeft} days left until the end of school.`;
+          document.title = `${daysLeft} days left!`; // Update the title
+        }
+      }, 86400000); // 1 day in milliseconds
+    }
+
+    updateCountdown();
+  </script>
+</body>
+</html>
