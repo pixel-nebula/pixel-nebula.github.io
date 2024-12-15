@@ -24,6 +24,7 @@
             align-items: center;
             padding-top: 0px;
             overflow-y: auto;
+            visibility: hidden;
         }
         .header {
             margin-top: 20px;
@@ -333,6 +334,7 @@
         if (sessionStorage.getItem('profile-pic')) {
             // Use cached profile pic if available
             document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
+            document.body.style.visibility = "visible";
         } else {
             // Fetch profile info from API
             fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
@@ -341,6 +343,7 @@
                     document.getElementById('profile-pic').src = data.picture;
                     // Cache profile picture in sessionStorage
                     sessionStorage.setItem('profile-pic', data.picture);
+                    document.body.style.visibility = "visible";
                 })
                 .catch(error => {
                     console.error('Error validating token:', error);
