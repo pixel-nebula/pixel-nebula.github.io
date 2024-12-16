@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
-    <script src="particles.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelNebula</title>
     <link rel="icon" href="Pictures/Logo.png" type="image/png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C130NKT3ZP');
+    </script>
     <style>
         body {
             margin: 0;
@@ -43,7 +50,7 @@
             top: 20px;
             left: 20px;
             display: flex;
-            gap: 20px; /* Adjust the spacing betwe menu items */
+            gap: 20px;
         }
         .menu a {
             text-decoration: none;
@@ -62,7 +69,7 @@
         }
         .logout {
             position: absolute;
-            top: 20px; /* Top right of the window */
+            top: 20px;
             right: 20px;
             padding: 10px;
             text-decoration: none;
@@ -72,24 +79,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .logout:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .TOS {
-            position: absolute;
-            top: 20px; /* Top right of the window */
-            right: 110px;
-            padding: 10px;
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .TOS:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
         footer {
@@ -100,10 +90,10 @@
             font-size: 12px;
             color: white;
             padding: 3px 0;
-            background-color: rgba(0, 0, 0, 0.6); /* Background color to make the text stand out */
+            background-color: rgba(0, 0, 0, 0.6);
         }
         .games-section {
-            margin-top: 40px; /* Move games up by 10 pixels */
+            margin-top: 40px;
             padding: 20px;
             text-align: center;
             max-width: 1200px;
@@ -112,41 +102,40 @@
         .games-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px; /* Space between game items */
+            gap: 20px;
             justify-content: center;
         }
         .game-item {
             display: flex;
             align-items: center;
             background-color: rgba(0, 0, 0, 0.6);
-            border: 3px solid white; /* White border */
+            border: 3px solid white;
             border-radius: 10px;
             padding: 20px;
-            text-align: left; /* Align text to the left */
-            width: 300px; /* Fixed width for game items */
-            box-sizing: border-box;
+            text-align: left;
+            width: 300px;
             position: relative;
         }
         .game-item img.game-image {
-            width: 100px; /* Fixed width for the image */
-            height: 100px; /* Maintain aspect ratio */
+            width: 100px;
+            height: 100px;
             border-radius: 10px;
-            margin-right: 20px; /* Space between image and text */
+            margin-right: 20px;
         }
         .game-item .text-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            flex-grow: 1; /* Allow the text container to expand */
-            text-align: center; /* Center text within the container */
+            flex-grow: 1;
+            text-align: center;
         }
         .game-item h3 {
             margin: 0 0 5px 0;
-	    font-size: 20px;
-            font-weight: bold; /* Make the game text bold */
+            font-size: 20px;
+            font-weight: bold;
         }
-	.game-item p {
-	    font-size: 14px;
+        .game-item p {
+            font-size: 14px;
             margin: 0 0 2px 0;
         }
         .play-button {
@@ -159,7 +148,7 @@
             padding: 10px 20px;
             border-radius: 5px;
             transition: background-color 0.3s;
-            border: 2px solid white; /* Border for play button */
+            border: 2px solid white;
             margin-top: 10px;
         }
         .play-button:hover {
@@ -169,7 +158,6 @@
             margin-top: 70px;
             text-align: center;
             width: 100%;
-            z-index: 5;
         }
         .search-bar input {
             width: 80%;
@@ -180,7 +168,6 @@
             border-radius: 5px;
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
-            z-index: 5;
         }
         .search-bar input::placeholder {
             color: rgba(255, 255, 255, 0.7);
@@ -193,29 +180,24 @@
             align-items: center;
             cursor: pointer;
         }
-
         .profile img {
             border-radius: 50%;
             width: 40px;
             height: 40px;
             transition: transform 0.3s ease;
         }
-
         .profile:hover img {
             transform: scale(1.1);
         }
-
         .dropdown {
             display: none;
             position: absolute;
-            top: 60px; /* Positioning the dropdown below the profile image */
+            top: 60px;
             right: 0;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 10px;
             border-radius: 5px;
-            z-index: 10;
         }
-
         .dropdown a {
             display: block;
             text-decoration: none;
@@ -226,7 +208,6 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .dropdown a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
@@ -236,19 +217,10 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 0; /* Send it behind all other elements */
+            z-index: 0;
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C130NKT3ZP');
-</script>
 <body onload="checkLoginStatus()">
     <div id="particles-js"></div>
     <!-- Menu -->
@@ -270,6 +242,10 @@
         <h2>Pixel Nebula</h2>
     </div>
 
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search games...">
+    </div>
+
     <div id="countdown"></div>
 
     <footer>
@@ -278,73 +254,50 @@
 
     <script>
         function checkLoginStatus() {
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-        const [key, value] = cookie.split('=').map(c => c.trim());
-        acc[key] = value;
-        return acc;
-    }, {});
+            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                const [key, value] = cookie.split('=').map(c => c.trim());
+                acc[key] = value;
+                return acc;
+            }, {});
+            const idToken = cookies.IDToken;
 
-    const idToken = cookies.IDToken;
-
-    if (idToken) {
-        if (sessionStorage.getItem('profile-pic')) {
-            // Use cached profile pic if available
-            document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
-            document.body.style.visibility = "visible";
-        } else {
-            // Fetch profile info from API
-            fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('profile-pic').src = data.picture;
-                    // Cache profile picture in sessionStorage
-                    sessionStorage.setItem('profile-pic', data.picture);
+            if (idToken) {
+                if (sessionStorage.getItem('profile-pic')) {
+                    document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
                     document.body.style.visibility = "visible";
-                })
-                .catch(error => {
-                    console.error('Error validating token:', error);
-                    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                    window.location.href = 'index.html';
-                });
-        }
-    } else {
-        window.location.href = 'index.html';
-    }
+                } else {
+                    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('profile-pic').src = data.picture;
+                            sessionStorage.setItem('profile-pic', data.picture);
+                            document.body.style.visibility = "visible";
+                        })
+                        .catch(error => {
+                            console.error('Error validating token:', error);
+                            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                            window.location.href = 'index.html';
+                        });
+                }
+            } else {
+                window.location.href = 'index.html';
+            }
 
-    document.getElementById('profile-pic').onerror = function() {
-        this.src = 'Pictures/profilepic.jpg';  // Path to your default profile picture
-    };
-}
+            document.getElementById('profile-pic').onerror = function() {
+                this.src = 'Pictures/profilepic.jpg';
+            };
+        }
 
         function logout() {
             document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
             window.location.href = 'index.html';
         }
 
-        document.getElementById('searchInput').addEventListener('input', function() {
-            let filter = this.value.toLowerCase();
-            let gameItems = document.querySelectorAll('.game-item');
-            
-            gameItems.forEach(function(item) {
-                let gameTitle = item.querySelector('h3').textContent.toLowerCase();
-                if (gameTitle.includes(filter)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdown-menu');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
-        function logout() {
-            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-            window.location.href = 'index.html';
-        }
-
-        // Close dropdown if clicking outside the profile
         window.onclick = function(event) {
             if (!event.target.matches('.profile img')) {
                 const dropdown = document.getElementById('dropdown-menu');
@@ -354,169 +307,45 @@
             }
         }
 
+        const holidays = new Set([
+            '2024-12-23', '2024-12-24', '2024-12-25', '2024-12-26', '2024-12-27',
+            '2024-12-30', '2024-12-31', '2025-01-01', '2025-01-02', '2025-01-03',
+            '2025-01-20', '2025-01-29', '2025-02-17', '2025-03-31', '2025-04-01',
+            '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+            '2025-05-26'
+        ]);
 
-        // List of holidays in 'YYYY-MM-DD' format
-    const holidays = new Set([
-      '2024-12-23', '2024-12-24', '2024-12-25', '2024-12-26', '2024-12-27',
-      '2024-12-30', '2024-12-31', '2025-01-01', '2025-01-02', '2025-01-03',
-      '2025-01-20', '2025-01-29', '2025-02-17', '2025-03-31', '2025-04-01',
-      '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
-      '2025-05-26'
-    ]);
+        const endDate = new Date('2025-06-11');
 
-    // End date
-    const endDate = new Date('2025-06-11');
-
-    // Function to check if a date is a weekend or holiday
-    function isWeekendOrHoliday(date) {
-      const dayOfWeek = date.getDay();
-      if (dayOfWeek === 0 || dayOfWeek === 6) return true; // Weekend
-      return holidays.has(date.toISOString().split('T')[0]); // Holiday
-    }
-
-    // Calculate business days left until the end date
-    function calculateBusinessDaysLeft(endDate) {
-      const currentDate = new Date();
-      let daysLeft = 0;
-      let tempDate = new Date(currentDate);
-
-      // Iterate day by day and count business days (non-weekend and non-holiday)
-      while (tempDate <= endDate) {
-        if (!isWeekendOrHoliday(tempDate)) {
-          daysLeft++;
+        function isWeekendOrHoliday(date) {
+            const dayOfWeek = date.getDay();
+            if (dayOfWeek === 0 || dayOfWeek === 6) return true;
+            return holidays.has(date.toISOString().split('T')[0]);
         }
-        tempDate.setDate(tempDate.getDate() + 1);
-      }
 
-      return daysLeft; // Return the number of business days left
-    }
+        function calculateBusinessDaysLeft(endDate) {
+            const currentDate = new Date();
+            let daysLeft = 0;
+            let tempDate = new Date(currentDate);
+            while (tempDate <= endDate) {
+                if (!isWeekendOrHoliday(tempDate)) {
+                    daysLeft++;
+                }
+                tempDate.setDate(tempDate.getDate() + 1);
+            }
+            return daysLeft;
+        }
 
-    // Update the countdown
-    function updateCountdown() {
-      const daysLeft = calculateBusinessDaysLeft(endDate);
-      const countdownElement = document.getElementById('countdown');
-      countdownElement.innerText = `${daysLeft} days left until the end of school.`;
+        function updateCountdown() {
+            const daysLeft = calculateBusinessDaysLeft(endDate);
+            const countdownElement = document.getElementById('countdown');
+            countdownElement.innerText = `${daysLeft} days left until the end of school.`;
+            document.title = `${daysLeft} days left!`;
+        }
 
-      // Update the page title for bookmarklets
-      document.title = `${daysLeft} days left!`;
-    }
-
-    // Update countdown when the page loads
-    updateCountdown();
+        updateCountdown();
     </script>
+
+    <script src="particles.js"></script>
 </body>
 </html>
-
-
-<script>
-    particlesJS('particles-js', {
-        "particles": {
-"number": {
-  "value": 200,
-  "density": {
-    "enable": true,
-    "value_area": 800
-  }
-},
-"color": {
-  "value": "#ffffff"
-},
-"shape": {
-  "type": "", // Circle //
-  "stroke": {
-    "width": 0,
-    "color": "#000000"
-  },
-  "polygon": {
-    "nb_sides": 5
-  },
-  "image": {
-    "src": "img/github.svg",
-    "width": 100,
-    "height": 100
-  }
-},
-"opacity": {
-  "value": 1,
-  "random": true,
-  "anim": {
-    "enable": true,
-    "speed": 1,
-    "opacity_min": 0,
-    "sync": false
-  }
-},
-"size": {
-  "value": 3,
-  "random": true,
-  "anim": {
-    "enable": false,
-    "speed": 4,
-    "size_min": 0.3,
-    "sync": false
-  }
-},
-"line_linked": {
-  "enable": true,
-  "distance": 90,
-  "color": "#ffffff",
-  "opacity": 0.4,
-  "width": 1
-},
-"move": {
-  "enable": true,
-  "speed": 2,
-  "direction": "none",
-  "random": true,
-  "straight": false,
-  "out_mode": "out",
-  "bounce": false,
-  "attract": {
-    "enable": false,
-    "rotateX": 600,
-    "rotateY": 600
-  }
-}
-},
-"interactivity": {
-"detect_on": "canvas",
-"events": {
-  "onhover": {
-    "enable": true,
-    "mode": "repulse"
-  },
-  "onclick": {
-    "enable": false,
-    "mode": "repulse"
-  },
-  "resize": true
-},
-"modes": {
-  "grab": {
-    "distance": 400,
-    "line_linked": {
-      "opacity": 1
-    }
-  },
-  "bubble": {
-    "distance": 100,
-    "size": 4,
-    "duration": 2,
-    "opacity": 0,
-    "speed": 3
-  },
-  "repulse": {
-    "distance": 50,
-    "duration": 0.4
-  },
-  "push": {
-    "particles_nb": 4
-  },
-  "remove": {
-    "particles_nb": 2
-  }
-}
-},
-"retina_detect": true
-    });
-</script>
