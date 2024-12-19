@@ -166,6 +166,19 @@
 .message-box a:hover {
   text-decoration: underline;
 }
+.close-btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.close-btn:hover {
+  color: red;
+}
 
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
@@ -208,10 +221,12 @@
             If you have a game you’d like us to add or just have questions, feel free to reach out! We’re always open to hearing from our community. Just drop us an email, and we'll get back to you!  <a style="font-size: 15px;">‎‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ !!To stay up to date with the current Pixel Nebula URL join this discord: <a style="font-size: 15px;" href="https://discord.com/invite/mpHMtVSDhw">Link</a></a>
           </p>
     </div>
-    <div class="message-box">
+    <div class="message-box" id="messageBox">
+      <span class="close-btn" onclick="closeMessageBox()">X</span>
       !!To stay up to date with the current Pixel Nebula URL join this discord: 
       <a href="https://discord.com/invite/mpHMtVSDhw" target="_blank">Link</a>
     </div>
+    
     
     <footer>
         &copy; 2024 Pixel Nebula. All rights reserved. | pixelnebulacontact@gmail.com | <a href="termsofservice.html" style="text-decoration: none; color: blue;">TOS</a>
@@ -219,6 +234,7 @@
 
     <script>
         function checkLoginStatus() {
+          
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.split('=').map(c => c.trim());
         acc[key] = value;
@@ -248,6 +264,9 @@
                     window.location.href = 'index.html';
                 });
         }
+        if (getCookie("messageBoxClosed") === "true") {
+    document.getElementById("messageBox").style.display = "none";
+  }
     } else {
         window.location.href = 'index.html';
     }
@@ -393,4 +412,11 @@
 },
 "retina_detect": true
     });
+</script>
+<script>
+  function closeMessageBox() {
+  document.getElementById("messageBox").style.display = "none";
+  setCookie("messageBoxClosed", "true", 30); // Cookie expires in 30 days
+}
+
 </script>
