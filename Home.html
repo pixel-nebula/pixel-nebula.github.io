@@ -264,13 +264,13 @@
                     window.location.href = 'index.html';
                 });
         }
-        if (getCookie("messageBoxClosed") === "true") {
-    document.getElementById("messageBox").style.display = "none";
-  }
     } else {
         window.location.href = 'index.html';
     }
     
+    if (getCookie("messageBoxClosed") === "true") {
+    document.getElementById("messageBox").style.display = "none";
+  }
     document.getElementById('profile-pic').onerror = function() {
         this.src = 'Pictures/profilepic.jpg';  // Path to your default profile picture
     };
@@ -419,4 +419,22 @@
   setCookie("messageBoxClosed", "true", 30); // Cookie expires in 30 days
 }
 
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie by its name.
+function getCookie(name) {
+  const nameEq = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEq) == 0) return c.substring(nameEq.length, c.length);
+  }
+  return "";
+}
 </script>
