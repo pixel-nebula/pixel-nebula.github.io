@@ -23,7 +23,7 @@
             justify-content: flex-start;
             align-items: center;
             padding-top: 0px;
-            visibility: hidden;
+            visibility: visible;
         }
         .header {
             margin-top: 20px;
@@ -144,6 +144,29 @@
             height: 100vh;
             z-index: 0; /* Send it behind all other elements */
         }
+        .message-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.3); /* Half-transparent black */
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: 300px;
+}
+
+.message-box a {
+  color: #00b0ff;
+  text-decoration: none;
+}
+
+.message-box a:hover {
+  text-decoration: underline;
+}
+
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
@@ -155,7 +178,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="checkLoginStatus()">
+<body onload="">
     <div id="particles-js"></div>
     <!-- Menu -->
     <div class="menu">
@@ -182,9 +205,14 @@
         <h3>About Us</h3>
         <p>At Pixel Nebula, we focus on quality over quantity, carefully selecting games that offer unique and engaging experiences. We believe that every game we feature should stand out.
 
-            If you have a game you’d like us to add or just have questions, feel free to reach out! We’re always open to hearing from our community. Just drop us an email, and we'll get back to you!  !!To stay up to date with the current Pixel Nebula URL join this discord: <a href="https://discord.com/invite/mpHMtVSDhw">Link</a></p>
+            If you have a game you’d like us to add or just have questions, feel free to reach out! We’re always open to hearing from our community. Just drop us an email, and we'll get back to you!  <a style="font-size: 15px;">‎‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ !!To stay up to date with the current Pixel Nebula URL join this discord: <a style="font-size: 15px;" href="https://discord.com/invite/mpHMtVSDhw">Link</a></a>
+          </p>
     </div>
-
+    <div class="message-box">
+      !!To stay up to date with the current Pixel Nebula URL join this discord: 
+      <a href="https://discord.com/invite/mpHMtVSDhw" target="_blank">Link</a>
+    </div>
+    
     <footer>
         &copy; 2024 Pixel Nebula. All rights reserved. | pixelnebulacontact@gmail.com | <a href="termsofservice.html" style="text-decoration: none; color: blue;">TOS</a>
     </footer>
