@@ -239,6 +239,41 @@
             height: 100vh;
             z-index: 0; /* Send it behind all other elements */
         }
+        .message-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.3); /* Half-transparent black */
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: 300px;
+}
+
+.message-box a {
+  color: #00b0ff;
+  text-decoration: none;
+}
+
+.message-box a:hover {
+  text-decoration: underline;
+}
+.close-btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.close-btn:hover {
+  color: red;
+}
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
@@ -999,7 +1034,7 @@
 <script>
     function closeMessageBox() {
     document.getElementById("messageBox").style.display = "none";
-    setCookie("messageBoxClosed", "true", 30); // Cookie expires in 30 days
+    setCookie("messageBoxClosed", "true", 5); // Cookie expires in 30 days
   }
   
   
