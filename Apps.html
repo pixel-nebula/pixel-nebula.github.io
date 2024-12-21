@@ -289,14 +289,6 @@
                 </div>
             </div>
             <div class="game-item">
-                <img src="Pictures/Blockbench.png" alt="Game 6" class="game-image">
-                <div class="text-container">
-                    <h3>Blockbench</h3>
-		    <p><small>Up to Date!</small></p>
-                    <a href="Games/Blockbench/index.html" class="play-button">Use</a>
-                </div>
-            </div>
-            <div class="game-item">
                 <img src="Pictures/youtube.png" alt="Game 6" class="game-image">
                 <div class="text-container">
                     <h3>Youtube</h3>
@@ -315,6 +307,11 @@
         </div>
     </div>
     
+    <div class="message-box" id="messageBox">
+        <span class="close-btn" onclick="closeMessageBox()">X</span>
+        !!To stay up to date with the current Pixel Nebula URL join this discord: 
+        <a href="https://discord.com/invite/mpHMtVSDhw" target="_blank">Link</a>
+      </div>
     <!-- Footer -->
     <footer>
         &copy; 2024 Pixel Nebula. All rights reserved. | pixelnebulacontact@gmail.com | <a href="termsofservice.html" style="text-decoration: none; color: blue;">TOS</a>
@@ -355,6 +352,7 @@
         window.location.href = 'index.html';
     }
 
+    if (getCookie("messageBoxClosed") === "true") {document.getElementById("messageBox").style.display = "none";}
     document.getElementById('profile-pic').onerror = function() {
         this.src = 'Pictures/profilepic.jpg';  // Path to your default profile picture
     };
@@ -514,3 +512,29 @@
 "retina_detect": true
     });
 </script>
+
+<script>
+    function closeMessageBox() {
+    document.getElementById("messageBox").style.display = "none";
+    setCookie("messageBoxClosed", "true", 30); // Cookie expires in 30 days
+  }
+  
+  
+  function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+  
+  // Function to get a cookie by its name.
+  function getCookie(name) {
+    const nameEq = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(nameEq) == 0) return c.substring(nameEq.length, c.length);
+    }
+    return "";
+  }
+  </script>

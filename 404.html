@@ -85,18 +85,6 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<script>
-  window.onload = function() {
-            var currentUrl = window.location.pathname; // Use pathname to check the path part of the URL
-            var oldFolder = 'Pixel-Nebula'; // Folder to match anywhere in the path
-
-            // Check if the pathname contains '/Pixel-Nebula' anywhere
-            if (currentUrl.includes(oldFolder)) {
-                // Redirect to the new URL
-                window.location.replace("https://pixel-nebula.github.io/");
-            }
-        }
-</script>
 <body>
     <div id="particles-js"></div>
     <!-- Menu -->
@@ -118,7 +106,7 @@
     </footer>
     <script>
         function goBack() {
-          window.location.replace("https://pixel-nebula.github.io/");
+          window.location.replace("https://pixel-nebula.s3.amazonaws.com/index.html");
         }
     </script>
 </body>

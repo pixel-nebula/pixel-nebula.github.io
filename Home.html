@@ -268,9 +268,7 @@
         window.location.href = 'index.html';
     }
     
-    if (getCookie("messageBoxClosed") === "true") {
-    document.getElementById("messageBox").style.display = "none";
-  }
+    if (getCookie("messageBoxClosed") === "true") {document.getElementById("messageBox").style.display = "none";}
     document.getElementById('profile-pic').onerror = function() {
         this.src = 'Pictures/profilepic.jpg';  // Path to your default profile picture
     };
