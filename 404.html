@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
-    <script src="particles.js"></script>
+    <script src="https://raw.githubusercontent.com/pixel-nebula/pixel-nebula.github.io/master/particles.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelNebula</title>
-    <link rel="icon" href="Pictures/Logo.png" type="image/png"> <!-- Favicon added -->
+    <link rel="icon" href="https://raw.githubusercontent.com/pixel-nebula/pixel-nebula.github.io/master/Pictures/Logo.png" type="image/png"> <!-- Favicon added -->
     <style>
         body {
             margin: 0;
@@ -74,6 +74,47 @@
             height: 100vh;
             z-index: 0; /* Send it behind all other elements */
         }
+        :root {
+        --clr1: #00ff00; /* Green color for text */
+    }
+
+
+    .drops {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2em;
+        white-space: nowrap;
+        color: var(--clr1); /* Green color */
+        font-weight: bold;
+        z-index: 1000;
+        background: transparent;
+        padding: 10px 25px;
+        transition: background-color 0.5s;
+    }
+
+    .drop {
+    position: absolute;
+    color: var(--clr1); /* Green color */
+    font-size: 1.5em; /* Smaller text size */
+    top: 0;
+    animation: none;
+    transition: color 0.5s;
+    z-index: -1; /* Send the drops to the background */
+}
+
+
+    @keyframes drop-fall {
+        0% {
+            transform: translateY(0); /* Start at the top */
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh); /* Fall all the way to the bottom */
+            opacity: 0; /* Fade out */
+        }
+    }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
@@ -86,7 +127,8 @@
   gtag('config', 'G-C130NKT3ZP');
 </script>
 <body>
-    <div id="particles-js"></div>
+  <div style="visibility: hidden;" id="particles-js"></div>
+  <div style="visibility: hidden;" id="drops"></div>
     <!-- Menu -->
     <div class="menu">
         <a class="back" onclick="goBack()">Back</a>
@@ -113,6 +155,21 @@
 </html>
 
 <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let cookieName = 'backgroundtype';
+            let cookieValue = getCookie(cookieName);
+
+            if (cookieValue === '1') {
+              document.getElementById('particles-js').style.visibility = 'visible';
+            } else if (cookieValue === '2') {
+              document.getElementById('drops').style.visibility = 'visible';
+            } else {
+                setCookie(cookieName, '1', 100);
+                document.getElementById('particles-js').style.visibility = 'visible';
+            }
+  })
+          
+
     particlesJS('particles-js', {
         "particles": {
 "number": {
@@ -223,4 +280,78 @@
 },
 "retina_detect": true
     });
+</script>
+
+
+<script>
+  function getCookie(name) {
+            // Split document.cookie into individual cookies
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cookies = decodedCookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                // Check if the cookie starts with the name we're looking for
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1); // Return the value of the cookie
+                }
+            }
+            return ''; // Return empty string if cookie is not found
+        }
+
+        function setCookie(name, value, days) {
+            let expires = '';
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/"; // Set the cookie
+        }
+
+  const colors = ['#00ff00']; // Green color for all letters
+  let colorIndex = 0;
+
+  function updateColor() {
+      const currentColor = colors[colorIndex];
+      document.documentElement.style.setProperty('--clr1', currentColor);
+      const drops = document.querySelectorAll('.drop');
+      drops.forEach(drop => {
+          drop.style.color = currentColor;
+      });
+      colorIndex = (colorIndex + 1) % colors.length;
+  }
+
+  updateColor();
+  setInterval(updateColor, 1000);
+
+  function createFallingDropWithDelay(content) {
+    const drop = document.createElement('div');
+    drop.classList.add('drop');
+    drop.textContent = content;
+
+    // Random position at the top, but not too close to the edges (at least 10px away)
+    const randomLeft = Math.random() * (100 - 10) + 5; // Random position between 10px and 90% of the screen width
+    drop.style.left = `${randomLeft}%`;
+
+    document.getElementById('drops').appendChild(drop);
+
+    setTimeout(() => {
+        drop.style.animation = 'drop-fall 3s linear forwards'; // Fall down
+    }, 100);
+
+    setTimeout(() => {
+        drop.remove(); // Remove after animation ends
+    }, 2900); // Remove after 3 seconds
+}
+
+
+  function generateSourceDrop() {
+      const symbolsPerTick = 1; // Spawn fewer symbols (1 symbol per tick)
+      for (let i = 0; i < symbolsPerTick; i++) {
+          const content = ['@', '#', '$', '%', '&', '*'][Math.floor(Math.random() * 6)];
+          createFallingDropWithDelay(content);
+      }
+  }
+
+  setInterval(generateSourceDrop, 60); // Adjusted interval to spawn fewer drops
 </script>

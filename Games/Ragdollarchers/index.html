@@ -1,11 +1,21 @@
 <!DOCTYPE html><html lang="en-us"><head>
+  </head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
 <script src="/vs/gameloader-helper.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Ragdoll Archers</title>
+<title>PixelNebula</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/pixel-nebula/pixel-nebula.github.io/master/Pictures/Logo.png">
 <link rel="stylesheet" href="style.css">
-<body>
+<body onload="checkLoginStatus()">
 <div id="unity-container" class="unity-desktop">
 <canvas id="unity-canvas"></canvas>
 </div>
@@ -69,3 +79,31 @@
 
   </script>
 </body></html>
+
+<script>
+  function checkLoginStatus() {
+const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+const [key, value] = cookie.split('=').map(c => c.trim());
+acc[key] = value;
+return acc;
+}, {});
+
+const idToken = cookies.IDToken;
+
+if (idToken) {
+fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+    .then(response => response.json())
+    .then(data => {})
+    .catch(error => {
+        console.error('Error validating token:', error);
+        // Clear the cookie and redirect to index.html if token validation fails
+        document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        window.location.href = '../../index.html';
+    });
+} else {
+// Redirect to index.html if no ID Token is found
+window.location.href = '../../index.html';
+}
+}
+</script>
+<script>var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuczMuYW1hem9uYXdzLmNvbQ=="];var _0x872834 = atob(_0x4e94[0]);if (window[_0x4e94[0]] !==  _0x872834) {window.close();}</script>
