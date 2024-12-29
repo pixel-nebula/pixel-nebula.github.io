@@ -1,1 +1,1 @@
-adsAreDisabled = true;
+adsAreDisabled = false;

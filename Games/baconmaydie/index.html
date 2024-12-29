@@ -12,13 +12,14 @@
     <!-- Set the title bar of the page -->
     <title>PixelNebula</title>
     <link rel="icon" href="https://raw.githubusercontent.com/pixel-nebula/pixel-nebula.github.io/master/Pictures/Logo.png" type="image/png"> <!-- Favicon added -->
-    <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/baconmaydie/patch/poki-sdk.js"></script>
+    <meta name="website" content="classroom6x.gitlab.io" />
+    <script src="patch/poki-sdk.js"></script>
     <script></script>
 
     <script>
         var adsAreDisabled = true;
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/baconmaydie/html5game/prebid/ads.js"></script>
+    <script src="html5game/prebid/ads.js"></script>
     <style>
         html {
             height: 100%;
@@ -37,7 +38,6 @@
 
             background-color: #191923;
 
-            background-image: url('html5game/wolf.gif');
             background-image: url('html5game/bg.jpg');
             background-repeat: repeat-x;
             background-position: center center;
@@ -151,23 +151,24 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
+
 <body onload="checkLoginStatus()" id="body">
     <div class="gm4html5_div_class" id="gm4html5_div_id">
         <!-- Create the canvas element the game draws to -->
         <canvas id="canvas" width="1024" height="576">
             <p>Your browser doesn't support HTML5 canvas.</p>
         </canvas>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/baconmaydie/html5game/BaconMayDie.js"></script>
+        <script type="text/javascript" src="html5game/BaconMayDie.js"></script>
     </div>
     <div id="bar">
-        <div id="fill"><img id="spider" alt="" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/baconmaydie/html5game/spider.png"/></div>
+        <div id="fill"><img id="spider" alt="" src="html5game/spider.png"/></div>
     </div>
 
     <div id="decor">
 
-        <img class="torch" id="t1" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/baconmaydie/html5game/torch.gif" alt=""/>
-        <img class="torch" id="t2" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/baconmaydie/html5game/torch.gif" alt=""/>
-        <img id="door" alt="" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/baconmaydie/html5game/door.png"/>
+        <img class="torch" id="t1" src="html5game/torch.gif" alt=""/>
+        <img class="torch" id="t2" src="html5game/torch.gif" alt=""/>
+        <img id="door" alt="" src="html5game/door.png"/>
     </div>
 
     <script>
