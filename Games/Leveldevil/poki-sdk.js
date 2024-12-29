@@ -77,7 +77,7 @@
 	})), ["setDebug", "gameplayStart", "gameplayStop", "gameLoadingProgress", "happyTime", "setPlayerAge", "togglePlayerAdvertisingConsent", "logError", "sendHighscore", "setDebugTouchOverlayController"].forEach((function(e) {
 		window.PokiSDK[e] = t.oneArgument(e)
 	}));
-	var o, i = ((o = window.pokiSDKVersion) || (o = e("ab") || "v2.263.0"), "../../poki-sdk-core-v2.263.0.js"),
+	var o, i = ((o = window.pokiSDKVersion) || (o = e("ab") || "v2.263.0"), "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Leveldevil/poki-sdk-core-v2.263.0.js"),
 		r = document.createElement("script");
 	r.setAttribute("src", i), r.setAttribute("type", "text/javascript"), r.setAttribute("crossOrigin", "anonymous"), r.onload = function() {
 		return t.dequeue()

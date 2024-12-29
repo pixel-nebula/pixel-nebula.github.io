@@ -117,7 +117,7 @@
         var r = function() {
                 var e, n = window.pokiSDKVersion;
                 n || (n = (e = RegExp("[?&]" + "ab" + "=([^&]*)").exec(window.location.search)) && decodeURIComponent(e[1].replace(/\+/g, " ")) || "v2");
-                return "./poki-sdk-core.js"
+                return "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/gladihopper/poki-sdk-core.js"
             }(),
             i = document.createElement("script");
         i.setAttribute("src", r), i.setAttribute("type", "text/javascript"), i.onload = function() {
