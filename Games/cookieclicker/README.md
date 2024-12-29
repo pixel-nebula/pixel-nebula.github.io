@@ -1,6 +1,6 @@
 # cookieclicker
 
-<img src="img/perfectCookie.png" width="128">
+<img src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/perfectCookie.png" width="128">
 
 The original game can be found at http://orteil.dashnet.org/cookieclicker/
 

@@ -7849,7 +7849,7 @@ Game.Launch=function()
 						success=1;
 					}
 				}
-				if (success) {PlaySound('snd/buy'+choose([1,2,3,4])+'.mp3',0.75);this.refresh();}
+				if (success) {PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/buy'+choose([1,2,3,4])+'.mp3',0.75);this.refresh();}
 				//if (moni>0 && amount>1) Game.Notify(this.name,'Bought <b>'+bought+'</b> for '+Beautify(moni)+' cookies','',2);
 			}
 			this.sell=function(amount,bypass)
@@ -9562,7 +9562,7 @@ Game.Launch=function()
 						if (Game.CountsAsUpgradeOwned(this.pool)) Game.UpgradesOwned++;
 						Game.setOnCrate(0);
 						Game.tooltip.hide();
-						PlaySound('snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
+						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
 						success=1;
 					}
 				}
@@ -9577,8 +9577,8 @@ Game.Launch=function()
 						this.bought=1;
 						if (this.buyFunction) this.buyFunction();
 						Game.BuildAscendTree(this);
-						PlaySound('snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
-						PlaySound('snd/shimmerClick.mp3');
+						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
+						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');
 						//PlaySound('snd/buyHeavenly.mp3');
 						success=1;
 					}
@@ -9625,7 +9625,7 @@ Game.Launch=function()
 				Game.upgradesToRebuild=1;
 				Game.recalculateGains=1;
 				if (Game.CountsAsUpgradeOwned(this.pool)) Game.UpgradesOwned++;
-				PlaySound('snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
 				if (this.pool=='prestige' || this.pool=='debug') PlaySound('snd/shimmerClick.mp3');
 			}
 			else
