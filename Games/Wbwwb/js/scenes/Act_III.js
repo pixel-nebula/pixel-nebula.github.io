@@ -1,6 +1,6 @@
 Game.addToManifest({
-    bg_panic: "sounds/bg_panic.mp3",
-    bg_creepy: "sounds/bg_creepy.mp3"
+    bg_panic: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/bg_panic.mp3",
+    bg_creepy: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/bg_creepy.mp3"
 });
 
 /*****************************

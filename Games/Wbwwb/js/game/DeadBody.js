@@ -1,5 +1,5 @@
 Game.addToManifest({
-    gore_bodies: "sprites/peeps/gore_bodies.json"
+    gore_bodies: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/gore_bodies.json"
 });
 
 /**************************************

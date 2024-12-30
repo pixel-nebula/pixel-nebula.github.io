@@ -1,5 +1,5 @@
 Game.addToManifest({
-    blood: "sprites/peeps/blood.json"
+    blood: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/blood.json"
 });
 
 /**************************************

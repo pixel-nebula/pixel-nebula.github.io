@@ -7,11 +7,11 @@ The graphics & controls for this sucka
 
 Game.addToManifest({
 
-	cam_frame: "sprites/cam/cam.png",
-	cam_flash: "sprites/cam/cam-flash.png",
-	cam_instructions: "sprites/cam/cam-instructions.png",
+	cam_frame: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/cam/cam.png",
+	cam_flash: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/cam/cam-flash.png",
+	cam_instructions: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/cam/cam-instructions.png",
 
-	cam_snap: "sounds/cam_snap.mp3"
+	cam_snap: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/cam_snap.mp3"
 
 });
 

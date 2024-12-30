@@ -1,5 +1,5 @@
 Game.addToManifest({
-	snow: "sprites/snow.png"
+	snow: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/snow.png"
 });
 
 /*************

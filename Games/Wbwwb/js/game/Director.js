@@ -13,8 +13,8 @@ When you click to take a photo, the Director...
 **************************************/
 
 Game.addToManifest({
-	crickets: "sounds/crickets.mp3",
-	breaking_news: "sounds/breaking_news.mp3"
+	crickets: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/crickets.mp3",
+	breaking_news: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/breaking_news.mp3"
 });
 
 function Director(scene){

@@ -6,10 +6,10 @@ Is a prop you can add a photo to.
 **************************************/
 
 Game.addToManifest({
-	tv: "sprites/tv.png",
-	chyron: "sprites/chyron.png",
-	chyron2: "sprites/chyron2.png",
-	chyron3: "sprites/chyron3.png"
+	tv: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/tv.png",
+	chyron: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/chyron.png",
+	chyron2: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/chyron2.png",
+	chyron3: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/chyron3.png"
 });
 
 function TV(scene){

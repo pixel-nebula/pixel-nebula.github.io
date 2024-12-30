@@ -1,5 +1,5 @@
 Game.addToManifest({
-    laptop: "sprites/laptop.png"
+    laptop: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/laptop.png"
 });
 
 /*************

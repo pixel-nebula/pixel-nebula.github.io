@@ -1,6 +1,6 @@
 Game.addToManifest({
-	bg: "sprites/bg.png",
-	bg_dark: "sprites/bg_dark.png"
+	bg: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/bg.png",
+	bg_dark: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/bg_dark.png"
 });
 
 /**************************************
