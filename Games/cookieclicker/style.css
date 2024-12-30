@@ -1237,7 +1237,7 @@ q:after
 }
 .elderWrath #bigCookie
 {
-	background:url(img/imperfectCookie.png);
+	background:url(https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/imperfectCookie.png);
 	background-size:256px 256px;
 }
 #cookieNumbers{position:absolute;top:-80px;}
@@ -2729,14 +2729,14 @@ from {background-position:0px 0px;}
 {
 	width:96px;
 	height:96px;
-	background:url(img/goldCookie.png);
+	background:url(https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/goldCookie.png);
 }
 
 .seasonPopup
 {
 	width:256px;
 	height:256px;
-	background:url(img/goldCookie.png) center center no-repeat;
+	background:url(https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/goldCookie.png) center center no-repeat;
 }
 .goldenCookie:hover,.seasonPopup:hover
 {

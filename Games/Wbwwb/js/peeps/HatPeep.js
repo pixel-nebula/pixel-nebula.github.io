@@ -1,5 +1,5 @@
 Game.addToManifest({
-    hatguy: "sprites/peeps/hatguy.json"
+    hatguy: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/hatguy.json"
 });
 
 /****

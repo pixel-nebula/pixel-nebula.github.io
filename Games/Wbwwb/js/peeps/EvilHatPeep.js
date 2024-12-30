@@ -1,7 +1,7 @@
 Game.addToManifest({
-    gun: "sprites/peeps/gun.json",
+    gun: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/gun.json",
 
-    gun_cock: "sounds/gun_cock.mp3"
+    gun_cock: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/gun_cock.mp3"
 });
 
 /****

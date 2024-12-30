@@ -1,9 +1,9 @@
 Game.addToManifest({
-	body: "sprites/peeps/body.json",
-    face: "sprites/peeps/face.json",
-    hat: "sprites/peeps/hat.json",
+	body: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/body.json",
+    face: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/face.json",
+    hat: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/hat.json",
 
-    squeak: "sounds/squeak.mp3"
+    squeak: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/squeak.mp3"
 });
 
 /****

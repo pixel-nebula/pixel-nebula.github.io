@@ -1,5 +1,5 @@
 Game.addToManifest({
-    lover_panic: "sprites/peeps/lover_panic.json"
+    lover_panic: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/lover_panic.json"
 });
 
 /****

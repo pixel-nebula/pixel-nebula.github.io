@@ -1,10 +1,10 @@
 Game.addToManifest({
 
-    face_snobby: "sprites/peeps/face_snobby.json",
-    face_snobby_hmph: "sprites/peeps/face_snobby_hmph.json",
+    face_snobby: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/face_snobby.json",
+    face_snobby_hmph: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/face_snobby_hmph.json",
 
-    peep_huh: "sounds/peep_huh.mp3",
-    peep_hmph: "sounds/peep_hmph.mp3"
+    peep_huh: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/peep_huh.mp3",
+    peep_hmph: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/peep_hmph.mp3"
 
 });
 

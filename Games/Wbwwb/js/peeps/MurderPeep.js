@@ -1,15 +1,15 @@
 Game.addToManifest({
 
-    face_murder: "sprites/peeps/face_murder.json",
+    face_murder: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/face_murder.json",
 
-    weapon_gun: "sprites/peeps/weapon_gun.json",
-    weapon_axe: "sprites/peeps/weapon_axe.json",
-    weapon_bat: "sprites/peeps/weapon_bat.json",
-    weapon_shotgun: "sprites/peeps/weapon_shotgun.json",
+    weapon_gun: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/weapon_gun.json",
+    weapon_axe: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/weapon_axe.json",
+    weapon_bat: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/weapon_bat.json",
+    weapon_shotgun: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/weapon_shotgun.json",
 
-    gunshot: "sounds/gunshot.mp3",
-    shotgun: "sounds/shotgun.mp3",
-    impact: "sounds/impact.mp3"
+    gunshot: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/gunshot.mp3",
+    shotgun: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/shotgun.mp3",
+    impact: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/impact.mp3"
 
 });
 

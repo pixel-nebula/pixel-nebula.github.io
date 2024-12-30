@@ -1,5 +1,5 @@
 Game.addToManifest({
-	lovers_watching: "sprites/misc/lovers_watching.json"
+	lovers_watching: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/misc/lovers_watching.json"
 });
 function LoversWatching(type){
 

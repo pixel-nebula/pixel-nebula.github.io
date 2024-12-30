@@ -1,5 +1,5 @@
 Game.addToManifest({
-	happy_weirdo: "sprites/peeps/happy_weirdo.json"
+	happy_weirdo: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/happy_weirdo.json"
 });
 
 /****

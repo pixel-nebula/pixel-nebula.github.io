@@ -1,6 +1,6 @@
 Game.addToManifest({
-    bg_shade: "sprites/bg_shade.png",
-    bg_nighttime: "sounds/bg_nighttime.mp3"
+    bg_shade: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/bg_shade.png",
+    bg_nighttime: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/bg_nighttime.mp3"
 });
 
 /************************************

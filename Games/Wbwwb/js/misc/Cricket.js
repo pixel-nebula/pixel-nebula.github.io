@@ -1,5 +1,5 @@
 Game.addToManifest({
-	cricket: "sprites/misc/cricket.json"
+	cricket: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/misc/cricket.json"
 });
 function Cricket(scene){
 

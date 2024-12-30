@@ -1,8 +1,8 @@
 Game.addToManifest({
-    face_angry: "sprites/peeps/face_angry.json",
-    body_red: "sprites/peeps/body_red.json",
+    face_angry: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/face_angry.json",
+    body_red: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/body_red.json",
 
-    shout: "sounds/shout.mp3"
+    shout: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/shout.mp3"
 });
 
 /****

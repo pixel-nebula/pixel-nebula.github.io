@@ -1,5 +1,5 @@
 Game.addToManifest({
-    helping: "sprites/peeps/helping.json"
+    helping: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/helping.json"
 });
 
 /****

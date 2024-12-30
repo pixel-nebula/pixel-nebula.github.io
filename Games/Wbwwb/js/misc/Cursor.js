@@ -1,5 +1,5 @@
 Game.addToManifest({
-	cursor: "sprites/misc/cursor.json"
+	cursor: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/misc/cursor.json"
 }, true);
 
 function Cursor(scene){

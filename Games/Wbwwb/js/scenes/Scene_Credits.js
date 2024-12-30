@@ -1,13 +1,13 @@
 Game.addToManifest({
 
-	credits0001: "sprites/credits/credits0001.png", // nicky case
-	credits0002: "sprites/credits/credits0002.png", // playtesters
-	credits0003: "sprites/credits/credits0003.png", // patreon
-	credits0004: "sprites/credits/credits0004.png", // patreon
-	credits0005: "sprites/credits/credits0005.png", // patreon
-	credits0006: "sprites/credits/credits0006.png", // patreon
-	credits0007: "sprites/credits/credits0007.png", // and thank...
-	credits0008: "sprites/credits/credits0008.png", // ...YOU!
+	credits0001: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0001.png", // nicky case
+	credits0002: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0002.png", // playtesters
+	credits0003: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0003.png", // patreon
+	credits0004: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0004.png", // patreon
+	credits0005: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0005.png", // patreon
+	credits0006: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0006.png", // patreon
+	credits0007: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0007.png", // and thank...
+	credits0008: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/credits/credits0008.png", // ...YOU!
 
 });
 

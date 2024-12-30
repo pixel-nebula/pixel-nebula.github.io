@@ -1,6 +1,6 @@
 Game.addToManifest({
-    lovehat: "sprites/peeps/lovehat.json",
-    lover_shirt: "sprites/peeps/lover_shirt.json"
+    lovehat: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/lovehat.json",
+    lover_shirt: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/lover_shirt.json"
 });
 
 /****

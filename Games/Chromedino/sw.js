@@ -1,6 +1,6 @@
 "use strict";
 
-const OFFLINE_DATA_FILE = "offline.js";
+const OFFLINE_DATA_FILE = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Chromedino/offline.js";
 const CACHE_NAME_PREFIX = "chrome-dino";
 const BROADCASTCHANNEL_NAME = "offline";
 const CONSOLE_PREFIX = "[SW] ";

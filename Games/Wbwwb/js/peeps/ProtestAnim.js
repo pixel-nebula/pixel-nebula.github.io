@@ -1,5 +1,5 @@
 Game.addToManifest({
-    peace: "sprites/peeps/peace.json"
+    peace: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/peace.json"
 });
 
 /****

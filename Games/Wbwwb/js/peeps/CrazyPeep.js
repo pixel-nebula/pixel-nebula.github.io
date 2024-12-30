@@ -1,8 +1,8 @@
 Game.addToManifest({
 
-	hangry: "sprites/peeps/hangry.json",
+	hangry: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/hangry.json",
 
-    scream: "sounds/scream.mp3"
+    scream: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/scream.mp3"
 
 });
 

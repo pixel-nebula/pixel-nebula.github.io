@@ -1,6 +1,6 @@
 Game.addToManifest({
 
-	candlelight: "sprites/misc/candlelight.json"
+	candlelight: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/misc/candlelight.json"
 
 });
 

@@ -1,9 +1,9 @@
 Game.addToManifest({
 
-    face_nervous: "sprites/peeps/face_nervous.json",
+    face_nervous: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/face_nervous.json",
 
-    peep_gasp: "sounds/peep_gasp.mp3",
-    peep_hngh: "sounds/peep_hngh.mp3"
+    peep_gasp: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/peep_gasp.mp3",
+    peep_hngh: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/peep_hngh.mp3"
 
 });
 

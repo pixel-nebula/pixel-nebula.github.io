@@ -1,7 +1,7 @@
 Game.addToManifest({
-	bg_preload: "sprites/bg_preload.png",
-	bg_preload_2: "sprites/bg_preload_2.png",
-	preload_play: "sprites/misc/preload_play.json"
+	bg_preload: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/bg_preload.png",
+	bg_preload_2: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/bg_preload_2.png",
+	preload_play: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/misc/preload_play.json"
 }, true);
 
 function Scene_Preloader(){
