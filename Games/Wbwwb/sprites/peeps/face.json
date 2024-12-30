@@ -107,7 +107,7 @@
 "meta": {
 	"app": "Adobe Animate",
 	"version": "15.2.0.66",
-	"image": "face.png",
+	"image": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/face.png",
 	"format": "RGBA8888",
 	"size": {"w":256,"h":1024},
 	"scale": "1"

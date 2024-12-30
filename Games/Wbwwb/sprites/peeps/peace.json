@@ -267,7 +267,7 @@
 "meta": {
 	"app": "Adobe Animate",
 	"version": "15.2.0.66",
-	"image": "peace.png",
+	"image": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/peeps/peace.png",
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":2048},
 	"scale": "1"
