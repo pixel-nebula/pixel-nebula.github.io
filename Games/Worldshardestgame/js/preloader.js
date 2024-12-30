@@ -25,9 +25,6 @@ function initImages() {
 }
 
 function initSounds() {
-   
-	music = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/music.mp3");
-    music.loop = true;
 
     sfx_bounce0      = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_bounce0.mp3");
     sfx_bounce1      = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_bounce1.mp3");
