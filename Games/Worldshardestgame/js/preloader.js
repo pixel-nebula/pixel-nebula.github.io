@@ -26,18 +26,18 @@ function initImages() {
 
 function initSounds() {
    
-	music = new Audio("sounds/music.mp3");
+	music = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/music.mp3");
     music.loop = true;
 
-    sfx_bounce0      = new Audio("sounds/sfx_bounce0.mp3");
-    sfx_bounce1      = new Audio("sounds/sfx_bounce1.mp3");
-    sfx_checkpoint   = new Audio("sounds/sfx_checkpoint.mp3");
-    sfx_click        = new Audio("sounds/sfx_click.mp3");
-    sfx_coin         = new Audio("sounds/sfx_coin.mp3");
-    sfx_die          = new Audio("sounds/sfx_die.mp3");
-    sfx_win          = new Audio("sounds/sfx_win.mp3");
-    sfx_intermission = new Audio("sounds/sfx_intermission.mp3");
-	sfx_door         = new Audio("sounds/sfx_win.mp3");
+    sfx_bounce0      = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_bounce0.mp3");
+    sfx_bounce1      = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_bounce1.mp3");
+    sfx_checkpoint   = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_checkpoint.mp3");
+    sfx_click        = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_click.mp3");
+    sfx_coin         = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_coin.mp3");
+    sfx_die          = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_die.mp3");
+    sfx_win          = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_win.mp3");
+    sfx_intermission = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_intermission.mp3");
+	sfx_door         = new Audio("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/sounds/sfx_win.mp3");
 	
 	
     soundsToMute.push(music);
