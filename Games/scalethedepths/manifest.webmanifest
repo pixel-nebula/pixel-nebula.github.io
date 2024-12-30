@@ -1,0 +1,15 @@
+{
+    "name": "Scale the Depths",
+    "short_name": "Scale the Depths",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#231F20",
+    "theme_color": "#000",
+    "description": "A game made for the 2024 GMTK Game Jam. You are a robot built to feed hungry aquatic \"customers\"! Scale the depths with your trusty fishing rod, then scale the depths again, but in the sense of scaling fish. It is best played in full-screen.",
+    "icons": [{
+      "src": "TemplateData/icons/unity-logo-dark.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }]
+  }

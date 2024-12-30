@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+  <title>PixelNebula</title>
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png">
+  <style>
+    body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  </style>
+  
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+
+<body onload="checkLoginStatus()">
+  <div class="webgl-content">
+    <div id="gameContainer" style="width: 100vw; height: 100vh">
+      <script src="js/ruffle/ruffle.js"></script>
+      <div id="gamefilearea" class="prestitial-running" style="height:100%;">
+
+      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="900" height="600" id="gamefile" align="middle">
+      <param name="allowScriptAccess" value="always" />
+      <param name="movie" value="swf/TheImpossibleQuiz.swf" />
+      <param name="quality" value="high" />
+      <param name="wmode" value="window" />
+      <param name="allowfullscreen" value="false" />
+      <param name="allowfullscreeninteractive" value="false" />
+      <param name="fullScreenAspectRatio" value="" />
+      <param name="quality" value="high" />
+      <param name="play" value="true" />
+      <param name="loop" value="true" />
+      <param name="menu" value="" />
+      <param name="flashvars" value="gameID=13824" />
+      <param name="hasPriority" value="true" />
+
+      <embed src="swf/TheImpossibleQuiz.swf" width="100%" height="100%" id="gamefileEmbed" name="gamefile" align="middle" wmode="window" allowfullscreen="false" allowfullscreeninteractive="false" fullScreenAspectRatio="" quality="high" play="true" loop="true" menu="" allowScriptAccess="always" flashvars="gameID=13824" hasPriority="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer"></embed>
+      </object>
+
+    </div>
+  </div>
+  <script src="js/analytics_ubg_v1_4.js"></script>
+  <script src="js/ubg235_client_v1_1.js"></script>
+  <script>
+    function checkLoginStatus() {
+const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+    const [key, value] = cookie.split('=').map(c => c.trim());
+    acc[key] = value;
+    return acc;
+}, {});
+
+const idToken = cookies.IDToken;
+
+if (idToken) {
+    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+        .then(response => response.json())
+        .then(data => {})
+        .catch(error => {
+            console.error('Error validating token:', error);
+            // Clear the cookie and redirect to index.html if token validation fails
+            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            window.location.href = '../../index.html';
+        });
+} else {
+    // Redirect to index.html if no ID Token is found
+    window.location.href = '../../index.html';
+}
+}
+</script>
+</body>
+</html>
+<script>var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuczMuYW1hem9uYXdzLmNvbQ=="];var _0x872834 = atob(_0x4e94[0]);if (window[_0x4e94[0]] !==  _0x872834) {window.close();}</script>

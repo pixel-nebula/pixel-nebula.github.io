@@ -1,0 +1,10 @@
+{
+	"name": "Basket Random",
+	"short_name": "Basket Random",
+	"description": "Basket Random - RHM Interactive",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "landscape",
+	"background_color": "#000000",
+	"icons": []
+}

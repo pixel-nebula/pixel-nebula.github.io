@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <title>PixelNebula</title>
+    
+    <!-- Async widget script -->
+    <script async src="https://arc.io/widget.min.js#5XPTU21J"></script>
+
+    <!-- GoatCounter analytics -->
+    <script data-goatcounter="https://parcoil.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <!-- Maintenance script -->
+    <script src="maintenance.js"></script>
+
+    <!-- Service Worker registration -->
+<script> if(top!=self){
+    top.location.replace(document.location);
+    window.open('https://840p.ml','_blank');window.setTimeout(function(){this.close();},1000);
+    alert("STOP STEALING GAMES FROM 840P.ML.")
+} </script>
+
+<script type="text/javascript">
+if ( window.self !== window.top ) {
+    window.top.location.href=window.location.href;
+}
+</script>
+<script> var iframes = document.getElementsByTagName('iframe');
+
+for (var i = 0; i < iframes.length; i++) {
+  var iframe = iframes[i];
+
+  try {
+    // Try to access the contentWindow property
+    var iframeWindow = iframe.contentWindow;
+
+    // If we can access the contentWindow property, block the iframe
+     window.open('https://840p.ml','_blank');window.setTimeout(function(){this.close();},1000);
+  } catch (e) {
+    // If we can't access the contentWindow property, the iframe is from a different origin and cannot be blocked
+  }
+}
+</script>
+
+<script> if (window.self !== window.top) {
+  // This page is being displayed in an iframe
+  window.top.location.href = window.location.href;
+} </script>
+<script>
+if( top != self )
+    delete top.onbeforeunload;
+</script>
+<script>
+var iframes = document.getElementsByTagName('iframe');
+
+for (var i = 0; i < iframes.length; i++) {
+  var iframe = iframes[i];
+
+  // Set the sandbox attribute to 'allow-scripts'
+  iframe.sandbox = 'allow-scripts';
+}
+</script>
+<meta http-equiv="X-Frame-Options" content="deny">
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8NZMM8WN9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W8NZMM8WN9');
+</script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+  <body onload="checkLoginStatus()">
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px; padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);">
+        <canvas class="emscripten" oncontextmenu="event.preventDefault()" id="canvas" width="335" height="667" style="width: 100%; height: 100%; cursor: default;"></canvas><div class="logo Dark" style="display: none;"></div><div class="progress Dark" style="display: none;"><div class="empty" style="width: 0%;"></div><div class="full" style="width: 100%;"></div></div></div>
+        
+   
+    <script type="text/javascript">
+      var Module = {
+        TOTAL_MEMORY: 268435456,
+        errorhandler: null, // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+        compatibilitycheck: null,
+        dataUrl: "webgl.datagz",
+        codeUrl: "webgl.jsgz",
+        memUrl: "webgl.memgz",
+      };
+    </script>
+    <script src="UnityLoader.js"></script>
+    <script src="main.js"></script>
+    <script>
+        function checkLoginStatus() {
+    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=').map(c => c.trim());
+        acc[key] = value;
+        return acc;
+    }, {});
+
+    const idToken = cookies.IDToken;
+
+    if (idToken) {
+        fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+            .then(response => response.json())
+            .then(data => {})
+            .catch(error => {
+                console.error('Error validating token:', error);
+                // Clear the cookie and redirect to index.html if token validation fails
+                document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                window.location.href = '../../index.html';
+            });
+    } else {
+        // Redirect to index.html if no ID Token is found
+        window.location.href = '../../index.html';
+    }
+}
+    </script>
+  </body>
+</html>
+
+
+<script>var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuczMuYW1hem9uYXdzLmNvbQ=="];var _0x872834 = atob(_0x4e94[0]);if (window[_0x4e94[0]] !==  _0x872834) {window.close();}</script>

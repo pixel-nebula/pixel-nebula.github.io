@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <meta charset="utf-8" />
+    <title>PixelNebula</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png">
+    <script type="text/javascript" src="/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <style>
+      html,
+      body {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+      }
+      canvas {
+        width: 100%;
+      }
+    </style>
+    <script src="poki3.js"></script>
+  </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+  <body onload="checkLoginStatus()">
+    <script src="bundle.js"></script>
+    <script>
+      function checkLoginStatus() {
+const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+    const [key, value] = cookie.split('=').map(c => c.trim());
+    acc[key] = value;
+    return acc;
+}, {});
+
+const idToken = cookies.IDToken;
+
+if (idToken) {
+    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+        .then(response => response.json())
+        .then(data => {})
+        .catch(error => {
+            console.error('Error validating token:', error);
+            // Clear the cookie and redirect to index.html if token validation fails
+            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            window.location.href = '../../index.html';
+        });
+} else {
+    // Redirect to index.html if no ID Token is found
+    window.location.href = '../../index.html';
+}
+}
+    </script>
+  </body>
+</html>
+<script>var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuczMuYW1hem9uYXdzLmNvbQ=="];var _0x872834 = atob(_0x4e94[0]);if (window[_0x4e94[0]] !==  _0x872834) {window.close();}</script>

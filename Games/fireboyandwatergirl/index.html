@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Bubblez">
+    <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui,shrink-to-fit=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+    <meta name="apple-mobile-web-app-title" content="Fireboy & Watergirl 1 Forest Temple">
+    <title>PixelNebula</title>
+
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png">
+    
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+
+<body onload="checkLoginStatus()" style="margin: 0px">
+    <script type="text/javascript">
+        window.requireNode = window.require;
+        window.require = undefined;
+    </script>
+    <script src="bower_components/requirejs/require.js"></script>
+    <div id="root">
+        <div id="container"></div>
+        <div id="hammer"></div>
+        <div id="debug-fps" style="color:#ff0000; position: absolute; top: 0;"></div>
+    </div>
+    <script type="text/javascript">
+        var gameName = "fireboy-and-watergirl-forest-temple.min.js";
+        function addScript(src, buster, callback) {
+            var s = document.createElement('script');
+            s.setAttribute('src', src + '?v=' + buster);
+            if (typeof callback === 'function') {
+                s.onload = callback;
+            }
+            document.body.appendChild(s);
+        }
+        addScript('version.js', 1, function() {
+            require(["fireboy-and-watergirl-forest-temple.min.js?v=" + version]);
+        });
+    </script>
+    <script>
+        function checkLoginStatus() {
+    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=').map(c => c.trim());
+        acc[key] = value;
+        return acc;
+    }, {});
+    
+    const idToken = cookies.IDToken;
+    
+    if (idToken) {
+        fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+            .then(response => response.json())
+            .then(data => {})
+            .catch(error => {
+                console.error('Error validating token:', error);
+                // Clear the cookie and redirect to index.html if token validation fails
+                document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                window.location.href = '../../index.html';
+            });
+    } else {
+        // Redirect to index.html if no ID Token is found
+        window.location.href = '../../index.html';
+    }
+    }
+    </script>
+</body>
+
+</html>
+<script>var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuczMuYW1hem9uYXdzLmNvbQ=="];var _0x872834 = atob(_0x4e94[0]);if (window[_0x4e94[0]] !==  _0x872834) {window.close();}</script>

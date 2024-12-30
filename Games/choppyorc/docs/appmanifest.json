@@ -1,0 +1,12 @@
+﻿{
+	"name": "ChoppyOrc",
+	"short_name": "ChoppyOrc",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "any",
+	"icons": [{
+		"src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/choppyorc/docs/icon-256.png",
+		"sizes": "144x144",
+		"type": "image/png"
+	}]
+}

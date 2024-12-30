@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html onload="checkLoginStatus()">
+
+<head>
+	<meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+	<title>PixelNebula</title>
+	<meta name="description" content="Drift Boss is a one-button endless drifting game where you must steer your vehicle across a platform with tricky bends and bumps whilst avoiding falling off the edge.">
+	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<!-- Use this metatag when Apple fixes their IOS 9
+	<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui"/>
+	-->
+
+	<!--Temporary fix for IOS 9-->
+	<meta name="viewport" content="initial-scale=1.0001, minimum-scale=1.0001, maximum-scale=1.0001, user-scalable=no, minimal-ui" />
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Driftboss/game.css">
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Driftboss/game.js"></script>
+	<!-- AnalyticsCode -->
+  	<meta name="robots" content="noindex,nofollow" />
+	<!-- APICode -->
+	 
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+
+<body onload="setTimeout(function(){window.scrollTo(0,1)},1);">
+	<!--body-->
+
+	<div id="ajaxbar">
+		<div id="game"><canvas id="canvas"></canvas></div>
+		<div id="webgl"><canvas id="webglcanvas"></canvas></div>
+
+		<div id="orientate"><img src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Driftboss/media/graphics/orientate/landscape.jpg" /></div>
+		<div id="play" class="play" onclick=""><img src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Driftboss/media/graphics/splash/mobile/cover-start.jpg" /></div>
+
+	</div>
+	<!-- <div id="tempdiv"><br><br><br></div> -->
+	<!-- APICode2 -->
+
+
+	<!-- END OF TEST -->
+
+</body>
+
+</html>
+
+
+<script>
+    function checkLoginStatus() {
+const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+    const [key, value] = cookie.split('=').map(c => c.trim());
+    acc[key] = value;
+    return acc;
+}, {});
+
+const idToken = cookies.IDToken;
+
+if (idToken) {
+    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+        .then(response => response.json())
+        .then(data => {})
+        .catch(error => {
+            console.error('Error validating token:', error);
+            // Clear the cookie and redirect to index.html if token validation fails
+            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            window.location.href = '../../index.html';
+        });
+} else {
+    // Redirect to index.html if no ID Token is found
+    window.location.href = '../../index.html';
+}
+}
+</script>
+<script>var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuczMuYW1hem9uYXdzLmNvbQ=="];var _0x872834 = atob(_0x4e94[0]);if (window[_0x4e94[0]] !==  _0x872834) {window.close();}</script>
