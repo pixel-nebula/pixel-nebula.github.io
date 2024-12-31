@@ -66,15 +66,15 @@
         },
         355: function (e, r, o) {
             "use strict";
-            o.r(r), (r.default = o.p + "ac268c48131d7ef2e42100beed84990f.webp");
+            o.r(r), (r.default = o.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Templerun/ac268c48131d7ef2e42100beed84990f.webp");
         },
         356: function (e, r, o) {
             "use strict";
-            o.r(r), (r.default = o.p + "6bbd8797ffdaf4e4c44b49e4732c9bf1.webp");
+            o.r(r), (r.default = o.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Templerun/6bbd8797ffdaf4e4c44b49e4732c9bf1.webp");
         },
         357: function (e, r, o) {
             "use strict";
-            o.r(r), (r.default = o.p + "72bdc992cae069c7b8720c3106e5d3c8.webp");
+            o.r(r), (r.default = o.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Templerun/72bdc992cae069c7b8720c3106e5d3c8.webp");
         },
         362: function (e, r, o) {
             var n = o(65),
