@@ -2265,7 +2265,7 @@ Game.Launch=function()
 		}
 		Game.bakeryNamePrompt=function()
 		{
-			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+			PlaySound('snd/tick.mp3');
 			Game.Prompt('<id NameBakery><h3>'+loc("Name your bakery")+'</h3><div class="block" style="text-align:center;">'+loc("What should your bakery's name be?")+'</div><div class="block"><input type="text" style="text-align:center;width:100%;" id="bakeryNameInput" value="'+Game.bakeryName+'"/></div>',[[loc("Confirm"),'if (l(\'bakeryNameInput\').value.length>0) {Game.bakeryNameSet(l(\'bakeryNameInput\').value);Game.Win(\'What\\\'s in a name\');Game.ClosePrompt();}'],[loc("Random"),'Game.bakeryNamePromptRandom();'],loc("Cancel")]);
 			l('bakeryNameInput').focus();
 			l('bakeryNameInput').select();
@@ -4033,7 +4033,7 @@ Game.Launch=function()
 		}
 		Game.PickAscensionMode=function()
 		{
-			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+			PlaySound('snd/tick.mp3');
 			Game.tooltip.hide();
 			
 			var str='';
@@ -4067,7 +4067,7 @@ Game.Launch=function()
 		Game.UpdateAscensionModePrompt();
 		
 		AddEvent(l('ascendButton'),'click',function(){
-			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+			PlaySound('snd/tick.mp3');
 			Game.Reincarnate();
 		});
 		
@@ -4081,14 +4081,14 @@ Game.Launch=function()
 		Game.AscendBreakpoint=Game.AscendDuration*0.5;//at which point the cookie explodes during the ascend animation
 		Game.UpdateAscendIntro=function()
 		{
-			if (Game.AscendTimer==1) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/charging.mp3');
-			if (Game.AscendTimer==Math.floor(Game.AscendBreakpoint)) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/thud.mp3');
+			if (Game.AscendTimer==1) PlaySound('snd/charging.mp3');
+			if (Game.AscendTimer==Math.floor(Game.AscendBreakpoint)) PlaySound('snd/thud.mp3');
 			Game.AscendTimer++;
 			if (Game.AscendTimer>Game.AscendDuration)//end animation and launch ascend screen
 			{
 				PlayCue('ascend');
-				PlayMusicSound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cymbalRev.mp3');
-				if (!App || Game.volumeMusic==0) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/choir.mp3');
+				PlayMusicSound('snd/cymbalRev.mp3');
+				if (!App || Game.volumeMusic==0) PlaySound('snd/choir.mp3');
 				Game.EarnHeavenlyChips(Game.cookiesEarned);
 				Game.AscendTimer=0;
 				Game.OnAscend=1;Game.removeClass('ascendIntro');
@@ -4573,7 +4573,7 @@ Game.Launch=function()
 				if (!free && Game.lumps<n) return false;
 				if (!free && Game.prefs.askLumps)
 				{
-					PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+					PlaySound('snd/tick.mp3');
 					Game.promptConfirmFunc=func;//bit dumb
 					Game.Prompt('<id SpendLump><div class="icon" style="background:url('+Game.resPath+'img/icons.png?v='+Game.version+');float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-29*48)+'px '+(-14*48)+'px;"></div><div style="margin:16px 8px;">'+loc("Do you want to spend %1 to %2?",['<b>'+loc("%1 sugar lump",LBeautify(n))+'</b>',str])+'</div>',[[loc("Yes"),'Game.lumps-='+n+';Game.promptConfirmFunc();Game.promptConfirmFunc=0;Game.recalculateGains=1;Game.ClosePrompt();'],loc("No")]);
 					return false;
@@ -5333,17 +5333,17 @@ Game.Launch=function()
 					
 					if (Game.season=='valentines')
 					{
-						bgPic=Game.resPath+'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/hearts.png';
+						bgPic=Game.resPath+'img/hearts.png';
 						picX=Math.floor(Math.random()*8);
 					}
 					else if (Game.season=='fools')
 					{
-						bgPic=Game.resPath+'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/contract.png';
-						if (me.wrath) bgPic=Game.resPath+'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/wrathContract.png';
+						bgPic=Game.resPath+'img/contract.png';
+						if (me.wrath) bgPic=Game.resPath+'img/wrathContract.png';
 					}
 					else if (Game.season=='easter')
 					{
-						bgPic=Game.resPath+'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/img/bunnies.png';
+						bgPic=Game.resPath+'img/bunnies.png';
 						picX=Math.floor(Math.random()*4);
 						picY=0;
 						if (me.wrath) picY=1;
@@ -5655,7 +5655,7 @@ Game.Launch=function()
 						if (Game.prefs.cookiesound) PlaySound('snd/clickb'+Math.floor(Math.random()*7+1)+'.mp3',0.75);
 						else PlaySound('snd/click'+Math.floor(Math.random()*7+1)+'.mp3',0.75);
 					}
-					else PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');
+					else PlaySound('snd/shimmerClick.mp3');
 					me.die();
 				},
 				missFunc:function(me)
@@ -5742,7 +5742,7 @@ Game.Launch=function()
 				},
 				initFunc:function(me)
 				{
-					if (!this.spawned && Game.chimeType!=0 && Game.ascensionMode!=1) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/jingle.mp3');
+					if (!this.spawned && Game.chimeType!=0 && Game.ascensionMode!=1) PlaySound('snd/jingle.mp3');
 					
 					me.x=-128;
 					me.y=Math.floor(Math.random()*Math.max(0,Game.bounds.bottom-Game.bounds.top-256)+Game.bounds.top+128)-128;
@@ -5822,7 +5822,7 @@ Game.Launch=function()
 					
 					//sparkle and kill the shimmer
 					Game.SparkleAt(Game.mouseX,Game.mouseY);
-					PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/jingleClick.mp3');
+					PlaySound('snd/jingleClick.mp3');
 					me.die();
 				},
 				missFunc:function(me)
@@ -6537,7 +6537,7 @@ Game.Launch=function()
 			}
 			return '';
 		}
-		Game.ClickTinyCookie=function(){if (!Game.HasAchiev('Tiny cookie')){PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');Game.Win('Tiny cookie');}}
+		Game.ClickTinyCookie=function(){if (!Game.HasAchiev('Tiny cookie')){PlaySound('snd/tick.mp3');Game.Win('Tiny cookie');}}
 		
 		Game.setVolume=function(what)
 		{
@@ -6577,14 +6577,14 @@ Game.Launch=function()
 				AddEvent(l('langSelect-'+i),'click',function(lang){return function(){
 					if (true)//lang!=locId)
 					{
-						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+						PlaySound('snd/tick.mp3');
 						localStorageSet('CookieClickerLang',lang);
 						Game.toSave=true;
 						Game.toReload=true;
 					}
 				};}(i));
 				AddEvent(l('langSelect-'+i),'mouseover',function(lang){return function(){
-					PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/smallTick.mp3',0.75);
+					PlaySound('snd/smallTick.mp3',0.75);
 					l('languageSelectHeader').innerHTML=Langs[lang].changeLanguage;
 				};}(i));
 			}
@@ -6968,7 +6968,7 @@ Game.Launch=function()
 		AddEvent(l('prefsButton'),'click',function(){Game.ShowMenu('prefs');});
 		AddEvent(l('statsButton'),'click',function(){Game.ShowMenu('stats');});
 		AddEvent(l('logButton'),'click',function(){Game.ShowMenu('log');});
-		AddEvent(l('legacyButton'),'click',function(){PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');Game.Ascend();});
+		AddEvent(l('legacyButton'),'click',function(){PlaySound('snd/tick.mp3');Game.Ascend();});
 		Game.ascendMeter=l('ascendMeter');
 		Game.ascendNumber=l('ascendNumber');
 		
@@ -7628,7 +7628,7 @@ Game.Launch=function()
 			
 			if (Game.TickerEffect && Game.TickerEffect.type=='fortune')
 			{
-				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/fortune.mp3',1);
+				PlaySound('snd/fortune.mp3',1);
 				Game.SparkleAt(Game.mouseX,Game.mouseY);
 				var effect=Game.TickerEffect.sub;
 				if (effect=='fortuneGC')
@@ -8104,7 +8104,7 @@ Game.Launch=function()
 				{
 					me.level+=1;
 					if (me.level>=10 && me.levelAchiev10) Game.Win(me.levelAchiev10.name);
-					if (!free) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/upgrade.mp3',0.6);
+					if (!free) PlaySound('snd/upgrade.mp3',0.6);
 					Game.LoadMinigames();
 					me.refresh();
 					if (l('productLevel'+me.id)){var rect=l('productLevel'+me.id).getBounds();Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24+32-TopBarOffset);}
@@ -8542,7 +8542,7 @@ Game.Launch=function()
 			}
 			
 			Game.storeToRefresh=1;
-			if (id!=-1) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+			if (id!=-1) PlaySound('snd/tick.mp3');
 		}
 		Game.BuildStore=function()//create the DOM for the store's buildings
 		{
@@ -8807,7 +8807,7 @@ Game.Launch=function()
 			Game.UnlockTiered(this);
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock(this.grandma.name);
 		});
-		Game.last.minigameUrl='https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/minigameGarden.js';
+		Game.last.minigameUrl='minigameGarden.js';
 		Game.last.minigameName=loc("Garden");
 		
 		new Game.Object('Mine','mine|mines|mined|[X] mile deeper|[X] miles deeper','Mines out cookie dough and chocolate chips.',4,3,{base:'mine',xV:16,yV:16,w:64,rows:2,x:0,y:24},10000,function(me){
@@ -8841,7 +8841,7 @@ Game.Launch=function()
 			Game.UnlockTiered(this);
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock(this.grandma.name);
 		});
-		Game.last.minigameUrl='https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/minigameMarket.js';
+		Game.last.minigameUrl='minigameMarket.js';
 		Game.last.minigameName=loc("Stock Market");
 		
 		new Game.Object('Temple','temple|temples|discovered|[X] sacred artifact retrieved|[X] sacred artifacts retrieved','Full of precious, ancient chocolate.',7,16,{base:'temple',xV:8,yV:4,w:72,rows:2,x:0,y:-5},0,function(me){
@@ -8853,7 +8853,7 @@ Game.Launch=function()
 			Game.UnlockTiered(this);
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock(this.grandma.name);
 		});
-		Game.last.minigameUrl='https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/minigamePantheon.js';
+		Game.last.minigameUrl='minigamePantheon.js';
 		Game.last.minigameName=loc("Pantheon");
 		
 		new Game.Object('Wizard tower','wizard tower|wizard towers|summoned|Incantations have [X] more syllable|Incantations have [X] more syllables','Summons cookies with magic spells.',8,17,{base:'wizardtower',xV:16,yV:16,w:48,rows:2,x:0,y:20},0,function(me){
@@ -8866,7 +8866,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock(this.grandma.name);
 		});
 		Game.last.displayName='<span style="font-size:90%;letter-spacing:-1px;position:relative;bottom:2px;">Wizard tower</span>';//shrink
-		Game.last.minigameUrl='https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/minigameGrimoire.js';
+		Game.last.minigameUrl='minigameGrimoire.js';
 		Game.last.minigameName=loc("Grimoire");
 		
 		new Game.Object('Shipment','shipment|shipments|shipped|[X] galaxy fully explored|[X] galaxies fully explored','Brings in fresh cookies from the cookie planet.',9,5,{base:'shipment',xV:16,yV:16,w:64,rows:1,x:0,y:0},40000,function(me){
@@ -9192,7 +9192,7 @@ Game.Launch=function()
 			}
 			if (off!=0)
 			{
-				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/press.mp3');
+				PlaySound('snd/press.mp3');
 				
 				Game.YouCustomizer.render();
 				Game.YouCustomizer.renderPortrait();
@@ -9468,7 +9468,7 @@ Game.Launch=function()
 					if (this.isVaulted()) this.unvault();
 					else this.vault();
 					Game.upgradesToRebuild=1;
-					PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+					PlaySound('snd/tick.mp3');
 				}
 			}
 			else this.buy();
@@ -9540,7 +9540,7 @@ Game.Launch=function()
 						l('toggleBox').style.display='block';
 						l('toggleBox').focus();
 						Game.tooltip.hide();
-						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+						PlaySound('snd/tick.mp3');
 						success=1;
 					}
 				}
@@ -9579,7 +9579,7 @@ Game.Launch=function()
 						Game.BuildAscendTree(this);
 						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
 						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');
-						//PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/buyHeavenly.mp3');
+						//PlaySound('snd/buyHeavenly.mp3');
 						success=1;
 					}
 				}
@@ -9626,7 +9626,7 @@ Game.Launch=function()
 				Game.recalculateGains=1;
 				if (Game.CountsAsUpgradeOwned(this.pool)) Game.UpgradesOwned++;
 				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/buy'+choose([1,2,3,4])+'.mp3',0.75);
-				if (this.pool=='prestige' || this.pool=='debug') PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');
+				if (this.pool=='prestige' || this.pool=='debug') PlaySound('snd/shimmerClick.mp3');
 			}
 			else
 			{
@@ -9635,7 +9635,7 @@ Game.Launch=function()
 				Game.recalculateGains=1;
 				if (Game.CountsAsUpgradeOwned(this.pool)) Game.UpgradesOwned--;
 				PlaySound('snd/sell'+choose([1,2,3,4])+'.mp3',0.75);
-				if (this.pool=='prestige' || this.pool=='debug') PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');
+				if (this.pool=='prestige' || this.pool=='debug') PlaySound('snd/shimmerClick.mp3');
 			}
 			if (Game.onMenu=='stats') Game.UpdateMenu();
 		}
@@ -10532,7 +10532,7 @@ Game.Launch=function()
 		}
 		Game.AssignPermanentSlot=function(slot)
 		{
-			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+			PlaySound('snd/tick.mp3');
 			Game.tooltip.hide();
 			var list=[];
 			for (var i in Game.Upgrades)
@@ -10801,9 +10801,9 @@ Game.Launch=function()
 		}
 		Game.playGoldenCookieChime=function()
 		{
-			if (Game.chimeType==1) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/chime.mp3');
-			else if (Game.chimeType==2) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/fortune.mp3');
-			else if (Game.chimeType==3) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cymbalRev.mp3');
+			if (Game.chimeType==1) PlaySound('snd/chime.mp3');
+			else if (Game.chimeType==2) PlaySound('snd/fortune.mp3');
+			else if (Game.chimeType==3) PlaySound('snd/cymbalRev.mp3');
 			else if (Game.chimeType==4) {Game.wrinklerSquishSound++;if (Game.wrinklerSquishSound>4) {Game.wrinklerSquishSound-=4;}PlaySound('snd/squeak'+(Game.wrinklerSquishSound)+'.mp3');}
 		}
 		
@@ -11308,7 +11308,7 @@ Game.Launch=function()
 			Game.Notify(loc("The shimmering veil disappears..."),'',[9,10]);
 			Game.upgradesToRebuild=1;
 			Game.recalculateGains=1;
-			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/spellFail.mp3',0.75);
+			PlaySound('snd/spellFail.mp3',0.75);
 		}
 		
 		
@@ -12039,7 +12039,7 @@ Game.Launch=function()
 					
 					console.log('out:',out);
 					
-					PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');PlaySound('snd/giftGet.mp3');
+					PlaySound('snd/tick.mp3');PlaySound('snd/giftGet.mp3');
 					Game.ClosePrompt();
 					Game.Prompt('<id GiftRedeemed><h3>'+loc("Redeem a gift")+'</h3>'+
 					'<div class="block" style="font-size:11px;">'+'<div id="giftWrapped" class="crate noFrame upgrade enabled pucker" style="background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;float:none;"></div>'+'<div class="line"></div>'+
@@ -12096,7 +12096,7 @@ Game.Launch=function()
 					l('giftBoxDesign').dataset.icon=icon[0]+' '+icon[1];
 					l('giftBoxDesign').style.backgroundPosition=(-icon[0]*48)+'px '+(-icon[1]*48)+'px';
 					l('giftBoxDesignButton').addEventListener('click',function(){
-						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+						PlaySound('snd/tick.mp3');
 						var icons=Game.giftBoxDesigns;
 						var str='';
 						for (var i=0;i<icons.length;i++)
@@ -12114,7 +12114,7 @@ Game.Launch=function()
 								l('giftBoxDesign').style.backgroundPosition=(-icon[0]*48)+'px '+(-icon[1]*48)+'px';
 								triggerAnim(l('giftBoxDesign'),'pucker');
 								l('giftPromptSelector').style.display='none';
-								PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+								PlaySound('snd/tick.mp3');
 							});
 						}
 					});
@@ -12165,7 +12165,7 @@ Game.Launch=function()
 							l('giftBoxIconNone').style.display='inline-block';
 							l('giftBoxIcon').style.display='none';
 							l('giftPromptSelector').style.display='none';
-							PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+							PlaySound('snd/tick.mp3');
 						});
 						for (var i=0;i<icons.length;i++)
 						{
@@ -12176,7 +12176,7 @@ Game.Launch=function()
 								l('giftBoxIconNone').style.display='none';
 								l('giftBoxIcon').style.display='inline-block';
 								l('giftPromptSelector').style.display='none';
-								PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+								PlaySound('snd/tick.mp3');
 							});
 						}
 					};
@@ -12253,7 +12253,7 @@ Game.Launch=function()
 						
 						str=utf8_to_b64(str);
 						
-						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');PlaySound('snd/giftSend.mp3');
+						PlaySound('snd/tick.mp3');PlaySound('snd/giftSend.mp3');
 						Game.ClosePrompt();
 						Game.Prompt('<id GiftSendReady><h3>'+loc("Send a gift")+'</h3>'+
 						'<div class="block" style="font-size:11px;">'+'<div id="giftWrapped" class="crate noFrame upgrade enabled pucker" style="background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;float:none;"></div>'+'<div class="line"></div>'+
@@ -12484,7 +12484,7 @@ Game.Launch=function()
 						Game.recalculateGains=1;
 						Game.season=Game.baseSeason;
 						Game.seasonT=-1;
-						PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+						PlaySound('snd/tick.mp3');
 						return false;
 					}
 					else return true;
@@ -13056,7 +13056,7 @@ Game.Launch=function()
 		new Game.Achievement('Rebirth',loc("Ascend at least once."),[21,6]);
 		
 		order=11000;
-		new Game.Achievement('Here you go',loc("Click this achievement's slot.")+'<q>All you had to do was ask.</q>',[1,7]);Game.last.clickFunction=function(){if (!Game.HasAchiev('Here you go')){PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');Game.Win('Here you go');}};
+		new Game.Achievement('Here you go',loc("Click this achievement's slot.")+'<q>All you had to do was ask.</q>',[1,7]);Game.last.clickFunction=function(){if (!Game.HasAchiev('Here you go')){PlaySound('snd/tick.mp3');Game.Win('Here you go');}};
 		
 		order=30000;
 		new Game.Achievement('Resurrection',loc("Ascend <b>%1 times</b>.",10),[21,6]);
@@ -14418,7 +14418,7 @@ Game.Launch=function()
 						//me.close*=0.99;
 						if (Game.Click && Game.lastClickedEl==l('backgroundLeftCanvas'))
 						{
-							if (Game.keys[17] && Game.sesame) {me.type=!me.type;PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');}//ctrl-click on a wrinkler in god mode to toggle its shininess
+							if (Game.keys[17] && Game.sesame) {me.type=!me.type;PlaySound('snd/shimmerClick.mp3');}//ctrl-click on a wrinkler in god mode to toggle its shininess
 							else
 							{
 								Game.playWrinklerSquishSound();
@@ -14718,9 +14718,9 @@ Game.Launch=function()
 						Game.CanClick=0;
 						if (Game.Click && Game.lastClickedEl==l('backgroundLeftCanvas'))
 						{
-							if (Game.specialTab!=Game.specialTabs[i]) {Game.specialTab=Game.specialTabs[i];Game.ToggleSpecialMenu(1);PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/press.mp3');}
-							else {Game.ToggleSpecialMenu(0);PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/press.mp3');}
-							//PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+							if (Game.specialTab!=Game.specialTabs[i]) {Game.specialTab=Game.specialTabs[i];Game.ToggleSpecialMenu(1);PlaySound('snd/press.mp3');}
+							else {Game.ToggleSpecialMenu(0);PlaySound('snd/press.mp3');}
+							//PlaySound('snd/tick.mp3');
 						}
 					}
 					
@@ -14739,7 +14739,7 @@ Game.Launch=function()
 			var moni=Math.pow(Game.santaLevel+1,Game.santaLevel+1);
 			if (Game.cookies>moni && Game.santaLevel<14)
 			{
-				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');
+				PlaySound('snd/shimmerClick.mp3');
 				
 				Game.Spend(moni);
 				Game.santaLevel=(Game.santaLevel+1)%15;
@@ -14926,7 +14926,7 @@ Game.Launch=function()
 		{
 			if (Game.dragonLevel<Game.dragonLevels.length-1 && Game.dragonLevels[Game.dragonLevel].cost())
 			{
-				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/shimmerClick.mp3');
+				PlaySound('snd/shimmerClick.mp3');
 				Game.dragonLevels[Game.dragonLevel].buy();
 				Game.dragonLevel=(Game.dragonLevel+1)%Game.dragonLevels.length;
 				
@@ -14945,8 +14945,8 @@ Game.Launch=function()
 			{
 				triggerAnim(l('specialPic'),'pucker');
 				PlaySound('snd/click'+Math.floor(Math.random()*7+1)+'.mp3',0.3);
-				if (Date.now()-Game.lastClickedSpecialPic>2000) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/growl.mp3');
-				//else if (Math.random()<0.5) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/growl.mp3',0.5+Math.random()*0.2);
+				if (Date.now()-Game.lastClickedSpecialPic>2000) PlaySound('snd/growl.mp3');
+				//else if (Math.random()<0.5) PlaySound('snd/growl.mp3',0.5+Math.random()*0.2);
 				Game.lastClickedSpecialPic=Date.now();
 				if (Game.prefs.particles)
 				{
@@ -16581,11 +16581,11 @@ Game.Launch=function()
 			{
 				//reset the gauge and play a sound if we gained a potential level
 				Game.ascendMeterPercent=0;
-				//PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/levelPrestige.mp3');//a bit too annoying
+				//PlaySound('snd/levelPrestige.mp3');//a bit too annoying
 			}
 			Game.ascendMeterLevel=ascendNowToGet;
 			Game.ascendMeterPercentT=percent;//gauge that fills up as you near your next chip
-			//if (Game.ascendMeterPercentT<Game.ascendMeterPercent) {Game.ascendMeterPercent=0;PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/levelPrestige.mp3',0.5);}
+			//if (Game.ascendMeterPercentT<Game.ascendMeterPercent) {Game.ascendMeterPercent=0;PlaySound('snd/levelPrestige.mp3',0.5);}
 			//if (percent>=1) {Game.ascendMeter.className='';} else Game.ascendMeter.className='filling';
 		}
 		//Game.ascendMeter.style.right=Math.floor(Math.max(0,1-Game.ascendMeterPercent)*100)+'px';
@@ -16899,7 +16899,7 @@ window.onload=function()
 			{
 				var lang=Langs[i];
 				AddEvent(l('langSelect-'+i),'click',function(lang){return function(){callback(lang);};}(i));
-				AddEvent(l('langSelect-'+i),'mouseover',function(lang){return function(){PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/smallTick.mp3',0.75);l('languageSelectHeader').innerHTML=Langs[lang].changeLanguage;};}(i));
+				AddEvent(l('langSelect-'+i),'mouseover',function(lang){return function(){PlaySound('snd/smallTick.mp3',0.75);l('languageSelectHeader').innerHTML=Langs[lang].changeLanguage;};}(i));
 			}
 		}
 		

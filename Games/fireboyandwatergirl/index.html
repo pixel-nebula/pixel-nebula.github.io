@@ -23,7 +23,7 @@
     <title>PixelNebula</title>
 
 
-    <link rel="manifest" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/fireboyandwatergirl/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png">
     
 </head>
@@ -41,7 +41,7 @@
         window.requireNode = window.require;
         window.require = undefined;
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/fireboyandwatergirl/bower_components/requirejs/require.js"></script>
+    <script src="bower_components/requirejs/require.js"></script>
     <div id="root">
         <div id="container"></div>
         <div id="hammer"></div>
@@ -57,7 +57,7 @@
             }
             document.body.appendChild(s);
         }
-        addScript('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/fireboyandwatergirl/version.js', 1, function() {
+        addScript('version.js', 1, function() {
             require(["fireboy-and-watergirl-forest-temple.min.js?v=" + version]);
         });
     </script>

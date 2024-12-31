@@ -1,12 +1,12 @@
 "use strict";
 var scripts = document.getElementsByTagName("script"),
     scriptUrl = scripts[scripts.length - 1].src,
-    root = scriptUrl.split("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/paperyplane/master-loader.js")[0],
+    root = scriptUrl.split("master-loader.js")[0],
     loaders = {
-        unity: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/paperyplane/unity.js", "unity-2020": "unity-2020.js"
+        unity: "unity.js", "unity-2020": "unity-2020.js"
     };
 if (0 <= window.location.href.indexOf("pokiForceLocalLoader") 
-	&& (loaders.unity = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/paperyplane/unity.js", 
+	&& (loaders.unity = "unity.js", 
 		
 		root = "/loaders"), !window.config) throw Error("window.config not found");
 var loader = loaders[window.config.loader];
