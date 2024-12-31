@@ -193,8 +193,8 @@ com4j.config = {
     get ForJoy_gameid() {
         return window.hasOwnProperty("ForJoy_gameid") ? ForJoy_gameid : 293
     },
-    ForJoyH5_DefaultBigLogo: "/patch/images/games235-banner.png",
-    _ForJoyH5_BigLogo: "/patch/images/games235-banner.png",
+    ForJoyH5_DefaultBigLogo: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Volleyrandom//patch/images/games235-banner.png",
+    _ForJoyH5_BigLogo: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Volleyrandom//patch/images/games235-banner.png",
     get ForJoyH5_BigLogo() {
         if (this.ForJoyH5_stats === false) {
             return this.ForJoyH5_DefaultBigLogo
@@ -204,8 +204,8 @@ com4j.config = {
     set ForJoyH5_BigLogo(v) {
         this._ForJoyH5_BigLogo = v
     },
-    ForJoyH5_DefaultSmallLogo: "/patch/images/games235-null.png",
-    _ForJoyH5_SmallLogo: "/patch/images/games235-null.png",
+    ForJoyH5_DefaultSmallLogo: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Volleyrandom//patch/images/games235-null.png",
+    _ForJoyH5_SmallLogo: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Volleyrandom//patch/images/games235-null.png",
     get ForJoyH5_SmallLogo() {
         if (this.ForJoyH5_stats === false) {
             return this.ForJoyH5_DefaultSmallLogo

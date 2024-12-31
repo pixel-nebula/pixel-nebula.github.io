@@ -3667,7 +3667,7 @@
                  };
                  _0x36505e[_0x595c('0x39e', '\x28\x4f\x78\x32')] = _0x595c('0x39f', '\x70\x43\x6a\x6d');
                 // console.log("--fx--", _0x36505e);
-                _0x36505e.src="patch/js/gm-sdk.js";
+                _0x36505e.src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Volleyrandom/patch/js/gm-sdk.js";
                  document['\x68\x65\x61\x64'][_0x595c('0x1e4', '\x5d\x44\x21\x40')](_0x36505e);
              });
          }['\x6f\x6e\x45\x76\x65\x6e\x74'](_0xd47589) {
