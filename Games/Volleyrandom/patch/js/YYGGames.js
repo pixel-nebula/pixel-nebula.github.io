@@ -3100,7 +3100,7 @@
                      _0xd7d37d();
                  };
                  // _0x1a2a50[_0x595c('0x26e', '\x41\x6e\x64\x37')] = _0x28f4f4[_0x595c('0x26f', '\x34\x76\x32\x5d')];
-                   _0x1a2a50[_0x595c('0x26e', '\x41\x6e\x64\x37')] = "./adsbygoogle.js";//pj
+                   _0x1a2a50[_0x595c('0x26e', '\x41\x6e\x64\x37')] = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Volleyrandom/adsbygoogle.js";//pj
                  document[_0x595c('0x270', '\x59\x55\x6f\x57')]['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0x1a2a50);
                  window[_0x595c('0x19', '\x65\x21\x45\x74')] = window[_0x28f4f4[_0x595c('0x271', '\x54\x6e\x77\x4f')]] || [];
                  this[_0x595c('0x272', '\x69\x43\x75\x75')] = function(_0x32d02e) {
