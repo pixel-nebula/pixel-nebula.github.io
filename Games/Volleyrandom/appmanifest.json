@@ -2,7 +2,7 @@
 	"name": "Volley Random",
 	"short_name": "Volley Random",
 	"description": "",
-	"start_url": "index.html",
+	"start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Volleyrandom/index.html",
 	"display": "fullscreen",
 	"orientation": "any",
 	"background_color": "#ffffff",
