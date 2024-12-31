@@ -4,7 +4,7 @@ function initPreloader() {
 
 function initImages() {
     img_mainMenu             = new Image();
-    img_mainMenu.src             = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Worldshardestgame/images/main_menu.png";
+    img_mainMenu.src             = "images/main_menu.png";
     img_mainMenu.addEventListener            ("load", imageLoaded);
     //if (!mobile) {
        /* img_mainMenu_playGame = new Image();

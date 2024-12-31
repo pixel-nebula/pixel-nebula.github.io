@@ -1,9 +1,9 @@
 "use strict";
 var scripts = document.getElementsByTagName("script"),
     scriptUrl = scripts[scripts.length - 1].src,
-    root = scriptUrl.split("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Subwaysurfers/master-loader.js")[0],
+    root = scriptUrl.split("master-loader.js")[0],
     loaders = {
-        unity: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Subwaysurfers/unity.js",
+        unity: "unity.js",
         "unity-beta": "unity-beta.js",
         "unity-2020": "unity-2020.js"
     };
