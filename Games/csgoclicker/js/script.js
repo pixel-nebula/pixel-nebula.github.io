@@ -24540,7 +24540,7 @@ function drawBackground() {
     setTimeout(drawBackground, fps);
     //requestFrameAnimation(drawBackground);
   }
-   image.src = "images/sunburst.png";
+   image.src = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/csgoclicker/images/sunburst.png";
 }
 function drawCase() {
   var image = new Image();

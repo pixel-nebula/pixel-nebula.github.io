@@ -2,7 +2,7 @@
 	"name": "Basket Random",
 	"short_name": "Basket Random",
 	"description": "Basket Random - RHM Interactive",
-	"start_url": "index.html",
+	"start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Basketrandom/index.html",
 	"display": "fullscreen",
 	"orientation": "landscape",
 	"background_color": "#000000",

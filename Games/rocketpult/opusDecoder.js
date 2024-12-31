@@ -1,8 +1,8 @@
 (function () {
 	'use strict';
 	
-	var AUDIO_WORKER_URL = "decodeWorker.js";
-	var FFMPEG_URL = "ffmpeg.js";
+	var AUDIO_WORKER_URL = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/decodeWorker.js";
+	var FFMPEG_URL = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/ffmpeg.js";
 	
 	var workers = [];
 	var queue = [];

@@ -1,6 +1,6 @@
 "use strict";
 
-const OFFLINE_DATA_FILE = "offline.js";
+const OFFLINE_DATA_FILE = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/offline.js";
 const CACHE_NAME_PREFIX = "c3offline";
 const BROADCASTCHANNEL_NAME = "offline";
 const CONSOLE_PREFIX = "[SW] ";
@@ -237,7 +237,7 @@ function UpdateCheck(isFirst)
 				});
 			}
 			
-			// Implicitly add the main page URL to the file list, e.g. "index.html", so we don't have to assume a specific name.
+			// Implicitly add the main page URL to the file list, e.g. "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/index.html", so we don't have to assume a specific name.
 			return GetMainPageUrl()
 			.then(mainPageUrl =>
 			{

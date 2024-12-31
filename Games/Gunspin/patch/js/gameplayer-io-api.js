@@ -21,7 +21,7 @@ GameAPI= {
     },
     "getLogo": function(){
       return {
-        "image": "patch/images/null.png",
+        "image": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Gunspin/patch/images/null.png",
         "action": function() {
           consolel0g("--fx--GameAPI--Branding--getLogo--action--");
           window.open("https://ads.games235.com/");

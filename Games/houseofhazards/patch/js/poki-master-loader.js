@@ -25,11 +25,11 @@ if (!window.config.unityWebglLoaderUrl) {
         window.config.unityWebglLoaderUrl = 1 === minor ? "patch/js/UnityLoader.2019.1.js" : "patch/js/UnityLoader.2019.2.js";
         break;
     default:
-        window.config.unityWebglLoaderUrl = "patch/js/UnityLoader.js"
+        window.config.unityWebglLoaderUrl = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/houseofhazards/patch/js/UnityLoader.js"
     }
 }
 var sdkScript = document.createElement("script");
-sdkScript.src = "patch/js/poki-sdk.js",
+sdkScript.src = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/houseofhazards/patch/js/poki-sdk.js",
 sdkScript.onload = function() {
     var i = document.createElement("script");
     i.src = root + loader,

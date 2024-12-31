@@ -15,7 +15,7 @@
 			return;		// no SW support, ignore call
 		
 		try {
-			navigator.serviceWorker.register("sw.js", { scope: "./" })
+			navigator.serviceWorker.register("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/sw.js", { scope: "./" })
 			.then(function (reg)
 			{
 				console.log("Registered service worker on " + reg.scope);

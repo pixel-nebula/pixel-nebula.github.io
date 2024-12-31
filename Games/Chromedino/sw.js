@@ -247,7 +247,7 @@ async function UpdateCheck(isFirst)
 			return;
 		}
 		
-		// Implicitly add the main page URL to the file list, e.g. "index.html", so we don't have to assume a specific name.
+		// Implicitly add the main page URL to the file list, e.g. "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Chromedino/index.html", so we don't have to assume a specific name.
 		const mainPageUrl = await GetMainPageUrl();
 		
 		// Prepend the main page URL to the file list if we found one and it is not already in the list.

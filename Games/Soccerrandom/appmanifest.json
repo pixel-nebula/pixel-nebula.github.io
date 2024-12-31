@@ -2,7 +2,7 @@
 	"name": "Soccer Random",
 	"short_name": "Soccer Random",
 	"description": "",
-	"start_url": "index.html",
+	"start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Soccerrandom/index.html",
 	"display": "fullscreen",
 	"orientation": "any",
 	"background_color": "#ffffff",

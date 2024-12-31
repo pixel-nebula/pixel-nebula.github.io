@@ -2,7 +2,7 @@
 	"name": "Draw the Hill",
 	"short_name": "Draw the Hill",
 	"description": "",
-	"start_url": "index.html",
+	"start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/index.html",
 	"display": "fullscreen",
 	"orientation": "landscape",
 	"background_color": "#ffffff",
@@ -33,7 +33,7 @@
 			"type": "image/png"
 		},
 		{
-			"src": "icons/icon-512.png",
+			"src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/icons/icon-512.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}

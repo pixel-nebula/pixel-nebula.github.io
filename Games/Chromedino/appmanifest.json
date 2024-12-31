@@ -3,7 +3,7 @@
 	"short_name": "Chrome Dino",
 	"description": "An offline game from Google Chrome",
 	"version": "1.5",
-	"start_url": "index.html",
+	"start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Chromedino/index.html",
 	"display": "fullscreen",
 	"orientation": "any",
 	"background_color": "#ffffff",

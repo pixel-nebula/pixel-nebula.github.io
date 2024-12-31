@@ -3,12 +3,12 @@
   "name": "Paper.io 2",
   "icons": [
     {
-      "src": "images/icon192.png",
+      "src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/paper.io/images/icon192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "images/icon512.png",
+      "src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/paper.io/images/icon512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -7,7 +7,7 @@
   "background_color": "#000000",
   "display": "fullScreen",
   "orientation": "any",
-  "start_url": "index.html",
+  "start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Templerun/index.html",
   "icons": [
     {
       "src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Templerun/img/icons/icon-72x72.png",

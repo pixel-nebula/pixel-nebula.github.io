@@ -71,7 +71,7 @@ if (idToken) {
       .then(data => {})
       .catch(error => {
           console.error('Error validating token:', error);
-          // Clear the cookie and redirect to index.html if token validation fails
+          // Clear the cookie andredirect to index.html if token validation fails
           document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
           window.location.href = '../../index.html';
       });

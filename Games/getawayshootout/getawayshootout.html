@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>PixelNebula</title>
-    <script src="Build/UnityLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/getawayshootout/Build/UnityLoader.js"></script>
     <script src="/js/main.js"></script>
     <style>
       html, body {
@@ -49,7 +49,7 @@ function checkLoginStatus() {
     if (idToken) {
         fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
             .then(response => response.json())
-            .then(data => {var gameInstance = UnityLoader.instantiate("gameContainer", "GetawayShootout.json", { width: window.innerWidth, height: window.innerHeight });window.addEventListener('resize', function() {gameInstance.SetSize(window.innerWidth, window.innerHeight);});})
+            .then(data => {var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/getawayshootout/GetawayShootout.json", { width: window.innerWidth, height: window.innerHeight });window.addEventListener('resize', function() {gameInstance.SetSize(window.innerWidth, window.innerHeight);});})
             .catch(error => {
                 console.error('Error validating token:', error);
                 // Clear the cookie and redirect to index.html if token validation fails

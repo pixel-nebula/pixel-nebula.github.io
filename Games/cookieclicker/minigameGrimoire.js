@@ -329,10 +329,10 @@ M.launch=function()
 				var rect=l('grimoireSpell'+spell.id).getBounds();
 				Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24);
 				
-				if (fail) PlaySound('snd/spellFail.mp3',0.75); else PlaySound('snd/spell.mp3',0.75);
+				if (fail) PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/spellFail.mp3',0.75); else PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/spell.mp3',0.75);
 				return true;
 			}
-			PlaySound('snd/spellFail.mp3',0.75);
+			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/spellFail.mp3',0.75);
 			return false;
 		}
 		
@@ -425,7 +425,7 @@ M.launch=function()
 		for (var i in M.spells)
 		{
 			var me=M.spells[i];
-			AddEvent(l('grimoireSpell'+me.id),'click',function(spell){return function(){PlaySound('snd/tick.mp3');M.castSpell(spell);}}(me));
+			AddEvent(l('grimoireSpell'+me.id),'click',function(spell){return function(){PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');M.castSpell(spell);}}(me));
 		}
 		
 		M.refillTooltip=function(){

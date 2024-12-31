@@ -2,7 +2,7 @@
   "productName": "PolyTrack",
   "version": "0.4.1",
   "private": true,
-  "main": "electron/main.js",
+  "main": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Polytrack2/electron/main.js",
   "devDependencies": {
     "@electron/packager": "^18.3.3",
     "@types/pako": "^0.2.0",

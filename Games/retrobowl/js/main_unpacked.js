@@ -3371,7 +3371,7 @@ var _72 = {
         { x: 802, y: 1977, _Z9: 1, __9: 1, _9k: 0, _ak: 0, _bk: 1, _ck: 1, _dk: 41, _ek: 9, _fk: 0 },
         { x: 802, y: 1977, _Z9: 1, __9: 1, _9k: 0, _ak: 0, _bk: 1, _ck: 1, _dk: 41, _ek: 9, _fk: 0 },
     ],
-    _gk: ["RetroBowl_texture_0.png"],
+    _gk: ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/retrobowl/RetroBowl_texture_0.png"],
     _hk: [{ MipsToGenerate: 0 }],
     _ik: [
         {

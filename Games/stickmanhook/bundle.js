@@ -390,7 +390,7 @@
 }, function(t, e) {
     t.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADEklEQVRogc2asW4TQRCG/3VSQAJxOmhQXEOR8ASJhJCoSAr6uKEObxCJGolIPIBFQZ3Q0tgdZUxJgRwKFAokmwREA3wUexdOts+3u7d39idZWXnXN/N7vDNzezGKCLAk6ZqkpqTrklaSv9nxiqSvki4lfTLGfIth28S4SAqwKumGpJvJa9p4/L1fkvqSTowx56G2G6U8n8Qk12xkxmZsPD5/S9ITSW+BV8DdEMPRhACujs+afyjpHfAGaPrYjxmREMfz5h9LOgO2fYzHIkZEsvPrknrAQd1CYkYk69cR0HExHovYEcnSLhKzqBGZVhZmiqkrIuPvFc3n+dUGXk6bWI6lIjGOpB+ShpL+SFpKXsuZ8R1J9yTdl7Sm/Cjl8QzoG2NeZ9+MVtmBZWPMb4/1K5IeSHoq6bYmO4BZv5aRpJYx5nu4x5EBVoEXwEfgC3AB/KWYwkw2F4B94By4dBCR4lwwawV4Dvz0EHI8b5+nAqwB7z2EAGxI8bvfUhhjLiQ9km3rXdmryJ3yAJseETmdt78zAQ49xDSj3iHGBHs/MnJcvrdQeyRLUux6jst3FlZIguum31p0IT3Hda2rpjHJx+3M5Ej2ZONzPL+8cd0jLUlX7UEeu5W5WQDQdE1brjl7bj2Nj5Bjh3XdRRdiAFwuaIypveYAm3LLXCPnrJVctG62HNf1G3LPDDthvpTC1eZZQ+5Fpx3kSjlcO9t+Q+5FZ6vO7IU9YVx3XN7zbZkHVTqfgq0fQx+fGsaYD5LOHG20gMPKFPznSO7ROLka4df7A+xX4r4Ku4xpbGY/vOH5YaigdQEOPH2YLNRAJ0BMtMgE2p9MPvhtsCyl9kxi16VNGif/gA7/0KZ0CUjNwC4wCLA3pOjRHGHfTsop9svIbWeAbWxyCRGQUrw/saE+LWGkatx/ytgiGbJfqsb/4BorZpEiM/UBj4+gzrwVECvNM18xcbsIwlNzKEOq6rax+6Zbg4gOyeOCSsFGZ1CBgAHzOLHBdqrdCAKOywqIcjKCbRfasocFLRXfa/dkb7HT/9Mq/XT2HywGHGG+XJ2rAAAAAElFTkSuQmCC"
 }, function(t, e, n) {
-    t.exports = n.p + "images/48b008015901097a88b7803f4ad868da-title.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/48b008015901097a88b7803f4ad868da-title.png"
 }, function(t, e) {
     function n(t, e, n, r, i, o, a) {
         try {
@@ -446,7 +446,7 @@
 }, function(t, e) {
     t.exports = "data:image/png;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAUAAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDPooor+lD+WwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAH7BRS0VnzGdwxRUmKKzAkooorO4DvLop2KKz5iSSinbKKzJDb70VJ5dFZ3AdRRRWYEmKKd5dFZ8wuVDqKkorMNQoqTFFZ3IuO2UU6is+YAoqTFFZXQDtlFOoqBWF2Gin0VF2Go/YKKWiseYi4uw0U/FFRcCSiiiswHeXRTsUVnzE6klFLsNFY8wXH0U7y6Km4rsdRRRWYiTFFO8uis+YB1FO2UVjzE6jqKkxRU3JHbKKdRWdx3YUVJiiseYQ/YKKWipuAuw0U+isronUfsFFLRWXMTckooxRWfMVzElFFFZ8xI7ZRTsUVF0BJRRRWXMTzElFO8uis+Ym46ipKKz5gCineXRWfMA6inbKKyuwHUVJiio5ieYdsop1FZXZIUVJiio5gH7BRSbKKz5gH7DRT6Kz5ieYfsFFLRWNw5hdhop+KKzuSf/Z"
 }, function(t, e, n) {
-    t.exports = n.p + "images/93ff3fc5d168e31f731739824e0659b3-SHOP_UI0005.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/93ff3fc5d168e31f731739824e0659b3-SHOP_UI0005.png"
 }, function(t) {
     t.exports = [{
         name: "LEVEL_009",
@@ -1665,57 +1665,57 @@
 }, function(t, e) {
     t.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARUSURBVHhe7Z2NcdpAEIVFGohdAXQAHUAHwRUYVxA6YFwBSQXEFdipAFyBQwXgCrArIPvQZgYTQHsSp9uV95vZkcxwup93q7tbHXLmOI7jOI7jRKDFR/Vst9suHXpkHT5ekZ3jD9kb2YJs3Wq1XvGhdtQKQgJ8pcOQbUBWJEARa7InsgWJ83v3iVMMPIFsRhaTFdmUDKI7x0DjkMUW4pAN2YTMhdmHGuQ7N04q4DHfuDifF2oEeMUcLaIEeGhSb0k2qHPFMQPCjEkTKNOQBv73/M96SSIIidGmAyqOKaxGMGUepBCldkEUe8YhSURJIcicDlhXVAWinuMSefwiQe74vHmQGJhNlQWD/y0Zbnci8F1OU2XicMuXaxZUMSz4ykxtMfMRi3AKXIOvFQrKXDl/dVClQnspvn/xhsA1+doh4DbbHKhC/bxeYqacNBrII89KTJ+T2ocqE9IjJ5wsOsgrz1LEjJPZhioS4h3RPeMQ5JlnLcJ+zIsqIR1IX8hqrzDy5Lwl1Oa9UaAKoLJSkt2jkXdehEJWnMQmVAGsASRsOEkyqAyI+ErAk8tofOFjLPC0T8IPPqZEWoYRH21BPSnkdpV8sEQZ8qIU8sJJohDTQ6SxJMSLkoS69+EyFMXHQNSgaExBpAXHxgMtiMpCXhJtApJcEOqZmnaAIOQuIZqXxBREsm1H2gC1QJ3jmU+LqLol6SSpxxDsldKGpEyXeNZylJiCSFDlIUzSTpJaEOcAF0QZLogyXBBluCDKcEGU4YIoo9JGuW3+bODUqlUSqPvFpgmE4YtCI1g/jfPT/3ijFf+Sz4MpJQgH1yQF/8yMSZiffC6mrCB4lKl1o7QmOiRK0G8bg8cQ9g4XQ0ZwO/mgrgwXRBkuiDJcEGW4IMpwQZThgijDBVFG8EqdF4aSOFVU1ut1tlgsstfXjwvhbrebDQaD7Ooq2saQEPArXulOlnJAELJkbDab7XA43FJFTxqJsR2Px5wiKfF39COTPK/6Wa1Wu8Y+JsIx6/V6nDIZwYKYGkNubm6y93f5NuDlcpnd3dn6mbkZQe7v73cNHMrDw0P29KRp+/B5zAzq19fXQd6xT7vdzuh2x3/VSvCgbsJDMJsqKwbATAzXsIAJQZ6fq88cL3GNOvCFoTJcEGWYEASDclUucY06MCEILfD4rDwIp1jAjCBVeni/3886HRv7MsyMIZNJ+bdaVEmrHiwMd1GaBIxGo6Mxq3M2m9X9buYPNDu4CKbT6dGGPzQEIefzKm/2uwjNFwQ8Pj4eFWHf8B0FNDva+w/Jw6cygUgNmBSkyZgURBKXshJMPMQ9RBkmBZH0fivR3UPcQ5TR2DEEWBxH3EOUYU6QkF5vcRxxD1GGOUFCer3FMcTs3l4jNHMb0GfCBVGGC6IMF0QZLogyXBBluCDKcEGU4YIoo4wgGl8PrpXgtgoWpJW/kAv/ZeZt94FzDLTNiNvKcRzHcRzHcRxHMVn2F2PX8gL1dlaqAAAAAElFTkSuQmCC"
 }, function(t, e, n) {
-    t.exports = n.p + "images/04184d3d7203cb3de14a0a404a84bf97-CHAR_Classic_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/04184d3d7203cb3de14a0a404a84bf97-CHAR_Classic_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/a5940ffe13ef294f944076aa73ef715a-CHAR_StickPlant_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/a5940ffe13ef294f944076aa73ef715a-CHAR_StickPlant_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/42d5a0d39256b37cf6708139269f3c03-CHAR_Momie_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/42d5a0d39256b37cf6708139269f3c03-CHAR_Momie_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/8fa30d5272fb19c67d5e279222f7b794-CHAR_Burger_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/8fa30d5272fb19c67d5e279222f7b794-CHAR_Burger_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/77faf6c9730991489534659f010dfa9b-CHAR_Cactus_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/77faf6c9730991489534659f010dfa9b-CHAR_Cactus_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/e05408b9bd045ed3e43a969146823019-CHAR_AngelStick_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/e05408b9bd045ed3e43a969146823019-CHAR_AngelStick_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/a05fd91e4801f756cf9f0dcb4e5517f8-CHAR_Harry_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/a05fd91e4801f756cf9f0dcb4e5517f8-CHAR_Harry_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/28506e14838e4d45f80d079fe1d2b110-CHAR_Unicorn_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/28506e14838e4d45f80d079fe1d2b110-CHAR_Unicorn_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/2d47eed71e4381405080714e00ec6ad9-CHAR_EvilStick_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/2d47eed71e4381405080714e00ec6ad9-CHAR_EvilStick_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/8e1269876513676187aec62722d9c236-CHAR_RainbowStick_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/8e1269876513676187aec62722d9c236-CHAR_RainbowStick_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/3f8e3b577ebcb0720aa183ffa614f39f-CHAR_StickOuech_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/3f8e3b577ebcb0720aa183ffa614f39f-CHAR_StickOuech_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/61f8a43a4891731ae3b68bb41346767f-CHAR_KingStick_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/61f8a43a4891731ae3b68bb41346767f-CHAR_KingStick_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/3a44cbb3a12ca246c94cc8a421f62a9a-CHAR_Banana_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/3a44cbb3a12ca246c94cc8a421f62a9a-CHAR_Banana_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/c40aa8ce16dc9ca63a65736aa1123119-CHAR_Ninja_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/c40aa8ce16dc9ca63a65736aa1123119-CHAR_Ninja_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/95eae8386a9fa35681d9259a90cfe08e-CHAR_Sheep_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/95eae8386a9fa35681d9259a90cfe08e-CHAR_Sheep_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/fcd3dbdb6348beb40a3122f7eeae8cbd-CHAR_Panda_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/fcd3dbdb6348beb40a3122f7eeae8cbd-CHAR_Panda_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/01434c96a36c2c33d787073809c13b8b-CHAR_SuperStick_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/01434c96a36c2c33d787073809c13b8b-CHAR_SuperStick_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/4ad6740ee1c9057ba7ed74460be8950a-CHAR_RobotMan_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/4ad6740ee1c9057ba7ed74460be8950a-CHAR_RobotMan_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/601a0de398a32bd53366c6fee57ea531-CHAR_Dragon_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/601a0de398a32bd53366c6fee57ea531-CHAR_Dragon_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/44c268a5c1540584f0d010b1c5ef9a7d-CHAR_TikiMan_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/44c268a5c1540584f0d010b1c5ef9a7d-CHAR_TikiMan_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/040f73e99e3473c54f2c9a9f1d88ec9f-CHAR_HotDog_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/040f73e99e3473c54f2c9a9f1d88ec9f-CHAR_HotDog_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/b5716296e3556e7ba7293148c682d305-CHAR_LemonMan_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/b5716296e3556e7ba7293148c682d305-CHAR_LemonMan_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/fac3f46ae48d845f47e31b60b8ea3127-CHAR_Plant_Miniature.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/fac3f46ae48d845f47e31b60b8ea3127-CHAR_Plant_Miniature.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/27f62cb7fcc15256d379f7e940d7fc35-titlepow2.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/27f62cb7fcc15256d379f7e940d7fc35-titlepow2.png"
 }, function(t, e) {
     t.exports = "data:image/png;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAUAAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDw+iiiv3w/QAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKCeYKKKKCQop+wUVfKiLsWinYWimRzDaKfsFFaGfMLRTt9FPlZnzDcUVJRVk3CipKKfKzHmCijFFWSLuNFPop8rM7hRTt3tRVk8w2ipKKfKzPmCipMUVZnzBRRRVcpIUVJiiqIuwop2yiq5SOYbuoqTFFUZ8wUUUVXKZ8xJiiiiqJCinbKKrlIux1FO8uiqMribjRS7KK0M7jqKdu9qKfKyeYNlFOoqzPmCineXRVcpF0OoooqiAop3l0VXKZ3HUU7ZRVE8w2ineXRVcpF0OopdhoqjLmH0UUVoSFFO2UUGfMOop3l0VoZibjRS7KKDO46iiitBXQ/YKKWinyszugop3l0VZndDqKKKfKyAop3l0VZncdRTtlFPlYrobRTvLoqzO6HUU7ZRT5WZcw6iiirJuFFO2UVXKZXQ6ineXRVEH//2Q=="
 }, function(t, e, n) {
-    t.exports = n.p + "images/43373af2c85cc40390455124c8916b67-BumperLarge.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/43373af2c85cc40390455124c8916b67-BumperLarge.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -1851,7 +1851,7 @@
 }, function(t, e) {
     t.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAADkElEQVR4nO3d4W3aQBjG8edYIGxQNigbhE7QbhAyQRkhG5QN4k5QRqAbkAlKNnAmePvBZ2SMARuIjf3+fxISMcScdI/f89mWTgIAAAAAAAAAAAAAAAAAAADQb+Gzdmxmj5Im8ZUbS5p+1m8OQCppU9q2lrQNIbx/xg/eLABm9kXSXNIsvnBbW2VhWIcQft9qp1cHwMy+S1qITm9TKmkpKbm2MlwcADN7kvSi/RKP9iWSXi4NQuMAmNmDpJU44u9JKmlxydDQKADxqE+a/ghas5E0CyF81P2HUd0vmtkv0fn3bippY2Zf6/5DrQpgZq/KzvDRD6mySvB27otnA0DZ761aw8HJAND5vXc2BEcDEMeR8lUp9E8SQng+9mFlAOJUbyPm+EMxPzZFPBaAP5J+fGqT0KZU0rTqYtHBNDCO+3T+sIx15FzuoAKY2T9R+odqFkL4W9ywVwHM7Kfo/CF7KW/YqwAc/S7sVYFdBYhj/6SLFqFV8+IfxSFg1moz0JW9E/zRsQ8wWOP4EI+kGID4/N64syahbbP8zai8AS7sHswdlTfAhVn+Jg/ApJNmoDPxfg8VwLGp1OCRMAwTAXCOADhHAJwjAM4RAOcIgHMEwDkC4BwBcI4AOEcAnCMAzhEA5wiAcwTAOQLgHAFwjgA4RwCcIwDOEQDnCIBzBMA5AuAcAXCOADhHAJwjAM4RAOcIgHMEwDkC4BwBcI4AOEcAnCMAzhEA5wiAcwTAuTwA6y4bgfbli0bkAUg7bAvat+vvPAAsEOnLrr8ZAnw6CAAVwJd1/mYkSXFx4VVXrUHr1vmbUdVGDNqquJp4MQCJmA14sFfpdwGIqUjabg1atS2vIl5eOfRB0lasIDZUB8vI710KjlVg2WqT0JaDo1+qvhewFNPCIZpXbTwIQKwClV9Gby3Ly8bnKu8GhhDeRAiGYqOKZeNz4dgHkmRmryIIfZZKmhTn/WUnnwcIITyLqWFfpZJmpzpfqvFASAzB4latQis2kqZxKD/p5BBQZGZPohr0wUY1jvxc7UfC4hxyruxCEe7TSg06X2pQAXLxauFKLDl/T1JJi6oLPec0fig0hPARQvgmqsG9SJSN9407X7qgAhTFajBXdpI4uWZfaCyRlBy7wFPXVQEoMrNHZWGY32qfOLBVdqk+aTLOn3KzABTFMMyUrVHPncXrbOJrHUJ477oxAAAAAAAAAAAAAAAAuHP/AV7pyirlIjGbAAAAAElFTkSuQmCC"
 }, function(t, e, n) {
-    t.exports = n.p + "images/b6a61ef922faf37de190abe915c17dec-FX_Spawn.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/b6a61ef922faf37de190abe915c17dec-FX_Spawn.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -2161,7 +2161,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/50a9bb3e272fc5be76bc8968f704e959-FinishPlatform.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/50a9bb3e272fc5be76bc8968f704e959-FinishPlatform.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -2512,7 +2512,7 @@
         }]
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/3e903b257d861f09cba9b42a601309c2-CHAR_Classic.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/3e903b257d861f09cba9b42a601309c2-CHAR_Classic.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -3087,7 +3087,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/93b6dcc1155241b085d711c509eaeafa-CHAR_StickPlant.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/93b6dcc1155241b085d711c509eaeafa-CHAR_StickPlant.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -3374,7 +3374,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/857eb4f13173bab620d058806de00f44-CHAR_Momie.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/857eb4f13173bab620d058806de00f44-CHAR_Momie.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -3589,7 +3589,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/7b99e73b8249767bd829cd4c07f9d0ac-CHAR_Burger.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/7b99e73b8249767bd829cd4c07f9d0ac-CHAR_Burger.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -3876,7 +3876,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/c8266212e222c99b3f36be97519fe984-CHAR_Cactus.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/c8266212e222c99b3f36be97519fe984-CHAR_Cactus.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -4187,7 +4187,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/1f8794216bbd48e1185deeeafd38e37f-CHAR_AngelStick.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/1f8794216bbd48e1185deeeafd38e37f-CHAR_AngelStick.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -4546,7 +4546,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/8d8328c8a5f7e4e701d5a1c98ff4660b-CHAR_Corgi.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/8d8328c8a5f7e4e701d5a1c98ff4660b-CHAR_Corgi.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -4809,7 +4809,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/8bcf52d4fa476d7409be921ceabea58b-CHAR_Unicorn.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/8bcf52d4fa476d7409be921ceabea58b-CHAR_Unicorn.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -5072,7 +5072,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/03b7dd5d1ae7134731c278c21bb06289-CHAR_EvilStick.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/03b7dd5d1ae7134731c278c21bb06289-CHAR_EvilStick.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -5359,7 +5359,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/5eb119962664142b51b839f8ffc53e15-CHAR_RainbowStick.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/5eb119962664142b51b839f8ffc53e15-CHAR_RainbowStick.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -5646,7 +5646,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/dc7ebdf3f8d4dcb71c7a59bbf3d11619-CHAR_StickOuech.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/dc7ebdf3f8d4dcb71c7a59bbf3d11619-CHAR_StickOuech.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -5957,7 +5957,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/325db0a37f265c4934bbe2dd1e2f3d3f-CHAR_KingStick.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/325db0a37f265c4934bbe2dd1e2f3d3f-CHAR_KingStick.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -6220,7 +6220,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/78696f12a3c6e8ed46cc5184cc505bcb-CHAR_Banana.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/78696f12a3c6e8ed46cc5184cc505bcb-CHAR_Banana.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -6555,7 +6555,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/3de7d310811b58b61509ccdbc6d52797-CHAR_Ninja.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/3de7d310811b58b61509ccdbc6d52797-CHAR_Ninja.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -6866,7 +6866,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/2c29c41a85e52e34092591b37aaaa278-CHAR_Sheep.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/2c29c41a85e52e34092591b37aaaa278-CHAR_Sheep.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -7201,7 +7201,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/b29eb22ba46e706f4964c7becd276ae2-CHAR_Panda.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/b29eb22ba46e706f4964c7becd276ae2-CHAR_Panda.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -7488,7 +7488,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/49e3dae36bca650873d849bb87b3890b-CHAR_SuperStick.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/49e3dae36bca650873d849bb87b3890b-CHAR_SuperStick.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -7775,7 +7775,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/82d481b0f0594b10f47878452ccb3f6e-CHAR_RobotMan.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/82d481b0f0594b10f47878452ccb3f6e-CHAR_RobotMan.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -8158,7 +8158,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/8aca225d45e83ac265aec132085a8b71-CHAR_Dragon.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/8aca225d45e83ac265aec132085a8b71-CHAR_Dragon.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -8493,7 +8493,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/34b2b8621726d53802db6f864b49cd90-CHAR_TikiMan.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/34b2b8621726d53802db6f864b49cd90-CHAR_TikiMan.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -8828,7 +8828,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/cb00f3da7bca38a121a28feac4b4d9ea-CHAR_HotDog.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/cb00f3da7bca38a121a28feac4b4d9ea-CHAR_HotDog.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -9091,7 +9091,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/4f337cbf23b4fd91307352b5f9a2d5de-CHAR_LemonMan.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/4f337cbf23b4fd91307352b5f9a2d5de-CHAR_LemonMan.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -9354,7 +9354,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/368f37cb016283b9e9dee8c14fab9ad4-CHAR_Plant.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/368f37cb016283b9e9dee8c14fab9ad4-CHAR_Plant.png"
 }, function(t) {
     t.exports = {
         frames: {
@@ -9641,7 +9641,7 @@
         }
     }
 }, function(t, e, n) {
-    t.exports = n.p + "images/1635fd44544c14a10472da2ec5d39197-madbox_blackBG.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/1635fd44544c14a10472da2ec5d39197-madbox_blackBG.png"
 }, function(t, e) {
     t.exports = "data:image/png;base64,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"
 }, function(t, e) {
@@ -10661,9 +10661,9 @@
 }, function(t, e, n) {
     t.exports = n.p + "fonts/Odin-Rounded-Bold.ttf"
 }, function(t, e, n) {
-    t.exports = n.p + "images/54e99c08dfada2fdd1e3b94b699360a4-btn_play.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/54e99c08dfada2fdd1e3b94b699360a4-btn_play.png"
 }, function(t, e, n) {
-    t.exports = n.p + "images/8c92b88b23a65aece8ad09c9fb12a398-B_PlayButton.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/8c92b88b23a65aece8ad09c9fb12a398-B_PlayButton.png"
 }, function(t, e) {
     t.exports = "data:image/png;base64,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"
 }, function(t, e) {
@@ -10673,7 +10673,7 @@
 }, function(t, e) {
     t.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM8AAADPCAYAAABSgYVfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOZSURBVHhe7drLceJAFEBRM3k6CEfiIBwoU0zBVPnDR1ctGcQ5G7EQDQtdvUb2CwCsanc8rm739rE/voSb7d9ff+2a/WqVLyIU1rB2WIt8mFj4bWuENPQDRMO9WTKiIQuLhnu3RESzFxQOj2RkRLMWEg6PaFRAaRHR8OhGBDR5AeGwFXMDmvRm4bA1cwK6+Y3CYatqQH+OR3hadTDcVNzoqTPqaQfPZ8kd0NTr8urJo76sYFjKyKCmXKcXT5z7pQTD2kaEdOt1u1g8wuE3rXHjP3tC/XDRcC+WvvkPjUc43KOlBsGPj6rnjjy4J0vd1If9ncfUYWuuDZFv8diusUVLXKP+w4CnMTqg2fGYOmzZpZ3Yp3g8KGDrRt7sbdsgmhWPLRvPzOTh6Yy66YsHrjj3LEA8EP2PZ+qTNr93eHYmD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EO2Ox5fd28f++BL4Yv/++r+VE5MHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IxAOReCASD0TigUg8EIkHIvFAJB6IdsfjP7u3j/3xJXC0f3/91MmJyQOReCASD0TigQvO/d45+BTPpROBz0weiMQDZ1zbiX2Lx9YNbmPywA9uGSI/xmP6wHUmD3xx6/A4G4/pA5ddDcQ/i/JMpgwN2zY4mrrbuhqP7Rv87OYwbN/YsjIkJr1BQGxR3V1Nr01AbMicnyWtOAGxAXN/z897s4h4UCMehM1fQEA8mBHhHAxZ5EBE3LtR0ZwMXexARNyb0dGcLLLogYj4bUtFc7Lo4idCYk1LR3Oyyod8JSZGWisWAAAAgCteXv4C/ujMgms5yHkAAAAASUVORK5CYII="
 }, function(t, e, n) {
-    t.exports = n.p + "images/71b76f184e6da03830b954235e33ae9c-ShopRewarded.png"
+    t.exports = n.p + "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/stickmanhook/images/71b76f184e6da03830b954235e33ae9c-ShopRewarded.png"
 }, function(t, e, n) {
     t.exports = n.p + "images/081cbab0a3ae7cc413d3a7b6f0de1d27-ShopRewardedLoading.png"
 }, function(t, e, n) {

@@ -1,9 +1,9 @@
 "use strict";
 var scripts = document.getElementsByTagName("script"),
     scriptUrl = scripts[scripts.length - 1].src,
-    root = scriptUrl.split("master-loader.js")[0],
+    root = scriptUrl.split("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/gladihopper/master-loader.js")[0],
     loaders = {
-        unity: "unity.js"
+        unity: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/gladihopper/unity.js"
     };
 if (0 <= window.location.href.indexOf("pokiForceLocalLoader") 
 	&& (loaders.unity = "./unity.js", 

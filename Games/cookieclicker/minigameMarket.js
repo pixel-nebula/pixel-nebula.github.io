@@ -230,7 +230,7 @@ M.launch=function()
 				if (min>=500) Game.Win('No nobility in poverty');
 				me.last=1;
 				me.prev=costInS;
-				PlaySound('snd/cashOut.mp3',0.4);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cashOut.mp3',0.4);
 				return true;
 			}
 			return false;
@@ -253,7 +253,7 @@ M.launch=function()
 				Game.cookiesEarned=Math.max(Game.cookies,Game.cookiesEarned);
 				me.stock-=n;
 				me.last=2;
-				PlaySound('snd/cashIn.mp3',0.4);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cashIn.mp3',0.4);
 				return true;
 			}
 			return false;
@@ -520,14 +520,14 @@ M.launch=function()
 			if (M.graphLines==0) M.graphLines=1;
 			else M.graphLines=0;
 			M.toRedraw=2;
-			PlaySound('snd/tick.mp3');
+			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
 		});
 		AddEvent(l('bankGraphCols'),'click',function(e){
 			if (M.graphCols==0) M.graphCols=1;
 			else M.graphCols=0;
 			M.setCols();
 			M.toRedraw=2;
-			PlaySound('snd/tick.mp3');
+			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
 		});
 		if (l('bankCheatSpeed'))
 		{
@@ -535,7 +535,7 @@ M.launch=function()
 			if (M.secondsPerTick==60) M.secondsPerTick=1/10;
 			else M.secondsPerTick=60;
 			M.toRedraw=2;
-			PlaySound('snd/tick.mp3');
+			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
 			});
 		}
 		
@@ -546,7 +546,7 @@ M.launch=function()
 				Game.Objects['Cursor'].sacrifice(me.cost[0]);
 				M.officeLevel+=1;
 				if (M.officeLevel>=M.offices.length-1) Game.Win('Pyramid scheme');
-				PlaySound('snd/cashIn2.mp3',0.6);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cashIn2.mp3',0.6);
 				Game.SparkleOn(e.target);
 			}
 		});
@@ -555,19 +555,19 @@ M.launch=function()
 			{
 				Game.Spend(M.getBrokerPrice());
 				M.brokers+=1;
-				PlaySound('snd/cashIn2.mp3',0.6);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cashIn2.mp3',0.6);
 				Game.SparkleOn(e.target);
 			}
 		});
 		
 		AddEvent(l('bankLoan1'),'click',function(e){
-			if (M.takeLoan(1)) {PlaySound('snd/cashIn2.mp3',0.6);Game.SparkleOn(e.target);}
+			if (M.takeLoan(1)) {PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cashIn2.mp3',0.6);Game.SparkleOn(e.target);}
 		});
 		AddEvent(l('bankLoan2'),'click',function(e){
-			if (M.takeLoan(2)) {PlaySound('snd/cashIn2.mp3',0.6);Game.SparkleOn(e.target);}
+			if (M.takeLoan(2)) {PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cashIn2.mp3',0.6);Game.SparkleOn(e.target);}
 		});
 		AddEvent(l('bankLoan3'),'click',function(e){
-			if (M.takeLoan(3)) {PlaySound('snd/cashIn2.mp3',0.6);Game.SparkleOn(e.target);}
+			if (M.takeLoan(3)) {PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/cashIn2.mp3',0.6);Game.SparkleOn(e.target);}
 		});
 		
 		for (var i=0;i<M.goodsById.length;i++)
@@ -609,7 +609,7 @@ M.launch=function()
 				}
 				M.checkGraphScale();
 				M.toRedraw=2;
-				PlaySound('snd/tick.mp3');
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
 			}}(i));
 			
 			AddEvent(l('bankGood-'+i+'_1'),'click',function(i){return function(e){

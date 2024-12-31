@@ -17,7 +17,7 @@
         "sizes": "128x128"
     },
     {
-        "src": "/public/icons/icon-144x144.png",
+        "src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Littlealchemy2//public/icons/icon-144x144.png",
         "sizes": "144x144"
     },
     {

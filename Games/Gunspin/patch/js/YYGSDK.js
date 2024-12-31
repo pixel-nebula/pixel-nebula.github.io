@@ -27,12 +27,12 @@ YYG= {
 YYGamesList= [{
     "id": "3814",
     "name": "Princess Glitter Coloring",
-    "thumb": "patch/images/null.png",
+    "thumb": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Gunspin/patch/images/null.png",
     "appName": "Princess-Glitter-Coloring"
   }, {
     "id": "3509",
     "name": "Princess Salon Frozen Party",
-    "thumb": "patch/images/null.png",
+    "thumb": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Gunspin/patch/images/null.png",
     "appName": "Princess-Salon-Frozen-Party"
 }];
 

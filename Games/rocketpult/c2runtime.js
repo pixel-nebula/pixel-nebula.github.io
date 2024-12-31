@@ -4963,7 +4963,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		{
 			var loadDataJsFn = function ()
 			{
-				self.fetchLocalFileViaCordovaAsText("data.js", function (str)
+				self.fetchLocalFileViaCordovaAsText("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/data.js", function (str)
 				{
 					self.loadProject(JSON.parse(str));
 					
@@ -5016,7 +5016,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			xhr = new XMLHttpRequest();
 		
 		// Use the project data URL if provided (used in preview mode), otherwise default to data.js or data.json depending on the platform.
-		var datajs_filename = this.projectDataUrl || "data.js";
+		var datajs_filename = this.projectDataUrl || "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/data.js";
 		
 		// Work around stupid WACK limitation
 		if (this.isWindows8App || this.isWindowsPhone8 || this.isWindowsPhone81 || this.isWindows10)

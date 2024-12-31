@@ -3,7 +3,7 @@
 // NOTE due to some VERY frustrating security requirements when running in a
 // WKWebView this file will be loaded with ffmpeg.js appended to the start
 if (!self.FFMPEG)
-	importScripts("ffmpeg.js");
+	importScripts("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/rocketpult/ffmpeg.js");
 
 self.onmessage = function (e)
 {

@@ -225,7 +225,7 @@ M.launch=function()
 			var y=box.top-box2.top;
 			div.style.transform='translate('+(x)+'px,'+(y)+'px)';
 			l('templeGodPlaceholder'+M.dragging.id).style.display='inline-block';
-			PlaySound('snd/tick.mp3');
+			PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
 		}
 		M.dropGod=function()
 		{
@@ -237,7 +237,7 @@ M.launch=function()
 			{
 				if (M.dragging.slot!=-1) l('templeSlot'+M.dragging.slot).appendChild(div);
 				else l('templeGodPlaceholder'+(M.dragging.id)).parentNode.insertBefore(div,l('templeGodPlaceholder'+(M.dragging.id)));
-				PlaySound('snd/sell1.mp3',0.75);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/sell1.mp3',0.75);
 			}
 			else if (M.slotHovered!=-1)//dropping on a slot
 			{
@@ -262,8 +262,8 @@ M.launch=function()
 				l('templeSlot'+M.slotHovered).appendChild(div);
 				M.slotGod(M.dragging,M.slotHovered);
 				
-				PlaySound('snd/tick.mp3');
-				PlaySound('snd/spirit.mp3',0.5);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/tick.mp3');
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/spirit.mp3',0.5);
 				
 				var rect=div.getBounds();
 				Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24+32-TopBarOffset);
@@ -274,7 +274,7 @@ M.launch=function()
 				other.parentNode.insertBefore(div,other);
 				other.style.display='none';
 				M.slotGod(M.dragging,-1);
-				PlaySound('snd/sell1.mp3',0.75);
+				PlaySound('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/cookieclicker/snd/sell1.mp3',0.75);
 			}
 			M.dragging=false;
 		}

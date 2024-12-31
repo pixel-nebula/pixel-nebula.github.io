@@ -4,7 +4,7 @@
   "short_name": "ubg235",
   "icons": [    
     {
-      "src": "/patch/images/null.png",
+      "src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Littlealchemy2//patch/images/null.png",
       "sizes": "512x512",
       "purpose": "maskable",
       "type": "image/png"

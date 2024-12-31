@@ -3,7 +3,7 @@
   "name": "Fireboy & Watergirl: Elements",
   "icons": [
     {
-      "src": "icon-60x60.png",
+      "src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/fireboyandwatergirl/icon-60x60.png",
       "type": "image/png",
       "sizes": "60x60"
     },
@@ -13,7 +13,7 @@
       "sizes": "120x120"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/fireboyandwatergirl//index.html",
   "display": "fullscreen",
   "orientation": "landscape"
 }

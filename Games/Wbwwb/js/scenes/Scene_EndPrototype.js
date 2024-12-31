@@ -1,6 +1,6 @@
 /*Game.addToManifest({
-	end_prototype: "sprites/quote/end_prototype.png",
-	gunshot: "sounds/gunshot.mp3"
+	end_prototype: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sprites/quote/end_prototype.png",
+	gunshot: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Wbwwb/sounds/gunshot.mp3"
 });
 
 function Scene_EndPrototype(){

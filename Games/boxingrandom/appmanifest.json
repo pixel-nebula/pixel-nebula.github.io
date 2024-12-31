@@ -2,7 +2,7 @@
 	"name": "Boxing Random",
 	"short_name": "Boxing Random",
 	"description": "",
-	"start_url": "index.html",
+	"start_url": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/boxingrandom/index.html",
 	"display": "fullscreen",
 	"orientation": "landscape",
 	"background_color": "#000000",

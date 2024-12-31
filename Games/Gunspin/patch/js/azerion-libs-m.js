@@ -877,7 +877,7 @@ var enableAnalytics;
         ,
         Object.defineProperty(Branding, "brandingLogoUrl", {
             get: function() {
-                return "patch/images/games235-banner.png";
+                return "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Gunspin/patch/images/games235-banner.png";
                 var imageName;
                 switch (Utils.isOnDevice() || Hosts.isAirfi() ? Utils.ASSET_LOCATION = "assets/" : "fbrq.io" === Utils.getSourceSite(!0) && (Utils.ASSET_LOCATION = "https://" + window.location.host + "/@azerion/splash/assets/"),
                 Utils.getBrandingDomain()) {

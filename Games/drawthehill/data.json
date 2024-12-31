@@ -24,7 +24,7 @@
                 1,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 576415532799638, [["images/shared-0-sheet0.png", 638622, 1, 1198, 250, 250, false, 1, 0, 0.5, [["Image Point 1", 0, 0.5]], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 576415532799638, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 1, 1198, 250, 250, false, 1, 0, 0.5, [["Image Point 1", 0, 0.5]], []]]]],
                 [["Physics", 1, 740786824614366, 0]],
                 false,
                 false,
@@ -53,7 +53,7 @@
                         544958242726354,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 824,
                                 1056,
@@ -78,7 +78,7 @@
                         147384644208470,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 769,
                                 1595,
@@ -122,7 +122,7 @@
                         327300017098839,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 813,
                                 787,
@@ -164,7 +164,7 @@
                         234214011538772,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 813,
                                 515,
@@ -194,7 +194,7 @@
                             ]
                         ]
                     ],
-                    ["Animation 5", 5, false, 1, 0, false, 708683792690118, [["images/shared-0-sheet0.png", 638622, 257, 1589, 250, 250, false, 1, 0.5, 0.5, [], []]]]
+                    ["Animation 5", 5, false, 1, 0, false, 708683792690118, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 257, 1589, 250, 250, false, 1, 0.5, 0.5, [], []]]]
                 ],
                 [
                     ["Physics", 1, 742654399978301, 0],
@@ -227,7 +227,7 @@
                         131161827627143,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 1,
                                 1921,
@@ -271,7 +271,7 @@
                         501664057360172,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 1,
                                 1921,
@@ -332,7 +332,7 @@
                         423271148054336,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 1,
                                 279,
@@ -366,7 +366,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 413354418985314, [["images/shared-0-sheet2.png", 2004, 65, 33, 25, 25, false, 1, 0, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 413354418985314, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 65, 33, 25, 25, false, 1, 0, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -384,7 +384,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 837645500673645, [["images/shared-0-sheet2.png", 2004, 65, 33, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 837645500673645, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 65, 33, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -403,7 +403,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 880918540583755, [["images/shared-0-sheet2.png", 2004, 97, 33, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 880918540583755, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 97, 33, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -413,7 +413,7 @@
                 11,
                 null
             ],
-            ["TiledBackground", 5, false, [], 0, 0, ["images/tiledbackground-sheet0.png", 85424, 0, 0, 256, 256, false], null, [], false, false, 622544601373896, [], null, 12, [1, 1]],
+            ["TiledBackground", 5, false, [], 0, 0, ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/tiledbackground-sheet0.png", 85424, 0, 0, 256, 256, false], null, [], false, false, 622544601373896, [], null, 12, [1, 1]],
             [
                 "SPAWMER",
                 0,
@@ -422,7 +422,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 478666536639580, [["images/shared-0-sheet2.png", 2004, 97, 65, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 478666536639580, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 97, 65, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -441,9 +441,9 @@
                 0,
                 null,
                 [
-                    ["Animation 1", 5, false, 1, 0, false, 455075247374611, [["images/shared-0-sheet2.png", 2004, 33, 65, 25, 25, false, 1, 0.5, 0.5, [], []]]],
-                    ["Animation 2", 5, false, 1, 0, false, 794354865362006, [["images/shared-0-sheet2.png", 2004, 65, 65, 25, 25, false, 1, 0.5, 0.5, [], [0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5]]]],
-                    ["Animation 3", 5, false, 1, 0, false, 645921698475353, [["images/shared-0-sheet2.png", 2004, 97, 97, 25, 25, false, 1, 0.5, 0.5, [], [0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5]]]]
+                    ["Animation 1", 5, false, 1, 0, false, 455075247374611, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 33, 65, 25, 25, false, 1, 0.5, 0.5, [], []]]],
+                    ["Animation 2", 5, false, 1, 0, false, 794354865362006, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 65, 65, 25, 25, false, 1, 0.5, 0.5, [], [0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5]]]],
+                    ["Animation 3", 5, false, 1, 0, false, 645921698475353, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 97, 97, 25, 25, false, 1, 0.5, 0.5, [], [0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5]]]]
                 ],
                 [],
                 false,
@@ -462,7 +462,7 @@
                 0,
                 0,
                 null,
-                [["Default", 5, false, 1, 0, false, 515017803426676, [["images/shared-0-sheet0.png", 638622, 1, 1, 512, 512, false, 1, 0.5, 0.5, [], []]]]],
+                [["Default", 5, false, 1, 0, false, 515017803426676, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 1, 1, 512, 512, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -492,7 +492,7 @@
                         726116307095988,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 1,
                                 1921,
@@ -553,7 +553,7 @@
                         154427877675247,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 824,
                                 1056,
@@ -578,7 +578,7 @@
                         980267372878554,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 769,
                                 1595,
@@ -620,7 +620,7 @@
                         335067345053208,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 813,
                                 787,
@@ -662,7 +662,7 @@
                         145428324847501,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 813,
                                 515,
@@ -723,7 +723,7 @@
                         926998626539845,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 1,
                                 279,
@@ -767,7 +767,7 @@
                         965445418367382,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 256,
                                 1079,
@@ -812,7 +812,7 @@
                         221167178111795,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 515,
                                 1,
@@ -840,7 +840,7 @@
             ["Dictionary", 11, false, [], 0, 0, null, null, [], true, false, 515538924299166, [], null, 26, null],
             ["LocalStorage", 12, false, [], 0, 0, null, null, [], false, false, 887874031771060, [], null, 27, null, []],
             ["t_score", 13, false, [], 0, 0, null, null, [], false, false, 573833223934618, [], null, 28, null],
-            ["TiledBackground2", 5, false, [], 0, 0, ["images/tiledbackground2-sheet0.png", 126, 0, 0, 32, 32, false], null, [], false, false, 950998002372100, [], null, 29, [1, 1]],
+            ["TiledBackground2", 5, false, [], 0, 0, ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/tiledbackground2-sheet0.png", 126, 0, 0, 32, 32, false], null, [], false, false, 950998002372100, [], null, 29, [1, 1]],
             [
                 "pencil",
                 0,
@@ -860,7 +860,7 @@
                         401559493405539,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 1,
                                 515,
@@ -917,7 +917,7 @@
                         749215188360814,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 769,
                                 1851,
@@ -979,7 +979,7 @@
                         162209152672598,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 193,
                                 449,
@@ -1024,7 +1024,7 @@
                         347050301305311,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 205,
                                 1,
@@ -1074,7 +1074,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 830033808744084, [["images/shared-0-sheet2.png", 2004, 1, 97, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 830033808744084, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 1, 97, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -1092,7 +1092,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 503609093946918, [["images/shared-0-sheet2.png", 2004, 1, 97, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 503609093946918, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 1, 97, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -1110,7 +1110,7 @@
                 1,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 369255703758673, [["images/shared-0-sheet2.png", 2004, 33, 97, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 369255703758673, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 33, 97, 25, 25, false, 1, 0.5, 0.5, [], []]]]],
                 [["Physics", 1, 606765992768226, 0]],
                 false,
                 false,
@@ -1138,10 +1138,10 @@
                         false,
                         177776613678695,
                         [
-                            ["images/shared-0-sheet0.png", 638622, 257, 1337, 250, 250, false, 1, 0.5, 0.5, [], []],
-                            ["images/shared-0-sheet0.png", 638622, 513, 1343, 250, 250, false, 1, 0.5, 0.5, [], []],
-                            ["images/shared-0-sheet0.png", 638622, 769, 1343, 250, 250, false, 1, 0.5, 0.5, [], []],
-                            ["images/shared-0-sheet0.png", 638622, 1, 1450, 250, 250, false, 1, 0.5, 0.5, [], []]
+                            ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 257, 1337, 250, 250, false, 1, 0.5, 0.5, [], []],
+                            ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 513, 1343, 250, 250, false, 1, 0.5, 0.5, [], []],
+                            ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 769, 1343, 250, 250, false, 1, 0.5, 0.5, [], []],
+                            ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 1, 1450, 250, 250, false, 1, 0.5, 0.5, [], []]
                         ]
                     ]
                 ],
@@ -1167,7 +1167,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 920356329350633, [["images/shared-0-sheet1.png", 30506, 131, 216, 100, 100, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 920356329350633, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png", 30506, 131, 216, 100, 100, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -1185,7 +1185,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 103730562790966, [["images/shared-0-sheet2.png", 2004, 65, 97, 20, 20, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 103730562790966, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 65, 97, 20, 20, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -1214,7 +1214,7 @@
                         521052755337070,
                         [
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 1,
                                 769,
@@ -1228,7 +1228,7 @@
                                 [-0.09375, -0.09375, 0, -0.4453125, 0.078125, -0.0859375, 0.078125, 0, 0.078125, 0.078125, 0, 0.4375, -0.09375, 0.0859375, -0.09375, 0]
                             ],
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 261,
                                 769,
@@ -1242,7 +1242,7 @@
                                 [-0.2109375, -0.2109375, 0, -0.4453125, 0.1484375, -0.15625, 0.15625, 0, 0.1484375, 0.1484375, 0, 0.4375, -0.2109375, 0.203125, -0.234375, 0]
                             ],
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 131,
                                 769,
@@ -1255,9 +1255,9 @@
                                 [],
                                 [-0.2890625, -0.2890625, 0, -0.4453125, 0.21875, -0.2265625, 0.2578125, 0, 0.21875, 0.21875, 0, 0.4453125, -0.2890625, 0.28125, -0.3515625, 0]
                             ],
-                            ["images/coin_-sheet0.png", 64606, 1, 513, 128, 128, false, 1, 0.5, 0.5, [], [-0.3125, -0.3125, 0, -0.4453125, 0.265625, -0.2734375, 0.34375, 0, 0.265625, 0.265625, 0, 0.4375, -0.3125, 0.3046875, -0.4296875, 0]],
+                            ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png", 64606, 1, 513, 128, 128, false, 1, 0.5, 0.5, [], [-0.3125, -0.3125, 0, -0.4453125, 0.265625, -0.2734375, 0.34375, 0, 0.265625, 0.265625, 0, 0.4375, -0.3125, 0.3046875, -0.4296875, 0]],
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 261,
                                 513,
@@ -1270,9 +1270,9 @@
                                 [],
                                 [-0.3203125, -0.3203125, 0, -0.4453125, 0.296875, -0.3046875, 0.40625, 0, 0.296875, 0.296875, 0, 0.4375, -0.3203125, 0.3125, -0.453125, 0]
                             ],
-                            ["images/coin_-sheet0.png", 64606, 131, 513, 128, 128, false, 1, 0.5, 0.5, [], [-0.3203125, -0.3203125, 0, -0.4453125, 0.3125, -0.3203125, 0.4375, 0, 0.3125, 0.3125, 0, 0.4375, -0.3203125, 0.3125, -0.453125, 0]],
+                            ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png", 64606, 131, 513, 128, 128, false, 1, 0.5, 0.5, [], [-0.3203125, -0.3203125, 0, -0.4453125, 0.3125, -0.3203125, 0.4375, 0, 0.3125, 0.3125, 0, 0.4375, -0.3203125, 0.3125, -0.453125, 0]],
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 1,
                                 257,
@@ -1286,7 +1286,7 @@
                                 [-0.3046875, -0.3046875, 0, -0.4453125, 0.3125, -0.3203125, 0.4453125, 0, 0.3125, 0.3125, 0, 0.4375, -0.3046875, 0.296875, -0.4140625, 0]
                             ],
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 261,
                                 257,
@@ -1300,7 +1300,7 @@
                                 [-0.2734375, -0.2734375, 0, -0.4453125, 0.3046875, -0.3125, 0.421875, 0, 0.3046875, 0.3046875, 0, 0.4375, -0.2734375, 0.265625, -0.3515625, 0]
                             ],
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 131,
                                 257,
@@ -1314,7 +1314,7 @@
                                 [-0.2265625, -0.2265625, 0, -0.453125, 0.28125, -0.2890625, 0.34375, 0, 0.28125, 0.28125, 0, 0.4453125, -0.2265625, 0.21875, -0.265625, 0]
                             ],
                             [
-                                "images/coin_-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/coin_-sheet0.png",
                                 64606,
                                 257,
                                 1,
@@ -1359,7 +1359,7 @@
                         585974702946158,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 1,
                                 409,
@@ -1409,7 +1409,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 593311285041000, [["images/shared-0-sheet1.png", 30506, 1, 140, 128, 137, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 593311285041000, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png", 30506, 1, 140, 128, 137, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -1438,7 +1438,7 @@
                         104654854821820,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 558,
                                 515,
@@ -1480,7 +1480,7 @@
                         292349495317453,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 558,
                                 796,
@@ -1522,7 +1522,7 @@
                         370233294955755,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 303,
                                 798,
@@ -1564,7 +1564,7 @@
                         771062091208443,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 1,
                                 917,
@@ -1606,7 +1606,7 @@
                         696351097339989,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 303,
                                 515,
@@ -1667,7 +1667,7 @@
                         118815808632057,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 558,
                                 1077,
@@ -1728,7 +1728,7 @@
                         947187049473525,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 1,
                                 1,
@@ -1761,7 +1761,7 @@
                 1,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 768228934660955, [["images/shared-0-sheet2.png", 2004, 1, 1, 40, 40, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 768228934660955, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet2.png", 2004, 1, 1, 40, 40, false, 1, 0.5, 0.5, [], []]]]],
                 [["Anchor", 18, 165170804983360, 54]],
                 false,
                 false,
@@ -1779,7 +1779,7 @@
                 0,
                 0,
                 null,
-                [["Animation 1", 5, false, 1, 0, false, 979774574546524, [["images/shared-0-sheet0.png", 638622, 513, 1595, 250, 250, false, 1, 0.5, 0.5, [], []]]]],
+                [["Animation 1", 5, false, 1, 0, false, 979774574546524, [["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png", 638622, 513, 1595, 250, 250, false, 1, 0.5, 0.5, [], []]]]],
                 [],
                 false,
                 false,
@@ -1808,7 +1808,7 @@
                         521786394855407,
                         [
                             [
-                                "images/shared-0-sheet0.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet0.png",
                                 638622,
                                 1,
                                 1702,
@@ -1872,7 +1872,7 @@
                         955635700370072,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 131,
                                 1,
@@ -1933,7 +1933,7 @@
                         201166915449640,
                         [
                             [
-                                "images/shared-0-sheet1.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet1.png",
                                 30506,
                                 131,
                                 318,
@@ -1977,7 +1977,7 @@
                         246812917323553,
                         [
                             [
-                                "images/shared-0-sheet3.png",
+                                "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/drawthehill/images/shared-0-sheet3.png",
                                 98,
                                 0,
                                 0,

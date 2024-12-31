@@ -3613,7 +3613,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		var self = this;
 		if (this.isWKWebView)
 		{
-			this.fetchLocalFileViaCordovaAsText("data.js", function (str)
+			this.fetchLocalFileViaCordovaAsText("https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/eggycar/data.js", function (str)
 			{
 				self.loadProject(JSON.parse(str));
 			}, function (err)
@@ -3627,7 +3627,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			xhr = new ActiveXObject("Microsoft.XMLHTTP");
 		else
 			xhr = new XMLHttpRequest();
-		var datajs_filename = "data.js";
+		var datajs_filename = "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/eggycar/data.js";
 		if (this.isWindows8App || this.isWindowsPhone8 || this.isWindowsPhone81 || this.isWindows10)
 			datajs_filename = "data.json";
 		xhr.open("GET", datajs_filename, true);
@@ -4234,7 +4234,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		{
 			var loaderImage = new Image();
 			loaderImage.crossOrigin = "anonymous";
-			this.setImageSrc(loaderImage, "loading-logo.png");
+			this.setImageSrc(loaderImage, "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/eggycar/loading-logo.png");
 			this.loaderlogos = {
 				logo: loaderImage
 			};
