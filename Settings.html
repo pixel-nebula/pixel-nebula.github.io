@@ -667,7 +667,8 @@ settingsContainer.addEventListener('click', (event) => {
     let cookieName = 'backgroundtype';
     let cookieValue = getCookie(cookieName);
 
-
+    console.log(cookieName);  // Debugging the value
+    console.log(cookieValue);  // Debugging the value
     if (cookieValue === '1') {
         setCookie(cookieName, '2', 100);
     } else if (cookieValue === '2') {
