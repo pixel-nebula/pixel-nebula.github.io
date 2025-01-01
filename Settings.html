@@ -24,7 +24,7 @@
             align-items: center;
             padding-top: 0px;
             overflow-y: auto;
-            visibility: hidden;
+            visibility: visible;
         }
         .header {
             margin-top: 20px;
@@ -275,6 +275,54 @@
             opacity: 0; /* Fade out */
         }
     }
+    .settings-container{
+        margin-top: 50px;
+    }
+
+    .settings-title {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .option {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #131313;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #fff;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+      border-radius: 4px;
+      transition: filter 0.3s ease;
+    }
+
+    .option:hover::before {
+      filter: blur(2px);
+    }
+
+    .option.selected {
+      outline: 2px solid white;
+    }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
@@ -286,7 +334,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="checkLoginStatus()">
+<body onload="">
     <div style="visibility: hidden;" id="particles-js"></div>
     <div style="visibility: hidden;" id="drops"></div>
     <!-- Menu -->
@@ -306,8 +354,16 @@
 
     <div class="header">
         <h2>Pixel Nebula</h2>
-        <h3>Under Development!</h3>
     </div>
+
+    <div class="settings-container">
+        <h2 class="settings-title">Background</h2>
+        <div class="options">
+          <button id="option1" class="option selected">Option 1</button>
+          <button id="option2" class="option">Option 2</button>
+        </div>
+      </div>
+
 
     <footer>
         &copy; 2024 Pixel Nebula. All rights reserved. | pixelnebulacontact@gmail.com | <a href="termsofservice.html" style="text-decoration: none; color: blue;">TOS</a>
@@ -317,7 +373,7 @@
         function checkLoginStatus() {
             let cookieName = 'backgroundtype';
             let cookieValue = getCookie(cookieName);
-
+            
             if (cookieValue === '1') {
               document.getElementById('particles-js').style.visibility = 'visible';
             } else if (cookieValue === '2') {
@@ -326,6 +382,20 @@
                 setCookie(cookieName, '1', 100);
                 document.getElementById('particles-js').style.visibility = 'visible';
             }
+
+            const option1 = document.getElementById('option1');
+            const option2 = document.getElementById('option2');
+    
+            if (cookieValue === '1') {
+                option1Button.classList.add('selected');
+                option2Button.classList.remove('selected');
+                option2Button.classList.add('option');  
+            } else {
+                option2Button.classList.add('selected');
+                option1Button.classList.remove('selected');
+                option1Button.classList.add('option');  
+            }
+
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.split('=').map(c => c.trim());
         acc[key] = value;
@@ -369,19 +439,6 @@
             window.location.href = 'index.html';
         }
 
-        document.getElementById('searchInput').addEventListener('input', function() {
-            let filter = this.value.toLowerCase();
-            let gameItems = document.querySelectorAll('.game-item');
-            
-            gameItems.forEach(function(item) {
-                let gameTitle = item.querySelector('h3').textContent.toLowerCase();
-                if (gameTitle.includes(filter)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdown-menu');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
@@ -592,4 +649,29 @@
     }
   
     setInterval(generateSourceDrop, 60); // Adjusted interval to spawn fewer drops
+
+
+    const settingsContainer = document.querySelector('.settings-container .options');
+
+// Add an event listener to the container
+settingsContainer.addEventListener('click', (event) => {
+  // Check if a button was clicked
+  if (event.target.tagName === 'BUTTON') {
+    // Remove the 'selected' class from all buttons
+    const buttons = settingsContainer.querySelectorAll('.option');
+    buttons.forEach(button => button.classList.remove('selected'));
+
+    // Add the 'selected' class to the clicked button
+    event.target.classList.add('selected');
+    let backgroundType = getCookie('backgroundtype');
+
+    // Toggle the value between 1 and 2
+    if (backgroundType === '1') {
+      setCookie('backgroundtype', '2', 7); // Set cookie to 2, with 7 days expiration
+    } else {
+      setCookie('backgroundtype', '1', 7); // Set cookie to 1, with 7 days expiration
+    }
+  }
+});
+
   </script>
