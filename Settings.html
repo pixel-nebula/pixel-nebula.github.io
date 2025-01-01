@@ -387,13 +387,13 @@
             const option2 = document.getElementById('option2');
     
             if (cookieValue === '1') {
-                option1Button.classList.add('selected');
-                option2Button.classList.remove('selected');
-                option2Button.classList.add('option');  
+                option1.classList.add('selected');
+                option2.classList.remove('selected');
+                option2.classList.add('option');  
             } else {
-                option2Button.classList.add('selected');
-                option1Button.classList.remove('selected');
-                option1Button.classList.add('option');  
+                option2.classList.add('selected');
+                option1.classList.remove('selected');
+                option1.classList.add('option');  
             }
 
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
