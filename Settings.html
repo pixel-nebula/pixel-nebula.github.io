@@ -663,13 +663,15 @@ settingsContainer.addEventListener('click', (event) => {
 
     // Add the 'selected' class to the clicked button
     event.target.classList.add('selected');
-    let backgroundType = getCookie('backgroundtype');
 
-    // Toggle the value between 1 and 2
-    if (backgroundType === '1') {
-      setCookie('backgroundtype', '2', 7); // Set cookie to 2, with 7 days expiration
-    } else {
-      setCookie('backgroundtype', '1', 7); // Set cookie to 1, with 7 days expiration
+    let cookieName = 'backgroundtype';
+    let cookieValue = getCookie(cookieName);
+
+
+    if (cookieValue === '1') {
+        setCookie(cookieName, '2', 100);
+    } else if (cookieValue === '2') {
+        setCookie(cookieName, '1', 100);
     }
   }
 });
