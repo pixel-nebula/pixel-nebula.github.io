@@ -671,8 +671,12 @@ settingsContainer.addEventListener('click', (event) => {
     console.log(cookieValue);  // Debugging the value
     if (cookieValue === '1') {
         setCookie(cookieName, '2', 100);
+        document.getElementById('drops').style.visibility = 'visible';
+        document.getElementById('particles-js').style.visibility = 'hidden';
     } else if (cookieValue === '2') {
         setCookie(cookieName, '1', 100);
+        document.getElementById('drops').style.visibility = 'hidden';
+        document.getElementById('particles-js').style.visibility = 'visible';
     }
   }
 });
