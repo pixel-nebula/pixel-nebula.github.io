@@ -657,6 +657,9 @@
 settingsContainer.addEventListener('click', (event) => {
   // Check if a button was clicked
   if (event.target.tagName === 'BUTTON') {
+    if (event.target.classList.contains('selected')) {
+      return; // Prevent further actions if the button is already selected
+    }
     // Remove the 'selected' class from all buttons
     const buttons = settingsContainer.querySelectorAll('.option');
     buttons.forEach(button => button.classList.remove('selected'));
