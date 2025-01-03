@@ -15,7 +15,6 @@
   gtag('config', 'G-C130NKT3ZP');
 </script>
   <body onload="checkLoginStatus()">
-    <script src="/js/main.js"></script>
     <div id="ruffle" width="100%" height="100%"></div>
     <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Tetris/ruffle.js"></script>
     <script>
@@ -28,7 +27,7 @@
         player.style.width = "100%";
         player.style.height = "100%";
         container.appendChild(player);
-        player.load("flashtetris.swf");
+        player.load("https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Tetris/flashtetris.swf");
       });
     </script>
     <script>
