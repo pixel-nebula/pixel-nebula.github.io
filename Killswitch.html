@@ -11,27 +11,21 @@
             const form = event.target;
             const formData = new FormData(form);
 
-            const data = {
-                action: formData.get('action'),
-                code: formData.get('code')
-            };
+            // Build the URL with query parameters
+            const action = formData.get('action');
+            const code = formData.get('code');
+            const baseUrl = form.action;
+            const url = `${baseUrl}?action=${encodeURIComponent(action)}&code=${encodeURIComponent(code)}`;
 
-            // Get the URL that the form submits to
-            const url = form.action;
-
-            // Display the URL used for the request (correctly logging the URL)
+            // Display the URL used for the request
             document.getElementById('response').textContent = `URL: ${url}\n`;
 
             try {
+                // Make a GET request to the constructed URL
                 const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
+                    method: 'GET', // Use GET since the API expects query parameters
                 });
 
-                // Check if the response is OK (status 200)
                 if (!response.ok) {
                     document.getElementById('response').textContent += `\nError: ${response.status} ${response.statusText}`;
                     return;
@@ -49,7 +43,7 @@
 </head>
 <body>
     <h1>Edit URL Parameters</h1>
-    <form id="urlForm" action="https://tk3zoi0r00.execute-api.us-east-2.amazonaws.com/default/S3Killswitch?" method="POST" onsubmit="handleSubmit(event)">
+    <form id="urlForm" action="https://tk3zoi0r00.execute-api.us-east-2.amazonaws.com/default/S3Killswitch" method="GET" onsubmit="handleSubmit(event)">
         <label for="action">Action:</label>
         <select id="action" name="action" required>
             <option value="disable">Disable</option>
@@ -57,7 +51,7 @@
         </select><br><br>
 
         <label for="code">Code:</label>
-        <input type="text" id="code" name="code" value="1234" required><br><br>
+        <input type="text" id="code" name="code" value="password" required><br><br>
 
         <button type="submit">Submit</button>
     </form>
