@@ -31,11 +31,18 @@
                     body: JSON.stringify(data)
                 });
 
-                // Display response as formatted JSON
+                // Check if the response is OK (status 200)
+                if (!response.ok) {
+                    document.getElementById('response').textContent += `\nError: ${response.status} ${response.statusText}`;
+                    return;
+                }
+
+                // Attempt to parse the JSON response
                 const result = await response.json();
                 document.getElementById('response').textContent += `Response: ${JSON.stringify(result, null, 2)}`;
             } catch (error) {
-                document.getElementById('response').textContent += `Error: ${error.message}`;
+                // Handle any errors that occur during the fetch
+                document.getElementById('response').textContent += `\nError: ${error.message}`;
             }
         }
     </script>
