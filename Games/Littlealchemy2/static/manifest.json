@@ -5,15 +5,15 @@
   "lang": "en-US",
   "icons": [
     {
-        "src": "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Littlealchemy2//public/icons/icon-48x48.png",
+        "src": "/public/icons/icon-48x48.png",
         "sizes": "48x48"
     },
     {
-        "src": "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Littlealchemy2//public/icons/icon-72x72.png",
+        "src": "/public/icons/icon-72x72.png",
         "sizes": "72x72"
     },
     {
-        "src": "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Littlealchemy2//public/icons/icon-128x128.png",
+        "src": "/public/icons/icon-128x128.png",
         "sizes": "128x128"
     },
     {
@@ -21,15 +21,15 @@
         "sizes": "144x144"
     },
     {
-        "src": "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Littlealchemy2//public/icons/icon-192x192.png",
+        "src": "/public/icons/icon-192x192.png",
         "sizes": "192x192"
     },
     {
-        "src": "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Littlealchemy2//public/icons/icon-256x256.png",
+        "src": "/public/icons/icon-256x256.png",
         "sizes": "256x256"
     },
     {
-        "src": "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Littlealchemy2//public/icons/icon-512x512.png",
+        "src": "/public/icons/icon-512x512.png",
         "sizes": "512x512"
     }
   ],

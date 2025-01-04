@@ -4446,7 +4446,7 @@
                   case 2:
                       return [4, n.sent().json()];
                   case 3:
-                      return (e = n.sent()) && ((t = document.createElement("script")).src = "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/Littlealchemy2/js/touchOverlayController.js",
+                      return (e = n.sent()) && ((t = document.createElement("script")).src = "js/touchOverlayController.js",
                       t.onload = function() {
                           new window.OverlayController(document.body,e)
                       }
