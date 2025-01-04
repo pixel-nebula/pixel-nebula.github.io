@@ -19,7 +19,7 @@
             // Get the URL that the form submits to
             const url = form.action;
 
-            // Display the URL used for the request
+            // Display the URL used for the request (correctly logging the URL)
             document.getElementById('response').textContent = `URL: ${url}\n`;
 
             try {
@@ -49,7 +49,7 @@
 </head>
 <body>
     <h1>Edit URL Parameters</h1>
-    <form id="urlForm" action="https://tk3zoi0r00.execute-api.us-east-2.amazonaws.com/default/S3Killswitch" method="POST" onsubmit="handleSubmit(event)">
+    <form id="urlForm" action="https://tk3zoi0r00.execute-api.us-east-2.amazonaws.com/default/S3Killswitch?" method="POST" onsubmit="handleSubmit(event)">
         <label for="action">Action:</label>
         <select id="action" name="action" required>
             <option value="disable">Disable</option>
