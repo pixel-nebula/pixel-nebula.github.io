@@ -7,7 +7,7 @@
     <title>PixelNebula</title>
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/scalethedepths/TemplateData/style.css">
-    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="manifest" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/scalethedepths/manifest.webmanifest">
   </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
 <script>
@@ -29,11 +29,6 @@
       <div id="unity-warning"> </div>
     </div>
     <script>
-      window.addEventListener("load", function () {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js");
-        }
-      });
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
