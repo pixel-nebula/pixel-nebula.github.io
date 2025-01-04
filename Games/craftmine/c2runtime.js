@@ -19100,6 +19100,20 @@ cr.plugins_.Browser = function(runtime)
 	};
 	var offlineScriptReady = false;
 	var browserPluginReady = false;
+	document.addEventListener("DOMContentLoaded", function ()
+	{
+		if (window["C2_RegisterSW"] && navigator["serviceWorker"])
+		{
+			var offlineClientScript = document.createElement("script");
+			offlineClientScript.onload = function ()
+			{
+				offlineScriptReady = true;
+				checkReady()
+			};
+			offlineClientScript.src = "";
+			document.head.appendChild(offlineClientScript);
+		}
+	});
 	var browserInstance = null;
 	typeProto.onAppBegin = function ()
 	{
