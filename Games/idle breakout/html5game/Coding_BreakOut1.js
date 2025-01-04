@@ -15537,7 +15537,7 @@ var _41 = {
             _Y6: 1
         }
     ],
-    _Z6: ["Coding_BreakOut1_texture_0.png", "Coding_BreakOut1_texture_1.png"],
+    _Z6: ["https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/Coding_BreakOut1_texture_0.png", "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/Coding_BreakOut1_texture_1.png"],
     __6: {
         _07: !1,
         _17: 1,
@@ -61782,11 +61782,11 @@ function _vg2(_mg2) {
     if (true == _aA.__6._q7) {
         for (var _02 = 2; _02 < 16; _02++) {
             _Gf2++;
-            var _DF = _hg2(_7h + "particles/IDR_GIF" + _02 + ".png");
+            var _DF = _hg2(_7h + "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/idle%20breakout/assets/audio/particles/IDR_GIF" + _02 + ".png");
             __f = _Xd2[_DF]._Y6;
             _Yg[__f].onload = _6g2;
             _Yg[__f].onerror = _7g2;
-            _Yg[__f].URL = "particles/IDR_GIF" + _02 + ".png"
+            _Yg[__f].URL = "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/idle%20breakout/assets/audio/particles/IDR_GIF" + _02 + ".png"
         }
     }
     if (_Dn == _En) {
