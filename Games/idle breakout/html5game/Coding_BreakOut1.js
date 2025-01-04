@@ -1,172 +1,140 @@
 Array.prototype._31 = 0;
 var _41 = {
     _81: [{
-        _91: "sound_0",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_0",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_0",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_0",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_1",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_1",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_1",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_1",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_2",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_2",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_2",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_2",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_3",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_3",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_3",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_3",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_4",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_4",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_4",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_4",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_5",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_5",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_5",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_5",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_6",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_6",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_6",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_6",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_click",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle breakout/assets/audio/sound_click",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_click",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_click",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_demon",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_demon",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_demon",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_demon",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_end",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_end",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_end",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_end",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_scatter",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_scatter",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_scatter",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_scatter",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_laser",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_laser",
         _a1: 0,
         _b1: ".mp3",
-        _c1: "sound_laser",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_laser",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_0_alt",
-        _a1: 0,
-        _b1: ".wav",
-        _c1: "sound_0_alt",
-        _d1: 0,
-        volume: 1,
-        _e1: 0,
-        preload: !0,
-        _f1: 0
-    }, {
-        _91: "sound_1_alt",
-        _a1: 1,
-        _b1: ".mp3",
-        _c1: "sound_1_alt",
-        _d1: 0,
-        volume: 1,
-        _e1: 0,
-        preload: !0,
-        _f1: 0,
-        duration: 0
-    }, {
-        _91: "sound_2_alt",
-        _a1: 1,
-        _b1: ".wav",
-        _c1: "sound_2_alt",
-        _d1: 0,
-        volume: 1,
-        _e1: 0,
-        preload: !0,
-        _f1: 0,
-        duration: 0
-    }, {
-        _91: "sound_3_alt",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_0_alt",
         _a1: 0,
         _b1: ".wav",
-        _c1: "sound_3_alt",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_0_alt",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_4_alt",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_1_alt",
         _a1: 1,
         _b1: ".mp3",
-        _c1: "sound_4_alt",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_1_alt",
         _d1: 0,
         volume: 1,
         _e1: 0,
@@ -174,10 +142,10 @@ var _41 = {
         _f1: 0,
         duration: 0
     }, {
-        _91: "sound_5_alt",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_2_alt",
         _a1: 1,
-        _b1: ".mp3",
-        _c1: "sound_5_alt",
+        _b1: ".wav",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_2_alt",
         _d1: 0,
         volume: 1,
         _e1: 0,
@@ -185,64 +153,96 @@ var _41 = {
         _f1: 0,
         duration: 0
     }, {
-        _91: "sound_6_alt",
-        _a1: 1,
-        _b1: ".mp3",
-        _c1: "sound_6_alt",
-        _d1: 0,
-        volume: 1,
-        _e1: 0,
-        preload: !0,
-        _f1: 0,
-        duration: 0
-    }, {
-        _91: "sound_click_alt",
-        _a1: 1,
-        _b1: ".mp3",
-        _c1: "sound_click_alt",
-        _d1: 0,
-        volume: 1,
-        _e1: 0,
-        preload: !0,
-        _f1: 0,
-        duration: 0
-    }, {
-        _91: "sound_demon_alt",
-        _a1: 1,
-        _b1: ".mp3",
-        _c1: "sound_demon_alt",
-        _d1: 0,
-        volume: 1,
-        _e1: 0,
-        preload: !0,
-        _f1: 0,
-        duration: 0
-    }, {
-        _91: "sound_end_alt",
-        _a1: 1,
-        _b1: ".mp3",
-        _c1: "sound_end_alt",
-        _d1: 0,
-        volume: 1,
-        _e1: 0,
-        preload: !0,
-        _f1: 0,
-        duration: 0
-    }, {
-        _91: "sound_laser_alt",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_3_alt",
         _a1: 0,
         _b1: ".wav",
-        _c1: "sound_laser_alt",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_3_alt",
         _d1: 0,
         volume: 1,
         _e1: 0,
         preload: !0,
         _f1: 0
     }, {
-        _91: "sound_scatter_alt",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_4_alt",
         _a1: 1,
         _b1: ".mp3",
-        _c1: "sound_scatter_alt",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_4_alt",
+        _d1: 0,
+        volume: 1,
+        _e1: 0,
+        preload: !0,
+        _f1: 0,
+        duration: 0
+    }, {
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_5_alt",
+        _a1: 1,
+        _b1: ".mp3",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_5_alt",
+        _d1: 0,
+        volume: 1,
+        _e1: 0,
+        preload: !0,
+        _f1: 0,
+        duration: 0
+    }, {
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_6_alt",
+        _a1: 1,
+        _b1: ".mp3",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_6_alt",
+        _d1: 0,
+        volume: 1,
+        _e1: 0,
+        preload: !0,
+        _f1: 0,
+        duration: 0
+    }, {
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_click_alt",
+        _a1: 1,
+        _b1: ".mp3",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_click_alt",
+        _d1: 0,
+        volume: 1,
+        _e1: 0,
+        preload: !0,
+        _f1: 0,
+        duration: 0
+    }, {
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_demon_alt",
+        _a1: 1,
+        _b1: ".mp3",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_demon_alt",
+        _d1: 0,
+        volume: 1,
+        _e1: 0,
+        preload: !0,
+        _f1: 0,
+        duration: 0
+    }, {
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_end_alt",
+        _a1: 1,
+        _b1: ".mp3",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_end_alt",
+        _d1: 0,
+        volume: 1,
+        _e1: 0,
+        preload: !0,
+        _f1: 0,
+        duration: 0
+    }, {
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_laser_alt",
+        _a1: 0,
+        _b1: ".wav",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_laser_alt",
+        _d1: 0,
+        volume: 1,
+        _e1: 0,
+        preload: !0,
+        _f1: 0
+    }, {
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_scatter_alt",
+        _a1: 1,
+        _b1: ".mp3",
+        _c1: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/sound_scatter_alt",
         _d1: 0,
         volume: 1,
         _e1: 0,
@@ -252,7 +252,7 @@ var _41 = {
     }],
     _g1: [],
     _h1: [{
-        _91: "spr_brick",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_brick",
         width: 64,
         height: 32,
         _i1: !1,
@@ -268,7 +268,7 @@ var _41 = {
             3, 4, 5, 6, 7, 8
         ]
     }, {
-        _91: "spr_brick_boss",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_brick_boss",
         width: 256,
         height: 128,
         _i1: !1,
@@ -282,7 +282,7 @@ var _41 = {
         _p1: 0,
         _q1: [9]
     }, {
-        _91: "spr_brick_mob",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_brick_mob",
         width: 320,
         height: 160,
         _i1: !1,
@@ -296,7 +296,7 @@ var _41 = {
         _p1: 0,
         _q1: [10]
     }, {
-        _91: "spr_brick_black",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_brick_black",
         width: 64,
         height: 32,
         _i1: !1,
@@ -310,7 +310,7 @@ var _41 = {
         _p1: 0,
         _q1: [11]
     }, {
-        _91: "spr_ball",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_ball",
         width: 32,
         height: 32,
         _i1: !1,
@@ -326,7 +326,7 @@ var _41 = {
             20
         ]
     }, {
-        _91: "spr_paddle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_paddle",
         width: 384,
         height: 32,
         _i1: !1,
@@ -340,7 +340,7 @@ var _41 = {
         _p1: 0,
         _q1: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     }, {
-        _91: "spr_wall",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_wall",
         height: 64,
         _i1: !1,
         _j1: !1,
@@ -353,7 +353,7 @@ var _41 = {
         _p1: 0,
         _q1: [31]
     }, {
-        _91: "spr_scorebox",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_scorebox",
         width: 115,
         height: 44,
         _i1: !1,
@@ -366,7 +366,7 @@ var _41 = {
         _p1: 0,
         _q1: [32]
     }, {
-        _91: "spr_launcher",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_launcher",
         width: 160,
         height: 48,
         _i1: !1,
@@ -380,7 +380,7 @@ var _41 = {
         _p1: 0,
         _q1: [33]
     }, {
-        _91: "spr_up_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_up_buy",
         width: 96,
         height: 24,
         _i1: !1,
@@ -394,7 +394,7 @@ var _41 = {
         _p1: 0,
         _q1: [34, 35]
     }, {
-        _91: "spr_wall_flat",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_wall_flat",
         width: 96,
         _i1: !1,
         _j1: !1,
@@ -406,7 +406,7 @@ var _41 = {
         _p1: 0,
         _q1: [36]
     }, {
-        _91: "spr_money",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_money",
         width: 160,
         height: 48,
         _i1: !1,
@@ -420,7 +420,7 @@ var _41 = {
         _p1: 0,
         _q1: [37]
     }, {
-        _91: "spr_arrow",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_arrow",
         width: 32,
         height: 89,
         _i1: !1,
@@ -434,7 +434,7 @@ var _41 = {
         _p1: 0,
         _q1: [38]
     }, {
-        _91: "spr_floor_add",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_floor_add",
         width: 96,
         height: 32,
         _i1: !1,
@@ -448,7 +448,7 @@ var _41 = {
         _p1: 0,
         _q1: [39]
     }, {
-        _91: "spr_type_a",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_type_a",
         width: 160,
         height: 64,
         _i1: !1,
@@ -462,7 +462,7 @@ var _41 = {
         _p1: 0,
         _q1: [40]
     }, {
-        _91: "spr_type_b",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_type_b",
         width: 160,
         height: 64,
         _i1: !1,
@@ -476,7 +476,7 @@ var _41 = {
         _p1: 0,
         _q1: [41]
     }, {
-        _91: "spr_laser",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_laser",
         width: 96,
         _i1: !1,
         _j1: !1,
@@ -489,7 +489,7 @@ var _41 = {
         _p1: 0,
         _q1: [42]
     }, {
-        _91: "spr_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_buy",
         width: 64,
         height: 24,
         _i1: !1,
@@ -503,7 +503,7 @@ var _41 = {
         _p1: 0,
         _q1: [43, 44, 45, 46]
     }, {
-        _91: "spr_buy_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_buy_bg",
         width: 64,
         height: 64,
         _i1: !1,
@@ -517,7 +517,7 @@ var _41 = {
         _p1: 0,
         _q1: [47]
     }, {
-        _91: "spr_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_toggle",
         width: 92,
         height: 32,
         _i1: !1,
@@ -531,7 +531,7 @@ var _41 = {
         _p1: 0,
         _q1: [48, 49]
     }, {
-        _91: "spr_info",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_info",
         width: 256,
         height: 144,
         _i1: !1,
@@ -543,7 +543,7 @@ var _41 = {
         _p1: 0,
         _q1: [50]
     }, {
-        _91: "spr_info_small",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_info_small",
         width: 128,
         height: 64,
         _i1: !1,
@@ -557,7 +557,7 @@ var _41 = {
         _p1: 0,
         _q1: [51]
     }, {
-        _91: "spr_plasma",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_plasma",
         width: 256,
         height: 256,
         _i1: !1,
@@ -673,7 +673,7 @@ var _41 = {
             ]
         ]
     }, {
-        _91: "spr_upgrade",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_upgrade",
         width: 96,
         height: 64,
         _i1: !1,
@@ -687,7 +687,7 @@ var _41 = {
         _p1: 0,
         _q1: [60]
     }, {
-        _91: "spr_upgrade_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_upgrade_bg",
         width: 800,
         height: 512,
         _i1: !1,
@@ -701,7 +701,7 @@ var _41 = {
         _p1: 0,
         _q1: [61]
     }, {
-        _91: "spr_close",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_close",
         width: 128,
         height: 32,
         _i1: !1,
@@ -715,7 +715,7 @@ var _41 = {
         _p1: 0,
         _q1: [62]
     }, {
-        _91: "spr_menu_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_menu_button",
         width: 128,
         height: 64,
         _i1: !1,
@@ -729,7 +729,7 @@ var _41 = {
         _p1: 0,
         _q1: [63, 64]
     }, {
-        _91: "spr_prestige_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_prestige_bg",
         width: 800,
         height: 512,
         _i1: !1,
@@ -743,7 +743,7 @@ var _41 = {
         _p1: 0,
         _q1: [65]
     }, {
-        _91: "spr_prestige_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_prestige_button",
         width: 128,
         height: 32,
         _i1: !1,
@@ -757,7 +757,7 @@ var _41 = {
         _p1: 0,
         _q1: [66]
     }, {
-        _91: "spr_prestige_claim",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_prestige_claim",
         width: 128,
         height: 32,
         _i1: !1,
@@ -771,7 +771,7 @@ var _41 = {
         _p1: 0,
         _q1: [67]
     }, {
-        _91: "spr_gold_claim_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_gold_claim_bg",
         width: 256,
         height: 96,
         _i1: !1,
@@ -785,7 +785,7 @@ var _41 = {
         _p1: 0,
         _q1: [68]
     }, {
-        _91: "spr_offline",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_offline",
         width: 384,
         height: 40,
         _i1: !1,
@@ -799,7 +799,7 @@ var _41 = {
         _p1: 0,
         _q1: [69]
     }, {
-        _91: "spr_prestige_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_prestige_buy",
         width: 128,
         height: 128,
         _i1: !1,
@@ -813,7 +813,7 @@ var _41 = {
         _p1: 0,
         _q1: [70]
     }, {
-        _91: "spr_prestige_cost",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_prestige_cost",
         width: 128,
         height: 32,
         _i1: !1,
@@ -827,7 +827,7 @@ var _41 = {
         _p1: 0,
         _q1: [71, 72]
     }, {
-        _91: "spr_bonus",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_bonus",
         width: 256,
         height: 96,
         _i1: !1,
@@ -841,7 +841,7 @@ var _41 = {
         _p1: 0,
         _q1: [73]
     }, {
-        _91: "spr_gold",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_gold",
         width: 96,
         height: 48,
         _i1: !1,
@@ -855,7 +855,7 @@ var _41 = {
         _p1: 0,
         _q1: [74]
     }, {
-        _91: "spr_level",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_level",
         width: 92,
         height: 64,
         _i1: !1,
@@ -869,7 +869,7 @@ var _41 = {
         _p1: 0,
         _q1: [75]
     }, {
-        _91: "spr_sound",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_sound",
         width: 32,
         height: 32,
         _i1: !1,
@@ -883,7 +883,7 @@ var _41 = {
         _p1: 0,
         _q1: [76, 77]
     }, {
-        _91: "spr_config",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_config",
         width: 32,
         height: 32,
         _i1: !1,
@@ -897,7 +897,7 @@ var _41 = {
         _p1: 0,
         _q1: [78]
     }, {
-        _91: "spr_config_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_config_bg",
         width: 800,
         height: 512,
         _i1: !1,
@@ -911,7 +911,7 @@ var _41 = {
         _p1: 0,
         _q1: [79]
     }, {
-        _91: "spr_powerup_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_powerup_bg",
         width: 800,
         height: 512,
         _i1: !1,
@@ -925,7 +925,7 @@ var _41 = {
         _p1: 0,
         _q1: [80]
     }, {
-        _91: "spr_brick_tally",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_brick_tally",
         width: 192,
         height: 96,
         _i1: !1,
@@ -939,7 +939,7 @@ var _41 = {
         _p1: 0,
         _q1: [81]
     }, {
-        _91: "spr_powerup_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_powerup_button",
         width: 64,
         height: 64,
         _i1: !1,
@@ -953,7 +953,7 @@ var _41 = {
         _p1: 0,
         _q1: [82, 83]
     }, {
-        _91: "spr_fact",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_fact",
         width: 320,
         height: 128,
         _i1: !1,
@@ -967,7 +967,7 @@ var _41 = {
         _p1: 0,
         _q1: [84]
     }, {
-        _91: "spr_demon",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_demon",
         width: 32,
         height: 32,
         _i1: !1,
@@ -981,7 +981,7 @@ var _41 = {
         _p1: 0,
         _q1: [85, 86, 87, 88, 89, 90]
     }, {
-        _91: "spr_power",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_power",
         width: 128,
         height: 128,
         _i1: !1,
@@ -995,7 +995,7 @@ var _41 = {
         _p1: 0,
         _q1: [91, 92, 93, 94, 95]
     }, {
-        _91: "spr_effects",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_effects",
         width: 64,
         height: 32,
         _i1: !1,
@@ -1007,7 +1007,7 @@ var _41 = {
         _p1: 0,
         _q1: [96, 97, 98]
     }, {
-        _91: "spr_classic",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_classic",
         width: 160,
         height: 64,
         _i1: !1,
@@ -1021,7 +1021,7 @@ var _41 = {
         _p1: 0,
         _q1: [99]
     }, {
-        _91: "spr_bonus_cash",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_bonus_cash",
         width: 128,
         height: 32,
         _i1: !1,
@@ -1035,7 +1035,7 @@ var _41 = {
         _p1: 0,
         _q1: [100]
     }, {
-        _91: "spr_bonus_click",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_bonus_click",
         width: 128,
         height: 32,
         _i1: !1,
@@ -1049,7 +1049,7 @@ var _41 = {
         _p1: 0,
         _q1: [101]
     }, {
-        _91: "spr_ach",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_ach",
         width: 128,
         height: 128,
         _i1: !1,
@@ -1063,7 +1063,7 @@ var _41 = {
         _p1: 0,
         _q1: [102, 103]
     }, {
-        _91: "spr_menu_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_menu_bg",
         width: 864,
         height: 512,
         _i1: !1,
@@ -1077,7 +1077,7 @@ var _41 = {
         _p1: 0,
         _q1: [104]
     }, {
-        _91: "spr_menu_nav",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_menu_nav",
         width: 160,
         height: 32,
         _i1: !1,
@@ -1093,7 +1093,7 @@ var _41 = {
             107, 108, 109, 110, 111, 112, 113, 114
         ]
     }, {
-        _91: "spr_trash",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_trash",
         width: 96,
         height: 32,
         _i1: !1,
@@ -1107,7 +1107,7 @@ var _41 = {
         _p1: 0,
         _q1: [115, 116]
     }, {
-        _91: "spr_back",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_back",
         width: 128,
         height: 32,
         _i1: !1,
@@ -1121,7 +1121,7 @@ var _41 = {
         _p1: 0,
         _q1: [117]
     }, {
-        _91: "spr_upgrade_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_upgrade_button",
         width: 128,
         height: 32,
         _i1: !1,
@@ -1135,7 +1135,7 @@ var _41 = {
         _p1: 0,
         _q1: [118]
     }, {
-        _91: "spr_pup_click",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_pup_click",
         width: 64,
         height: 64,
         _i1: !1,
@@ -1151,7 +1151,7 @@ var _41 = {
             120, 121, 122, 123
         ]
     }, {
-        _91: "spr_bg_custom",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_bg_custom",
         width: 960,
         height: 640,
         _i1: !1,
@@ -1165,7 +1165,7 @@ var _41 = {
         _p1: 0,
         _q1: [124, 125, 126, 127, 128]
     }, {
-        _91: "spr_mob_start",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_mob_start",
         width: 192,
         height: 64,
         _i1: !1,
@@ -1179,7 +1179,7 @@ var _41 = {
         _p1: 0,
         _q1: [129]
     }, {
-        _91: "spr_ball_buster",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_ball_buster",
         width: 64,
         height: 64,
         _i1: !1,
@@ -1193,7 +1193,7 @@ var _41 = {
         _p1: 0,
         _q1: [130, 131]
     }, {
-        _91: "spr_mob",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_mob",
         width: 64,
         height: 64,
         _i1: !1,
@@ -1207,7 +1207,7 @@ var _41 = {
             136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181
         ]
     }, {
-        _91: "spr_mob_cover",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_mob_cover",
         width: 96,
         height: 32,
         _i1: !1,
@@ -1219,7 +1219,7 @@ var _41 = {
         _p1: 0,
         _q1: [182]
     }, {
-        _91: "spr_regen",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_regen",
         width: 32,
         height: 32,
         _i1: !1,
@@ -1231,7 +1231,7 @@ var _41 = {
         _p1: 0,
         _q1: [183, 184, 185]
     }, {
-        _91: "spr_mob_cover_skill",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_mob_cover_skill",
         width: 32,
         height: 32,
         _i1: !1,
@@ -1243,7 +1243,7 @@ var _41 = {
         _p1: 0,
         _q1: [186]
     }, {
-        _91: "spr_tooltip",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_tooltip",
         width: 128,
         height: 48,
         _i1: !1,
@@ -1257,7 +1257,7 @@ var _41 = {
         _p1: 0,
         _q1: [187]
     }, {
-        _91: "spr_skill",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_skill",
         width: 32,
         height: 32,
         _i1: !1,
@@ -1269,7 +1269,7 @@ var _41 = {
         _p1: 0,
         _q1: [188, 189, 190, 191]
     }, {
-        _91: "spr_timer",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_timer",
         width: 128,
         height: 64,
         _i1: !1,
@@ -1283,7 +1283,7 @@ var _41 = {
         _p1: 0,
         _q1: [192]
     }, {
-        _91: "spr_mob_skill_block",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_mob_skill_block",
         width: 32,
         height: 32,
         _i1: !1,
@@ -1295,7 +1295,7 @@ var _41 = {
         _p1: 0,
         _q1: [193]
     }, {
-        _91: "spr_spell",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_spell",
         width: 96,
         height: 64,
         _i1: !1,
@@ -1309,7 +1309,7 @@ var _41 = {
         _p1: 0,
         _q1: [194, 195, 196]
     }, {
-        _91: "spr_cursor_1",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_cursor_1",
         width: 40,
         height: 48,
         _i1: !1,
@@ -1325,7 +1325,7 @@ var _41 = {
         _p1: 0,
         _q1: [197]
     }, {
-        _91: "spr_cursor_2",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_cursor_2",
         width: 40,
         height: 48,
         _i1: !1,
@@ -1341,7 +1341,7 @@ var _41 = {
         _p1: 0,
         _q1: [198]
     }, {
-        _91: "spr_cursor_3",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_cursor_3",
         width: 40,
         height: 48,
         _i1: !1,
@@ -1357,7 +1357,7 @@ var _41 = {
         _p1: 0,
         _q1: [199]
     }, {
-        _91: "spr_cursor_4",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_cursor_4",
         width: 40,
         height: 48,
         _i1: !1,
@@ -1373,7 +1373,7 @@ var _41 = {
         _p1: 0,
         _q1: [200]
     }, {
-        _91: "spr_loot_alert",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_loot_alert",
         width: 128,
         height: 64,
         _i1: !1,
@@ -1387,7 +1387,7 @@ var _41 = {
         _p1: 0,
         _q1: [201]
     }, {
-        _91: "spr_loot_pick",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_loot_pick",
         width: 48,
         height: 48,
         _i1: !1,
@@ -1401,7 +1401,7 @@ var _41 = {
         _p1: 0,
         _q1: [202, 203, 204]
     }, {
-        _91: "spr_bb_tally",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_bb_tally",
         width: 160,
         height: 64,
         _i1: !1,
@@ -1415,7 +1415,7 @@ var _41 = {
         _p1: 0,
         _q1: [205]
     }, {
-        _91: "spr_fb_like",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_fb_like",
         width: 153,
         height: 64,
         _i1: !1,
@@ -1429,7 +1429,7 @@ var _41 = {
         _p1: 0,
         _q1: [206]
     }, {
-        _91: "spr_armor_logo",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_armor_logo",
         width: 224,
         height: 128,
         _i1: !1,
@@ -1442,7 +1442,7 @@ var _41 = {
         _p1: 0,
         _q1: [207]
     }, {
-        _91: "spr_ag_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_ag_bg",
         width: 391,
         height: 119,
         _i1: !1,
@@ -1456,7 +1456,7 @@ var _41 = {
         _p1: 0,
         _q1: [208]
     }, {
-        _91: "spr_crazygames",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_crazygames",
         width: 312,
         height: 222,
         _i1: !1,
@@ -1472,7 +1472,7 @@ var _41 = {
         _p1: 0,
         _q1: [209]
     }, {
-        _91: "spr_loot_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/spr_loot_buy",
         width: 128,
         height: 64,
         _i1: !1,
@@ -1487,7 +1487,7 @@ var _41 = {
         _q1: [210]
     }],
     _v1: [{
-        _91: "background0",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/background0",
         _i1: !1,
         _j1: !1,
         preload: !1,
@@ -1509,7 +1509,7 @@ var _41 = {
     ],
     _R1: [],
     _S1: [{
-        _91: "font_timer",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_timer",
         _T1: 32,
         bold: !1,
         _U1: !1,
@@ -2388,7 +2388,7 @@ var _41 = {
             },
         ],
     }, {
-        _91: "font_money",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_money",
         _T1: 22,
         bold: !1,
         _U1: !1,
@@ -3265,7 +3265,7 @@ var _41 = {
             offset: -1
         }, ],
     }, {
-        _91: "font_mob_name",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_mob_name",
         _T1: 20,
         bold: !1,
         _U1: !1,
@@ -4142,7 +4142,7 @@ var _41 = {
             offset: -1
         }, ],
     }, {
-        _91: "font_brick",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_brick",
         _T1: 16,
         bold: !1,
         _U1: !1,
@@ -5021,7 +5021,7 @@ var _41 = {
             },
         ],
     }, {
-        _91: "font_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_buy",
         _T1: 12,
         bold: !1,
         _U1: !1,
@@ -5898,7 +5898,7 @@ var _41 = {
             offset: 0
         }, ],
     }, {
-        _91: "font_ach",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_ach",
         _T1: 14,
         bold: !1,
         _U1: !1,
@@ -6775,7 +6775,7 @@ var _41 = {
             offset: -1
         }, ],
     }, {
-        _91: "font_debug",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_debug",
         _T1: 10,
         bold: !1,
         _U1: !1,
@@ -7652,7 +7652,7 @@ var _41 = {
             offset: 0
         }, ],
     }, {
-        _91: "font_upgrade",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_upgrade",
         _T1: 12,
         bold: !1,
         _U1: !1,
@@ -8529,7 +8529,7 @@ var _41 = {
             offset: 1
         }, ],
     }, {
-        _91: "font_tooltip",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/font_tooltip",
         _T1: 10,
         bold: !1,
         _U1: !1,
@@ -9409,7 +9409,7 @@ var _41 = {
     _42: [],
     _52: [{}, ],
     _62: [{
-        _91: "object_control",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/object_control",
         _72: -1,
         _82: !0,
         _92: !0,
@@ -9429,7 +9429,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_wall",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_wall",
         _72: 6,
         _82: !0,
         _a2: 1,
@@ -9437,7 +9437,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_wall_flat",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_wall_flat",
         _72: 10,
         _82: !0,
         _a2: 1,
@@ -9445,7 +9445,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_brick",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_brick",
         _82: !0,
         _a2: 2,
         parent: -100,
@@ -9459,7 +9459,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_brick_boss",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_brick_boss",
         _72: 1,
         _82: !0,
         parent: 3,
@@ -9470,7 +9470,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_brick_mob",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_brick_mob",
         _72: 2,
         _82: !0,
         parent: 3,
@@ -9486,7 +9486,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_brick_black",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_brick_black",
         _72: 3,
         _82: !0,
         parent: 3,
@@ -9496,7 +9496,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_paddle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_paddle",
         _72: 5,
         _82: !0,
         parent: -100,
@@ -9509,7 +9509,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_ball",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_ball",
         _72: 4,
         _82: !0,
         _a2: 1,
@@ -9525,7 +9525,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_snowball",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_snowball",
         _72: 4,
         _82: !0,
         parent: 8,
@@ -9535,7 +9535,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_launcher",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_launcher",
         _72: 8,
         _82: !0,
         _a2: 3,
@@ -9548,7 +9548,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_money",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_money",
         _72: 11,
         _82: !0,
         parent: -100,
@@ -9556,7 +9556,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_bb_tally",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_bb_tally",
         _72: 75,
         _82: !0,
         parent: -100,
@@ -9565,7 +9565,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_laser",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_laser",
         _72: 16,
         _82: !0,
         parent: -100,
@@ -9577,7 +9577,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_buy",
         _72: 18,
         _82: !0,
         _a2: -2,
@@ -9590,7 +9590,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_effects",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_effects",
         _72: 46,
         _82: !0,
         parent: -100,
@@ -9600,7 +9600,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_sound",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_sound",
         _72: 37,
         _82: !0,
         parent: -100,
@@ -9610,7 +9610,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_plasma",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_plasma",
         _72: 22,
         _82: !0,
         parent: -100,
@@ -9619,7 +9619,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_menu_bg",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_menu_bg",
         _72: 51,
         _82: !0,
         _a2: -1,
@@ -9630,7 +9630,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_menu_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_menu_button",
         _72: 26,
         _82: !0,
         parent: -100,
@@ -9639,7 +9639,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_menu_nav",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_menu_nav",
         _72: 52,
         _82: !0,
         _a2: -2,
@@ -9650,7 +9650,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_upgrade_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_upgrade_button",
         _72: 55,
         _82: !0,
         parent: -100,
@@ -9658,7 +9658,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_prestige_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_prestige_button",
         _72: 28,
         _82: !0,
         parent: -100,
@@ -9667,7 +9667,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_powerup_button",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_powerup_button",
         _72: 42,
         _82: !0,
         parent: -100,
@@ -9676,7 +9676,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_upgrade",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_upgrade",
         _72: 23,
         _82: !0,
         _a2: -2,
@@ -9688,7 +9688,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_close",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_close",
         _72: 25,
         _82: !0,
         _a2: -2,
@@ -9698,7 +9698,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_offline",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_offline",
         _72: 31,
         _82: !0,
         _a2: -1,
@@ -9710,7 +9710,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_fact",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_fact",
         _72: 43,
         _82: !0,
         _a2: -1,
@@ -9723,7 +9723,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_bb_note",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_bb_note",
         _72: 43,
         _82: !0,
         _a2: -1,
@@ -9734,7 +9734,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_hundred_note",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_hundred_note",
         _72: 43,
         _82: !0,
         _a2: -1,
@@ -9745,7 +9745,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_prestige_screen",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_prestige_screen",
         _72: 27,
         _82: !0,
         _a2: -1,
@@ -9756,7 +9756,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_prestige_claim",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_prestige_claim",
         _72: 29,
         _82: !0,
         _a2: -2,
@@ -9769,7 +9769,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_gold",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_gold",
         _72: 35,
         _82: !0,
         _a2: -2,
@@ -9780,7 +9780,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_prestige_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_prestige_buy",
         _72: 32,
         _82: !0,
         _a2: -2,
@@ -9792,7 +9792,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_bonus",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_bonus",
         _72: 34,
         _82: !0,
         _a2: -1,
@@ -9804,7 +9804,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_config",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_config",
         _72: 38,
         _82: !0,
         _a2: -1,
@@ -9814,7 +9814,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_wipe",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_wipe",
         _72: 20,
         _82: !0,
         _a2: -1,
@@ -9825,7 +9825,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_popup_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_popup_toggle",
         _72: 18,
         _82: !0,
         parent: -100,
@@ -9834,7 +9834,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_laser_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_laser_toggle",
         _72: 18,
         _82: !0,
         parent: -100,
@@ -9843,7 +9843,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_cursor_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_cursor_toggle",
         _72: 18,
         _82: !0,
         parent: -100,
@@ -9852,7 +9852,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_sfx_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_sfx_toggle",
         _72: 18,
         _82: !0,
         parent: -100,
@@ -9862,7 +9862,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_bg_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_bg_toggle",
         _72: 18,
         _82: !0,
         parent: -100,
@@ -9871,7 +9871,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_fact_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_fact_toggle",
         _72: 18,
         _82: !0,
         parent: -100,
@@ -9880,7 +9880,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_export_save",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_export_save",
         _72: 17,
         _82: !0,
         parent: -100,
@@ -9889,7 +9889,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_import_save",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_import_save",
         _72: 17,
         _82: !0,
         parent: -100,
@@ -9898,7 +9898,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_bg_custom",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_bg_custom",
         _72: 57,
         _82: !0,
         _a2: 5,
@@ -9908,7 +9908,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_boss_wipe",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_boss_wipe",
         _72: 18,
         _82: !0,
         parent: -100,
@@ -9918,7 +9918,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_fb_like",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_fb_like",
         _72: 76,
         _82: !0,
         parent: -100,
@@ -9928,7 +9928,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_armor_logo",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_armor_logo",
         _72: 77,
         _82: !0,
         parent: -100,
@@ -9937,7 +9937,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_classic",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_classic",
         _72: 47,
         _82: !0,
         _a2: -2,
@@ -9948,7 +9948,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_powerup",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_powerup",
         _72: 45,
         _82: !0,
         _a2: -2,
@@ -9960,7 +9960,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_powerup_screen",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_powerup_screen",
         _72: 40,
         _82: !0,
         _a2: -1,
@@ -9971,7 +9971,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_pup_click",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_pup_click",
         _72: 56,
         _82: !0,
         _a2: 3,
@@ -9983,7 +9983,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_demon",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_demon",
         _72: 44,
         _82: !0,
         parent: -100,
@@ -9995,7 +9995,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_ach",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_ach",
         _72: 50,
         _82: !0,
         _a2: -2,
@@ -10006,7 +10006,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_trash",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_trash",
         _72: 53,
         _82: !0,
         _a2: -2,
@@ -10017,7 +10017,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_back",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_back",
         _72: 54,
         _82: !0,
         parent: -100,
@@ -10025,7 +10025,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_type_bZZ",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_type_bZZ",
         _72: 15,
         _82: !0,
         parent: -100,
@@ -10033,7 +10033,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_type_aZZ",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_type_aZZ",
         _72: 14,
         _82: !0,
         parent: -100,
@@ -10041,7 +10041,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_splash_damageZZ",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_splash_damageZZ",
         _72: -1,
         _82: !0,
         parent: -100,
@@ -10051,7 +10051,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_floor_addZZ",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_floor_addZZ",
         _72: 13,
         _82: !0,
         parent: -100,
@@ -10061,7 +10061,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_mob_start",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_mob_start",
         _72: 58,
         _82: !0,
         _a2: -2,
@@ -10074,7 +10074,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_mob_auto_toggle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_mob_auto_toggle",
         _72: 18,
         _82: !0,
         _a2: -2,
@@ -10085,7 +10085,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_ball_buster",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_ball_buster",
         _72: 59,
         _82: !0,
         parent: -100,
@@ -10095,7 +10095,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_float",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_float",
         _72: -1,
         _82: !0,
         parent: -100,
@@ -10105,7 +10105,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_spell",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_spell",
         _72: 68,
         _82: !0,
         parent: -100,
@@ -10116,7 +10116,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_lose",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_lose",
         _72: 64,
         _82: !0,
         parent: -100,
@@ -10127,7 +10127,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_win",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_win",
         _72: 64,
         _82: !0,
         parent: -100,
@@ -10139,7 +10139,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_boss_exit",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_boss_exit",
         _72: 19,
         _82: !0,
         parent: -100,
@@ -10150,7 +10150,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_loot_alert",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_loot_alert",
         _72: 73,
         _82: !0,
         parent: -100,
@@ -10160,7 +10160,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_loot_pick",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_loot_pick",
         _72: 74,
         _82: !0,
         _a2: -2,
@@ -10172,7 +10172,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_loot_buy",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_loot_buy",
         _72: 80,
         _82: !0,
         _a2: -2,
@@ -10184,7 +10184,7 @@ var _41 = {
         _x2: [],
         _y2: []
     }, {
-        _91: "obj_sitelock",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/obj_sitelock",
         _72: -1,
         _82: !0,
         _a2: -5,
@@ -10194,7 +10194,7 @@ var _41 = {
         _y2: []
     }],
     _k6: [{
-        _91: "rm_idle",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/rm_idle",
         _l6: 60,
         _92: !0,
         _m6: [{
@@ -10768,7 +10768,7 @@ var _41 = {
         }],
         _F6: []
     }, {
-        _91: "rm_heart",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/rm_heart",
         _l6: 60,
         _92: !0,
         _m6: [{
@@ -12251,7 +12251,7 @@ var _41 = {
         }],
         _F6: []
     }, {
-        _91: "rm_config",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/rm_config",
         _l6: 60,
         _92: !0,
         _m6: [{
@@ -12419,7 +12419,7 @@ var _41 = {
         }],
         _F6: []
     }, {
-        _91: "rm_lock",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/rm_lock",
         _l6: 60,
         _92: !0,
         _m6: [{
@@ -12479,7 +12479,7 @@ var _41 = {
         }],
         _F6: []
     }, {
-        _91: "rm_start",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/rm_start",
         _m6: [{}, {}, {}, {}, {}, {}, {}, {}],
         _n6: [{
             _o6: 1024,
@@ -12543,7 +12543,7 @@ var _41 = {
         }],
         _F6: []
     }, {
-        _91: "rm_main",
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/rm_main",
         _l6: 60,
         _m6: [{
             _82: !0,
@@ -72598,7 +72598,7 @@ _3h2.prototype._sG2 = function(_Fe) {
 };
 _3h2.prototype._tG2 = function() {
     this._UU = {
-        _91: "room_empty_" + this.id,
+        _91: "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/idle%20breakout/assets/audio/room_empty_" + this.id,
         width: 640,
         height: 480,
         _m6: [{}, {}, {}, {}, {}, {}, {}, {}],
