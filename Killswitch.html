@@ -16,8 +16,14 @@
                 code: formData.get('code')
             };
 
+            // Get the URL that the form submits to
+            const url = form.action;
+
+            // Display the URL used for the request
+            document.getElementById('response').textContent = `URL: ${url}\n`;
+
             try {
-                const response = await fetch(form.action, {
+                const response = await fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -25,10 +31,11 @@
                     body: JSON.stringify(data)
                 });
 
+                // Display response as formatted JSON
                 const result = await response.json();
-                document.getElementById('response').textContent = JSON.stringify(result, null, 2);
+                document.getElementById('response').textContent += `Response: ${JSON.stringify(result, null, 2)}`;
             } catch (error) {
-                document.getElementById('response').textContent = 'Error: ' + error.message;
+                document.getElementById('response').textContent += `Error: ${error.message}`;
             }
         }
     </script>
