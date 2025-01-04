@@ -1,4 +1,4 @@
-const rootPath = "TemplateData56";
+const rootPath = "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope/TemplateData56";
 function UnityProgress(gameInstance, progress) {
     if (!gameInstance.Module) {
         return;
