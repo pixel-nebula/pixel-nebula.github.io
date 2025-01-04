@@ -7,7 +7,7 @@
     "theme_color": "#000",
     "description": "",
     "icons": [{
-      "src": "TemplateData/icons/unity-logo-dark.png",
+      "src": "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/Pickpocketsimulator/TemplateData/icons/unity-logo-dark.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
