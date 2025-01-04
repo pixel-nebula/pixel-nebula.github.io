@@ -44,7 +44,7 @@
         if (!args[1].includes("arc.io")) args[1] = /^http/.test(args[1]) ? "https://onebigstatic-tmm.tbt.mx/static/" + args[1] : args[1];
         origOpen.apply(this, args);
       };
-      var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope/Build/slope_27Sept.json", {
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope_27Sept.json", {
         onProgress: UnityProgress,
         Module: {
           onRuntimeInitialized: function () {
