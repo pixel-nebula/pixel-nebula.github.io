@@ -106,7 +106,7 @@
                         p.className = "active",
                         n.prev = 5,
                         n.next = 8,
-                        f("".concat(B, "screenshots/1-small.jpg").concat(I));
+                        f("".concat(B, "").concat(I));
                     case 8:
                         e = n.sent,
                         n.next = 16;
@@ -115,7 +115,7 @@
                         return n.prev = 11,
                         n.t0 = n.catch(5),
                         n.next = 15,
-                        f("".concat(B, "screenshots/1.jpg").concat(I));
+                        f("".concat(B, "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/houseofhazards/screenshots/1.jpg").concat(I));
                     case 15:
                         e = n.sent;
                     case 16:
@@ -137,7 +137,7 @@
                             i.setAttribute("data-idx", o),
                             g.appendChild(i);
                         return n.next = 31,
-                        f("".concat(B, "screenshots/1.jpg").concat(I));
+                        f("".concat(B, "https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Games/houseofhazards/screenshots/1.jpg").concat(I));
                     case 31:
                         for (r = n.sent,
                         t.querySelector("img").src = r.src,
