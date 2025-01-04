@@ -19110,7 +19110,7 @@ cr.plugins_.Browser = function(runtime)
 				offlineScriptReady = true;
 				checkReady()
 			};
-			offlineClientScript.src = "";
+			offlineClientScript.src = "offlineClient.js";
 			document.head.appendChild(offlineClientScript);
 		}
 	});
