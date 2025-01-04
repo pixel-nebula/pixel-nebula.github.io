@@ -15,9 +15,9 @@
     <title>PixelNebula</title>
     <link href="https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope/shared/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope/TemplateData56/style.css" />
-    <script src="https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope/TemplateData56/UnityProgress.js"></script>
+    <script src="TemplateData56/UnityProgress.js"></script>
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" />
-    <script src="https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope/Build/UnityLoader.js"></script>
+    <script src="Build/UnityLoader.js"></script>
     <script>
       window.rWS = WebSocket;
       WebSocket = function (url, options) {
@@ -44,7 +44,7 @@
         if (!args[1].includes("arc.io")) args[1] = /^http/.test(args[1]) ? "https://onebigstatic-tmm.tbt.mx/static/" + args[1] : args[1];
         origOpen.apply(this, args);
       };
-      var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope/Build/slope_27Sept.json", {
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope_27Sept.json", {
         onProgress: UnityProgress,
         Module: {
           onRuntimeInitialized: function () {
@@ -77,7 +77,7 @@
     <div class="webgl-content">
       <div id="gameContainer" style="width: 100vw; height: 100vh;"></div>
     </div>
-    <script type="application/javascript" src="https://cdn.rawgit.org/pixel-nebula/pixel-nebula.github.io/master/Games/slope//js/main.js"></script>
+    <script type="application/javascript" src="/js/main.js"></script>
     <script>
       function checkLoginStatus() {
 const cookies = document.cookie.split(';').reduce((acc, cookie) => {
