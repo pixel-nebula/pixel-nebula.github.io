@@ -9,21 +9,21 @@
             event.preventDefault(); // Prevent form from redirecting
 
             const form = event.target;
+            const baseUrl = form.getAttribute('action'); // Ensure we get the correct action URL
             const formData = new FormData(form);
 
             // Build the URL with query parameters
             const action = formData.get('action');
             const code = formData.get('code');
-            const baseUrl = form.action;
             const url = `${baseUrl}?action=${encodeURIComponent(action)}&code=${encodeURIComponent(code)}`;
 
-            // Display the URL used for the request
+            // Display the constructed URL
             document.getElementById('response').textContent = `URL: ${url}\n`;
 
             try {
                 // Make a GET request to the constructed URL
                 const response = await fetch(url, {
-                    method: 'GET', // Use GET since the API expects query parameters
+                    method: 'GET', // Use GET if query parameters are required
                 });
 
                 if (!response.ok) {
@@ -31,11 +31,11 @@
                     return;
                 }
 
-                // Attempt to parse the JSON response
+                // Parse and display the JSON response
                 const result = await response.json();
-                document.getElementById('response').textContent += `Response: ${JSON.stringify(result, null, 2)}`;
+                document.getElementById('response').textContent += `\nResponse: ${JSON.stringify(result, null, 2)}`;
             } catch (error) {
-                // Handle any errors that occur during the fetch
+                // Handle fetch errors
                 document.getElementById('response').textContent += `\nError: ${error.message}`;
             }
         }
@@ -51,7 +51,7 @@
         </select><br><br>
 
         <label for="code">Code:</label>
-        <input type="text" id="code" name="code" value="password" required><br><br>
+        <input type="text" id="code" name="code" value="PXL-12NB" required><br><br>
 
         <button type="submit">Submit</button>
     </form>
