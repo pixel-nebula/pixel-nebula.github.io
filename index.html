@@ -196,19 +196,13 @@
 </script>
 <body onload="checkLoginStatus()">
   <script>
-    // Check if service workers are supported by the browser
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        // Register the service worker
-        navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
-          .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch(error => {
-            console.error('Service Worker registration failed:', error);
-          });
-      });
-    }
+    // Check if the user is offline and redirect if necessary
+    window.addEventListener('load', function() {
+      if (!navigator.onLine) {
+        // User is offline, redirect to Home.html
+        window.location.href = 'Home.html';
+      }
+    });
   </script>
     <div style="visibility: hidden;" id="particles-js"></div>
     <div style="visibility: hidden;" id="drops"></div>
