@@ -22,6 +22,7 @@
         const URLS_TO_CACHE = ${JSON.stringify(URLS_TO_CACHE)};
         
         self.addEventListener('install', event => {
+        console.log('Service Worker: Installing...');
           event.waitUntil(
             caches.open(CACHE_NAME).then(cache => {
               console.log('Opened cache');
@@ -31,6 +32,7 @@
         });
   
         self.addEventListener('fetch', event => {
+        console.log('Service Worker: Fetching...');
           event.respondWith(
             caches.match(event.request).then(response => {
               // If the request is for an HTML page
@@ -45,12 +47,14 @@
         });
   
         self.addEventListener('activate', event => {
+        console.log('Service Worker: Activating...');
           const cacheWhitelist = [CACHE_NAME];
           event.waitUntil(
             caches.keys().then(cacheNames => {
               return Promise.all(
                 cacheNames.map(cacheName => {
                   if (!cacheWhitelist.includes(cacheName)) {
+                    console.log('Service Worker: Deleting old cache:', cacheName);
                     return caches.delete(cacheName);
                   }
                 })
