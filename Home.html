@@ -574,9 +574,9 @@ function getCookie(name) {
 </script>
 <script>
   function toggleDropdown() {
-            const dropdown = document.getElementById('dropdown-menu');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
+  const dropdown = document.getElementById('dropdown-menu');
+  dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+}
 
         function logout() {
             document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
