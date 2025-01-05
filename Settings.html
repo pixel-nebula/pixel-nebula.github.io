@@ -492,30 +492,6 @@
     };
 }
 
-        function logout() {
-            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-            window.location.href = 'index.html';
-        }
-
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdown-menu');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function logout() {
-            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-            window.location.href = 'index.html';
-        }
-
-        // Close dropdown if clicking outside the profile
-        window.onclick = function(event) {
-            if (!event.target.matches('.profile img')) {
-                const dropdown = document.getElementById('dropdown-menu');
-                if (dropdown.style.display === 'block') {
-                    dropdown.style.display = 'none';
-                }
-            }
-            }
         }
     </script>
 </body>
@@ -749,4 +725,25 @@ function closeMessageBox() {
   setCookie("messageBoxClosed", "true", 5); // Cookie expires in 30 days
 }
 
+  </script>
+  <script>
+    function toggleDropdown() {
+    const dropdown = document.getElementById('dropdown-menu');
+    dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+  }
+  
+          function logout() {
+              document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+              window.location.href = 'index.html';
+          }
+  
+          // Close dropdown if clicking outside the profile
+          window.onclick = function(event) {
+              if (!event.target.matches('.profile img')) {
+                  const dropdown = document.getElementById('dropdown-menu');
+                  if (dropdown.style.display === 'block') {
+                      dropdown.style.display = 'none';
+                  }
+              }
+            }
   </script>
