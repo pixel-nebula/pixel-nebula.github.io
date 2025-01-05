@@ -227,6 +227,8 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+          if (navigator.onLine == false) {window.location.href = 'Home.html';} 
+          console.log("Online!")
           let cookieName = 'backgroundtype';
             let cookieValue = getCookie(cookieName);
 
