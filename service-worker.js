@@ -17,7 +17,19 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       console.log('Opened cache');
-      return cache.addAll(URLS_TO_CACHE);
+      // Add resources to cache with error handling
+      return Promise.all(
+        URLS_TO_CACHE.map(url => {
+          return fetch(url).then(response => {
+            if (!response.ok) {
+              throw new Error(`Failed to fetch ${url}`);
+            }
+            return cache.put(url, response);
+          }).catch(error => {
+            console.error(`Error caching ${url}:`, error);
+          });
+        })
+      );
     })
   );
 });
@@ -27,12 +39,6 @@ self.addEventListener('fetch', event => {
   console.log('Service Worker: Fetching...');
   event.respondWith(
     caches.match(event.request).then(response => {
-      // If the request is for an HTML page
-      if (event.request.headers.get('accept').includes('text/html')) {
-        // Serve the HTML page from the cache
-        return response || fetch(event.request);
-      }
-      // Otherwise, serve the request from the cache if available
       return response || fetch(event.request);
     })
   );
