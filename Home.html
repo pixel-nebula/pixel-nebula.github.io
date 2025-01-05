@@ -304,7 +304,6 @@
             document.body.style.visibility = "visible";
             document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
             document.getElementById("messageBox").style.display = "none";
-
           }
           else if (navigator.onLine) {
             let cookieName = 'backgroundtype';
@@ -357,25 +356,6 @@
     };
 }
 
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdown-menu');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function logout() {
-            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-            window.location.href = 'index.html';
-        }
-
-        // Close dropdown if clicking outside the profile
-        window.onclick = function(event) {
-            if (!event.target.matches('.profile img')) {
-                const dropdown = document.getElementById('dropdown-menu');
-                if (dropdown.style.display === 'block') {
-                    dropdown.style.display = 'none';
-                }
-            }
-          }
         }
     </script>
 </body>
@@ -591,4 +571,25 @@ function getCookie(name) {
       }
   }
   setInterval(generateSourceDrop, 60); // Adjusted interval to spawn fewer drops
+</script>
+<script>
+  function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function logout() {
+            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            window.location.href = 'index.html';
+        }
+
+        // Close dropdown if clicking outside the profile
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile img')) {
+                const dropdown = document.getElementById('dropdown-menu');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+          }
 </script>
