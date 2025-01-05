@@ -410,7 +410,24 @@
 
     <script>
         function checkLoginStatus() {
-            let cookieName = 'backgroundtype';
+            if (!navigator.onLine) {
+                let cookieName = 'backgroundtype';
+            let cookieValue = getCookie(cookieName);
+
+            if (cookieValue === '1') {
+              document.getElementById('particles-js').style.visibility = 'visible';
+            } else if (cookieValue === '2') {
+              document.getElementById('drops').style.visibility = 'visible';
+            } else {
+                setCookie(cookieName, '1', 100);
+                document.getElementById('particles-js').style.visibility = 'visible';
+            }
+            document.body.style.visibility = "visible";
+            document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+            document.getElementById("messageBox").style.display = "none";
+            }
+            else if (navigator.onLine) {
+                let cookieName = 'backgroundtype';
             let cookieValue = getCookie(cookieName);
 
             if (cookieValue === '1') {
@@ -495,6 +512,7 @@
                 if (dropdown.style.display === 'block') {
                     dropdown.style.display = 'none';
                 }
+            }
             }
         }
     </script>
