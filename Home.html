@@ -300,13 +300,6 @@
                 setCookie(cookieName, '1', 100);
                 document.getElementById('particles-js').style.visibility = 'visible';
             }
-            if (!navigator.onLine) {
-        // When offline, don't redirect to index.html
-        document.getElementById("messageBox").style.display = "none";
-        document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
-        document.body.style.visibility = "visible";
-        return; // Exit the function early to avoid redirection
-    }
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.split('=').map(c => c.trim());
         acc[key] = value;
