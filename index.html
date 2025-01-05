@@ -1,6 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    const CACHE_NAME = 'self-cache-v1';
+    const URLS_TO_CACHE = [
+    '/', // Cache the root URL (index.html)
+    'index.html', // Cache the index.html
+    '404.html', // Cache 404.html
+    'Apps.html', // Cache Apps.html
+    'Games.html', // Cache Games.html
+    'Home.html', // Cache Home.html
+    'particles.js', // Cache particles.js (assuming it's a JS file)
+    'Settings.html', // Cache Settings.html
+    'termsofservice.html', // Cache terms of service HTML
+  ];
+  
+    // Register the service worker
+    if ('serviceWorker' in navigator) {
+      const serviceWorkerCode = `
+        const CACHE_NAME = '${CACHE_NAME}';
+        const URLS_TO_CACHE = ${JSON.stringify(URLS_TO_CACHE)};
+  
+        self.addEventListener('install', event => {
+          event.waitUntil(
+            caches.open(CACHE_NAME).then(cache => {
+              console.log('Opened cache');
+              return cache.addAll(URLS_TO_CACHE);
+            })
+          );
+        });
+  
+        self.addEventListener('fetch', event => {
+          event.respondWith(
+            caches.match(event.request).then(response => {
+              return response || fetch(event.request);
+            })
+          );
+        });
+  
+        self.addEventListener('activate', event => {
+          const cacheWhitelist = [CACHE_NAME];
+          event.waitUntil(
+            caches.keys().then(cacheNames => {
+              return Promise.all(
+                cacheNames.map(cacheName => {
+                  if (!cacheWhitelist.includes(cacheName)) {
+                    return caches.delete(cacheName);
+                  }
+                })
+              );
+            })
+          );
+        });
+      `;
+  
+      const blob = new Blob([serviceWorkerCode], { type: 'application/javascript' });
+      const blobURL = URL.createObjectURL(blob);
+  
+      navigator.serviceWorker.register(blobURL)
+        .then(() => console.log('Service Worker registered successfully.'))
+        .catch(error => console.error('Service Worker registration failed:', error));
+    }
+  </script>
+  
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
     <meta charset="UTF-8">
