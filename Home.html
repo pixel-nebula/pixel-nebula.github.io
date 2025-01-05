@@ -275,8 +275,7 @@
 
     <script>
         function checkLoginStatus() {
-          if (navigator.onLine == true) {
-            let cookieName = 'backgroundtype';
+          let cookieName = 'backgroundtype';
             let cookieValue = getCookie(cookieName);
 
             if (cookieValue === '1') {
@@ -324,24 +323,7 @@
     document.getElementById('profile-pic').onerror = function() {
         this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
     };
-          }
-          else if (navigator.onLine == false) {
-            document.getElementById("messageBox").style.display = "none";
-            document.getElementById('profile-pic').src = sessionStorage.getItem('https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg');
-            document.body.style.visibility = "visible";
-            let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
-
-            if (cookieValue === '1') {
-              document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-              document.getElementById('drops').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
-          }
-        }
+}
 
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdown-menu');
