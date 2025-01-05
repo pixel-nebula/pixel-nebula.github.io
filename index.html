@@ -241,7 +241,7 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-          console.log("Online!")
+          checkOnlineStatus();
           let cookieName = 'backgroundtype';
             let cookieValue = getCookie(cookieName);
 
@@ -509,11 +509,11 @@
 
   setInterval(generateSourceDrop, 60); // Adjusted interval to spawn fewer drops
 
-  window.addEventListener('offline', function() {
-    window.location.href = 'Home.html';
-});
-
-if (!navigator.onLine) {
-    window.location.href = 'Home.html';
+  function checkOnlineStatus() {
+    if (!navigator.onLine) {
+        window.location.href = 'Home.html';
+    }
 }
+
+window.addEventListener('offline', checkOnlineStatus);
 </script>
