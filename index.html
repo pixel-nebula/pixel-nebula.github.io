@@ -196,11 +196,18 @@
 </script>
 <body onload="checkLoginStatus()">
   <script>
-    // Check if the user is offline and redirect if necessary
+    function isGoogleIDToken(token) {
+  const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; 
+  return jwtPattern.test(token);
+}
+
     window.addEventListener('load', function() {
       if (!navigator.onLine) {
-        // User is offline, redirect to Home.html
+        const idToken = getCookie('IDToken'); // Get the cookie named "IDToken"
+  
+        if (idToken && isGoogleIDToken(idToken)) {
         window.location.href = 'Home.html';
+  }
       }
     });
   </script>
