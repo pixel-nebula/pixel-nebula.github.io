@@ -288,8 +288,15 @@
     </footer>
 
     <script>
+      function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
+
         function checkLoginStatus() {
           if (!navigator.onLine) {
+
+            const idToken = getCookie('IDToken'); 
+            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
+      
+
             let cookieName = 'backgroundtype';
             let cookieValue = getCookie(cookieName);
 
