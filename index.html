@@ -204,11 +204,14 @@
     window.addEventListener('load', function() {
       if (!navigator.onLine) {
         const idToken = getCookie('IDToken'); // Get the cookie named "IDToken"
-  
+
         if (idToken && isGoogleIDToken(idToken)) {
-        window.location.href = 'Home.html';
-  }
-      }
+            window.location.href = 'Home.html'; // Redirect if valid ID token exists
+        } else {
+            console.log('No valid ID Token found, stay on login page.');
+            // Optionally, show a message indicating the user needs to log in
+        }
+    }
     });
   </script>
     <div style="visibility: hidden;" id="particles-js"></div>
