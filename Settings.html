@@ -429,37 +429,41 @@
             const idToken = getCookie('IDToken'); 
             if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
 
-                let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
+            let cookieName = 'backgroundtype';
+  let cookieValue = getCookie(cookieName);
 
-            if (cookieValue === '1') {
-              document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-              document.getElementById('drops').style.visibility = 'visible';
-            } else if (cookieValue === '3') {
-              document.getElementById('LaserCanvas').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('LaserCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
             document.body.style.visibility = "visible";
             document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
             document.getElementById("messageBox").style.display = "none";
             }
             else if (navigator.onLine) {
               let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
-            
-            if (cookieValue === '1') {
-              document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-              document.getElementById('drops').style.visibility = 'visible';
-            } else if (cookieValue === '3') {
-              document.getElementById('LaserCanvas').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
+  let cookieValue = getCookie(cookieName);
+
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('LaserCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
 
             const option1 = document.getElementById('option1');
             const option2 = document.getElementById('option2');
@@ -710,7 +714,26 @@
 
     const settingsContainer = document.querySelector('.settings-container .options');
 
-// Add an event listener to the container
+    document.addEventListener('DOMContentLoaded', () => {
+  // Get the saved cookie value on page load
+  let savedCookie = getCookie('backgroundtype');
+  let selectedButtonId;
+
+  // Determine which button should be selected based on the saved cookie value
+  if (savedCookie === '1') {
+    selectedButtonId = 'option1';
+  } else if (savedCookie === '2') {
+    selectedButtonId = 'option2';
+  } else if (savedCookie === '3') {
+    selectedButtonId = 'option3';
+  }
+
+  if (selectedButtonId) {
+    const selectedButton = document.getElementById(selectedButtonId);
+    selectedButton.classList.add('selected');
+  }
+});
+
 settingsContainer.addEventListener('click', (event) => {
   // Check if a button was clicked
   if (event.target.tagName === 'BUTTON') {
@@ -757,6 +780,7 @@ settingsContainer.addEventListener('click', (event) => {
     }
   }
 });
+
 
 
 

@@ -168,18 +168,20 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
+  let cookieValue = getCookie(cookieName);
 
-            if (cookieValue === '1') {
-              document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-              document.getElementById('drops').style.visibility = 'visible';
-            } else if (cookieValue === '3') {
-              document.getElementById('LaserCanvas').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('LaserCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
   })
           
 

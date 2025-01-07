@@ -814,34 +814,40 @@
                 if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
 
                 let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
+  let cookieValue = getCookie(cookieName);
 
-            if (cookieValue === '1') {
-              document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-              document.getElementById('drops').style.visibility = 'visible';
-            } else if (cookieValue === '3') {
-                document.getElementById('LaserCanvas').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('LaserCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
             document.body.style.visibility = "visible";
             document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
             document.getElementById("messageBox").style.display = "none";
             }
             else if (navigator.onLine) {
                 let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
+  let cookieValue = getCookie(cookieName);
 
-            if (cookieValue === '1') {
-              document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-              document.getElementById('drops').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('LaserCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.split('=').map(c => c.trim());
         acc[key] = value;
