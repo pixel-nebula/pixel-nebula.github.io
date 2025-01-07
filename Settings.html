@@ -483,15 +483,41 @@
 
             const option1 = document.getElementById('option1');
             const option2 = document.getElementById('option2');
+            const option3 = document.getElementById('option3');
+            const option4 = document.getElementById('option4');
     
             if (cookieValue === '1') {
                 option1.classList.add('selected');
                 option2.classList.remove('selected');
                 option2.classList.add('option');  
-            } else {
+                option3.classList.remove('selected');
+                option3.classList.add('option');  
+                option4.classList.remove('selected');
+                option4.classList.add('option');  
+            } else if (cookieValue === '2')  {
                 option2.classList.add('selected');
                 option1.classList.remove('selected');
                 option1.classList.add('option');  
+                option3.classList.remove('selected');
+                option3.classList.add('option');  
+                option4.classList.remove('selected');
+                option4.classList.add('option');  
+            } else if (cookieValue === '3')  {
+                option3.classList.add('selected');
+                option1.classList.remove('selected');
+                option1.classList.add('option');  
+                option2.classList.remove('selected');
+                option2.classList.add('option');  
+                option4.classList.remove('selected');
+                option4.classList.add('option');  
+            } else if (cookieValue === '4')  {
+                option4.classList.add('selected');
+                option1.classList.remove('selected');
+                option1.classList.add('option');  
+                option2.classList.remove('selected');
+                option2.classList.add('option');  
+                option3.classList.remove('selected');
+                option3.classList.add('option');  
             }
 
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
