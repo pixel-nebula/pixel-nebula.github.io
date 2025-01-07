@@ -406,6 +406,7 @@
         <div class="options">
           <button id="option1" class="option selected">Dynamic Web</button>
           <button id="option2" class="option">Matrix Rain</button>
+          <button id="option3" class="option">Guided Laser</button>
         </div>
       </div>
 
@@ -716,6 +717,7 @@ settingsContainer.addEventListener('click', (event) => {
     if (event.target.classList.contains('selected')) {
       return; // Prevent further actions if the button is already selected
     }
+
     // Remove the 'selected' class from all buttons
     const buttons = settingsContainer.querySelectorAll('.option');
     buttons.forEach(button => button.classList.remove('selected'));
@@ -723,22 +725,39 @@ settingsContainer.addEventListener('click', (event) => {
     // Add the 'selected' class to the clicked button
     event.target.classList.add('selected');
 
+    // Set cookie based on the id of the clicked button
     let cookieName = 'backgroundtype';
-    let cookieValue = getCookie(cookieName);
+    let cookieValue;
 
-    console.log(cookieName);  // Debugging the value
-    console.log(cookieValue);  // Debugging the value
+    // Set cookieValue based on the id of the clicked button
+    if (event.target.id === 'option1') {
+      cookieValue = '1';
+    } else if (event.target.id === 'option2') {
+      cookieValue = '2';
+    } else if (event.target.id === 'option3') {
+      cookieValue = '3';
+    }
+
+    // Set the cookie with the new value
+    setCookie(cookieName, cookieValue, 100);
+
+    // Handle visibility based on the cookie value
     if (cookieValue === '1') {
-        setCookie(cookieName, '2', 100);
         document.getElementById('drops').style.visibility = 'visible';
         document.getElementById('particles-js').style.visibility = 'hidden';
+        document.getElementById('LaserCanvas').style.visibility = 'hidden';
     } else if (cookieValue === '2') {
-        setCookie(cookieName, '1', 100);
         document.getElementById('drops').style.visibility = 'hidden';
         document.getElementById('particles-js').style.visibility = 'visible';
+        document.getElementById('LaserCanvas').style.visibility = 'hidden';
+    } else if (cookieValue === '3') {
+        document.getElementById('drops').style.visibility = 'hidden';
+        document.getElementById('particles-js').style.visibility = 'hidden';
+        document.getElementById('LaserCanvas').style.visibility = 'visible';
     }
   }
 });
+
 
 
 function closeMessageBox() {
