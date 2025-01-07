@@ -358,6 +358,15 @@
 .close-btn:hover {
   color: red;
 }
+#LaserCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;  /* Ensure it's on top of other elements */
+    pointer-events: auto;  /* Allow click-through */
+}
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
@@ -372,6 +381,7 @@
 <body onload="checkLoginStatus()">
     <div style="visibility: hidden;" id="particles-js"></div>
     <div style="visibility: hidden;" id="drops"></div>
+    <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
     <!-- Menu -->
     <div class="menu">
         <a href="Home.html">Home</a>
@@ -425,6 +435,8 @@
               document.getElementById('particles-js').style.visibility = 'visible';
             } else if (cookieValue === '2') {
               document.getElementById('drops').style.visibility = 'visible';
+            } else if (cookieValue === '3') {
+              document.getElementById('LaserCanvas').style.visibility = 'visible';
             } else {
                 setCookie(cookieName, '1', 100);
                 document.getElementById('particles-js').style.visibility = 'visible';
@@ -441,6 +453,8 @@
               document.getElementById('particles-js').style.visibility = 'visible';
             } else if (cookieValue === '2') {
               document.getElementById('drops').style.visibility = 'visible';
+            } else if (cookieValue === '3') {
+              document.getElementById('LaserCanvas').style.visibility = 'visible';
             } else {
                 setCookie(cookieName, '1', 100);
                 document.getElementById('particles-js').style.visibility = 'visible';
@@ -500,6 +514,7 @@
 
         }
     </script>
+    <script src="Laser.js"></script>
 </body>
 </html>
 
