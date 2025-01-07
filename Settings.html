@@ -415,7 +415,7 @@
     <div class="settings-container">
         <h2 class="settings-title">Background</h2>
         <div class="options">
-          <button id="option1" class="option selected">Dynamic Web</button>
+          <button id="option1" class="option">Dynamic Web</button>
           <button id="option2" class="option">Matrix Rain</button>
           <button id="option3" class="option">Guided Laser</button>
           <button id="option4" class="option">TextToDots</button>
@@ -488,36 +488,12 @@
     
             if (cookieValue === '1') {
                 option1.classList.add('selected');
-                option2.classList.remove('selected');
-                option2.classList.add('option');  
-                option3.classList.remove('selected');
-                option3.classList.add('option');  
-                option4.classList.remove('selected');
-                option4.classList.add('option');  
             } else if (cookieValue === '2')  {
                 option2.classList.add('selected');
-                option1.classList.remove('selected');
-                option1.classList.add('option');  
-                option3.classList.remove('selected');
-                option3.classList.add('option');  
-                option4.classList.remove('selected');
-                option4.classList.add('option');  
             } else if (cookieValue === '3')  {
                 option3.classList.add('selected');
-                option1.classList.remove('selected');
-                option1.classList.add('option');  
-                option2.classList.remove('selected');
-                option2.classList.add('option');  
-                option4.classList.remove('selected');
-                option4.classList.add('option');  
             } else if (cookieValue === '4')  {
                 option4.classList.add('selected');
-                option1.classList.remove('selected');
-                option1.classList.add('option');  
-                option2.classList.remove('selected');
-                option2.classList.add('option');  
-                option3.classList.remove('selected');
-                option3.classList.add('option');  
             }
 
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
