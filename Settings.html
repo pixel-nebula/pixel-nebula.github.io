@@ -812,13 +812,13 @@ settingsContainer.addEventListener('click', (event) => {
 
     // Handle visibility based on the cookie value
     if (cookieValue === '1') {
-        document.getElementById('drops').style.visibility = 'visible';
-        document.getElementById('particles-js').style.visibility = 'hidden';
+        document.getElementById('drops').style.visibility = 'hidden';
+        document.getElementById('particles-js').style.visibility = 'visible';
         document.getElementById('LaserCanvas').style.visibility = 'hidden';
         document.getElementById('dotCanvas').style.visibility = 'hidden';
     } else if (cookieValue === '2') {
-        document.getElementById('drops').style.visibility = 'hidden';
-        document.getElementById('particles-js').style.visibility = 'visible';
+        document.getElementById('drops').style.visibility = 'visible';
+        document.getElementById('particles-js').style.visibility = 'hidden';
         document.getElementById('LaserCanvas').style.visibility = 'hidden';
         document.getElementById('dotCanvas').style.visibility = 'hidden';
     } else if (cookieValue === '3') {
