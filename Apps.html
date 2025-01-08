@@ -458,6 +458,20 @@
             document.body.style.visibility = "visible";
             document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
             document.getElementById("messageBox").style.display = "none";
+            const gameItems = document.querySelectorAll('.game-item');
+
+        gameItems.forEach(item => {
+            // Update the play button
+            const playButton = item.querySelector('.play-button');
+            playButton.href = "#";
+            playButton.textContent = "Unavailable";
+
+            // Update the status message
+            const statusMessage = item.querySelector('.text-container p small');
+            if (statusMessage) {
+                statusMessage.textContent = "Offline";
+            }
+        });
             }
             else if (navigator.onLine) {
               let cookieName = 'backgroundtype';
