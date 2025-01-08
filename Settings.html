@@ -378,12 +378,9 @@
     pointer-events: auto;  /* Allow click-through */
         }
         #eyes-container {
-          position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;  /* Ensure it's on top of other elements */
+      display: flex;
+      position: absolute;
+    z-index: -1;  /* Ensure it's on top of other elements */
     pointer-events: none;
       gap: 200px; /* Increased spacing to accommodate larger eyes */
     }
