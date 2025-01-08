@@ -7,7 +7,6 @@ const URLS_TO_CACHE = [
   'Home.html', // Cache Home.html
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js', // Cache particles.js (assuming it's a JS file)
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Lasar.js', // Cache particles.js (assuming it's a JS file)
-  'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/TrackingEyes.js', // Cache particles.js (assuming it's a JS file)
   'Settings.html', // Cache Settings.html
   'termsofservice.html', // Cache terms of service HTML
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png',
