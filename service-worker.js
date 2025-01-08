@@ -1,57 +1,58 @@
-const CACHE_NAME = 'dynamic-cache-v1';
+const CACHE_NAME = 'my-site-cache-v1';
+const OFFLINE_PAGE = 'offline.html'; // Add this to your pre-cached files
 
-// Install event - No pre-caching required
+// Pre-caching resources during install
 self.addEventListener('install', event => {
-  console.log('Service Worker: Installed');
-});
-
-// Fetch event - Cache resources dynamically
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      if (cachedResponse) {
-        // Serve from cache if available
-        console.log(`Service Worker: Serving from cache: ${event.request.url}`);
-        return cachedResponse;
-      }
-      
-      // If not in cache, fetch from the network
-      return fetch(event.request)
-        .then(networkResponse => {
-          // Only cache successful responses (status 200)
-          if (!networkResponse || !networkResponse.ok) {
-            console.error(`Service Worker: Failed to fetch: ${event.request.url}`);
-            return networkResponse;
-          }
-
-          // Cache the newly fetched resource
-          return caches.open(CACHE_NAME).then(cache => {
-            console.log(`Service Worker: Caching new resource: ${event.request.url}`);
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          });
-        })
-        .catch(error => {
-          console.error(`Service Worker: Fetch error: ${event.request.url}`, error);
-        });
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/styles.css',
+        '/script.js',
+        OFFLINE_PAGE, // Ensure the offline fallback page is cached
+      ]);
     })
   );
+  self.skipWaiting(); // Activate the service worker immediately
 });
 
-// Activate event - Clean up old caches
+// Clean up old caches during activate
 self.addEventListener('activate', event => {
-  console.log('Service Worker: Activating...');
-  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            console.log('Service Worker: Deleting old cache:', cacheName);
+          if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
         })
       );
+    })
+  );
+  self.clients.claim(); // Take control of clients immediately
+});
+
+// Fetch handler optimized for offline speed
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+      if (cachedResponse) {
+        return cachedResponse; // Serve directly from cache
+      }
+      return fetch(event.request)
+        .then(networkResponse => {
+          return caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, networkResponse.clone()); // Cache the response
+            return networkResponse;
+          });
+        })
+        .catch(() => {
+          // Serve offline page for navigation requests if offline
+          if (event.request.mode === 'navigate') {
+            return caches.match(OFFLINE_PAGE);
+          }
+        });
     })
   );
 });
