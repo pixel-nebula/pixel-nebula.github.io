@@ -377,29 +377,6 @@
     z-index: 0;  /* Ensure it's on top of other elements */
     pointer-events: auto;  /* Allow click-through */
         }
-        #eyes-container {
-      display: flex;
-      gap: 200px; /* Increased spacing to accommodate larger eyes */
-    }
-
-    .eye {
-      width: 200px; /* Increased size by 50% */
-      height: 200px; /* Increased size by 50% */
-      background: white;
-      border-radius: 50%;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .pupil {
-      width: 75px; /* Increased size by 50% */
-      height: 75px; /* Increased size by 50% */
-      background: black;
-      border-radius: 50%;
-      position: absolute;
-    }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
@@ -416,8 +393,6 @@
     <div style="visibility: hidden;" id="drops"></div>
     <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
     <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
-    <script src="TrackingEyes.js"></script>
-    
     <!-- Menu -->
     <div class="menu">
         <a href="Home.html">Home</a>
