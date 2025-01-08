@@ -377,6 +377,30 @@
     z-index: 0;  /* Ensure it's on top of other elements */
     pointer-events: auto;  /* Allow click-through */
         }
+        #eyes-container {
+      display: flex;
+      gap: 200px; /* Increased spacing to accommodate larger eyes */
+      z-index: -1;
+    }
+
+    .eye {
+      width: 200px; /* Increased size by 50% */
+      height: 200px; /* Increased size by 50% */
+      background: white;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pupil {
+      width: 75px; /* Increased size by 50% */
+      height: 75px; /* Increased size by 50% */
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+    }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
@@ -393,6 +417,21 @@
     <div style="visibility: hidden;" id="drops"></div>
     <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
     <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
+    <div style="visibility: hidden;"  id="eyes-container">
+      <div class="eye" id="left-eye">
+        <div class="pupil" id="left-pupil"></div>
+      </div>
+      <div class="eye" id="right-eye">
+        <div class="pupil" id="right-pupil"></div>
+      </div>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="TrackingEyes.js"></script>
+  
     <!-- Menu -->
     <div class="menu">
         <a href="Home.html">Home</a>
@@ -419,6 +458,7 @@
           <button id="option2" class="option">Matrix Rain</button>
           <button id="option3" class="option">Guided Laser</button>
           <button id="option4" class="option">TextToDots</button>
+          <button id="option5" class="option">Tracking Eyes</button>
         </div>
       </div>
 
@@ -453,6 +493,8 @@
     document.getElementById('LaserCanvas').style.visibility = 'visible';
   } else if (cookieValue === '4') {
     document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else if (cookieValue === '5') {
+    document.getElementById('eyes-container').style.visibility = 'visible';
   } else {
     // If no cookie exists, set the cookie to '1' and set the default visibility
     setCookie(cookieName, '1', 100);  // Set the default cookie value
@@ -475,6 +517,8 @@
     document.getElementById('LaserCanvas').style.visibility = 'visible';
   } else if (cookieValue === '4') {
     document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else if (cookieValue === '5') {
+    document.getElementById('eyes-container').style.visibility = 'visible';
   } else {
     // If no cookie exists, set the cookie to '1' and set the default visibility
     setCookie(cookieName, '1', 100);  // Set the default cookie value
@@ -485,6 +529,7 @@
             const option2 = document.getElementById('option2');
             const option3 = document.getElementById('option3');
             const option4 = document.getElementById('option4');
+            const option5 = document.getElementById('option5');
     
             if (cookieValue === '1') {
                 option1.classList.add('selected');
@@ -494,6 +539,8 @@
                 option3.classList.add('selected');
             } else if (cookieValue === '4')  {
                 option4.classList.add('selected');
+            } else if (cookieValue === '5')  {
+                option5.classList.add('selected');
             }
 
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
@@ -746,6 +793,8 @@
     selectedButtonId = 'option3';
   } else if (savedCookie === '4') {
     selectedButtonId = 'option4';
+  } else if (savedCookie === '5') {
+    selectedButtonId = 'option5';
   }
 
   if (selectedButtonId) {
@@ -781,6 +830,8 @@ settingsContainer.addEventListener('click', (event) => {
       cookieValue = '3';
     } else if (event.target.id === 'option4') {
       cookieValue = '4';
+    } else if (event.target.id === 'option5') {
+      cookieValue = '5';
     }
 
     // Set the cookie with the new value
@@ -792,21 +843,31 @@ settingsContainer.addEventListener('click', (event) => {
         document.getElementById('particles-js').style.visibility = 'visible';
         document.getElementById('LaserCanvas').style.visibility = 'hidden';
         document.getElementById('dotCanvas').style.visibility = 'hidden';
+        document.getElementById('eyes-container').style.visibility = 'hidden';
     } else if (cookieValue === '2') {
         document.getElementById('drops').style.visibility = 'visible';
         document.getElementById('particles-js').style.visibility = 'hidden';
         document.getElementById('LaserCanvas').style.visibility = 'hidden';
         document.getElementById('dotCanvas').style.visibility = 'hidden';
+        document.getElementById('eyes-container').style.visibility = 'hidden';
     } else if (cookieValue === '3') {
         document.getElementById('drops').style.visibility = 'hidden';
         document.getElementById('particles-js').style.visibility = 'hidden';
         document.getElementById('LaserCanvas').style.visibility = 'visible';
         document.getElementById('dotCanvas').style.visibility = 'hidden';
+        document.getElementById('eyes-container').style.visibility = 'hidden';
     } else if (cookieValue === '4') {
         document.getElementById('drops').style.visibility = 'hidden';
         document.getElementById('particles-js').style.visibility = 'hidden';
         document.getElementById('LaserCanvas').style.visibility = 'hidden';
         document.getElementById('dotCanvas').style.visibility = 'visible';
+        document.getElementById('eyes-container').style.visibility = 'hidden';
+    } else if (cookieValue === '5') {
+        document.getElementById('drops').style.visibility = 'hidden';
+        document.getElementById('particles-js').style.visibility = 'hidden';
+        document.getElementById('LaserCanvas').style.visibility = 'hidden';
+        document.getElementById('dotCanvas').style.visibility = 'hidden';
+        document.getElementById('eyes-container').style.visibility = 'visible';
     }
   }
 });
