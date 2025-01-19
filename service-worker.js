@@ -1,4 +1,4 @@
-const CACHE_NAME = 'self-cache-v2';
+const CACHE_NAME = 'self-cache-v1';
 const URLS_TO_CACHE = [
   'index.html', // Cache the index.html
   '404.html', // Cache 404.html
@@ -109,7 +109,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (!cacheWhitelist.includes(cacheName)) {
+          if (cacheWhitelist.includes(cacheName)) {
             console.log('Service Worker: Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
