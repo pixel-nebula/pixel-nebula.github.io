@@ -1,4 +1,4 @@
-const CACHE_NAME = 'self-cache-v1';
+const CACHE_NAME = 'self-cache-v2';
 const URLS_TO_CACHE = [
   'index.html', // Cache the index.html
   '404.html', // Cache 404.html
