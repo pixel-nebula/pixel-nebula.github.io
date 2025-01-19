@@ -311,6 +311,18 @@
       function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
 
         function checkLoginStatus() {
+          const cacheNameToDelete = 'self-cache-v1';
+
+  // Open the Cache Storage and delete the specified cache
+  caches.delete(cacheNameToDelete).then((success) => {
+    if (success) {
+      console.log(`Cache "${cacheNameToDelete}" deleted successfully.`);
+    } else {
+      console.log(`Cache "${cacheNameToDelete}" not found or could not be deleted.`);
+    }
+  }).catch((error) => {
+    console.error(`Error deleting cache "${cacheNameToDelete}":`, error);
+  });
           if (!navigator.onLine) {
 
             const idToken = getCookie('IDToken'); 
@@ -785,3 +797,4 @@ window.addEventListener('resize', () => {
 });
 
 </script>
+
