@@ -218,7 +218,7 @@ button:hover {
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 0; /* Send it behind all other elements */
+            z-index: -10; /* Send it behind all other elements */
         }
         .message-box {
   position: fixed;
@@ -327,7 +327,7 @@ button:hover {
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
 <body onload="checkLoginStatus()">
-  <div style="visibility: hidden;" id="particles-js"></div>
+    <div style="visibility: hidden;" id="particles-js"></div>
     <div style="visibility: hidden;" id="drops"></div>
     <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
     <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
