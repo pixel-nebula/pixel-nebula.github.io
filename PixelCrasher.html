@@ -359,7 +359,7 @@ button:hover {
     <span id="iframeCountValue">3000</span>
   </div>
 
-  <button onclick="warning();" id="hangButton">Shatter Extension!</button>
+  <button onclick="warning();" id="hangButton">Crash Extension!</button>
   <button id="killButton" onclick="openExtensionPopup();">Kill Extension!</button>
 </div>
 
@@ -446,10 +446,7 @@ function replaceIframes(container, iframeSrc, iframeCount) {
 
 function warning() {
   const overlay = document.getElementById("overlay");
-  const ContainerGeneral = document.getElementById("container")
-
   ContainerGeneral.style.display = "none";
-  overlay.style.display = "flex";
 
   const iframeSelect = document.getElementById("iframeSelect");
   const selectedOption = iframeSelect.options[iframeSelect.selectedIndex].text;
