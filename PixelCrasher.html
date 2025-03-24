@@ -26,7 +26,7 @@ body {
   border-radius: 25px;
 }
 select {
-  font-family: 'Varela Round', sans-serif
+  font-family: 'Varela Round', sans-serif;
   color: #fff;
   background-color: #ffff;
   margin-bottom: 10px;
@@ -108,7 +108,7 @@ button:hover {
 </head>
 <body>
 <div class="container">
-  <p>Welcome to Pixel Crasher! lag after you finish shattering is normal.</p>
+  <p>Welcome to Pixel Crasher! lag after you finish Crashing is normal.</p>
 
   <label for="iframeSelect" id="labelForIframeSelect"></label>
   <select style="background-color: #000000; color: #fff;" id="iframeSelect"></select>
@@ -121,11 +121,11 @@ button:hover {
     <span id="iframeCountValue">3000</span>
   </div>
 
-  <button onclick="warning();" id="hangButton">Shatter Extension!</button>
+  <button onclick="warning();" id="hangButton">Crash Extension!</button>
   <button id="killButton" onclick="openExtensionPopup();">Kill Extension!</button>
 </div>
 
-<div class="overlay" id="overlay"><div class="spinner"></div> Shattering... (This will take a few minutes)</div>
+<div class="overlay" id="overlay"><div class="spinner"></div> Crashing... (This will take a few minutes)</div>
 
 <div id="killExtensionText"></div>
 
@@ -224,7 +224,7 @@ function warning() {
   setTimeout(function() {
     popup.close();
     const killExtensionText = document.getElementById("killExtensionText");
-    killExtensionText.innerHTML = "Now that the extension <strong>" + selectedOption + "</strong> has been Shattered, press the button above.";
+    killExtensionText.innerHTML = "Now that the extension <strong>" + selectedOption + "</strong> has been Crashed, press the button above.";
     setTimeout(function() {
       overlay.style.display = "none";
       killExtensionText.style.display = "block";
