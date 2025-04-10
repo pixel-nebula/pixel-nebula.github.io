@@ -203,24 +203,39 @@
             color: rgba(255, 255, 255, 0.7);
         }
         .profile {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
+          position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 8px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s;
+  z-index: 1001; 
+    }
 
-        .profile img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
+    .profile span{
+      font-weight: 700;
+      left: 5px;
+      position: relative;
+      font-family: 'Monaco', monospace;
+      -webkit-font-smoothing: antialiased;  
+      -moz-osx-font-smoothing: grayscale;  
+      text-rendering: optimizeLegibility;  
+    }
 
-        .profile:hover img {
-            transform: scale(1.1);
-        }
+    .profile:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .profile img {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      margin-left: 16px;
+    }
 
         .dropdown {
             display: none;
@@ -374,11 +389,13 @@
     </div>
     
     <div class="profile" onclick="toggleDropdown()">
-        <img id="profile-pic" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg" alt="Profile">
-        <div class="dropdown" id="dropdown-menu">
-            <a href="Settings.html">Settings</a>
-            <a href="#" onclick="logout()">Logout</a>
-        </div>
+      <span id="UsernameText" >Log in</span>
+      <img src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg" alt="Profile">
+
+      <div class="dropdown" id="dropdown-menu">
+        <a href="Settings.html">Settings</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
     </div>
 
     <div class="header">
@@ -430,6 +447,10 @@
 
               const idToken = getCookie('IDToken'); 
             if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
+
+
+            const Username = getCookie('Username'); 
+            document.getElementById("UsernameText").textContent = Username
 
             let cookieName = 'backgroundtype';
   let cookieValue = getCookie(cookieName);
