@@ -37,7 +37,7 @@
             justify-content: flex-start;
             align-items: center;
             padding-top: 0px;
-            visibility: visible;
+            visibility: hidden;
         }
         .header {
             margin-top: 20px;
@@ -286,7 +286,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="">
+<body onload="checkLoginStatus()">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
