@@ -37,7 +37,7 @@
             justify-content: flex-start;
             align-items: center;
             padding-top: 0px;
-            visibility: visible;
+            visibility: hidden;
         }
         .header {
             margin-top: 20px;
@@ -286,7 +286,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="">
+<body onload="checkLoginStatus()">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
@@ -341,6 +341,7 @@
 
             const Username = getCookie('Username'); 
             document.getElementById("Username").textContent = Username
+            
 
             let cookieName = 'backgroundtype';
   let cookieValue = getCookie(cookieName);
@@ -390,7 +391,9 @@
     const idToken = cookies.IDToken;
 
     if (idToken) {
+      console.log("1!!!!!!!!!!!!!!!!!!!!!!!")
         if (sessionStorage.getItem('profile-pic')) {
+          console.log("2!!!!!!!!!!!!!!!!!!!!!!!")
             // Use cached profile pic if available
             document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
             document.body.style.visibility = "visible";
