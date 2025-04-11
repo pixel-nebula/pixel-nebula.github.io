@@ -292,9 +292,10 @@
                 fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
                     .then(response => response.json())
                     .then(data => {
+                    const firstName = data.name.split(' ')[0];
                     console.log('User ID: ' + data.sub);
                     console.log('Name: ' + data.name);
-                    document.cookie = "Username=" + data.name + "; path=/";
+                    document.cookie = "Username=" + firstName + "; path=/";
                     console.log('Email: ' + data.email);
                     if (data.email.endsWith('@fcpsschools.net') && /^[0-9]+@fcpsschools\.net$/.test(data.email)) {
                         if (blacklist.includes(data.email)) {
