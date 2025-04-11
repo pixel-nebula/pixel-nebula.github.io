@@ -37,7 +37,7 @@
             justify-content: flex-start;
             align-items: center;
             padding-top: 0px;
-            visibility: hidden;
+            visibility: visible;
         }
         .header {
             margin-top: 20px;
@@ -75,50 +75,72 @@
         }
 
         .profile {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 8px 8px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      transition: background-color 0.3s;
+      position: relative;
+      top: 10px;
+      left: 650px;
+    }
 
-        .profile img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
+    .profile span{
+      font-weight: 700;
+      left: 5px;
+      position: relative;
+      font-family: 'Monaco', monospace;
+      -webkit-font-smoothing: antialiased;  
+      -moz-osx-font-smoothing: grayscale;  
+      text-rendering: optimizeLegibility;  
+    }
 
-        .profile:hover img {
-            transform: scale(1.1);
-        }
+    .profile:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 60px; /* Positioning the dropdown below the profile image */
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 10;
-        }
+    .profile img {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      margin-left: 16px;
+      
+    }
 
-        .dropdown a {
-            display: block;
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
 
-        .dropdown a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px; 
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 20px;
+      z-index: 10;
+    }
+
+    .dropdown a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+      font-weight: 700;
+      font-family: 'Monaco', monospace;
+      -webkit-font-smoothing: antialiased;  
+      -moz-osx-font-smoothing: grayscale;  
+      text-rendering: optimizeLegibility;  
+      margin-bottom: 5px;
+    }
+
+    .dropdown a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
         footer {
             position: absolute;
@@ -264,7 +286,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="checkLoginStatus()">
+<body onload="">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
@@ -276,13 +298,15 @@
         <a href="Apps.html">Apps</a>
     </div>
 
-    <div class="profile" onclick="toggleDropdown()">
-        <img id="profile-pic" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg" alt="Profile">
-        <div class="dropdown" id="dropdown-menu">
-            <a href="Settings.html">Settings</a>
-            <a href="#" onclick="logout()">Logout</a>
-        </div>
+    <div class="profile" onclick="event.stopPropagation(); toggleDropdown();">
+      <span onclick="event.stopPropagation(); toggleDropdown();">Log in</span>
+      <img onclick="event.stopPropagation(); toggleDropdown();" id="profile-pic" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg" alt="Profile">
+      <div class="dropdown" id="dropdown-menu">
+        <a href="Settings.html">Settings</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
     </div>
+  
 
     <div class="header">
     </div>
