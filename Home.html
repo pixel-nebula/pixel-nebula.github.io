@@ -339,7 +339,8 @@
             const idToken = getCookie('IDToken'); 
             if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
 
-            const Username = getCookie('Username'); 
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
             document.getElementById("Username").textContent = Username
             
 
@@ -391,11 +392,12 @@
     const idToken = cookies.IDToken;
 
     if (idToken) {
-      console.log("1!!!!!!!!!!!!!!!!!!!!!!!")
         if (sessionStorage.getItem('profile-pic')) {
-          console.log("2!!!!!!!!!!!!!!!!!!!!!!!")
             // Use cached profile pic if available
             document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
+            document.getElementById("Username").textContent = Username
             document.body.style.visibility = "visible";
         } else {
             // Fetch profile info from API
