@@ -294,7 +294,7 @@
                     .then(data => {
                     console.log('User ID: ' + data.sub);
                     console.log('Name: ' + data.name);
-                    document.cookie = "Username=" + data.name + "; path=/";
+                    document.cookie = "Username=" + given_name + "; path=/";
                     console.log('Email: ' + data.email);
                     if (data.email.endsWith('@fcpsschools.net') && /^[0-9]+@fcpsschools\.net$/.test(data.email)) {
                         if (blacklist.includes(data.email)) {
