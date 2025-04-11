@@ -37,7 +37,7 @@
             justify-content: flex-start;
             align-items: center;
             padding-top: 0px;
-            visibility: hidden;
+            visibility: visible;
         }
         .header {
             margin-top: 20px;
@@ -75,17 +75,17 @@
         }
 
         .profile {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      padding: 8px 8px;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.05);
-      transition: background-color 0.3s;
-      position: relative;
-      top: 10px;
-      left: 650px;
-    }
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 8px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s;
+  position: fixed;  /* Change to fixed to keep the element fixed in the viewport */
+  top: 10px;  /* Set 10px from the top */
+  right: 10px;  /* Set 10px from the right */
+}
 
     .profile span{
       font-weight: 700;
@@ -286,7 +286,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="checkLoginStatus()">
+<body onload="">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
