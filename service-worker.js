@@ -1,14 +1,7 @@
 const CACHE_NAME = 'self-cache-v1';
 const URLS_TO_CACHE = [
-  'index.html', // Cache the index.html
-  '404.html', // Cache 404.html
-  'Apps.html', // Cache Apps.html
-  'Games.html', // Cache Games.html
-  'Home.html', // Cache Home.html
-  'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js', // Cache particles.js (assuming it's a JS file)
-  'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Lasar.js', // Cache particles.js (assuming it's a JS file)
-  'Settings.html', // Cache Settings.html
-  'termsofservice.html', // Cache terms of service HTML
+  'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js', 
+  'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Laser.js', 
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png',
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg',
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Ai.png',
