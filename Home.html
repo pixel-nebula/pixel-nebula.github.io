@@ -299,7 +299,7 @@
     </div>
 
     <div class="profile" onclick="event.stopPropagation(); toggleDropdown();">
-      <span onclick="event.stopPropagation(); toggleDropdown();">Log in</span>
+      <span id="Username" onclick="event.stopPropagation(); toggleDropdown();">Log in</span>
       <img onclick="event.stopPropagation(); toggleDropdown();" id="profile-pic" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg" alt="Profile">
       <div class="dropdown" id="dropdown-menu">
         <a href="Settings.html">Settings</a>
@@ -338,7 +338,9 @@
 
             const idToken = getCookie('IDToken'); 
             if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
-      
+
+            const Username = getCookie('Username'); 
+            document.getElementById("Username").textContent = Username
 
             let cookieName = 'backgroundtype';
   let cookieValue = getCookie(cookieName);
