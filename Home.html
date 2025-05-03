@@ -407,6 +407,11 @@
                     document.getElementById('profile-pic').src = data.picture;
                     // Cache profile picture in sessionStorage
                     sessionStorage.setItem('profile-pic', data.picture);
+
+                    let Username = getCookie('Username'); 
+                    document.getElementById("Username").innerText = Username
+                    document.getElementById("Username").textContent = Username
+
                     document.body.style.visibility = "visible";
                 })
                 .catch(error => {
