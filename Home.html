@@ -180,40 +180,72 @@
             z-index: 0; /* Send it behind all other elements */
         }
         .message-box {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background-color: rgba(255, 255, 255, 0.05); /* Half-transparent black */
-  color: white;
-  padding: 15px;
-  font-size: 14px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: auto;
-  max-width: 300px;
-}
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: white;
+      padding: 20px 20px 15px 20px;
+      font-size: 14px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      max-width: 320px;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+      animation: slideIn 0.5s ease-out forwards;
+    }
 
-.message-box a {
-  color: #00b0ff;
-  text-decoration: none;
-}
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
 
-.message-box a:hover {
-  text-decoration: underline;
-}
-.close-btn {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-}
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
 
-.close-btn:hover {
-  color: red;
-}
+    .message-box a {
+      color: #00b0ff;
+      text-decoration: none;
+    }
+
+    .message-box a:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: none;
+      border: none;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
 :root {
         --clr1: #00ff00; /* Green color for text */
     }
@@ -317,10 +349,12 @@
             If you have a game you’d like us to add or just have questions, feel free to reach out! We’re always open to hearing from our community. Just drop us an email, and we'll get back to you!
           </p>
     </div>
-    <div class="message-box" id="messageBox">
-      <span class="close-btn" onclick="closeMessageBox()">X</span>
-      To stay up to date with the current Pixel Nebula URL join this discord: 
-      <a href="https://discord.com/invite/mpHMtVSDhw" target="_blank">Link</a>
+    <div class="message-box" id="notification">
+      <button class="close-btn" onclick="closeNotification()">×</button>
+      <div>
+        To stay up to date with the current Pixel Nebula URL join this discord:
+        <a href="#" target="_blank">Link</a>
+      </div>
     </div>
     
     
@@ -434,7 +468,13 @@
 </body>
 </html>
 
-
+<script>
+  function closeNotification() {
+      const box = document.getElementById('notification');
+      box.style.animation = 'slideOut 0.4s ease-in forwards';
+      setTimeout(() => box.style.display = 'none', 400);
+    }
+</script>
 
 <script>
     particlesJS('particles-js', {
