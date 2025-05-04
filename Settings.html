@@ -616,7 +616,16 @@
         window.location.href = 'index.html';
     }
 
-    if (getCookie("messageBoxClosed") === "true") {document.getElementById("messageBox").style.display = "none";}
+    if (getCookie("messageBoxClosed") === "true") {
+  const interval = setInterval(() => {
+    const box = document.getElementById("messageBox");
+    if (box) {
+      box.style.display = "none";
+      clearInterval(interval); // Stop checking once it's found
+    }
+  }, 100); // check every 100ms
+}
+
     document.getElementById('profile-pic').onerror = function() {
         this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
     };
