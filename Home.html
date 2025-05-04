@@ -113,8 +113,6 @@
 
 
     .dropdown {
-      will-change: transform;
-      transform: translateZ(0);
       display: none;
       position: fixed;
       top: 60px; 
@@ -126,6 +124,16 @@
       border-radius: 20px;
       z-index: 10;
     }
+
+    .dropdown::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.3); /* subtle base color */
+  z-index: -1; /* Push behind dropdown content */
+}
 
     .dropdown a {
       display: block;
