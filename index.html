@@ -84,8 +84,17 @@
             width: 100%;
             text-align: center;
             font-size: 12px;
-            color: white;
+            color: #999;
         }
+
+        footer a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
         .login-container {
             display: flex;
             flex-direction: column;
@@ -257,7 +266,9 @@
     </div>
     
     <footer>
-        &copy; 2024 Pixel Nebula. All rights reserved. | pixelnebulacontact@gmail.com | <a href="termsofservice.html" style="text-decoration: none; color: blue;">TOS</a>
+      &copy; 2024 Pixel Nebula. All rights reserved. |
+      <a href="mailto:pixelnebulacontact@gmail.com">pixelnebulacontact@gmail.com</a> |
+      <a href="#">TOS</a>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -292,6 +303,7 @@
                     const firstName = data.name.split(' ')[0];
                     console.log('User ID: ' + data.sub);
                     console.log('Name: ' + data.name);
+                    document.cookie = "Username=" + firstName + "; path=/";
                     document.cookie = "Username=" + firstName + "; path=/";
                     console.log('Email: ' + data.email);
                     if (data.email.endsWith('@fcpsschools.net') && /^[0-9]+@fcpsschools\.net$/.test(data.email)) {
