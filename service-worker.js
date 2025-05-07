@@ -82,15 +82,22 @@ self.addEventListener('install', event => {
   );
 });
 
-// Fetch event - Responds with cached content if available
 self.addEventListener('fetch', event => {
-  console.log('Service Worker: Fetching...');
+  const requestURL = new URL(event.request.url);
+
+  // Skip matching or caching the homepage ("/") to ensure it's always fresh
+  if (requestURL.pathname === '/') {
+    console.log('Service Worker: Skipping fetch for homepage');
+    return; // Let the browser handle it normally
+  }
+
   event.respondWith(
     caches.match(event.request).then(response => {
       return response || fetch(event.request);
     })
   );
 });
+
 
 // Activate event - Cleans up old caches if there are any
 self.addEventListener('activate', event => {
