@@ -1,7 +1,6 @@
 const CACHE_NAME = 'self-cache-v1';
 const URLS_TO_CACHE = [
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js', 
-  'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Laser.js', 
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png',
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg',
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Ai.png',
@@ -61,7 +60,6 @@ const URLS_TO_CACHE = [
 ];
 
 
-// Install event - Caches all necessary resources
 self.addEventListener('install', event => {
   console.log('Service Worker: Installing...');
   event.waitUntil(
