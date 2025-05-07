@@ -367,15 +367,6 @@
       margin-top: -20px;
       color: #cde;
     }
-    #LaserCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;  /* Ensure it's on top of other elements */
-    pointer-events: auto;  /* Allow click-through */
-}
 #dotCanvas {
             display: block;
             position: absolute;
@@ -400,7 +391,6 @@
 <body onload="checkLoginStatus()">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
-  <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
   <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
     <!-- Menu -->
     <div class="menu">
@@ -452,6 +442,8 @@
       function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
 
         function checkLoginStatus() {
+          navigator.serviceWorker.register('/service-worker.js')
+
           if (!navigator.onLine) {
 
             const idToken = getCookie('IDToken'); 
@@ -471,8 +463,6 @@
   } else if (cookieValue === '2') {
     document.getElementById('drops').style.visibility = 'visible';
   } else if (cookieValue === '3') {
-    document.getElementById('LaserCanvas').style.visibility = 'visible';
-  } else if (cookieValue === '4') {
     document.getElementById('dotCanvas').style.visibility = 'visible';
   } else {
     // If no cookie exists, set the cookie to '1' and set the default visibility
@@ -493,8 +483,6 @@
   } else if (cookieValue === '2') {
     document.getElementById('drops').style.visibility = 'visible';
   } else if (cookieValue === '3') {
-    document.getElementById('LaserCanvas').style.visibility = 'visible';
-  } else if (cookieValue === '4') {
     document.getElementById('dotCanvas').style.visibility = 'visible';
   } else {
     // If no cookie exists, set the cookie to '1' and set the default visibility
