@@ -101,21 +101,22 @@ self.addEventListener('fetch', event => {
 
 self.addEventListener('activate', event => {
   console.log('Service Worker: Activating...');
-  const cacheWhitelist = [CACHE_NAME];
+  const expectedCacheItems = new Set(URLS_TO_CACHE);
+
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
-      ).then(() => {
-        // Delete homepage cache manually (in case it exists)
-        return caches.open(CACHE_NAME).then(cache => {
-          return cache.delete('/');
-        });
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.keys().then(keys => {
+        return Promise.all(
+          keys.map(request => {
+            if (!expectedCacheItems.has(request.url)) {
+              console.log('Deleting outdated cache item:', request.url);
+              return cache.delete(request);
+            }
+            return Promise.resolve(); // Keep this one
+          })
+        );
       });
     })
   );
 });
+
