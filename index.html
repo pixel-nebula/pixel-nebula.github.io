@@ -142,6 +142,31 @@
             text-align: center;
             font-weight: bold;
         }
+        .container {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #bfffe3;
+      margin-bottom: 2rem;
+    }
+
+    .login-box {
+      border: 2px solid #80ffd3;
+      border-radius: 16px;
+      padding: 2rem;
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 12px #80ffd3;
+    }
         #particles-js {
             position: fixed;
             top: 0;
@@ -246,23 +271,27 @@
     <canvas style="visibility: hidden;"  id="LaserCanvas"></canvas>
     <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
     
-    <div class="header">
-        <h1>Pixel Nebula</h1>
-    </div>
-    <div class="login-container">
-        <div id="g_id_onload"
-            data-client_id="969220335009-8qmk1b3bgvliq1spf00dn49mnj4hjq96.apps.googleusercontent.com"
-            data-callback="handleCredentialResponse">
-        </div>
-        <div class="g_id_signin"
-            data-type="standard"
-            data-shape="rectangular"
-            data-theme="outline"
-            data-text="sign_in_with"
-            data-size="large">
-        </div>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <div id="error-message" class="error-message"></div>
+    <div class="container">
+      <div class="title">Welcome to<br>Pixel Nebula</div>
+      <div class="subtitle">Light authentication required to proceed.</div>
+  
+      <div class="login-box">
+        <div class="login-container">
+          <div id="g_id_onload"
+              data-client_id="969220335009-8qmk1b3bgvliq1spf00dn49mnj4hjq96.apps.googleusercontent.com"
+              data-callback="handleCredentialResponse">
+          </div>
+          <div class="g_id_signin"
+              data-type="standard"
+              data-shape="rectangular"
+              data-theme="outline"
+              data-text="sign_in_with"
+              data-size="large">
+          </div>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <div id="error-message" class="error-message"></div>
+      </div>
+      </div>
     </div>
     
     <footer>

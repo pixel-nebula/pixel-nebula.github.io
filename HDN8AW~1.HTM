@@ -37,6 +37,7 @@
       padding: 16px;
       max-height: 400px;
       overflow-y: auto;
+      display: none;
     }
 
     .message {
@@ -128,26 +129,47 @@
       textarea.style.height = 'auto';
 
       try {
+        chatMessages.style.display = "block";
         const response = await fetch(`https://gnany3ohbd.execute-api.us-east-2.amazonaws.com/default/Formative?message=${encodeURIComponent(userMessage)}`);  // Replace with your actual API URL
         const rawText = await response.json();  // Directly parse JSON response
 
         console.log('Raw JSON:', rawText);  // Log the raw JSON response
 
+
         const botMessage = rawText.response || 'Sorry, no response.';
-        appendMessage('ChatGPT', botMessage, 'bot-message');
+        appendMessage('ChatGPT', botMessage, 'bot-message', typingEffect=true);
       } catch (error) {
         console.error('Error:', error);  // Log error if any
-        appendMessage('ChatGPT', 'Failed to fetch response.', 'bot-message');
+        appendMessage('ChatGPT', 'Failed to fetch response.', 'bot-message', typingEffect=true);
       }
     });
 
-    function appendMessage(sender, text, className) {
-      const msgDiv = document.createElement('div');
-      msgDiv.classList.add('message', className);
-      msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
-      chatMessages.appendChild(msgDiv);
+    function appendMessage(sender, text, className, typingEffect = false) {
+  const msgDiv = document.createElement('div');
+  msgDiv.classList.add('message', className);
+  chatMessages.appendChild(msgDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // Typing effect for bot
+  if (typingEffect) {
+    let index = 0;
+    msgDiv.innerHTML = `<strong>${sender}:</strong> <span id="typing-text"></span>`;
+    const typingSpan = msgDiv.querySelector('#typing-text');
+
+    const typingInterval = setInterval(() => {
+      typingSpan.textContent += text.charAt(index);
+      index++;
       chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
+      if (index === text.length) {
+        clearInterval(typingInterval);
+      }
+    }, 30); // Typing speed (ms per character)
+  } else {
+    msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    msgDiv.style.display = 'block';
+  }
+}
+
   </script>
 </body>
 </html>
