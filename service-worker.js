@@ -1,4 +1,4 @@
-const CACHE_NAME = 'self-cache-v1';
+const CACHE_NAME = 'self-cache-v5';
 const URLS_TO_CACHE = [
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js', 
   'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png',
