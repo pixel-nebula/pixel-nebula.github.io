@@ -99,7 +99,6 @@ self.addEventListener('fetch', event => {
 });
 
 
-// Activate event - Cleans up old caches if there are any
 self.addEventListener('activate', event => {
   console.log('Service Worker: Activating...');
   const cacheWhitelist = [CACHE_NAME];
@@ -107,14 +106,16 @@ self.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheWhitelist.includes(cacheName)) {
-            console.log('Service Worker: Deleting old cache:', cacheName);
+          if (!cacheWhitelist.includes(cacheName)) {
             return caches.delete(cacheName);
           }
         })
-      );
+      ).then(() => {
+        // Delete homepage cache manually (in case it exists)
+        return caches.open(CACHE_NAME).then(cache => {
+          return cache.delete('/');
+        });
+      });
     })
   );
 });
-
-
