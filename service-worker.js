@@ -83,20 +83,21 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-  const requestURL = new URL(event.request.url);
+  const requestURL = event.request.url;
 
-  // Skip matching or caching the homepage ("/") to ensure it's always fresh
-  if (requestURL.pathname === '/') {
-    console.log('Service Worker: Skipping fetch for homepage');
-    return; // Let the browser handle it normally
+  // Only intercept requests we explicitly cache
+  if (URLS_TO_CACHE.includes(requestURL)) {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        return response || fetch(event.request);
+      })
+    );
+  } else {
+    // Allow the browser to handle everything else (like the homepage)
+    return;
   }
-
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
 });
+
 
 
 self.addEventListener('activate', event => {
