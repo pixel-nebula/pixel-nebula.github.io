@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Register the service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope: ', registration.scope);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
     <meta charset="UTF-8">
@@ -22,6 +36,8 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            padding-top: 0px;
+            visibility: hidden;
         }
         .header {
             margin-top: 20px;
@@ -42,30 +58,215 @@
             display: flex;
             gap: 20px; /* Adjust the spacing between menu items */
         }
+        h1 {
+      font-size: 3rem;
+      color: #9fffd8;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .scroll-box {
+      max-width: 800px;
+      height: 50%;
+      margin: 2rem auto;
+      overflow-y: auto;
+      border-radius: 15px;
+      padding: 2rem;
+      
+      background: rgba(0, 255, 204, 0.05);
+      border: 2px solid #00ffcc;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+      text-align: center;
+      color: #e0fefe;
+      scrollbar-width: thin;
+      scrollbar-color: #9fffd8 transparent;
+    }
+    
+
+    .entry {
+      margin-bottom: 2rem;
+    }
+
+    .entry h2 {
+      color: #9fffd8;
+      margin-bottom: 0.3rem;
+    }
+
+    .entry p {
+      color: #ccf;
+    }
         .menu a {
             text-decoration: none;
             color: white;
             font-size: 16px;
             font-weight: bold;
-            padding: 10px;
+            padding: 5px;
             border-radius: 5px;
             transition: background-color 0.3s;
+            font-weight: bold;
         }
         .menu a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+          text-decoration: underline;
+          color: #00ffcc;
         }
+        .menu a.home {
+          text-decoration: underline;
+          color: #00ffcc;
+        }
+
+        .profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 8px;
+  transition: background-color 0.3s;
+  position: fixed;  /* Change to fixed to keep the element fixed in the viewport */
+  top: 10px;  /* Set 10px from the top */
+  right: 10px;  /* Set 10px from the right */
+
+  background: rgba(0, 255, 204, 0.05);
+  border: 2px solid #00ffcc;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+  color: #e0fefe;
+}
+
+    .profile span{
+      font-weight: 700;
+      left: 5px;
+      position: relative;
+      font-family: 'Monaco', monospace;
+      -webkit-font-smoothing: antialiased;  
+      -moz-osx-font-smoothing: grayscale;  
+      text-rendering: optimizeLegibility;  
+    }
+
+    .profile:hover {
+      background-color: rgba(0, 255, 204, 0.1);
+    }
+
+    .profile img {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      margin-left: 16px;
+      
+    }
+
+
+    .dropdown {
+      display: none;
+      position: fixed;
+      top: 70px; 
+      right: 1;
+      padding: 5px;
+
+      background: rgba(0, 255, 204, 0.05);
+      border: 2px solid #00ffcc;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+      text-align: center;
+      font-size: 18px;
+      line-height: .4;
+    }
+
+    .dropdown a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+      font-weight: 700;
+      font-family: 'Monaco', monospace;
+      -webkit-font-smoothing: antialiased;  
+      -moz-osx-font-smoothing: grayscale;  
+      text-rendering: optimizeLegibility;  
+      margin-bottom: 5px;
+    }
+
+    .dropdown a:hover {
+      background-color: rgba(0, 255, 204, 0.1);
+    }
+
         footer {
             position: absolute;
             bottom: 10px;
             width: 100%;
             text-align: center;
             font-size: 12px;
-            color: white;
-            z-index: 100;
+            color: #999;
         }
-        .menu a.back {
-            cursor: pointer;
+
+        footer a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+        .info {
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+
+            background: rgba(0, 255, 204, 0.05);
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            text-align: center;
+            font-size: 18px;
+            line-height: .4;
+            color: #e0fefe;
         }
+
+        .info.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .info h1 {
+          font-size: 48px;
+          font-weight: 700;
+          background: linear-gradient(to right, #00ffd5, #ffffff);
+          -webkit-text-fill-color: transparent;
+        }
+
+        .info h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            
+        }
+
+        .info p {
+            line-height: 1.8;
+            margin: 0;
+            font-size: 20px;
+            color: #cde;
+        }
+
+        .info a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+        
         #particles-js {
             position: fixed;
             top: 0;
@@ -74,7 +275,78 @@
             height: 100vh;
             z-index: 0; /* Send it behind all other elements */
         }
-        :root {
+        .message-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 20px 20px 15px 20px;
+      font-size: 14px;
+      border-radius: 20px;
+      max-width: 320px;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+      animation: slideIn 0.5s ease-out forwards;
+
+      background: rgba(0, 255, 204, 0.05);
+      border: 2px solid #00ffcc;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+      color: #e0fefe;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    .message-box a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .message-box a:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: none;
+      border: none;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+:root {
         --clr1: #00ff00; /* Green color for text */
     }
 
@@ -115,6 +387,24 @@
             opacity: 0; /* Fade out */
         }
     }
+    .hero {
+      text-align: center;
+      padding: 20px 20px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      background: linear-gradient(to right, #00ffd5, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-top: -20px;
+      color: #cde;
+    }
 #dotCanvas {
             display: block;
             position: absolute;
@@ -136,39 +426,72 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body>
+<body onload="checkLoginStatus()">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
     <!-- Menu -->
     <div class="menu">
-        <a class="back" onclick="goBack()">Back</a>
+        <a href="Home.html">Home</a>
+        <a href="Games.html">Games</a>
+        <a href="Apps.html">Apps</a>
+        <a href="Update.html" class="home">Updates</a>
     </div>
 
-    <div class="header">
-        <h2>Pixel Nebula</h2>
+    <div class="profile" onclick="event.stopPropagation(); toggleDropdown();">
+      <span id="Username" onclick="event.stopPropagation(); toggleDropdown();">Log in</span>
+      <img onclick="event.stopPropagation(); toggleDropdown();" id="profile-pic" src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg" alt="Profile">
+      <div class="dropdown" id="dropdown-menu">
+        <a href="Settings.html">Settings</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
     </div>
+  
 
-    <!-- Info Section -->
-    <div class="info">
-        <h3>404 Page not found!</h3>
+    <h1>Update Log</h1>
+
+    <div class="scroll-box">
+        <div class="entry">
+          <h2>May 7, 2025 – AI Feature Added & Update Log</h2>
+          <p>A custom AI was integrated into the Apps category, offering users a smarter and more interactive experience. This page was also added to help users stay up-to-date with the new features.</p>
+        </div>
+        <div class="entry">
+          <h2>May 5, 2025 – Full Site Redesign</h2>
+          <p>The entire design of Pixel Nebula was revamped for a sleeker, more immersive aesthetic and better performance.</p>
+        </div>
+      </div>
+
+    <div class="message-box" id="notification">
+      <button class="close-btn" onclick="closeNotification()">×</button>
+      <div>
+        To stay up to date with the current Pixel Nebula URL join this discord:
+        <a href="#" target="_blank">Link</a>
+      </div>
     </div>
     
+    
     <footer>
-        &copy; 2024 Pixel Nebula. All rights reserved. | pixelnebulacontact@gmail.com | <a href="termsofservice.html" style="text-decoration: none; color: blue;">TOS</a>
+      &copy; 2024 Pixel Nebula. All rights reserved. |
+      <a href="mailto:pixelnebulacontact@gmail.com">pixelnebulacontact@gmail.com</a> |
+      <a href="#">TOS</a>
     </footer>
-    <script>
-        function goBack() {
-          window.location.replace("https://pixel-nebula.s3.amazonaws.com/index.html");
-        }
-    </script>
-    <script src="Laser.js"></script>
-</body>
-</html>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    let cookieName = 'backgroundtype';
+    <script>
+      function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
+
+        function checkLoginStatus() {
+
+          if (!navigator.onLine) {
+
+            const idToken = getCookie('IDToken'); 
+            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
+
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
+            document.getElementById("Username").textContent = Username
+            
+
+            let cookieName = 'backgroundtype';
   let cookieValue = getCookie(cookieName);
 
   // If cookie value exists, apply the visibility based on the value
@@ -183,9 +506,100 @@
     setCookie(cookieName, '1', 100);  // Set the default cookie value
     document.getElementById('particles-js').style.visibility = 'visible';
   }
-  })
-          
+            document.body.style.visibility = "visible";
+            document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+            document.getElementById("messageBox").style.display = "none";
+          }
+          else if (navigator.onLine) {
+            navigator.serviceWorker.register('/service-worker.js')
+            let cookieName = 'backgroundtype';
+  let cookieValue = getCookie(cookieName);
 
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
+    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=').map(c => c.trim());
+        acc[key] = value;
+        return acc;
+    }, {});
+
+    const idToken = cookies.IDToken;
+
+    if (idToken) {
+        if (sessionStorage.getItem('profile-pic')) {
+            // Use cached profile pic if available
+            document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
+            document.getElementById("Username").textContent = Username
+            document.body.style.visibility = "visible";
+        } else {
+            // Fetch profile info from API
+            fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('profile-pic').src = data.picture;
+                    // Cache profile picture in sessionStorage
+                    sessionStorage.setItem('profile-pic', data.picture);
+
+                    let Username = getCookie('Username'); 
+                    document.getElementById("Username").innerText = Username
+                    document.getElementById("Username").textContent = Username
+
+                    document.body.style.visibility = "visible";
+                })
+                .catch(error => {
+                    console.error('Error validating token:', error);
+                    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                    window.location.href = 'index.html';
+                });
+        }
+    } else {
+        window.location.href = 'index.html';
+    }
+    
+    if (getCookie("messageBoxClosed") === "true") {document.getElementById("notification").style.display = "none";}
+    document.getElementById('profile-pic').onerror = function() {
+        this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
+    };
+
+    const infoBox = document.querySelector('.info');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        infoBox.classList.add('visible');
+                        observer.disconnect(); // Only animate once
+                    }
+                });
+            });
+            observer.observe(infoBox);
+}
+
+        }
+    </script>
+    <script src="Laser.js"></script>
+</body>
+</html>
+
+<script>
+  function closeNotification() {
+      const box = document.getElementById('notification');
+      box.style.animation = 'slideOut 0.4s ease-in forwards';
+      setCookie("messageBoxClosed", "true", 5);
+    }
+</script>
+
+<script>
     particlesJS('particles-js', {
         "particles": {
 "number": {
@@ -297,7 +711,27 @@
 "retina_detect": true
     });
 </script>
+<script>
 
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie by its name.
+function getCookie(name) {
+  const nameEq = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEq) == 0) return c.substring(nameEq.length, c.length);
+  }
+  return "";
+}
+</script>
 
 <script>
   function getCookie(name) {
@@ -368,8 +802,28 @@
           createFallingDropWithDelay(content);
       }
   }
-
   setInterval(generateSourceDrop, 60); // Adjusted interval to spawn fewer drops
+</script>
+<script>
+  function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown-menu');
+  dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+}
+
+        function logout() {
+            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            window.location.href = 'index.html';
+        }
+
+        // Close dropdown if clicking outside the profile
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile img')) {
+                const dropdown = document.getElementById('dropdown-menu');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+          }
 </script>
 <script>
   const canvasDot2 = document.getElementById('dotCanvas');
@@ -523,3 +977,4 @@ window.addEventListener('resize', () => {
 });
 
 </script>
+
