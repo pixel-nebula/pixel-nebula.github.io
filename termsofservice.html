@@ -118,8 +118,9 @@
             height: 500px; /* Fixed height for scrolling */
             overflow-y: auto; /* Enable vertical scrolling */
 
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
+            opacity: 0; /* Start invisible */
+            transform: translateY(10px); /* Start below */
+            transition: opacity 1s ease, transform 1s ease; /* Smooth transition for opacity and position */
 
             background: rgba(0, 255, 204, 0.05);
             border: 2px solid #00ffcc;
@@ -213,7 +214,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="checkLoginStatus()">
+<body onload="OnLoad()">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
@@ -229,7 +230,7 @@
     </div>
 
     <!-- Scroll Frame Section -->
-    <div class="info">
+    <div class="info" id="infodiv">
         <h3>Last Updated: 8/26/2024</h3>
         <p>Welcome to Pixel Nebula! By accessing or using our website and services (collectively, the "Services"), you agree to comply with and be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Services.</p>
         <p>1. Acceptance of Terms<br>
@@ -272,11 +273,14 @@
       &copy; 2024 Pixel Nebula. All rights reserved. |
       <a href="mailto:pixelnebulacontact@gmail.com">pixelnebulacontact@gmail.com</a>
     </footer>
-    <script src="Laser.js"></script>
 </body>
 </html>
 
-
+<script>
+ function OnLoad() {
+  document.getElementById('infodiv').classList.add('visible');
+ }
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {

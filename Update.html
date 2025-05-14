@@ -81,12 +81,26 @@
       color: #e0fefe;
       scrollbar-width: thin;
       scrollbar-color: #9fffd8 transparent;
+      opacity: 0; /* Start invisible */
+      transform: translateY(10px); /* Start below */
+      transition: opacity 1s ease, transform 1s ease; /* Smooth transition for opacity and position */
     }
 
     
 .scroll-box.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
     
 
@@ -456,7 +470,7 @@
 
     <h1>Update Log</h1>
 
-    <div class="scroll-box">
+    <div class="scroll-box" id="scroll-box">
         <div class="entry">
           <h2>May 7, 2025 – AI Feature Added & Update Log</h2>
           <p>A custom AI was integrated into the Apps category, offering users a smarter and more interactive experience. This page was also added to help users stay up-to-date with the new features.</p>
@@ -486,6 +500,8 @@
       function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
 
         function checkLoginStatus() {
+
+          document.getElementById('scroll-box').classList.add('visible');
 
           if (!navigator.onLine) {
 
@@ -578,22 +594,10 @@
     document.getElementById('profile-pic').onerror = function() {
         this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
     };
-
-    const infoBox = document.querySelector('.info');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        infoBox.classList.add('visible');
-                        observer.disconnect(); // Only animate once
-                    }
-                });
-            });
-            observer.observe(infoBox);
 }
 
         }
     </script>
-    <script src="Laser.js"></script>
 </body>
 </html>
 
