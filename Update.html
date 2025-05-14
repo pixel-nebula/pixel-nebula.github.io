@@ -81,7 +81,14 @@
       color: #e0fefe;
       scrollbar-width: thin;
       scrollbar-color: #9fffd8 transparent;
+      transition: opacity 1s ease, transform 1s ease;
     }
+
+    
+.scroll-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
     
 
     .entry {
