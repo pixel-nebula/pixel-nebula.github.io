@@ -109,16 +109,23 @@
       text-decoration: underline;
     }
         .info {
-            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
-            border-radius: 10px;
             max-width: 700px; /* Adjusted width for shorter lines */
             width: 90%; /* Ensures responsiveness */
-            margin-top: 20px;
+            margin-top: 30px;
             position: relative;
             z-index: 1;
-            height: 370px; /* Fixed height for scrolling */
+            height: 500px; /* Fixed height for scrolling */
             overflow-y: auto; /* Enable vertical scrolling */
+
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+
+            background: rgba(0, 255, 204, 0.05);
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            color: #e0fefe;
         }
         .info h3 {
             font-size: 36px;
