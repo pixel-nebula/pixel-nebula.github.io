@@ -59,7 +59,6 @@
       display: flex;
       align-items: flex-end;
       gap: 12px;
-      box-shadow: 0 0 0 1px #333;
     }
 
     .chat-box textarea {
@@ -98,9 +97,25 @@
       font-size: 18px;
       color: black;
     }
+    #clearButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #2a2a2a;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
   </style>
 </head>
-<body>
+<body onload="checkLoginStatus()">
+  <button onclick="clearConversation()" id="clearButton">Clear Chat</button>
+
   <h1>What can I help with?</h1>
   <div class="chat-container">
     <div class="chat-messages" id="chatMessages"></div>
@@ -111,6 +126,8 @@
   </div>
 
   <script>
+    let conversationHistory = [];
+
     const textarea = document.getElementById('chatInput');
     const sendButton = document.getElementById('sendButton');
     const chatMessages = document.getElementById('chatMessages');
@@ -125,19 +142,32 @@
       if (!userMessage) return;
 
       appendMessage('You', userMessage, 'user-message');
+
       textarea.value = '';
       textarea.style.height = 'auto';
 
       try {
         chatMessages.style.display = "block";
-        const response = await fetch(`https://gnany3ohbd.execute-api.us-east-2.amazonaws.com/default/Formative?message=${encodeURIComponent(userMessage)}`);  // Replace with your actual API URL
+
+        const tempHistory = [...conversationHistory, { role: "user", content: userMessage }];
+        const lastFew = tempHistory.slice(-4);
+        const summary = lastFew.map(m => `${m.role}: ${m.content}`).join('\n');
+
+        const url = `https://gnany3ohbd.execute-api.us-east-2.amazonaws.com/default/Formative?message=${encodeURIComponent(summary)}`;
+
+        const response = await fetch(url);  // Replace with your actual API URL
         const rawText = await response.json();  // Directly parse JSON response
 
         console.log('Raw JSON:', rawText);  // Log the raw JSON response
 
 
         const botMessage = rawText.response || 'Sorry, no response.';
+
+        conversationHistory.push({ role: "user", content: userMessage });
+
         appendMessage('ChatGPT', botMessage, 'bot-message', typingEffect=true);
+        conversationHistory.push({ role: "assistant", content: botMessage });
+        localStorage.setItem('conversationHistory', JSON.stringify(conversationHistory));
       } catch (error) {
         console.error('Error:', error);  // Log error if any
         appendMessage('ChatGPT', 'Failed to fetch response.', 'bot-message', typingEffect=true);
@@ -173,3 +203,56 @@
   </script>
 </body>
 </html>
+
+
+<script>
+      function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
+
+        function checkLoginStatus() {
+
+          const savedHistory = localStorage.getItem('conversationHistory');
+          if (savedHistory) {
+            conversationHistory = JSON.parse(savedHistory);
+
+            chatMessages.style.display = "block";
+
+            for (const entry of conversationHistory) {
+              const sender = entry.role === 'user' ? 'You' : 'ChatGPT';
+              const className = entry.role === 'user' ? 'user-message' : 'bot-message';
+              appendMessage(sender, entry.content, className);
+            }
+          }
+
+          if (!navigator.onLine) {
+
+            const idToken = getCookie('IDToken'); 
+            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
+
+          }
+          else if (navigator.onLine) {
+
+
+    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=').map(c => c.trim());
+        acc[key] = value;
+        return acc;
+    }, {});
+
+    const idToken = cookies.IDToken;
+
+    if (!idToken) {
+      window.location.href = 'index.html';
+    }
+
+}
+}
+</script>
+
+<script>
+  function clearConversation() {
+  localStorage.removeItem('conversationHistory'); // ❌ clear from localStorage
+  conversationHistory = []; // ❌ clear from memory
+  chatMessages.innerHTML = ''; // ❌ clear chat display
+  chatMessages.style.display = "none"; // hide chat area again
+}
+</script>
