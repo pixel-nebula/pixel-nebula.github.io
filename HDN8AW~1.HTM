@@ -42,6 +42,8 @@
 
     .message {
       margin-bottom: 12px;
+      word-wrap: break-word; 
+      white-space: pre-wrap;
     }
 
     .user-message {
@@ -166,10 +168,10 @@
 
         const url = `https://gnany3ohbd.execute-api.us-east-2.amazonaws.com/default/Formative?message=${encodeURIComponent(summary + " **DON'T START RESPONSE WITH ASSISTANT!**")}`;
 
-        const response = await fetch(url);  // Replace with your actual API URL
-        const rawText = await response.json();  // Directly parse JSON response
+        const response = await fetch(url);  
+        const rawText = await response.json();  
 
-        console.log('Raw JSON:', rawText);  // Log the raw JSON response
+        console.log('Raw JSON:', rawText);  
 
 
         const botMessage = rawText.response || 'Sorry, no response.';
@@ -180,7 +182,7 @@
         conversationHistory.push({ role: "assistant", content: botMessage });
         localStorage.setItem('conversationHistory', JSON.stringify(conversationHistory));
       } catch (error) {
-        console.error('Error:', error);  // Log error if any
+        console.error('Error:', error); 
         appendMessage('ChatGPT', 'Failed to fetch response.', 'bot-message', typingEffect=true);
       }
 
@@ -194,7 +196,6 @@
   chatMessages.appendChild(msgDiv);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
-  // Typing effect for bot
   if (typingEffect) {
     let index = 0;
     msgDiv.innerHTML = `<strong>${sender}:</strong> <span id="typing-text"></span>`;
@@ -207,7 +208,7 @@
       if (index === text.length) {
         clearInterval(typingInterval);
       }
-    }, 30); // Typing speed (ms per character)
+    }, 30);
   } else {
     msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
     msgDiv.style.display = 'block';
@@ -264,9 +265,9 @@
 
 <script>
   function clearConversation() {
-  localStorage.removeItem('conversationHistory'); // ❌ clear from localStorage
-  conversationHistory = []; // ❌ clear from memory
-  chatMessages.innerHTML = ''; // ❌ clear chat display
-  chatMessages.style.display = "none"; // hide chat area again
+  localStorage.removeItem('conversationHistory'); 
+  conversationHistory = []; 
+  chatMessages.innerHTML = ''; 
+  chatMessages.style.display = "none"; 
 }
 </script>
