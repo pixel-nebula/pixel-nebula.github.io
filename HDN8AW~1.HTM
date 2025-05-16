@@ -141,6 +141,9 @@
       const userMessage = textarea.value.trim();
       if (!userMessage) return;
 
+      sendButton.style.pointerEvents = 'none';
+      sendButton.style.opacity = '0.5';
+
       appendMessage('You', userMessage, 'user-message');
 
       textarea.value = '';
@@ -153,7 +156,7 @@
         const lastFew = tempHistory.slice(-4);
         const summary = lastFew.map(m => `${m.role}: ${m.content}`).join('\n');
 
-        const url = `https://gnany3ohbd.execute-api.us-east-2.amazonaws.com/default/Formative?message=${encodeURIComponent(summary)}`;
+        const url = `https://gnany3ohbd.execute-api.us-east-2.amazonaws.com/default/Formative?message=${encodeURIComponent(summary + " **DON'T START RESPONSE WITH ASSISTANT!**")}`;
 
         const response = await fetch(url);  // Replace with your actual API URL
         const rawText = await response.json();  // Directly parse JSON response
@@ -172,6 +175,9 @@
         console.error('Error:', error);  // Log error if any
         appendMessage('ChatGPT', 'Failed to fetch response.', 'bot-message', typingEffect=true);
       }
+
+      sendButton.style.pointerEvents = 'auto';
+      sendButton.style.opacity = '1';
     });
 
     function appendMessage(sender, text, className, typingEffect = false) {
