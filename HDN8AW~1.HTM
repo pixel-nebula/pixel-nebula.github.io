@@ -134,6 +134,10 @@
     const sendButton = document.getElementById('sendButton');
     const chatMessages = document.getElementById('chatMessages');
 
+    function isNearBottom(element, threshold = 50) {
+      return (element.scrollHeight - element.scrollTop - element.clientHeight) < threshold;
+    }
+
     textarea.addEventListener('input', () => {
       textarea.style.height = 'auto';
       textarea.style.height = textarea.scrollHeight + 'px';
@@ -191,6 +195,7 @@
     });
 
     function appendMessage(sender, text, className, typingEffect = false) {
+      const wasNearBottom = isNearBottom(chatMessages);
   const msgDiv = document.createElement('div');
   msgDiv.classList.add('message', className);
   chatMessages.appendChild(msgDiv);
@@ -212,6 +217,9 @@
   } else {
     msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
     msgDiv.style.display = 'block';
+  }
+  if (wasNearBottom) {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 }
 
