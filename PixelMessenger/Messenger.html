@@ -1,128 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+<script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Simple Messaging App</title>
+<title>PixelNebula</title>
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" type="image/png" />
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 0 15px;
-  }
-  #messageContainer {
-    border: 1px solid #ccc;
-    padding: 10px;
-    min-height: 300px;
-    overflow-y: auto;
-    background: #f9f9f9;
-    margin-bottom: 15px;
-  }
-  .message {
-    background: #e1f5fe;
-    padding: 8px 12px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    position: relative;
+    margin: 0;
+    background-color: #313338;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0;
   }
+
+  #messageContainer {
+    flex: 1;
+    background-color: #2b2d31;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #555 transparent;
+  }
+  #messageContainer::-webkit-scrollbar {
+    width: 8px;
+  }
+  #messageContainer::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+  }
+
+  .message {
+    background-color: #383a40;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
+    transition: background-color 0.2s ease;
+    width: 100%;
+  }
+
+  .message:hover {
+    background-color: #404249;
+  }
+
+  .message-content {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap;  <-- remove this */
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  white-space: normal; /* allow text to wrap */
+}
+
+  .username {
+  font-weight: 600;
+  color: #949cf7;
+  white-space: nowrap;  /* keep username on one line */
+  user-select: none;
+  flex-shrink: 0; /* prevent username from shrinking */
+  margin-right: 6px; /* add space after username */
+}
+
   .message-text {
     flex-grow: 1;
-    word-wrap: break-word;
+    color: #dcddde;
+    word-break: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
   }
-  .delete-btn {
-    background: #ff5252;
-    border: none;
-    color: white;
-    padding: 4px 8px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 3px;
-  }
+
   #inputArea {
     display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    background-color: #313338;
+    border-top: 1px solid #1e1f22;
   }
+
   #messageInput {
     flex-grow: 1;
-    padding: 8px;
+    background-color: #383a40;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 14px;
     font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.2;
+    outline: none;
+    resize: none;
+    height: 2.8em; /* initial height for 2 lines approx */
+    min-height: 2.8em; /* prevent too small */
+    max-height: none; /* no max height */
+    overflow-y: hidden; /* hide scrollbar */
+    scrollbar-width: none;
+    transition: background-color 0.2s ease;
   }
+
+  #messageInput::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  #messageInput::placeholder {
+    color: #aaa;
+  }
+
+  #messageInput.slowmode {
+    background-color: #ff5555; /* red background for slowmode */
+    color: #fff;
+  }
+
   #sendBtn {
-    padding: 8px 15px;
+    background-color: #5865f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  #sendBtn:hover:not(:disabled) {
+    background-color: #4752c4;
+  }
+  #sendBtn:disabled {
+    background-color: #3a3b40;
+    cursor: not-allowed;
+    color: #999;
+  }
+
+  /* Delete button style */
+  .delete-btn {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .delete-btn:hover {
+    background-color: #ff7777;
+  }
+
+  /* Responsive: send button only visible on mobile */
+  #sendBtn {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    #sendBtn {
+      display: inline-block;
+    }
   }
 </style>
 </head>
-<body>
+<body onload="checkLoginStatus()">
 
-<h2>Game Chat</h2>
-
-<div id="messageContainer">
-  <!-- Messages appear here -->
-</div>
+<div id="messageContainer"></div>
 
 <div id="inputArea">
-  <input type="text" id="messageInput" placeholder="Type your message..." />
+  <textarea id="messageInput" placeholder="Type your message..." maxlength="1080"></textarea>
   <button id="sendBtn">Send</button>
 </div>
 
 <script>
+  const username = "Player123";
+
   const messageContainer = document.getElementById('messageContainer');
   const messageInput = document.getElementById('messageInput');
   const sendBtn = document.getElementById('sendBtn');
 
-  // Send message function
-  function sendMessage() {
-    const text = messageInput.value.trim();
-    if (text === '') return; // Don't send empty messages
+  function autoResizeTextarea() {
+  const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
+  const minHeightPx = lineHeightPx * 1;
 
-    // Create message div
+  messageInput.style.height = 'auto';
+
+  if (messageInput.scrollHeight > minHeightPx) {
+    messageInput.style.height = messageInput.scrollHeight + 'px';
+  } else {
+    messageInput.style.height = minHeightPx + 'px';
+  }
+}
+
+function resetTextareaHeight() {
+  const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
+  const minHeightPx = lineHeightPx * 1;
+  messageInput.style.height = minHeightPx + 'px';
+}
+
+  messageInput.addEventListener('input', autoResizeTextarea);
+
+  let canSend = true;
+  let slowmodeCountdownId = null;
+
+  function scrollToBottom() {
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+  }
+
+  function deleteMessageAfter24Hours(messageDiv, timestamp) {
+    const now = Date.now();
+    const msUntilDelete = timestamp + 24 * 60 * 60 * 1000 - now;
+    if (msUntilDelete <= 0) {
+      messageDiv.remove();
+    } else {
+      setTimeout(() => {
+        messageDiv.remove();
+      }, msUntilDelete);
+    }
+  }
+
+  function startSlowmode() {
+    canSend = false;
+    sendBtn.disabled = true;
+    messageInput.disabled = true;
+    messageInput.classList.add('slowmode');
+
+    let secondsLeft = 20;
+    messageInput.placeholder = `Slowmode: ${secondsLeft} seconds remaining`;
+    messageInput.value = '';
+
+    slowmodeCountdownId = setInterval(() => {
+      secondsLeft--;
+      if (secondsLeft > 0) {
+        messageInput.placeholder = `Slowmode: ${secondsLeft} seconds remaining`;
+      } else {
+        clearInterval(slowmodeCountdownId);
+        messageInput.placeholder = 'Type your message...';
+        canSend = true;
+        sendBtn.disabled = false;
+        messageInput.disabled = false;
+        messageInput.classList.remove('slowmode');
+        messageInput.focus();
+      }
+    }, 1000);
+  }
+
+  function sendMessage() {
+    if (!canSend) return;
+
+    const text = messageInput.value.trim();
+    if (!text) return;
+
+    if (text.length > 1080) {
+      alert('Message cannot exceed 1080 characters.');
+      messageInput.focus();
+      return;
+    }
+
+    autoResizeTextarea();
+
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message');
 
-    // Message text span
+    const contentWrapper = document.createElement('div');
+    contentWrapper.classList.add('message-content');
+
+    const usernameSpan = document.createElement('span');
+    usernameSpan.classList.add('username');
+    usernameSpan.textContent = username + ':';
+
     const messageText = document.createElement('span');
     messageText.classList.add('message-text');
     messageText.textContent = text;
 
-    // Delete button
+    contentWrapper.appendChild(usernameSpan);
+    contentWrapper.appendChild(messageText);
+
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete-btn');
     deleteBtn.textContent = 'Delete';
-
-    // Delete message on click
     deleteBtn.addEventListener('click', () => {
       messageDiv.remove();
     });
-
-    // Append message text and delete button to message div
-    messageDiv.appendChild(messageText);
+    messageDiv.appendChild(contentWrapper);
     messageDiv.appendChild(deleteBtn);
 
-    // Append message div to container
     messageContainer.appendChild(messageDiv);
 
-    // Scroll to bottom
-    messageContainer.scrollTop = messageContainer.scrollHeight;
+    const timestamp = Date.now();
+    deleteMessageAfter24Hours(messageDiv, timestamp);
 
-    // Clear input
+    scrollToBottom();
+
     messageInput.value = '';
+    resetTextareaHeight(); 
     messageInput.focus();
+
+    startSlowmode();
   }
 
-  // Send on button click
   sendBtn.addEventListener('click', sendMessage);
 
-  // Send on Enter key press
-  messageInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
+  messageInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
       sendMessage();
     }
   });
+
+  window.onload = scrollToBottom;
+
+  function isGoogleIDToken(token) {
+        const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/;
+        return jwtPattern.test(token);
+    }
+
+    function checkLoginStatus() {
+        if (!navigator.onLine) {
+            const idToken = getCookie('IDToken');
+            if (!idToken || !isGoogleIDToken(idToken)) {
+                window.location.href = '../index.html';
+            }
+
+            let cookieName = 'backgroundtype';
+            let cookieValue = getCookie(cookieName);
+
+            if (cookieValue === '1') {
+                document.getElementById('particles-js').style.visibility = 'visible';
+            } else if (cookieValue === '2') {
+                document.getElementById('drops').style.visibility = 'visible';
+            } else if (cookieValue === '3') {
+                document.getElementById('dotCanvas').style.visibility = 'visible';
+            } else {
+                setCookie(cookieName, '1', 100);
+                document.getElementById('particles-js').style.visibility = 'visible';
+            }
+
+            document.body.style.visibility = "visible";
+            document.getElementById("messageBox").style.display = "none";
+
+        } else {
+            let cookieName = 'backgroundtype';
+            let cookieValue = getCookie(cookieName);
+
+            if (cookieValue === '1') {
+                document.getElementById('particles-js').style.visibility = 'visible';
+            } else if (cookieValue === '2') {
+                document.getElementById('drops').style.visibility = 'visible';
+            } else if (cookieValue === '3') {
+                document.getElementById('dotCanvas').style.visibility = 'visible';
+            } else {
+                setCookie(cookieName, '1', 100);
+                document.getElementById('particles-js').style.visibility = 'visible';
+            }
+
+            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                const [key, value] = cookie.split('=').map(c => c.trim());
+                acc[key] = value;
+                return acc;
+            }, {});
+
+            const idToken = cookies.IDToken;
+
+            if (idToken) {
+                document.body.style.visibility = "visible";
+                document.getElementById('infodiv').classList.add('visible');
+            } else {
+                window.location.href = '../index.html';
+            }
+
+            if (getCookie("messageBoxClosed") === "true") {
+                document.getElementById("notification").style.display = "none";
+            }
+        }
+    }
+
+    function logout() {
+        document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        window.location.href = '../index.html';
+    }
 </script>
 
 </body>
