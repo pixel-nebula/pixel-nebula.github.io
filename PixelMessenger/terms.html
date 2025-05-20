@@ -691,13 +691,12 @@ window.addEventListener('resize', () => {
                 return acc;
             }, {});
 
-            const idToken = cookies.IDToken;
+            const idToken = getCookie('IDToken'); 
+            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = '../index.html';}
 
             if (idToken) {
                 document.body.style.visibility = "visible";
                 document.getElementById('infodiv').classList.add('visible');
-            } else {
-                window.location.href = '../index.html';
             }
 
             if (getCookie("messageBoxClosed") === "true") {

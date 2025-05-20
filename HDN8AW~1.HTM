@@ -261,12 +261,8 @@
         return acc;
     }, {});
 
-    const idToken = cookies.IDToken;
-
-    if (!idToken) {
-      window.location.href = 'index.html';
-    }
-
+    const idToken = getCookie('IDToken'); 
+            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
 }
 }
 </script>
