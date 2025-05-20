@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple Messaging App</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  #messageContainer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 300px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    margin-bottom: 15px;
+  }
+  .message {
+    background: #e1f5fe;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .message-text {
+    flex-grow: 1;
+    word-wrap: break-word;
+  }
+  .delete-btn {
+    background: #ff5252;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  #inputArea {
+    display: flex;
+  }
+  #messageInput {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 1rem;
+  }
+  #sendBtn {
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Game Chat</h2>
+
+<div id="messageContainer">
+  <!-- Messages appear here -->
+</div>
+
+<div id="inputArea">
+  <input type="text" id="messageInput" placeholder="Type your message..." />
+  <button id="sendBtn">Send</button>
+</div>
+
+<script>
+  const messageContainer = document.getElementById('messageContainer');
+  const messageInput = document.getElementById('messageInput');
+  const sendBtn = document.getElementById('sendBtn');
+
+  // Send message function
+  function sendMessage() {
+    const text = messageInput.value.trim();
+    if (text === '') return; // Don't send empty messages
+
+    // Create message div
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
+
+    // Message text span
+    const messageText = document.createElement('span');
+    messageText.classList.add('message-text');
+    messageText.textContent = text;
+
+    // Delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.textContent = 'Delete';
+
+    // Delete message on click
+    deleteBtn.addEventListener('click', () => {
+      messageDiv.remove();
+    });
+
+    // Append message text and delete button to message div
+    messageDiv.appendChild(messageText);
+    messageDiv.appendChild(deleteBtn);
+
+    // Append message div to container
+    messageContainer.appendChild(messageDiv);
+
+    // Scroll to bottom
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+
+    // Clear input
+    messageInput.value = '';
+    messageInput.focus();
+  }
+
+  // Send on button click
+  sendBtn.addEventListener('click', sendMessage);
+
+  // Send on Enter key press
+  messageInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+</script>
+
+</body>
+</html>
