@@ -665,10 +665,6 @@ function checkLoginStatus() {
     }
 
     document.body.style.visibility = "visible";
-
-    if (getCookie("messageBoxClosed") === "true") {
-        document.getElementById("notification").style.display = "none";
-    }
 }
 
 function logout() {
