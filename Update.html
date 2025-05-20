@@ -446,7 +446,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body>
+<body onload="checkLoginStatus()">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
@@ -505,146 +505,107 @@
     </footer>
 
     <script>
-function isGoogleIDToken(token) {
-    const jwtPattern = /^[a-zA-Z0-9\-_]+\.[a-zA-Z0-9\-_]+\.[a-zA-Z0-9\-_]+$/;
-    return jwtPattern.test(token);
-}
+      function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
 
-function getCookie(name) {
-    return document.cookie
-        .split('; ')
-        .reduce((acc, cookie) => {
-            const [k, v] = cookie.split('=');
-            return k === name ? decodeURIComponent(v) : acc;
-        }, '');
-}
+        function checkLoginStatus() {
 
-function setCookie(name, value, days) {
-    const expires = days
-        ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`
-        : '';
-    document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
-}
+          document.getElementById('scroll-box').classList.add('visible');
 
-function applyBackgroundVisibility() {
-    const bgType = getCookie('backgroundtype');
-    const defaultType = '1';
+          if (!navigator.onLine) {
 
-    const visibilityMap = {
-        '1': 'particles-js',
-        '2': 'drops',
-        '3': 'dotCanvas'
-    };
+            const idToken = getCookie('IDToken'); 
+            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
 
-    const targetId = visibilityMap[bgType] || visibilityMap[defaultType];
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
+            document.getElementById("Username").textContent = Username
+            
 
-    if (!bgType) {
-        setCookie('backgroundtype', defaultType, 100);
-    }
+            let cookieName = 'backgroundtype';
+  let cookieValue = getCookie(cookieName);
 
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) targetElement.style.visibility = 'visible';
-}
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
+            document.body.style.visibility = "visible";
+            document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+            document.getElementById("messageBox").style.display = "none";
+          }
+          else if (navigator.onLine) {
+            navigator.serviceWorker.register('/service-worker.js')
+            let cookieName = 'backgroundtype';
+  let cookieValue = getCookie(cookieName);
 
-function handleOfflineMode() {
-    const idToken = getCookie('IDToken');
-    if (!idToken || !isGoogleIDToken(idToken)) {
-        window.location.href = 'index.html';
-        return;
-    }
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
+    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=').map(c => c.trim());
+        acc[key] = value;
+        return acc;
+    }, {});
 
-    applyBackgroundVisibility();
-    document.body.style.visibility = 'visible';
+    const idToken = cookies.IDToken;
 
-    const profilePic = document.getElementById('profile-pic');
-    profilePic.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+    if (idToken) {
+        if (sessionStorage.getItem('profile-pic')) {
+            // Use cached profile pic if available
+            document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
+            document.getElementById("Username").textContent = Username
+            document.body.style.visibility = "visible";
+        } else {
+            // Fetch profile info from API
+            fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('profile-pic').src = data.picture;
+                    // Cache profile picture in sessionStorage
+                    sessionStorage.setItem('profile-pic', data.picture);
 
-    const messageBox = document.getElementById('messageBox');
-    if (messageBox) messageBox.style.display = 'none';
+                    let Username = getCookie('Username'); 
+                    document.getElementById("Username").innerText = Username
+                    document.getElementById("Username").textContent = Username
 
-    document.querySelectorAll('.game-item').forEach(item => {
-        const playButton = item.querySelector('.play-button');
-        const statusMsg = item.querySelector('.text-container p small');
-
-        if (playButton) {
-            playButton.href = "#";
-            playButton.textContent = "Unavailable";
+                    document.body.style.visibility = "visible";
+                })
+                .catch(error => {
+                    console.error('Error validating token:', error);
+                    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                    window.location.href = 'index.html';
+                });
         }
-        if (statusMsg) {
-            statusMsg.textContent = "Offline";
-        }
-    });
-}
-
-function handleOnlineMode(idToken) {
-    applyBackgroundVisibility();
-
-    const profilePicEl = document.getElementById('profile-pic');
-    const usernameEl = document.getElementById('Username');
-
-    if (!idToken || !isGoogleIDToken(idToken)) {
-        window.location.href = 'index.html';
-        return;
-    }
-
-    function showUserProfile(pictureUrl) {
-        profilePicEl.src = pictureUrl;
-        sessionStorage.setItem('profile-pic', pictureUrl);
-
-        const username = getCookie('Username');
-        if (usernameEl) {
-            usernameEl.innerText = username;
-            usernameEl.textContent = username;
-        }
-
-        document.body.style.visibility = 'visible';
-    }
-
-    if (sessionStorage.getItem('profile-pic')) {
-        showUserProfile(sessionStorage.getItem('profile-pic'));
     } else {
-        fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
-            .then(res => res.json())
-            .then(data => showUserProfile(data.picture))
-            .catch(err => {
-                console.error('Token validation failed:', err);
-                document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                window.location.href = 'index.html';
-            });
-    }
-
-    profilePicEl.onerror = function () {
-        this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
-    };
-
-    if (getCookie("messageBoxClosed") === "true") {
-        const notification = document.getElementById("notification");
-        if (notification) notification.style.display = "none";
-    }
-}
-
-function checkLoginStatus() {
-    const idToken = getCookie('IDToken');
-    if (!idToken) {
         window.location.href = 'index.html';
-        return;
     }
-
-    if (!navigator.onLine) {
-        handleOfflineMode();
-    } else {
-        handleOnlineMode(idToken);
-    }
+    
+    if (getCookie("messageBoxClosed") === "true") {document.getElementById("notification").style.display = "none";}
+    document.getElementById('profile-pic').onerror = function() {
+        this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
+    };
 }
 
-function logout() {
-    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-    window.location.href = 'index.html';
-}
-
-document.addEventListener('DOMContentLoaded', checkLoginStatus);
-</script>
-
+        }
+    </script>
 </body>
 </html>
 
