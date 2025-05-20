@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelNebula</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 0px;
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+            color: #00ffcc;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+        footer a {
+            color: #00ffcc;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .info {
+            padding: 20px;
+            max-width: 700px;
+            width: 90%;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+            height: 500px;
+            overflow-y: auto;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 1s ease, transform 1s ease;
+            background: rgba(0, 255, 204, 0.05);
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            color: #e0fefe;
+        }
+        .info.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .info h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        .info p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+  <div style="visibility: hidden;" id="particles-js"></div>
+
+  <script>
+    function goBack() {
+        window.history.back();
+    }
+  </script>
+
+  <div class="menu">
+      <a onclick="goBack()">Back</a>
+  </div>
+
+  <div class="info visible" id="infodiv">
+      <h3>Privacy Policy</h3>
+      <p>Last Updated: 8/26/2024</p>
+      <p>Pixel Nebula is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our Services.</p>
+      <p><strong>1. Information We Collect</strong><br>
+      We may collect the following types of information:
+      <ul>
+          <li>Personal information you provide to us (e.g., name, email address).</li>
+          <li>Usage data, such as IP address, browser type, and pages visited.</li>
+          <li>Cookies and similar technologies to enhance your experience.</li>
+      </ul></p>
+      <p><strong>2. How We Use Your Information</strong><br>
+      We use your information to:
+      <ul>
+          <li>Provide, maintain, and improve our Services.</li>
+          <li>Communicate with you about updates or support requests.</li>
+          <li>Analyze trends and enhance user experience.</li>
+      </ul></p>
+      <p><strong>3. Sharing of Information</strong><br>
+      We do not sell or share your personal data with third parties except:
+      <ul>
+          <li>When legally required.</li>
+          <li>To protect the rights and safety of Pixel Nebula or users.</li>
+          <li>With trusted service providers who agree to uphold this policy.</li>
+      </ul></p>
+      <p><strong>4. Your Rights</strong><br>
+      You may request access to or deletion of your personal data. To make a request, contact us through the support channels listed on our site.</p>
+      <p><strong>5. Data Security</strong><br>
+      We implement reasonable safeguards to protect your information but cannot guarantee complete security of data transmitted over the internet.</p>
+      <p><strong>6. Changes to This Policy</strong><br>
+      We may update this Privacy Policy from time to time. Changes will be posted on this page with the updated date.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Pixel Nebula. All rights reserved. | <a href="/privacy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>

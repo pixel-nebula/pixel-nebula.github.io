@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelNebula</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 0px;
+        }
+        .header {
+            margin-top: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+        .header h2 {
+            font-size: 40px;
+            margin: 0;
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+            color: #00ffcc;
+        }
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .logout:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .TOS {
+            position: absolute;
+            top: 20px;
+            right: 110px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .TOS:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+        footer a {
+            color: #00ffcc;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .info {
+            padding: 20px;
+            max-width: 700px;
+            width: 90%;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+            height: 500px;
+            overflow-y: auto;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 1s ease, transform 1s ease;
+            background: rgba(0, 255, 204, 0.05);
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            color: #e0fefe;
+        }
+        .info.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .info h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        .info p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+        }
+        :root {
+            --clr1: #00ff00;
+        }
+        .drops {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            white-space: nowrap;
+            color: var(--clr1);
+            font-weight: bold;
+            z-index: 1000;
+            background: transparent;
+            padding: 10px 25px;
+            transition: background-color 0.5s;
+        }
+        .drop {
+            position: absolute;
+            color: var(--clr1);
+            font-size: 1.5em;
+            top: 0;
+            animation: none;
+            transition: color 0.5s;
+            z-index: -1;
+        }
+        @keyframes drop-fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        #dotCanvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411" crossorigin="anonymous"></script>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+<body>
+  <div style="visibility: hidden;" id="particles-js"></div>
+  <div style="visibility: hidden;" id="drops"></div>
+  <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
+
+  <script>
+    function goBack() {
+        window.history.back();
+    }
+  </script>
+
+  <div class="menu">
+      <a onclick="goBack()">Back</a>
+  </div>
+
+  <div class="info" id="infodiv">
+      <h3>Last Updated: 8/26/2024</h3>
+      <p>Welcome to Pixel Nebula! By accessing or using our website and services (collectively, the "Services"), you agree to comply with and be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Services.</p>
+      <p>1. Acceptance of Terms<br>
+      By using the Services, you affirm that you are at least 13 years old and have the legal capacity to enter into these Terms. If you are under 18 years old, you represent that you have obtained parental or guardian consent to use the Services.</p>
+      <p>2. Account Registration<br>
+      To access certain features of our Services, you may be required to create an account. You agree to:
+      <ul>
+          <li>Provide accurate, current, and complete information during registration and to update such information to keep it accurate, current, and complete.</li>
+          <li>Maintain the security of your password and accept responsibility for all activities that occur under your account.</li>
+          <li>Notify us immediately of any unauthorized use of your account or any other breach of security.</li>
+      </ul></p>
+      <p>3. User Conduct<br>
+      You agree to adhere to the following rules of conduct while using our Services. Engaging in any of the prohibited activities listed below is strictly forbidden:
+      <ul>
+          <li>Interference: You must not interfere with or disrupt the Services, including but not limited to disrupting servers or networks connected to the Services, or violating the regulations, policies, or procedures of such networks.</li>
+          <li>Impersonation: You are prohibited from impersonating any person or entity or misrepresenting your affiliation with any person or entity.</li>
+      </ul>
+      Engaging in any of the above behaviors may result in immediate termination or suspension of your account and access to the Services.</p>
+      <p>4. Intellectual Property<br>
+      All content on Pixel Nebula, including but not limited to text, graphics, logos, images, and third-party files, is either owned by Pixel Nebula or licensed from third parties. You may not reproduce, distribute, or create derivative works from any content without the prior written permission of the respective copyright owner. If you believe that any content on our Services infringes your copyright, please contact us...</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Pixel Nebula. All rights reserved. | <a href="/tos.html">Terms of Service</a>
+  </footer>
+</body>
+</html>
