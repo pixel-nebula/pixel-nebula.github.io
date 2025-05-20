@@ -695,6 +695,7 @@ window.addEventListener('resize', () => {
 
             if (idToken) {
                 document.body.style.visibility = "visible";
+                document.getElementById('infodiv').classList.add('visible');
             } else {
                 window.location.href = '../index.html';
             }
