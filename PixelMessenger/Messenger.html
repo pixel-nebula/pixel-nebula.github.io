@@ -173,7 +173,7 @@
   }
 </style>
 </head>
-<body onload="checkLoginStatus()">
+<body>
 
 <div id="messageContainer"></div>
 
@@ -359,4 +359,5 @@ function logout() {
     location.href = '../index.html';
 }
 
+document.addEventListener('DOMContentLoaded', checkLoginStatus);
 </script>

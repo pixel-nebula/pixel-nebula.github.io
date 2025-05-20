@@ -212,7 +212,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="checkLoginStatus()">
+<body>
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
@@ -652,7 +652,7 @@ function setCookie(name, value, days) {
 function checkLoginStatus() {
     const idToken = getCookie('IDToken');
     if (!idToken || !isGoogleIDToken(idToken)) {
-        location.href = './index.html';
+        location.href = '../index.html';
         return;
     }
 
@@ -669,4 +669,5 @@ function logout() {
     location.href = '../index.html';
 }
 
+document.addEventListener('DOMContentLoaded', checkLoginStatus);
 </script>

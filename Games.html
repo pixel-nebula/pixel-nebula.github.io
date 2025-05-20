@@ -950,7 +950,8 @@ footer a {
         return acc;
     }, {});
 
-    const idToken = cookies.IDToken;
+    const idToken = getCookie('IDToken'); 
+    if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
 
     if (idToken) {
         if (sessionStorage.getItem('profile-pic')) {

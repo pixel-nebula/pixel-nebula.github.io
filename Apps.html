@@ -460,7 +460,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body onload="checkLoginStatus()">
+<body>
     <div style="visibility: hidden;" id="particles-js"></div>
     <div style="visibility: hidden;" id="drops"></div>
     <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
@@ -536,118 +536,6 @@
     </div>
 
     <script>
-      function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
-
-        function checkLoginStatus() {
-            if (!navigator.onLine) {
-
-              const idToken = getCookie('IDToken'); 
-            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
-
-            let cookieName = 'backgroundtype';
-  let cookieValue = getCookie(cookieName);
-
-  // If cookie value exists, apply the visibility based on the value
-  if (cookieValue === '1') {
-    document.getElementById('particles-js').style.visibility = 'visible';
-  } else if (cookieValue === '2') {
-    document.getElementById('drops').style.visibility = 'visible';
-  } else if (cookieValue === '3') {
-    document.getElementById('dotCanvas').style.visibility = 'visible';
-  } else {
-    // If no cookie exists, set the cookie to '1' and set the default visibility
-    setCookie(cookieName, '1', 100);  // Set the default cookie value
-    document.getElementById('particles-js').style.visibility = 'visible';
-  }
-            document.body.style.visibility = "visible";
-            document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
-            document.getElementById("messageBox").style.display = "none";
-            const gameItems = document.querySelectorAll('.game-item');
-
-        gameItems.forEach(item => {
-            // Update the play button
-            const playButton = item.querySelector('.play-button');
-            playButton.href = "#";
-            playButton.textContent = "Unavailable";
-
-            // Update the status message
-            const statusMessage = item.querySelector('.text-container p small');
-            if (statusMessage) {
-                statusMessage.textContent = "Offline";
-            }
-        });
-            }
-            else if (navigator.onLine) {
-              let cookieName = 'backgroundtype';
-  let cookieValue = getCookie(cookieName);
-
-  // If cookie value exists, apply the visibility based on the value
-  if (cookieValue === '1') {
-    document.getElementById('particles-js').style.visibility = 'visible';
-  } else if (cookieValue === '2') {
-    document.getElementById('drops').style.visibility = 'visible';
-  } else if (cookieValue === '3') {
-    document.getElementById('dotCanvas').style.visibility = 'visible';
-  } else {
-    // If no cookie exists, set the cookie to '1' and set the default visibility
-    setCookie(cookieName, '1', 100);  // Set the default cookie value
-    document.getElementById('particles-js').style.visibility = 'visible';
-  }
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-        const [key, value] = cookie.split('=').map(c => c.trim());
-        acc[key] = value;
-        return acc;
-    }, {});
-
-    const idToken = getCookie('IDToken'); 
-    if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
-
-    if (idToken) {
-        if (sessionStorage.getItem('profile-pic')) {
-            // Use cached profile pic if available
-            document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
-
-            let Username = getCookie('Username'); 
-            document.getElementById("Username").innerText = Username
-            document.getElementById("Username").textContent = Username
-
-            document.body.style.visibility = "visible";
-        } else {
-            // Fetch profile info from API
-            fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('profile-pic').src = data.picture;
-                    // Cache profile picture in sessionStorage
-                    sessionStorage.setItem('profile-pic', data.picture);
-
-                    let Username = getCookie('Username'); 
-                    document.getElementById("Username").innerText = Username
-                    document.getElementById("Username").textContent = Username
-
-                    document.body.style.visibility = "visible";
-                })
-                .catch(error => {
-                    console.error('Error validating token:', error);
-                    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                    window.location.href = 'index.html';
-                });
-        }
-    } else {
-        window.location.href = 'index.html';
-    }
-
-    if (getCookie("messageBoxClosed") === "true") {document.getElementById("notification").style.display = "none";}
-    document.getElementById('profile-pic').onerror = function() {
-        this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
-    };
-}
-
-        function logout() {
-            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-            window.location.href = 'index.html';
-        }
-
         document.getElementById('searchInput').addEventListener('input', function() {
             let filter = this.value.toLowerCase();
             let gameItems = document.querySelectorAll('.game-item');
@@ -661,7 +549,7 @@
                 }
             });
         });
-        }
+        
     </script>
 </body>
 </html>
@@ -1052,3 +940,146 @@
   });
   
   </script>
+
+
+<script>
+function isGoogleIDToken(token) {
+    const jwtPattern = /^[a-zA-Z0-9\-_]+\.[a-zA-Z0-9\-_]+\.[a-zA-Z0-9\-_]+$/;
+    return jwtPattern.test(token);
+}
+
+function getCookie(name) {
+    return document.cookie
+        .split('; ')
+        .reduce((acc, cookie) => {
+            const [k, v] = cookie.split('=');
+            return k === name ? decodeURIComponent(v) : acc;
+        }, '');
+}
+
+function setCookie(name, value, days) {
+    const expires = days
+        ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`
+        : '';
+    document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
+}
+
+function applyBackgroundVisibility() {
+    const bgType = getCookie('backgroundtype');
+    const defaultType = '1';
+
+    const visibilityMap = {
+        '1': 'particles-js',
+        '2': 'drops',
+        '3': 'dotCanvas'
+    };
+
+    const targetId = visibilityMap[bgType] || visibilityMap[defaultType];
+
+    if (!bgType) {
+        setCookie('backgroundtype', defaultType, 100);
+    }
+
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) targetElement.style.visibility = 'visible';
+}
+
+function handleOfflineMode() {
+    const idToken = getCookie('IDToken');
+    if (!idToken || !isGoogleIDToken(idToken)) {
+        window.location.href = 'index.html';
+        return;
+    }
+
+    applyBackgroundVisibility();
+    document.body.style.visibility = 'visible';
+
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+
+    const messageBox = document.getElementById('messageBox');
+    if (messageBox) messageBox.style.display = 'none';
+
+    document.querySelectorAll('.game-item').forEach(item => {
+        const playButton = item.querySelector('.play-button');
+        const statusMsg = item.querySelector('.text-container p small');
+
+        if (playButton) {
+            playButton.href = "#";
+            playButton.textContent = "Unavailable";
+        }
+        if (statusMsg) {
+            statusMsg.textContent = "Offline";
+        }
+    });
+}
+
+function handleOnlineMode(idToken) {
+    applyBackgroundVisibility();
+
+    const profilePicEl = document.getElementById('profile-pic');
+    const usernameEl = document.getElementById('Username');
+
+    if (!idToken || !isGoogleIDToken(idToken)) {
+        window.location.href = 'index.html';
+        return;
+    }
+
+    function showUserProfile(pictureUrl) {
+        profilePicEl.src = pictureUrl;
+        sessionStorage.setItem('profile-pic', pictureUrl);
+
+        const username = getCookie('Username');
+        if (usernameEl) {
+            usernameEl.innerText = username;
+            usernameEl.textContent = username;
+        }
+
+        document.body.style.visibility = 'visible';
+    }
+
+    if (sessionStorage.getItem('profile-pic')) {
+        showUserProfile(sessionStorage.getItem('profile-pic'));
+    } else {
+        fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+            .then(res => res.json())
+            .then(data => showUserProfile(data.picture))
+            .catch(err => {
+                console.error('Token validation failed:', err);
+                document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                window.location.href = 'index.html';
+            });
+    }
+
+    profilePicEl.onerror = function () {
+        this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+    };
+
+    if (getCookie("messageBoxClosed") === "true") {
+        const notification = document.getElementById("notification");
+        if (notification) notification.style.display = "none";
+    }
+}
+
+function checkLoginStatus() {
+    const idToken = getCookie('IDToken');
+    if (!idToken) {
+        window.location.href = 'index.html';
+        return;
+    }
+
+    if (!navigator.onLine) {
+        handleOfflineMode();
+    } else {
+        handleOnlineMode(idToken);
+    }
+}
+
+function logout() {
+    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    window.location.href = 'index.html';
+}
+
+// Run on DOM load
+document.addEventListener('DOMContentLoaded', checkLoginStatus);
+</script>
