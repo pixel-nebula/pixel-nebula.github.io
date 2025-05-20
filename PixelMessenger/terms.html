@@ -660,7 +660,7 @@ function setCookie(name, value, days) {
 function checkLoginStatus() {
     const idToken = getCookie('IDToken');
     if (!idToken || !isGoogleIDToken(idToken)) {
-        location.href = './index.html';
+        location.href = '../index.html';
         return;
     }
 
