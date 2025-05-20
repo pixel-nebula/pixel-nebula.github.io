@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -688,33 +687,7 @@ window.addEventListener('resize', () => {
             const idToken = cookies.IDToken;
 
             if (idToken) {
-                if (sessionStorage.getItem('profile-pic')) {
-                    document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
-
-                    let Username = getCookie('Username');
-                    document.getElementById("Username").innerText = Username;
-                    document.getElementById("Username").textContent = Username;
-
-                    document.body.style.visibility = "visible";
-                } else {
-                    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            document.getElementById('profile-pic').src = data.picture;
-                            sessionStorage.setItem('profile-pic', data.picture);
-
-                            let Username = getCookie('Username');
-                            document.getElementById("Username").innerText = Username;
-                            document.getElementById("Username").textContent = Username;
-
-                            document.body.style.visibility = "visible";
-                        })
-                        .catch(error => {
-                            console.error('Error validating token:', error);
-                            document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                            window.location.href = '../index.html';
-                        });
-                }
+                document.body.style.visibility = "visible";
             } else {
                 window.location.href = '../index.html';
             }
