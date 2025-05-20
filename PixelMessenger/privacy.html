@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <script src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/particles.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +13,36 @@
             padding: 0;
             height: 100vh;
             background-color: black;
+            background-size: cover;
+            background-position: center;
             font-family: Arial, sans-serif;
             color: white;
             text-align: center;
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
             padding-top: 0px;
+        }
+        .header {
+            margin-top: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+        .header h2 {
+            font-size: 40px;
+            margin: 0;
         }
         .menu {
             position: absolute;
             top: 20px;
             left: 20px;
             display: flex;
-            gap: 20px;
+            gap: 20px; /* Adjust the spacing between menu items */
         }
         .menu a {
             text-decoration: none;
@@ -35,10 +52,44 @@
             padding: 5px;
             border-radius: 5px;
             transition: background-color 0.3s;
+            font-weight: bold;
         }
         .menu a:hover {
-            text-decoration: underline;
-            color: #00ffcc;
+          text-decoration: underline;
+          color: #00ffcc;
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px; /* Top right of the window */
+            right: 20px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .logout:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .TOS {
+            position: absolute;
+            top: 20px; /* Top right of the window */
+            right: 110px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .TOS:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         footer {
             position: absolute;
@@ -48,43 +99,49 @@
             font-size: 12px;
             color: #999;
         }
+
         footer a {
-            color: #00ffcc;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
         .info {
             padding: 20px;
-            max-width: 700px;
-            width: 90%;
+            max-width: 700px; /* Adjusted width for shorter lines */
+            width: 90%; /* Ensures responsiveness */
             margin-top: 30px;
             position: relative;
             z-index: 1;
-            height: 500px;
-            overflow-y: auto;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 1s ease, transform 1s ease;
+            height: 500px; /* Fixed height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+
+            opacity: 0; /* Start invisible */
+            transform: translateY(10px); /* Start below */
+            transition: opacity 1s ease, transform 1s ease; /* Smooth transition for opacity and position */
+
             background: rgba(0, 255, 204, 0.05);
             border: 2px solid #00ffcc;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
             color: #e0fefe;
         }
+
         .info.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .info h3 {
             font-size: 36px;
             margin-bottom: 15px;
         }
         .info p {
             font-size: 18px;
-            line-height: 1.6;
-            margin: 0;
+            line-height: 1.6; /* Increased line height for better readability */
+            margin: 0; /* Removes default margin for better control */
         }
         #particles-js {
             position: fixed;
@@ -92,58 +149,492 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 0;
+            z-index: 0; /* Send it behind all other elements */
         }
-    </style>
-</head>
-<body>
-  <div style="visibility: hidden;" id="particles-js"></div>
-
-  <script>
-    function goBack() {
-        window.history.back();
+        :root {
+        --clr1: #00ff00; /* Green color for text */
     }
-  </script>
 
-  <div class="menu">
-      <a onclick="goBack()">Back</a>
-  </div>
 
-  <div class="info visible" id="infodiv">
-      <h3>Privacy Policy</h3>
-      <p>Last Updated: 8/26/2024</p>
-      <p>Pixel Nebula is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our Services.</p>
-      <p><strong>1. Information We Collect</strong><br>
-      We may collect the following types of information:
-      <ul>
-          <li>Personal information you provide to us (e.g., name, email address).</li>
-          <li>Usage data, such as IP address, browser type, and pages visited.</li>
-          <li>Cookies and similar technologies to enhance your experience.</li>
-      </ul></p>
-      <p><strong>2. How We Use Your Information</strong><br>
-      We use your information to:
-      <ul>
-          <li>Provide, maintain, and improve our Services.</li>
-          <li>Communicate with you about updates or support requests.</li>
-          <li>Analyze trends and enhance user experience.</li>
-      </ul></p>
-      <p><strong>3. Sharing of Information</strong><br>
-      We do not sell or share your personal data with third parties except:
-      <ul>
-          <li>When legally required.</li>
-          <li>To protect the rights and safety of Pixel Nebula or users.</li>
-          <li>With trusted service providers who agree to uphold this policy.</li>
-      </ul></p>
-      <p><strong>4. Your Rights</strong><br>
-      You may request access to or deletion of your personal data. To make a request, contact us through the support channels listed on our site.</p>
-      <p><strong>5. Data Security</strong><br>
-      We implement reasonable safeguards to protect your information but cannot guarantee complete security of data transmitted over the internet.</p>
-      <p><strong>6. Changes to This Policy</strong><br>
-      We may update this Privacy Policy from time to time. Changes will be posted on this page with the updated date.</p>
-  </div>
+    .drops {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2em;
+        white-space: nowrap;
+        color: var(--clr1); /* Green color */
+        font-weight: bold;
+        z-index: 1000;
+        background: transparent;
+        padding: 10px 25px;
+        transition: background-color 0.5s;
+    }
 
-  <footer>
-    &copy; 2025 Pixel Nebula. All rights reserved. | <a href="/privacy.html">Privacy Policy</a>
-  </footer>
+    .drop {
+    position: absolute;
+    color: var(--clr1); /* Green color */
+    font-size: 1.5em; /* Smaller text size */
+    top: 0;
+    animation: none;
+    transition: color 0.5s;
+    z-index: -1; /* Send the drops to the background */
+}
+
+
+    @keyframes drop-fall {
+        0% {
+            transform: translateY(0); /* Start at the top */
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh); /* Fall all the way to the bottom */
+            opacity: 0; /* Fade out */
+        }
+    }
+#dotCanvas {
+            display: block;
+            position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;  /* Ensure it's on top of other elements */
+    pointer-events: auto;  /* Allow click-through */
+        }
+
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C130NKT3ZP');
+</script>
+<body onload="OnLoad()">
+  <div style="visibility: hidden;" id="particles-js"></div>
+  <div style="visibility: hidden;" id="drops"></div>
+  <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
+
+    <!-- Menu -->
+     <script>
+        function goBack() {
+            window.history.back();
+        }
+     </script>
+    <div class="menu">
+        <a onclick="goBack()">Back</a>
+    </div>
+
+    <!-- Scroll Frame Section -->
+    <div class="info" id="infodiv">
+        <h3>Last Updated: 8/26/2024</h3>
+        <p>Welcome to Pixel Nebula! By accessing or using our website and services (collectively, the "Services"), you agree to comply with and be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Services.</p>
+        <p>1. Acceptance of Terms<br>
+        By using the Services, you affirm that you are at least 13 years old and have the legal capacity to enter into these Terms. If you are under 18 years old, you represent that you have obtained parental or guardian consent to use the Services.</p>
+        <p>2. Account Registration<br>
+        To access certain features of our Services, you may be required to create an account. You agree to:
+        <ul>
+            <li>Provide accurate, current, and complete information during registration and to update such information to keep it accurate, current, and complete.</li>
+            <li>Maintain the security of your password and accept responsibility for all activities that occur under your account.</li>
+            <li>Notify us immediately of any unauthorized use of your account or any other breach of security.</li>
+        </ul></p>
+        <p>3. User Conduct<br>
+        You agree to adhere to the following rules of conduct while using our Services. Engaging in any of the prohibited activities listed below is strictly forbidden:
+        <ul>
+            <li>Interference: You must not interfere with or disrupt the Services, including but not limited to disrupting servers or networks connected to the Services, or violating the regulations, policies, or procedures of such networks.</li>
+            <li>Impersonation: You are prohibited from impersonating any person or entity or misrepresenting your affiliation with any person or entity.</li>
+        </ul>
+        Engaging in any of the above behaviors may result in immediate termination or suspension of your account and access to the Services.</p>
+        <p>4. Intellectual Property<br>
+        All content on Pixel Nebula, including but not limited to text, graphics, logos, images, and third-party files, is either owned by Pixel Nebula or licensed from third parties. You may not reproduce, distribute, or create derivative works from any content without the prior written permission of the respective copyright owner. If you believe that any content on our Services infringes your copyright, please contact us at pixelnebulacontact@gmail.com.</p>
+        <p>5. User-Generated Content<br>
+        You may have the opportunity to submit, post, or otherwise make available content through our Services ("User Content"). By submitting User Content, you grant Pixel Nebula a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, publish, and distribute such content in any form. You are solely responsible for your User Content and the consequences of submitting it.</p>
+        <p>6. Third-Party Files<br>
+        Our Services may include third-party files that are not created or owned by Pixel Nebula. We do not endorse these files and are not responsible for their content or accuracy. You acknowledge that the use of such files is at your own risk and that Pixel Nebula shall not be liable for any damages or losses caused by or in connection with your use of any third-party files.</p>
+        <p>7. Termination<br>
+        We may terminate or suspend your access to our Services at any time, without prior notice or liability, for any reason whatsoever, including, without limitation, a breach of these Terms. Upon termination, your right to use the Services will immediately cease.</p>
+        <p>8. Disclaimer of Warranties<br>
+        Our Services are provided on an "as is" and "as available" basis. Pixel Nebula makes no representations or warranties of any kind, express or implied, regarding the operation of the Services, or the information, content, materials, or products included in the Services.</p>
+        <p>9. Limitation of Liability<br>
+        To the fullest extent permitted by applicable law, Pixel Nebula shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (a) your use or inability to use the Services; (b) any unauthorized access to or use of our servers and/or any personal information stored therein; (c) any interruption or cessation of transmission to or from our Services; or (d) any bugs, viruses, or the like that may be transmitted to or through our Services.</p>
+        <p>10. Governing Law<br>
+        These Terms shall be governed by and construed in accordance with the laws of Virginia, without regard to its conflict of law principles. You agree to submit to the personal jurisdiction of the state and federal courts located in Virginia for the resolution of any disputes.</p>
+        <p>11. Changes to Terms<br>
+        We reserve the right to modify these Terms at any time. We will notify you of significant changes by posting a notice on our Services or by sending you an email. Your continued use of the Services after any modifications constitutes your acceptance of the new Terms.</p>
+        <p>If you have any questions about these Terms, please contact us at pixelnebulacontact@gmail.com.</p>
+        <p>Thank you for being a part of Pixel Nebula!</p>
+    </div>
+
+    <footer>
+      &copy; 2024 Pixel Nebula. All rights reserved. |
+      <a href="mailto:pixelnebulacontact@gmail.com">pixelnebulacontact@gmail.com</a>
+    </footer>
 </body>
 </html>
+
+<script>
+ function OnLoad() {
+  document.getElementById('infodiv').classList.add('visible');
+ }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  // Read the cookie value
+  let cookieName = 'backgroundtype';
+  let cookieValue = getCookie(cookieName);
+
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
+});
+    particlesJS('particles-js', {
+        "particles": {
+"number": {
+  "value": 200,
+  "density": {
+    "enable": true,
+    "value_area": 800
+  }
+},
+"color": {
+  "value": "#ffffff"
+},
+"shape": {
+  "type": "", // Circle //
+  "stroke": {
+    "width": 0,
+    "color": "#000000"
+  },
+  "polygon": {
+    "nb_sides": 5
+  },
+  "image": {
+    "src": "img/github.svg",
+    "width": 100,
+    "height": 100
+  }
+},
+"opacity": {
+  "value": 1,
+  "random": true,
+  "anim": {
+    "enable": true,
+    "speed": 1,
+    "opacity_min": 0,
+    "sync": false
+  }
+},
+"size": {
+  "value": 3,
+  "random": true,
+  "anim": {
+    "enable": false,
+    "speed": 4,
+    "size_min": 0.3,
+    "sync": false
+  }
+},
+"line_linked": {
+  "enable": true,
+  "distance": 90,
+  "color": "#ffffff",
+  "opacity": 0.4,
+  "width": 1
+},
+"move": {
+  "enable": true,
+  "speed": 2,
+  "direction": "none",
+  "random": true,
+  "straight": false,
+  "out_mode": "out",
+  "bounce": false,
+  "attract": {
+    "enable": false,
+    "rotateX": 600,
+    "rotateY": 600
+  }
+}
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": {
+  "onhover": {
+    "enable": true,
+    "mode": "repulse"
+  },
+  "onclick": {
+    "enable": false,
+    "mode": "repulse"
+  },
+  "resize": true
+},
+"modes": {
+  "grab": {
+    "distance": 400,
+    "line_linked": {
+      "opacity": 1
+    }
+  },
+  "bubble": {
+    "distance": 100,
+    "size": 4,
+    "duration": 2,
+    "opacity": 0,
+    "speed": 3
+  },
+  "repulse": {
+    "distance": 50,
+    "duration": 0.4
+  },
+  "push": {
+    "particles_nb": 4
+  },
+  "remove": {
+    "particles_nb": 2
+  }
+}
+},
+"retina_detect": true
+    });
+</script>
+
+<script>
+  function getCookie(name) {
+            // Split document.cookie into individual cookies
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cookies = decodedCookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                // Check if the cookie starts with the name we're looking for
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1); // Return the value of the cookie
+                }
+            }
+            return ''; // Return empty string if cookie is not found
+        }
+
+        function setCookie(name, value, days) {
+            let expires = '';
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/"; // Set the cookie
+        }
+
+
+  const colors = ['#00ff00']; // Green color for all letters
+  let colorIndex = 0;
+
+  function updateColor() {
+      const currentColor = colors[colorIndex];
+      document.documentElement.style.setProperty('--clr1', currentColor);
+      const drops = document.querySelectorAll('.drop');
+      drops.forEach(drop => {
+          drop.style.color = currentColor;
+      });
+      colorIndex = (colorIndex + 1) % colors.length;
+  }
+
+  updateColor();
+  setInterval(updateColor, 1000);
+
+  function createFallingDropWithDelay(content) {
+    const drop = document.createElement('div');
+    drop.classList.add('drop');
+    drop.textContent = content;
+
+    // Random position at the top, but not too close to the edges (at least 10px away)
+    const randomLeft = Math.random() * (100 - 10) + 5; // Random position between 10px and 90% of the screen width
+    drop.style.left = `${randomLeft}%`;
+
+    document.getElementById('drops').appendChild(drop);
+
+    setTimeout(() => {
+        drop.style.animation = 'drop-fall 3s linear forwards'; // Fall down
+    }, 100);
+
+    setTimeout(() => {
+        drop.remove(); // Remove after animation ends
+    }, 2900); // Remove after 3 seconds
+}
+
+
+  function generateSourceDrop() {
+      const symbolsPerTick = 1; // Spawn fewer symbols (1 symbol per tick)
+      for (let i = 0; i < symbolsPerTick; i++) {
+          const content = ['@', '#', '$', '%', '&', '*'][Math.floor(Math.random() * 6)];
+          createFallingDropWithDelay(content);
+      }
+  }
+
+  setInterval(generateSourceDrop, 60); // Adjusted interval to spawn fewer drops
+</script>
+<script>
+  const canvasDot2 = document.getElementById('dotCanvas');
+const ctx22 = canvasDot2.getContext('2d');
+const word2 = "PXL NB";  // Single word
+let dots2 = [];
+let mouseX2 = 0, mouseY2 = 0;
+
+// Set canvas size
+canvasDot2.width = window.innerWidth;
+canvasDot2.height = window.innerHeight;
+
+// Dot class to represent a moving dot
+class Dot2 {
+    constructor(x, y, targetX, targetY) {
+        this.x = x;
+        this.y = y;
+        this.targetX = targetX;
+        this.targetY = targetY;
+        this.easing = 0.05;  // Easing factor (slow movement)
+        this.size = 4; // Size of the dot
+        this.repulsionDistance = 100; // Distance for mouse repulsion
+        this.repulsionStrength = 0.1; // Repulsion strength
+    }
+
+    // Move the dot smoothly to its target position
+    move() {
+        // Repulsion from the mouse if too close
+        const dx = mouseX2 - this.x;
+        const dy = mouseY2 - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.repulsionDistance) {
+            // Apply repulsion
+            const repulsionForce = (this.repulsionDistance - distance) * this.repulsionStrength;
+            this.x -= repulsionForce * (dx / distance);
+            this.y -= repulsionForce * (dy / distance);
+        } else {
+            // Apply attraction to the original position
+            this.x += (this.targetX - this.x) * this.easing;
+            this.y += (this.targetY - this.y) * this.easing;
+        }
+    }
+
+    draw() {
+        ctx22.beginPath();
+        ctx22.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx22.fillStyle = '#fff';
+        ctx22.fill();
+    }
+
+    // Update the target position
+    updateTarget(newTargetX, newTargetY) {
+        this.targetX = newTargetX;
+        this.targetY = newTargetY;
+    }
+}
+
+// Function to create dots for a given word
+function createDotsForWord2(word) {
+    const tempCanvas2 = document.createElement('canvas');
+    const tempCtx2 = tempCanvas2.getContext('2d');
+    tempCanvas2.width = canvasDot2.width;
+    tempCanvas2.height = canvasDot2.height;
+
+    // Calculate the font size to make the word fit almost perfectly within the canvas
+    const fontSize2 = Math.min(canvasDot2.width / (word.length * 1), canvasDot2.height / 1); // Adjust size based on screen size
+    tempCtx2.font = `bold ${fontSize2}px Arial`;
+    tempCtx2.fillStyle = '#ffffff';
+    tempCtx2.textAlign = 'left';
+    tempCtx2.textBaseline = 'top';
+    tempCtx2.clearRect(0, 0, tempCanvas2.width, tempCanvas2.height);
+
+    // Calculate the word's position in the middle
+    const wordWidth2 = tempCtx2.measureText(word).width;
+    const wordHeight2 = fontSize2;  // Approximate height of the word
+    const startX2 = canvasDot2.width / 2 - wordWidth2 / 2;
+    const startY2 = canvasDot2.height / 2 - wordHeight2 / 2;
+
+    tempCtx2.clearRect(0, 0, tempCanvas2.width, tempCanvas2.height);
+    tempCtx2.fillText(word, startX2, startY2);
+
+    // Get image data for the word
+    const imageData2 = tempCtx2.getImageData(0, 0, tempCanvas2.width, tempCanvas2.height);
+    const dots2 = [];
+
+    // Loop through all the pixels and create dots where there's non-transparent color
+    let totalDots2 = 0;
+    for (let y = 0; y < imageData2.height; y += 6) {  // Reduced spacing to create more dots
+        for (let x = 0; x < imageData2.width; x += 6) {  // Reduced spacing to create more dots
+            const i = (y * imageData2.width + x) * 4;
+            const a = imageData2.data[i + 3];
+
+            // If the pixel is not transparent (alpha > 128), create a dot
+            if (a > 128) {
+                // Scatter the dots slightly around their original target positions for less uniformity
+                const offsetX2 = (Math.random() - 0.5) * 5;
+                const offsetY2 = (Math.random() - 0.5) * 5;
+
+                // Add the dot only if it doesn't overlap with an existing one
+                let overlaps2 = false;
+                for (let dot of dots2) {
+                    const dist = Math.sqrt((dot.x - (x + offsetX2)) ** 2 + (dot.y - (y + offsetY2)) ** 2);
+                    if (dist < dot.size * 2) {  // If the dot is too close to another
+                        overlaps2 = true;
+                        break;
+                    }
+                }
+
+                if (!overlaps2) {
+                    const dot = new Dot2(x + offsetX2, y + offsetY2, x + offsetX2, y + offsetY2);
+                    dots2.push(dot);
+                    totalDots2++;
+                }
+
+                // Limit the number of dots to 200 per letter
+                if (totalDots2 >= word.length * 500) break;
+            }
+        }
+        if (totalDots2 >= word.length * 500) break;
+    }
+
+    return dots2;
+}
+
+// Function to animate the dots
+function animate2() {
+    ctx22.clearRect(0, 0, canvasDot2.width, canvasDot2.height); // Clear the canvas
+    dots2.forEach(dot => {
+        dot.move();
+        dot.draw();
+    });
+    requestAnimationFrame(animate2);
+}
+
+// Initialize setup
+dots2 = createDotsForWord2(word2);
+animate2();
+
+// Handle mouse movement
+window.addEventListener('mousemove', (e) => {
+    mouseX2 = e.clientX;
+    mouseY2 = e.clientY;
+});
+
+// Adjust canvas size when window is resized
+window.addEventListener('resize', () => {
+    canvasDot2.width = window.innerWidth;
+    canvasDot2.height = window.innerHeight;
+    dots2 = createDotsForWord2(word2);
+});
+
+</script>
