@@ -317,61 +317,46 @@ function resetTextareaHeight() {
       sendMessage();
     }
   });
-
-  function isGoogleIDToken(token) {
-        const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/;
-        return jwtPattern.test(token);
-    }
-
-    function checkLoginStatus() {
-        const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-                const [key, value] = cookie.split('=').map(c => c.trim());
-                acc[key] = value;
-                return acc;
-            }, {});
-
-            const idToken = getCookie('IDToken'); 
-            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = './/index.html';}
-
-            if (idToken) {
-                document.body.style.visibility = "visible";
-                scrollToBottom();
-            }
-
-            if (getCookie("messageBoxClosed") === "true") {
-                document.getElementById("notification").style.display = "none";
-            }
-    }
-
-    function logout() {
-        document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-        window.location.href = '../index.html';
-    }
-
-    function getCookie(name) {
-            // Split document.cookie into individual cookies
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let cookies = decodedCookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                let cookie = cookies[i].trim();
-                // Check if the cookie starts with the name we're looking for
-                if (cookie.startsWith(name + '=')) {
-                    return cookie.substring(name.length + 1); // Return the value of the cookie
-                }
-            }
-            return ''; // Return empty string if cookie is not found
-        }
-
-        function setCookie(name, value, days) {
-            let expires = '';
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + value + expires + "; path=/"; // Set the cookie
-        }
 </script>
 
 </body>
 </html>
+
+<script>
+    function isGoogleIDToken(token) {
+    return /^[\w\-]+\.[\w\-]+\.[\w\-]+$/.test(token);
+}
+
+function getCookie(name) {
+    return document.cookie.split('; ').reduce((acc, c) => {
+        const [k, v] = c.split('=');
+        return k === name ? decodeURIComponent(v) : acc;
+    }, '');
+}
+
+function setCookie(name, value, days) {
+    const expires = days ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}` : '';
+    document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
+}
+
+function checkLoginStatus() {
+    const idToken = getCookie('IDToken');
+    if (!idToken || !isGoogleIDToken(idToken)) {
+        location.href = './index.html';
+        return;
+    }
+
+    document.body.style.visibility = "visible";
+    scrollToBottom();
+
+    if (getCookie("messageBoxClosed") === "true") {
+        document.getElementById("notification").style.display = "none";
+    }
+}
+
+function logout() {
+    setCookie("IDToken", '', -1);
+    location.href = '../index.html';
+}
+
+</script>

@@ -642,71 +642,40 @@ window.addEventListener('resize', () => {
 
 <script>
     function isGoogleIDToken(token) {
-        const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/;
-        return jwtPattern.test(token);
+    return /^[\w\-]+\.[\w\-]+\.[\w\-]+$/.test(token);
+}
+
+function getCookie(name) {
+    return document.cookie.split('; ').reduce((acc, c) => {
+        const [k, v] = c.split('=');
+        return k === name ? decodeURIComponent(v) : acc;
+    }, '');
+}
+
+function setCookie(name, value, days) {
+    const expires = days ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}` : '';
+    document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
+}
+
+function checkLoginStatus() {
+    const idToken = getCookie('IDToken');
+    if (!idToken || !isGoogleIDToken(idToken)) {
+        location.href = './index.html';
+        return;
     }
 
-    function checkLoginStatus() {
-        if (!navigator.onLine) {
-            const idToken = getCookie('IDToken');
-            if (!idToken || !isGoogleIDToken(idToken)) {
-                window.location.href = '../index.html';
-            }
+    document.body.style.visibility = "visible";
+    scrollToBottom();
 
-            let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
-
-            if (cookieValue === '1') {
-                document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-                document.getElementById('drops').style.visibility = 'visible';
-            } else if (cookieValue === '3') {
-                document.getElementById('dotCanvas').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
-
-            document.body.style.visibility = "visible";
-            document.getElementById("messageBox").style.display = "none";
-
-        } else {
-            let cookieName = 'backgroundtype';
-            let cookieValue = getCookie(cookieName);
-
-            if (cookieValue === '1') {
-                document.getElementById('particles-js').style.visibility = 'visible';
-            } else if (cookieValue === '2') {
-                document.getElementById('drops').style.visibility = 'visible';
-            } else if (cookieValue === '3') {
-                document.getElementById('dotCanvas').style.visibility = 'visible';
-            } else {
-                setCookie(cookieName, '1', 100);
-                document.getElementById('particles-js').style.visibility = 'visible';
-            }
-
-            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-                const [key, value] = cookie.split('=').map(c => c.trim());
-                acc[key] = value;
-                return acc;
-            }, {});
-
-            const idToken = getCookie('IDToken'); 
-            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = '../index.html';}
-
-            if (idToken) {
-                document.body.style.visibility = "visible";
-                document.getElementById('infodiv').classList.add('visible');
-            }
-
-            if (getCookie("messageBoxClosed") === "true") {
-                document.getElementById("notification").style.display = "none";
-            }
-        }
+    if (getCookie("messageBoxClosed") === "true") {
+        document.getElementById("notification").style.display = "none";
     }
+}
 
-    function logout() {
-        document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-        window.location.href = '../index.html';
-    }
+function logout() {
+    setCookie("IDToken", '', -1);
+    location.href = '../index.html';
+}
+
 </script>
+
