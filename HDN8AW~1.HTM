@@ -115,7 +115,7 @@
 
   </style>
 </head>
-<body onload="checkLoginStatus()">
+<body>
   <button onclick="clearConversation()" id="clearButton">Clear Chat</button>
 
   <h1>What can I help with?</h1>
@@ -178,7 +178,7 @@
         console.log('Raw JSON:', rawText);  
 
 
-        const botMessage = rawText.response || 'Sorry, no response.';
+        const botMessage = rawText.response || 'We have currently used our budget for Ai, We are trying to find alternatives!';
 
         conversationHistory.push({ role: "user", content: userMessage });
 
@@ -227,46 +227,6 @@
 </body>
 </html>
 
-
-<script>
-      function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
-
-        function checkLoginStatus() {
-
-          const savedHistory = localStorage.getItem('conversationHistory');
-          if (savedHistory) {
-            conversationHistory = JSON.parse(savedHistory);
-
-            chatMessages.style.display = "block";
-
-            for (const entry of conversationHistory) {
-              const sender = entry.role === 'user' ? 'You' : 'ChatGPT';
-              const className = entry.role === 'user' ? 'user-message' : 'bot-message';
-              appendMessage(sender, entry.content, className);
-            }
-          }
-
-          if (!navigator.onLine) {
-
-            const idToken = getCookie('IDToken'); 
-            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
-
-          }
-          else if (navigator.onLine) {
-
-
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-        const [key, value] = cookie.split('=').map(c => c.trim());
-        acc[key] = value;
-        return acc;
-    }, {});
-
-    const idToken = getCookie('IDToken'); 
-            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
-}
-}
-</script>
-
 <script>
   function clearConversation() {
   localStorage.removeItem('conversationHistory'); 
@@ -275,3 +235,58 @@
   chatMessages.style.display = "none"; 
 }
 </script>
+
+
+<script>
+    function isGoogleIDToken(token) {
+    return /^[\w\-]+\.[\w\-]+\.[\w\-]+$/.test(token);
+}
+
+function getCookie(name) {
+    return document.cookie.split('; ').reduce((acc, c) => {
+        const [k, v] = c.split('=');
+        return k === name ? decodeURIComponent(v) : acc;
+    }, '');
+}
+
+function setCookie(name, value, days) {
+    const expires = days ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}` : '';
+    document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
+}
+
+function checkLoginStatus() {
+    const idToken = getCookie('IDToken');
+    if (!idToken || !isGoogleIDToken(idToken)) {
+        location.href = '../index.html';
+        return;
+    }
+
+    const savedHistory = localStorage.getItem('conversationHistory');
+    if (savedHistory) {
+      conversationHistory = JSON.parse(savedHistory);
+
+      chatMessages.style.display = "block";
+
+      for (const entry of conversationHistory) {
+        const sender = entry.role === 'user' ? 'You' : 'ChatGPT';
+        const className = entry.role === 'user' ? 'user-message' : 'bot-message';
+        appendMessage(sender, entry.content, className);
+      }
+    }
+
+    document.body.style.visibility = "visible";
+    scrollToBottom();
+
+    if (getCookie("messageBoxClosed") === "true") {
+        document.getElementById("notification").style.display = "none";
+    }
+}
+
+function logout() {
+    setCookie("IDToken", '', -1);
+    location.href = '../index.html';
+}
+
+document.addEventListener('DOMContentLoaded', checkLoginStatus);
+</script>
+
