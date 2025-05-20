@@ -33,9 +33,11 @@
     scrollbar-width: thin;
     scrollbar-color: #555 transparent;
   }
+
   #messageContainer::-webkit-scrollbar {
     width: 8px;
   }
+
   #messageContainer::-webkit-scrollbar-thumb {
     background-color: #555;
     border-radius: 10px;
@@ -59,24 +61,23 @@
   }
 
   .message-content {
-  display: flex;
-  flex-direction: row;
-  /* flex-wrap: wrap;  <-- remove this */
-  gap: 6px;
-  flex: 1;
-  min-width: 0;
-  word-break: break-word;
-  white-space: normal; /* allow text to wrap */
-}
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+    white-space: normal;
+  }
 
   .username {
-  font-weight: 600;
-  color: #949cf7;
-  white-space: nowrap;  /* keep username on one line */
-  user-select: none;
-  flex-shrink: 0; /* prevent username from shrinking */
-  margin-right: 6px; /* add space after username */
-}
+    font-weight: 600;
+    color: #949cf7;
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
+    margin-right: 6px;
+  }
 
   .message-text {
     flex-grow: 1;
@@ -107,16 +108,16 @@
     line-height: 1.2;
     outline: none;
     resize: none;
-    height: 2.8em; /* initial height for 2 lines approx */
-    min-height: 2.8em; /* prevent too small */
-    max-height: none; /* no max height */
-    overflow-y: hidden; /* hide scrollbar */
+    height: 2.8em;
+    min-height: 2.8em;
+    max-height: none;
+    overflow-y: hidden;
     scrollbar-width: none;
     transition: background-color 0.2s ease;
   }
 
   #messageInput::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
   }
 
   #messageInput::placeholder {
@@ -124,7 +125,7 @@
   }
 
   #messageInput.slowmode {
-    background-color: #ff5555; /* red background for slowmode */
+    background-color: #ff5555;
     color: #fff;
   }
 
@@ -137,17 +138,19 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    display: none;
   }
+
   #sendBtn:hover:not(:disabled) {
     background-color: #4752c4;
   }
+
   #sendBtn:disabled {
     background-color: #3a3b40;
     cursor: not-allowed;
     color: #999;
   }
 
-  /* Delete button style */
   .delete-btn {
     background-color: #ff5c5c;
     border: none;
@@ -158,22 +161,74 @@
     font-size: 0.85rem;
     flex-shrink: 0;
   }
+
   .delete-btn:hover {
     background-color: #ff7777;
   }
 
-  /* Responsive: send button only visible on mobile */
-  #sendBtn {
-    display: none;
-  }
   @media (max-width: 767px) {
     #sendBtn {
       display: inline-block;
     }
   }
+
+  #warningScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e1e1e;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  #warningScreen a {
+    color: #949cf7;
+    margin: 0 10px;
+  }
+
+  #warningScreen button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+  }
+
+  #acceptWarning {
+    background-color: #5865f2;
+    color: white;
+  }
+
+  #declineWarning {
+    background-color: #ff5c5c;
+    color: white;
+  }
 </style>
 </head>
 <body>
+
+<div id="warningScreen">
+  <h2>Welcome to PixelNebula</h2>
+  <p style="max-width:600px;">Before using this service, please read and accept our Terms of Service and Privacy Policy.</p>
+  <div style="margin-bottom: 20px;">
+    <a href="terms.html" target="_blank">Terms of Service</a>
+    <a href="privacy.html" target="_blank">Privacy Policy</a>
+  </div>
+  <div>
+    <button id="acceptWarning">Accept</button>
+    <button id="declineWarning">Decline</button>
+  </div>
+</div>
 
 <div id="messageContainer"></div>
 
@@ -184,29 +239,26 @@
 
 <script>
   const username = "Player123";
-
   const messageContainer = document.getElementById('messageContainer');
   const messageInput = document.getElementById('messageInput');
   const sendBtn = document.getElementById('sendBtn');
 
   function autoResizeTextarea() {
-  const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
-  const minHeightPx = lineHeightPx * 1;
+    const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
+    const minHeightPx = lineHeightPx * 1;
+    messageInput.style.height = 'auto';
+    if (messageInput.scrollHeight > minHeightPx) {
+      messageInput.style.height = messageInput.scrollHeight + 'px';
+    } else {
+      messageInput.style.height = minHeightPx + 'px';
+    }
+  }
 
-  messageInput.style.height = 'auto';
-
-  if (messageInput.scrollHeight > minHeightPx) {
-    messageInput.style.height = messageInput.scrollHeight + 'px';
-  } else {
+  function resetTextareaHeight() {
+    const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
+    const minHeightPx = lineHeightPx * 1;
     messageInput.style.height = minHeightPx + 'px';
   }
-}
-
-function resetTextareaHeight() {
-  const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
-  const minHeightPx = lineHeightPx * 1;
-  messageInput.style.height = minHeightPx + 'px';
-}
 
   messageInput.addEventListener('input', autoResizeTextarea);
 
@@ -292,6 +344,7 @@ function resetTextareaHeight() {
     deleteBtn.addEventListener('click', () => {
       messageDiv.remove();
     });
+
     messageDiv.appendChild(contentWrapper);
     messageDiv.appendChild(deleteBtn);
 
@@ -303,7 +356,7 @@ function resetTextareaHeight() {
     scrollToBottom();
 
     messageInput.value = '';
-    resetTextareaHeight(); 
+    resetTextareaHeight();
     messageInput.focus();
 
     startSlowmode();
@@ -317,47 +370,64 @@ function resetTextareaHeight() {
       sendMessage();
     }
   });
+
+  function checkWarningAccepted() {
+    const accepted = localStorage.getItem('acceptedWarning');
+    if (accepted === 'true') {
+      document.getElementById('warningScreen').style.display = 'none';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+
+    document.getElementById('acceptWarning').onclick = function () {
+      localStorage.setItem('acceptedWarning', 'true');
+      document.getElementById('warningScreen').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    };
+
+    document.getElementById('declineWarning').onclick = function () {
+      window.location.href = '../index.html';
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', checkWarningAccepted);
 </script>
 
-</body>
-</html>
-
 <script>
-    function isGoogleIDToken(token) {
+  function isGoogleIDToken(token) {
     return /^[\w\-]+\.[\w\-]+\.[\w\-]+$/.test(token);
-}
+  }
 
-function getCookie(name) {
+  function getCookie(name) {
     return document.cookie.split('; ').reduce((acc, c) => {
-        const [k, v] = c.split('=');
-        return k === name ? decodeURIComponent(v) : acc;
+      const [k, v] = c.split('=');
+      return k === name ? decodeURIComponent(v) : acc;
     }, '');
-}
+  }
 
-function setCookie(name, value, days) {
+  function setCookie(name, value, days) {
     const expires = days ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}` : '';
     document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
-}
+  }
 
-function checkLoginStatus() {
+  function checkLoginStatus() {
     const idToken = getCookie('IDToken');
     if (!idToken || !isGoogleIDToken(idToken)) {
-        location.href = '../index.html';
-        return;
+      location.href = '../index.html';
+      return;
     }
 
     document.body.style.visibility = "visible";
     scrollToBottom();
 
     if (getCookie("messageBoxClosed") === "true") {
-        document.getElementById("notification").style.display = "none";
+      const notification = document.getElementById("notification");
+      if (notification) notification.style.display = "none";
     }
-}
+  }
 
-function logout() {
-    setCookie("IDToken", '', -1);
-    location.href = '../index.html';
-}
-
-document.addEventListener('DOMContentLoaded', checkLoginStatus);
+  document.addEventListener('DOMContentLoaded', checkLoginStatus);
 </script>
+
+</body>
+</html>
