@@ -130,8 +130,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;  /* Ensure it's on top of other elements */
-    pointer-events: auto;  /* Allow click-through */
+    z-index: 0;  
+    pointer-events: auto; 
         }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6845450223326411"crossorigin="anonymous"></script>
@@ -180,7 +180,6 @@
     let cookieName = 'backgroundtype';
   let cookieValue = getCookie(cookieName);
 
-  // If cookie value exists, apply the visibility based on the value
   if (cookieValue === '1') {
     document.getElementById('particles-js').style.visibility = 'visible';
   } else if (cookieValue === '2') {
@@ -188,8 +187,7 @@
   } else if (cookieValue === '3') {
     document.getElementById('dotCanvas').style.visibility = 'visible';
   } else {
-    // If no cookie exists, set the cookie to '1' and set the default visibility
-    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    setCookie(cookieName, '1', 100); 
     document.getElementById('particles-js').style.visibility = 'visible';
   }
   })
@@ -208,7 +206,7 @@
   "value": "#ffffff"
 },
 "shape": {
-  "type": "", // Circle //
+  "type": "", 
   "stroke": {
     "width": 0,
     "color": "#000000"
@@ -310,30 +308,29 @@
 
 <script>
   function getCookie(name) {
-            // Split document.cookie into individual cookies
             let decodedCookie = decodeURIComponent(document.cookie);
             let cookies = decodedCookie.split(';');
             for (let i = 0; i < cookies.length; i++) {
                 let cookie = cookies[i].trim();
-                // Check if the cookie starts with the name we're looking for
+
                 if (cookie.startsWith(name + '=')) {
-                    return cookie.substring(name.length + 1); // Return the value of the cookie
+                    return cookie.substring(name.length + 1); 
                 }
             }
-            return ''; // Return empty string if cookie is not found
+            return ''; 
         }
 
         function setCookie(name, value, days) {
             let expires = '';
             if (days) {
                 let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
                 expires = "; expires=" + date.toUTCString();
             }
-            document.cookie = name + "=" + value + expires + "; path=/"; // Set the cookie
+            document.cookie = name + "=" + value + expires + "; path=/"; 
         }
 
-  const colors = ['#00ff00']; // Green color for all letters
+  const colors = ['#00ff00'];
   let colorIndex = 0;
 
   function updateColor() {
@@ -354,8 +351,7 @@
     drop.classList.add('drop');
     drop.textContent = content;
 
-    // Random position at the top, but not too close to the edges (at least 10px away)
-    const randomLeft = Math.random() * (100 - 10) + 5; // Random position between 10px and 90% of the screen width
+    const randomLeft = Math.random() * (100 - 10) + 5; 
     drop.style.left = `${randomLeft}%`;
 
     document.getElementById('drops').appendChild(drop);
