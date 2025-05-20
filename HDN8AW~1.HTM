@@ -174,7 +174,7 @@
         console.log('Raw JSON:', rawText);  
 
 
-        const botMessage = rawText.response || 'There has been en error!';
+        const botMessage = rawText.response || 'This AI has ran out of requests for today, Come back later to ask more questions!';
 
         conversationHistory.push({ role: "user", content: userMessage });
 
