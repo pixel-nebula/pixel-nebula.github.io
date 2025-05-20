@@ -166,10 +166,6 @@
       try {
         chatMessages.style.display = "block";
 
-        //const tempHistory = [...conversationHistory, { role: "user", content: userMessage }];
-        //const lastFew = tempHistory.slice(-4);
-        //const summary = lastFew.map(m => `${m.role}: ${m.content}`).join('\n');
-
         const url = `https://gnany3ohbd.execute-api.us-east-2.amazonaws.com/default/Formative?message=${encodeURIComponent(userMessage)}`;
 
         const response = await fetch(url);  
