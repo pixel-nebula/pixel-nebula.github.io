@@ -4,10 +4,8 @@ document.getElementById("botForm").addEventListener("submit", function(event) {
     const pin = encodeURIComponent(document.getElementById("pin").value);
     const botName = encodeURIComponent(document.getElementById("botNames").value);
     const botCount = parseInt(document.getElementById("botCount").value, 10);
-    
-    document.getElementById("pin").value = "";
-    document.getElementById("botNames").value = "";
-    document.getElementById("botCount").value = "";
+
+    document.getElementById("botForm").reset();
 
     const output = document.getElementById("output");
 
