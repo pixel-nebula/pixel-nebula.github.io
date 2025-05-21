@@ -626,7 +626,7 @@ function handleOnlineMode(idToken) {
         this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
     };
 
-    if (getCookie("messageBoxClosed_V1") === "true") {
+    if (getCookie("messageBoxClosed_V2") === "true") {
         const notification = document.getElementById("notification");
         if (notification) notification.style.display = "none";
     }
@@ -920,7 +920,7 @@ settingsContainer.addEventListener('click', (event) => {
 function closeNotification() {
       const box = document.getElementById('notification');
       box.style.animation = 'slideOut 0.4s ease-in forwards';
-      setCookie("messageBoxClosed_V1", "true", 5);
+      setCookie("messageBoxClosed_V2", "true", 5);
     }
 
   </script>
