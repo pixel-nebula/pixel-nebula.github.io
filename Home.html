@@ -388,7 +388,7 @@
 
   gtag('config', 'G-C130NKT3ZP');
 </script>
-<body>
+<body onload="checkLoginStatus()">
   <div style="visibility: hidden;" id="particles-js"></div>
   <div style="visibility: hidden;" id="drops"></div>
   <canvas style="visibility: hidden;" id="dotCanvas"></canvas>
@@ -427,8 +427,8 @@
     <div class="message-box" id="notification">
       <button class="close-btn" onclick="closeNotification()">×</button>
       <div>
-        To stay up to date with the current Pixel Nebula URL follow us on Instagram:
-        <a href="https://www.instagram.com/pixelnebu1a?igsh=NGVuemFyaDkzazJu&utm_source=qr" target="_blank">Link</a>
+        To stay up to date with the current Pixel Nebula URL join this discord:
+        <a href="#" target="_blank">Link</a>
       </div>
     </div>
     
@@ -440,7 +440,102 @@
     </footer>
 
     <script>
-  
+      function isGoogleIDToken(token) {const jwtPattern = /^[a-zA-Z0-9\-_]+\.([a-zA-Z0-9\-_]+)\.[a-zA-Z0-9\-_]+$/; return jwtPattern.test(token);}
+
+        function checkLoginStatus() {
+
+          if (!navigator.onLine) {
+
+            const idToken = getCookie('IDToken'); 
+            if (!idToken || !isGoogleIDToken(idToken)) {window.location.href = 'index.html';}
+
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
+            document.getElementById("Username").textContent = Username
+            
+
+            let cookieName = 'backgroundtype';
+  let cookieValue = getCookie(cookieName);
+
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
+            document.body.style.visibility = "visible";
+            document.getElementById('profile-pic').src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';
+            document.getElementById("messageBox").style.display = "none";
+          }
+          else if (navigator.onLine) {
+            navigator.serviceWorker.register('/service-worker.js')
+            let cookieName = 'backgroundtype';
+  let cookieValue = getCookie(cookieName);
+
+  // If cookie value exists, apply the visibility based on the value
+  if (cookieValue === '1') {
+    document.getElementById('particles-js').style.visibility = 'visible';
+  } else if (cookieValue === '2') {
+    document.getElementById('drops').style.visibility = 'visible';
+  } else if (cookieValue === '3') {
+    document.getElementById('dotCanvas').style.visibility = 'visible';
+  } else {
+    // If no cookie exists, set the cookie to '1' and set the default visibility
+    setCookie(cookieName, '1', 100);  // Set the default cookie value
+    document.getElementById('particles-js').style.visibility = 'visible';
+  }
+    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=').map(c => c.trim());
+        acc[key] = value;
+        return acc;
+    }, {});
+
+    const idToken = cookies.IDToken;
+
+    if (idToken) {
+        if (sessionStorage.getItem('profile-pic')) {
+            // Use cached profile pic if available
+            document.getElementById('profile-pic').src = sessionStorage.getItem('profile-pic');
+            let Username = getCookie('Username'); 
+            document.getElementById("Username").innerText = Username
+            document.getElementById("Username").textContent = Username
+            document.body.style.visibility = "visible";
+        } else {
+            // Fetch profile info from API
+            fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('profile-pic').src = data.picture;
+                    // Cache profile picture in sessionStorage
+                    sessionStorage.setItem('profile-pic', data.picture);
+
+                    let Username = getCookie('Username'); 
+                    document.getElementById("Username").innerText = Username
+                    document.getElementById("Username").textContent = Username
+
+                    document.body.style.visibility = "visible";
+                })
+                .catch(error => {
+                    console.error('Error validating token:', error);
+                    document.cookie = "IDToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                    window.location.href = 'index.html';
+                });
+        }
+    } else {
+        window.location.href = 'index.html';
+    }
+    
+    if (getCookie("messageBoxClosed") === "true") {document.getElementById("notification").style.display = "none";}
+    document.getElementById('profile-pic').onerror = function() {
+        this.src = 'https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/profilepic.jpg';  // Path to your default profile picture
+    };
+
     const infoBox = document.querySelector('.info');
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
@@ -451,6 +546,9 @@
                 });
             });
             observer.observe(infoBox);
+}
+
+        }
     </script>
 </body>
 </html>
@@ -840,43 +938,4 @@ window.addEventListener('resize', () => {
     dots2 = createDotsForWord2(word2);
 });
 
-</script>
-
-<script>
-    function isGoogleIDToken(token) {
-    return /^[\w\-]+\.[\w\-]+\.[\w\-]+$/.test(token);
-}
-
-function getCookie(name) {
-    return document.cookie.split('; ').reduce((acc, c) => {
-        const [k, v] = c.split('=');
-        return k === name ? decodeURIComponent(v) : acc;
-    }, '');
-}
-
-function setCookie(name, value, days) {
-    const expires = days ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}` : '';
-    document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
-}
-
-function checkLoginStatus() {
-    const idToken = getCookie('IDToken');
-    if (!idToken || !isGoogleIDToken(idToken)) {
-        location.href = '../index.html';
-        return;
-    }
-
-    document.body.style.visibility = "visible";
-
-    if (getCookie("messageBoxClosed") === "true") {
-        document.getElementById("notification").style.display = "none";
-    }
-}
-
-function logout() {
-    setCookie("IDToken", '', -1);
-    location.href = '../index.html';
-}
-
-document.addEventListener('DOMContentLoaded', checkLoginStatus);
 </script>
