@@ -420,7 +420,7 @@
     document.body.style.visibility = "visible";
     scrollToBottom();
 
-    if (getCookie("messageBoxClosed") === "true") {
+    if (getCookie("messageBoxClosed_V1") === "true") {
       const notification = document.getElementById("notification");
       if (notification) notification.style.display = "none";
     }
