@@ -52,7 +52,32 @@
 </script>
 <body onload="checkLoginStatus()">
     <div class="holder">
-        <iframe class="frame" src="https://totalvisits.onrender.com/" title="Chat"></iframe>
+        <html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahoot Botter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kahoot Botter</h1>
+        <form id="botForm">
+            <label for="pin">Game PIN:</label>
+            <input type="text" id="pin" required="">
+            <label for="botNames">Bot Names (comma-separated):</label>
+            <input type="text" id="botNames" required="">
+            <label for="botCount">How many bots to send?</label>
+            <input type="number" id="botCount" required="" min="1" max="50">
+            <label for="interval">Interval (ms) between bots:</label>
+            <input type="number" id="interval" required="" min="200">
+            <button type="submit">Start Botting</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <script src="app.js"></script>
+
+
+</body></html>
     </div>
 </body>
 </html>
