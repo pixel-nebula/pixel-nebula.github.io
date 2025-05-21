@@ -26,5 +26,4 @@ document.getElementById("botForm").addEventListener("submit", function(event) {
         console.error('Error:', error);
     });
     document.getElementById("botForm").reset();
-    this.reset();
 });
