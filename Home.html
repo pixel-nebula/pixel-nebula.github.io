@@ -240,22 +240,47 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      padding: 20px 20px 15px 20px;
+      padding: 20px;
       font-size: 14px;
-      border-radius: 20px;
+      border-radius: 15px;
       max-width: 320px;
-      width: fit-content;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 9999;
-      animation: slideIn 0.5s ease-out forwards;
-
       background: rgba(0, 255, 204, 0.05);
       border: 2px solid #00ffcc;
-      border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
       color: #e0fefe;
+      z-index: 9999;
+      animation: slideIn 0.5s ease-out forwards;
+    }
+
+    .message-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .message-text {
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .qr-code img {
+      width: 80px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #00ffcc;
+      margin-right: 5px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 5px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: #00ffcc;
+      cursor: pointer;
     }
 
     @keyframes slideIn {
@@ -278,34 +303,6 @@
         transform: translateX(100%);
         opacity: 0;
       }
-    }
-
-    .message-box a {
-      color: #00ffcc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .message-box a:hover {
-      text-decoration: underline;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 8px;
-      right: 10px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      color: #fff;
-      background: none;
-      border: none;
-      padding: 0;
-      line-height: 1;
-    }
-
-    .close-btn:hover {
-      color: red;
     }
 :root {
         --clr1: #00ff00; /* Green color for text */
@@ -424,10 +421,13 @@
     </p>
   </div>
     <div class="message-box" id="notification">
-      <button class="close-btn" onclick="closeNotification()">×</button>
-      <div>
-        To stay up to date with the current Pixel Nebula URL follow us on Instagram:
-        <a href="https://www.instagram.com/pixelnebu1a?igsh=NGVuemFyaDkzazJu&utm_source=qr" target="_blank">Link</a>
+    <button class="close-btn" onclick="closeNotification()">×</button>
+    <div class="message-content">
+      <div class="message-text">
+        To stay up to date with the current Pixel Nebula URL, follow us on Instagram:
+      </div>
+      <div class="qr-code">
+        <img src="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/InstaQRCode.png" alt="Instagram QR Code">
       </div>
     </div>
     
