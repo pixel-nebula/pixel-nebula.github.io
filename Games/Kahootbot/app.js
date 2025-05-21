@@ -5,8 +5,6 @@ document.getElementById("botForm").addEventListener("submit", function(event) {
     const botName = encodeURIComponent(document.getElementById("botNames").value);
     const botCount = parseInt(document.getElementById("botCount").value, 10);
 
-    document.getElementById("botForm").reset();
-
     const output = document.getElementById("output");
 
     fetch(`https://dnpzivj073.execute-api.us-east-2.amazonaws.com/default/KahootBotter?pin=${pin}&nickname=${botName}&amount=${botCount}`)
@@ -27,4 +25,6 @@ document.getElementById("botForm").addEventListener("submit", function(event) {
         output.textContent = 'Error: ' + error.message + '\n';
         console.error('Error:', error);
     });
+    document.getElementById("botForm").reset();
+    this.reset();
 });
