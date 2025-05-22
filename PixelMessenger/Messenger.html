@@ -129,28 +129,6 @@
     color: #fff;
   }
 
-  #sendBtn {
-    background-color: #5865f2;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    display: none;
-  }
-
-  #sendBtn:hover:not(:disabled) {
-    background-color: #4752c4;
-  }
-
-  #sendBtn:disabled {
-    background-color: #3a3b40;
-    cursor: not-allowed;
-    color: #999;
-  }
-
   .delete-btn {
     background-color: #ff5c5c;
     border: none;
@@ -164,12 +142,6 @@
 
   .delete-btn:hover {
     background-color: #ff7777;
-  }
-
-  @media (max-width: 767px) {
-    #sendBtn {
-      display: inline-block;
-    }
   }
 
   #warningScreen {
@@ -241,14 +213,11 @@
 
 <div id="inputArea">
   <textarea id="messageInput" placeholder="Type your message..." maxlength="1080"></textarea>
-  <button id="sendBtn">Send</button>
 </div>
 
 <script>
-  const username = "Player123";
   const messageContainer = document.getElementById('messageContainer');
   const messageInput = document.getElementById('messageInput');
-  const sendBtn = document.getElementById('sendBtn');
 
   function autoResizeTextarea() {
     const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
@@ -276,21 +245,8 @@
     messageContainer.scrollTop = messageContainer.scrollHeight;
   }
 
-  function deleteMessageAfter24Hours(messageDiv, timestamp) {
-    const now = Date.now();
-    const msUntilDelete = timestamp + 24 * 60 * 60 * 1000 - now;
-    if (msUntilDelete <= 0) {
-      messageDiv.remove();
-    } else {
-      setTimeout(() => {
-        messageDiv.remove();
-      }, msUntilDelete);
-    }
-  }
-
   function startSlowmode() {
     canSend = false;
-    sendBtn.disabled = true;
     messageInput.disabled = true;
     messageInput.classList.add('slowmode');
 
@@ -306,70 +262,12 @@
         clearInterval(slowmodeCountdownId);
         messageInput.placeholder = 'Type your message...';
         canSend = true;
-        sendBtn.disabled = false;
         messageInput.disabled = false;
         messageInput.classList.remove('slowmode');
         messageInput.focus();
       }
     }, 1000);
   }
-
-  function sendMessage() {
-    if (!canSend) return;
-
-    const text = messageInput.value.trim();
-    if (!text) return;
-
-    if (text.length > 1080) {
-      alert('Message cannot exceed 1080 characters.');
-      messageInput.focus();
-      return;
-    }
-
-    autoResizeTextarea();
-
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('message');
-
-    const contentWrapper = document.createElement('div');
-    contentWrapper.classList.add('message-content');
-
-    const usernameSpan = document.createElement('span');
-    usernameSpan.classList.add('username');
-    usernameSpan.textContent = username + ':';
-
-    const messageText = document.createElement('span');
-    messageText.classList.add('message-text');
-    messageText.textContent = text;
-
-    contentWrapper.appendChild(usernameSpan);
-    contentWrapper.appendChild(messageText);
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('delete-btn');
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.addEventListener('click', () => {
-      messageDiv.remove();
-    });
-
-    messageDiv.appendChild(contentWrapper);
-    messageDiv.appendChild(deleteBtn);
-
-    messageContainer.appendChild(messageDiv);
-
-    const timestamp = Date.now();
-    deleteMessageAfter24Hours(messageDiv, timestamp);
-
-    scrollToBottom();
-
-    messageInput.value = '';
-    resetTextareaHeight();
-    messageInput.focus();
-
-    startSlowmode();
-  }
-
-  sendBtn.addEventListener('click', sendMessage);
 
   messageInput.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -413,8 +311,42 @@
   }
 
   function setCookie(name, value, days) {
-    const expires = days ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}` : '';
+    const expires = days
+      ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`
+      : '';
     document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
+  }
+
+  const apiUrl = 'https://3rwuk5mkqh.execute-api.us-east-2.amazonaws.com/default/chatHandler';
+
+  async function loadMessages() {
+    const res = await fetch(apiUrl);
+    const messages = await res.json();
+    const container = document.getElementById('messageContainer');
+    container.innerHTML = '';
+
+    messages.forEach(msg => {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+
+      const contentWrapper = document.createElement('div');
+      contentWrapper.classList.add('message-content');
+
+      const usernameSpan = document.createElement('span');
+      usernameSpan.classList.add('username');
+      usernameSpan.textContent = `[${msg.timestamp}] ${msg.username}`;
+
+      const messageText = document.createElement('span');
+      messageText.classList.add('message-text');
+      messageText.textContent = msg.message;
+
+      contentWrapper.appendChild(usernameSpan);
+      contentWrapper.appendChild(messageText);
+
+      messageDiv.appendChild(contentWrapper);
+
+      container.appendChild(messageDiv);
+    });
   }
 
   function checkLoginStatus() {
@@ -424,17 +356,18 @@
       return;
     }
 
-    document.body.style.visibility = "visible";
+    document.body.style.visibility = 'visible';
     scrollToBottom();
 
-    if (getCookie("messageBoxClosed_V2") === "true") {
-      const notification = document.getElementById("notification");
-      if (notification) notification.style.display = "none";
+    if (getCookie('messageBoxClosed_V2') === 'true') {
+      const notification = document.getElementById('notification');
+      if (notification) notification.style.display = 'none';
     }
   }
 
   document.addEventListener('DOMContentLoaded', checkLoginStatus);
 </script>
+
 
 </body>
 </html>
