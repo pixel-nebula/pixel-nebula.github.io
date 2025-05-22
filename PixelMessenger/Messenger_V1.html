@@ -1,65 +1,395 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chat Box</title>
-    <style>
-        body { font-family: Arial; margin: 20px; }
-        #messages { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; }
-        #message-form { margin-top: 10px; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PixelNebula</title>
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/pixel-nebula/pixel-nebula.github.io@master/Pictures/Logo.png" type="image/png" />
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: #313338;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0;
+  }
+
+  #messageContainer {
+    flex: 1;
+    background-color: #2b2d31;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #555 transparent;
+  }
+
+  #messageContainer::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #messageContainer::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+  }
+
+  .message {
+    background-color: #383a40;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
+    transition: background-color 0.2s ease;
+    width: 100%;
+  }
+
+  .message:hover {
+    background-color: #404249;
+  }
+
+  .message-content {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .username {
+    font-weight: 600;
+    color: #949cf7;
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
+    margin-right: 6px;
+  }
+
+  .message-text {
+    flex-grow: 1;
+    color: #dcddde;
+    word-break: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  #inputArea {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    background-color: #313338;
+    border-top: 1px solid #1e1f22;
+  }
+
+  #messageInput {
+    flex-grow: 1;
+    background-color: #383a40;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.2;
+    outline: none;
+    resize: none;
+    height: 2.8em;
+    min-height: 2.8em;
+    max-height: none;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    transition: background-color 0.2s ease;
+  }
+
+  #messageInput::-webkit-scrollbar {
+    display: none;
+  }
+
+  #messageInput::placeholder {
+    color: #aaa;
+  }
+
+  #messageInput.slowmode {
+    background-color: #ff5555;
+    color: #fff;
+  }
+
+  .delete-btn {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .delete-btn:hover {
+    background-color: #ff7777;
+  }
+
+  #warningScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e1e1e;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  #warningScreen a {
+    color: #949cf7;
+    margin: 0 10px;
+  }
+
+  #warningScreen button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+  }
+
+  #acceptWarning {
+    background-color: #5865f2;
+    color: white;
+  }
+
+  #declineWarning {
+    background-color: #ff5c5c;
+    color: white;
+  }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C130NKT3ZP');
+</script>
 </head>
 <body>
-    <h2>Chat Room</h2>
-    <div id="messages"></div>
-    <form id="message-form">
-        <input type="text" id="message" placeholder="Message" required />
-        <button type="submit">Send</button>
-    </form>
 
-    <script>
-        const apiUrl = 'https://3rwuk5mkqh.execute-api.us-east-2.amazonaws.com/default/chatHandler';
+<div id="warningScreen">
+  <h2>Welcome to PixelNebula</h2>
+  <p style="max-width:600px;">Before using this service, please read and accept our Terms of Service and Privacy Policy.</p>
+  <div style="margin-bottom: 20px;">
+    <a href="terms.html" target="_blank">Terms of Service</a>
+    <a href="privacy.html" target="_blank">Privacy Policy</a>
+  </div>
+  <div>
+    <button id="acceptWarning">Accept</button>
+    <button id="declineWarning">Decline</button>
+  </div>
+</div>
 
-        // Helper to get cookie value by name
-        function getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
-            return null;
-        }
+<div id="messageContainer"></div>
 
-        async function loadMessages() {
-            const res = await fetch(apiUrl);
-            const messages = await res.json();
-            const container = document.getElementById('messages');
-            container.innerHTML = '';
-            messages.forEach(msg => {
-                const div = document.createElement('div');
-                div.textContent = `[${msg.timestamp}] ${msg.username}: ${msg.message}`;
-                container.appendChild(div);
-            });
-        }
+<div id="inputArea">
+  <textarea id="messageInput" placeholder="Type your message..." maxlength="1080"></textarea>
+</div>
 
-        document.getElementById('message-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const token = getCookie('IDToken');
-            if (!token) {
-                alert('Please sign in to send messages.');
-                return;
-            }
-            const message = document.getElementById('message').value;
+<script>
+  const messageContainer = document.getElementById('messageContainer');
+  const messageInput = document.getElementById('messageInput');
 
-            await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token, message })
-            });
+  function autoResizeTextarea() {
+    const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
+    const minHeightPx = lineHeightPx * 1;
+    messageInput.style.height = 'auto';
+    if (messageInput.scrollHeight > minHeightPx) {
+      messageInput.style.height = messageInput.scrollHeight + 'px';
+    } else {
+      messageInput.style.height = minHeightPx + 'px';
+    }
+  }
 
-            document.getElementById('message').value = '';
-            loadMessages();
-        });
+  async function sendMessage() {
+    const token = getCookie('IDToken');
+    if (!token) {
+      alert('Please sign in to send messages.');
+      return;
+    }
+    const message = messageInput.value;
 
-        setInterval(loadMessages, 5000);
-        loadMessages();
-    </script>
+    await fetch(apiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, message })
+    });
+
+    messageInput.value = '';
+    loadMessages();
+    startSlowmode();
+  }
+
+  function resetTextareaHeight() {
+    const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
+    const minHeightPx = lineHeightPx * 1;
+    messageInput.style.height = minHeightPx + 'px';
+  }
+
+  messageInput.addEventListener('input', autoResizeTextarea);
+
+  let canSend = true;
+  let slowmodeCountdownId = null;
+
+  function startSlowmode() {
+    canSend = false;
+    messageInput.disabled = true;
+    messageInput.classList.add('slowmode');
+
+    let secondsLeft = 20;
+    messageInput.placeholder = `Slowmode: ${secondsLeft} seconds remaining`;
+    messageInput.value = '';
+
+    slowmodeCountdownId = setInterval(() => {
+      secondsLeft--;
+      if (secondsLeft > 0) {
+        messageInput.placeholder = `Slowmode: ${secondsLeft} seconds remaining`;
+      } else {
+        clearInterval(slowmodeCountdownId);
+        messageInput.placeholder = 'Type your message...';
+        canSend = true;
+        messageInput.disabled = false;
+        messageInput.classList.remove('slowmode');
+        messageInput.focus();
+      }
+    }, 1000);
+  }
+
+  messageInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage().catch(err => console.error("Failed on load:", err));
+    }
+  });
+
+  function checkWarningAccepted() {
+    const accepted = localStorage.getItem('acceptedWarning');
+    if (accepted === 'true') {
+      document.getElementById('warningScreen').style.display = 'none';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+
+    document.getElementById('acceptWarning').onclick = function () {
+      localStorage.setItem('acceptedWarning', 'true');
+      document.getElementById('warningScreen').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    };
+
+    document.getElementById('declineWarning').onclick = function () {
+      window.location.href = '../index.html';
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', checkWarningAccepted);
+</script>
+
+<script>
+  function isGoogleIDToken(token) {
+    return /^[\w\-]+\.[\w\-]+\.[\w\-]+$/.test(token);
+  }
+
+  function getCookie(name) {
+    return document.cookie.split('; ').reduce((acc, c) => {
+      const [k, v] = c.split('=');
+      return k === name ? decodeURIComponent(v) : acc;
+    }, '');
+  }
+
+  function setCookie(name, value, days) {
+    const expires = days
+      ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`
+      : '';
+    document.cookie = `${name}=${encodeURIComponent(value)}${expires}; path=/`;
+  }
+
+  const apiUrl = 'https://3rwuk5mkqh.execute-api.us-east-2.amazonaws.com/default/chatHandler';
+
+  async function loadMessages() {
+    try {
+      const res = await fetch(apiUrl);
+    const messages = await res.json();
+    const container = document.getElementById('messageContainer');
+    container.innerHTML = '';
+
+    messages.forEach(msg => {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+
+      const contentWrapper = document.createElement('div');
+      contentWrapper.classList.add('message-content');
+
+      const usernameSpan = document.createElement('span');
+      usernameSpan.classList.add('username');
+      usernameSpan.textContent = `[${msg.timestamp}] ${msg.username}`;
+
+      const messageText = document.createElement('span');
+      messageText.classList.add('message-text');
+      messageText.textContent = msg.message;
+
+      contentWrapper.appendChild(usernameSpan);
+      contentWrapper.appendChild(messageText);
+
+      messageDiv.appendChild(contentWrapper);
+
+      container.appendChild(messageDiv);
+    });
+    } catch(error) {
+      console.error('Failed to load messages:', error);
+    }
+    
+    
+  }
+
+  function checkLoginStatus() {
+    const idToken = getCookie('IDToken');
+    if (!idToken || !isGoogleIDToken(idToken)) {
+      location.href = '../index.html';
+      return;
+    }
+
+    document.body.style.visibility = 'visible';
+
+    if (getCookie('messageBoxClosed_V2') === 'true') {
+      const notification = document.getElementById('notification');
+      if (notification) notification.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', checkLoginStatus);
+
+  setInterval(loadMessages, 5000);
+  loadMessages();
+</script>
+
+
 </body>
 </html>
