@@ -41,7 +41,7 @@
 
         document.getElementById('message-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const token = getCookie('IDToken'); // <-- updated cookie name here
+            const token = getCookie('IDToken');
             if (!token) {
                 alert('Please sign in to send messages.');
                 return;
@@ -58,8 +58,7 @@
             loadMessages();
         });
 
-        // Refresh messages every 3 seconds
-        setInterval(loadMessages, 3000);
+        setInterval(loadMessages, 5000);
         loadMessages();
     </script>
 </body>
