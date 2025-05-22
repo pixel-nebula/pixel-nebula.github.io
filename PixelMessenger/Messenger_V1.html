@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Box</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        #messages { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; }
+        #message-form { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Chat Room</h2>
+    <div id="messages"></div>
+    <form id="message-form">
+        <input type="text" id="message" placeholder="Message" required />
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        const apiUrl = 'https://3rwuk5mkqh.execute-api.us-east-2.amazonaws.com/default/chatHandler';
+
+        // Helper to get cookie value by name
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
+            return null;
+        }
+
+        async function loadMessages() {
+            const res = await fetch(apiUrl);
+            const messages = await res.json();
+            const container = document.getElementById('messages');
+            container.innerHTML = '';
+            messages.forEach(msg => {
+                const div = document.createElement('div');
+                div.textContent = `[${msg.timestamp}] ${msg.username}: ${msg.message}`;
+                container.appendChild(div);
+            });
+        }
+
+        document.getElementById('message-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const token = getCookie('IDToken'); // <-- updated cookie name here
+            if (!token) {
+                alert('Please sign in to send messages.');
+                return;
+            }
+            const message = document.getElementById('message').value;
+
+            await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token, message })
+            });
+
+            document.getElementById('message').value = '';
+            loadMessages();
+        });
+
+        // Refresh messages every 3 seconds
+        setInterval(loadMessages, 3000);
+        loadMessages();
+    </script>
+</body>
+</html>
