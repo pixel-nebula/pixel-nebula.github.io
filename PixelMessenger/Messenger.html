@@ -383,10 +383,12 @@
 
     document.body.style.visibility = 'visible';
 
-    const savedSeconds = parseInt(getCookie(SLOWMODE_COOKIE_NAME), 0);
+    const savedSeconds = parseInt(getCookie("slowmodeSeconds"), 0);
     if (savedSeconds > 0) {
       startSlowmode(savedSeconds);
-    } 
+    } else {
+      setCookie("slowmodeSeconds", slowmodeSecondsLeft, 0);
+    }
 
     if (getCookie('messageBoxClosed_V2') === 'true') {
       const notification = document.getElementById('notification');
