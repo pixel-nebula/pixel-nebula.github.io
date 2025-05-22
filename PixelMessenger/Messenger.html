@@ -230,6 +230,24 @@
     }
   }
 
+  async function sendMessage() {
+    const token = getCookie('IDToken');
+    if (!token) {
+      alert('Please sign in to send messages.');
+      return;
+    }
+    const message = document.getElementById('message').value;
+
+    await fetch(apiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, message })
+    });
+
+    document.getElementById('message').value = '';
+    loadMessages();
+  }
+
   function resetTextareaHeight() {
     const lineHeightPx = parseFloat(getComputedStyle(messageInput).lineHeight);
     const minHeightPx = lineHeightPx * 1;
@@ -240,10 +258,6 @@
 
   let canSend = true;
   let slowmodeCountdownId = null;
-
-  function scrollToBottom() {
-    messageContainer.scrollTop = messageContainer.scrollHeight;
-  }
 
   function startSlowmode() {
     canSend = false;
@@ -272,7 +286,7 @@
   messageInput.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      sendMessage();
+      sendMessage().catch(err => console.error("Failed on load:", err));
     }
   });
 
@@ -320,7 +334,8 @@
   const apiUrl = 'https://3rwuk5mkqh.execute-api.us-east-2.amazonaws.com/default/chatHandler';
 
   async function loadMessages() {
-    const res = await fetch(apiUrl);
+    try {
+      const res = await fetch(apiUrl);
     const messages = await res.json();
     const container = document.getElementById('messageContainer');
     container.innerHTML = '';
@@ -347,6 +362,11 @@
 
       container.appendChild(messageDiv);
     });
+    } catch {
+      console.error('Failed to load messages:', error);
+    }
+    
+    
   }
 
   function checkLoginStatus() {
@@ -357,7 +377,6 @@
     }
 
     document.body.style.visibility = 'visible';
-    scrollToBottom();
 
     if (getCookie('messageBoxClosed_V2') === 'true') {
       const notification = document.getElementById('notification');
@@ -366,6 +385,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', checkLoginStatus);
+
+  setInterval(loadMessages, 5000);
+  loadMessages();
 </script>
 
 
