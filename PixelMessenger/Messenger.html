@@ -271,10 +271,10 @@
     slowmodeCountdownId = setInterval(() => {
       secondsLeft--;
       if (secondsLeft > 0) {
-        setCookie("slowmodeSeconds", slowmodeSecondsLeft, secondsLeft);
+        setCookie("slowmodeSeconds", secondsLeft, 100);
         messageInput.placeholder = `Slowmode: ${secondsLeft} seconds remaining`;
       } else {
-        setCookie("slowmodeSeconds", slowmodeSecondsLeft, 0);
+        setCookie("slowmodeSeconds", slowmodeSecondsLeft, 100);
         clearInterval(slowmodeCountdownId);
         messageInput.placeholder = 'Type your message...';
         canSend = true;
@@ -327,14 +327,15 @@
   }
 
   function setCookie(name, value, days) {
-            let expires = '';
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + value + expires + "; path=/"; 
-        }
+  let expires = '';
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+}
+
 
   const apiUrl = 'https://3rwuk5mkqh.execute-api.us-east-2.amazonaws.com/default/chatHandler';
 
@@ -387,7 +388,7 @@
     if (savedSeconds > 0) {
       startSlowmode(savedSeconds);
     } else {
-      setCookie("slowmodeSeconds", slowmodeSecondsLeft, 0);
+      setCookie("slowmodeSeconds", 0, 100);
     }
 
     if (getCookie('messageBoxClosed_V2') === 'true') {
