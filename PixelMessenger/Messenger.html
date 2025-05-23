@@ -237,10 +237,12 @@
     }
     const message = messageInput.value;
 
+    let randomnumber = Math.floor(Math.random() * 1000) + 1;
+
     await fetch(apiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token, message })
+      body: JSON.stringify({ token, message , randomnumber})
     });
 
     messageInput.value = '';
