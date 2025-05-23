@@ -260,7 +260,7 @@
   let canSend = true;
   let slowmodeCountdownId = null;
 
-  function startSlowmode(seconds = 20) {
+  function startSlowmode(seconds = 10) {
     canSend = false;
     messageInput.disabled = true;
     messageInput.classList.add('slowmode');
