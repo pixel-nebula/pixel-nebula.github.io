@@ -274,7 +274,7 @@
         setCookie("slowmodeSeconds", secondsLeft, 100);
         messageInput.placeholder = `Slowmode: ${secondsLeft} seconds remaining`;
       } else {
-        setCookie("slowmodeSeconds", slowmodeSecondsLeft, 100);
+        setCookie("slowmodeSeconds", 0, 100);
         clearInterval(slowmodeCountdownId);
         messageInput.placeholder = 'Type your message...';
         canSend = true;
