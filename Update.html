@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <script>
-    // Register the service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
@@ -55,7 +54,7 @@
             top: 20px;
             left: 20px;
             display: flex;
-            gap: 20px; /* Adjust the spacing between menu items */
+            gap: 20px;  
         }
         h1 {
       font-size: 3rem;
@@ -80,9 +79,9 @@
       color: #e0fefe;
       scrollbar-width: thin;
       scrollbar-color: #9fffd8 transparent;
-      opacity: 0; /* Start invisible */
-      transform: translateY(10px); /* Start below */
-      transition: opacity 1s ease, transform 1s ease; /* Smooth transition for opacity and position */
+      opacity: 0;  
+      transform: translateY(10px);  
+      transition: opacity 1s ease, transform 1s ease;  
     }
 
     
@@ -140,9 +139,9 @@
   cursor: pointer;
   padding: 8px 8px;
   transition: background-color 0.3s;
-  position: fixed;  /* Change to fixed to keep the element fixed in the viewport */
-  top: 10px;  /* Set 10px from the top */
-  right: 10px;  /* Set 10px from the right */
+  position: fixed;   
+  top: 10px;   
+  right: 10px;   
 
   background: rgba(0, 255, 204, 0.05);
   border: 2px solid #00ffcc;
@@ -292,7 +291,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 0; /* Send it behind all other elements */
+            z-index: 0;  
         }
         .message-box {
       position: fixed;
@@ -363,7 +362,7 @@
       }
     }
 :root {
-        --clr1: #00ff00; /* Green color for text */
+        --clr1: #00ff00;  
     }
 
 
@@ -374,7 +373,7 @@
         transform: translateX(-50%);
         font-size: 2em;
         white-space: nowrap;
-        color: var(--clr1); /* Green color */
+        color: var(--clr1);  
         font-weight: bold;
         z-index: 1000;
         background: transparent;
@@ -384,23 +383,23 @@
 
     .drop {
     position: absolute;
-    color: var(--clr1); /* Green color */
-    font-size: 1.5em; /* Smaller text size */
+    color: var(--clr1);  
+    font-size: 1.5em;  
     top: 0;
     animation: none;
     transition: color 0.5s;
-    z-index: -1; /* Send the drops to the background */
+    z-index: -1;  
 }
 
 
     @keyframes drop-fall {
         0% {
-            transform: translateY(0); /* Start at the top */
+            transform: translateY(0);  
             opacity: 1;
         }
         100% {
-            transform: translateY(100vh); /* Fall all the way to the bottom */
-            opacity: 0; /* Fade out */
+            transform: translateY(100vh);  
+            opacity: 0;  
         }
     }
     .hero {
@@ -428,8 +427,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;  /* Ensure it's on top of other elements */
-    pointer-events: auto;  /* Allow click-through */
+    z-index: 0;   
+    pointer-events: auto;   
         }
     </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C130NKT3ZP"></script>
@@ -980,17 +979,14 @@ function animate2() {
     requestAnimationFrame(animate2);
 }
 
-// Initialize setup
 dots2 = createDotsForWord2(word2);
 animate2();
 
-// Handle mouse movement
 window.addEventListener('mousemove', (e) => {
     mouseX2 = e.clientX;
     mouseY2 = e.clientY;
 });
 
-// Adjust canvas size when window is resized
 window.addEventListener('resize', () => {
     canvasDot2.width = window.innerWidth;
     canvasDot2.height = window.innerHeight;
